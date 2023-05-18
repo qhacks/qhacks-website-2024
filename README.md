@@ -4,11 +4,8 @@ Welcome to the QHacks 2024 website repo. This repo holds all the code to power t
 First, run the development server:
 
 ```bash
+npm i
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
