@@ -26,7 +26,7 @@ export default function Home() {
             </div>
           </div>
           <div className='flex-None'>
-            <Image src="/Vectary texture.svg" alt="QHacks Logo" width={650} height={650}/>
+            <Image src="/Qhacks Crown.svg" alt="QHacks Logo" width={650} height={650}/>
           </div>
         </div>
       </section>
