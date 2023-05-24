@@ -1,4 +1,7 @@
 import Image from 'next/image'
+import 'tailwindcss/tailwind.css';
+import Head from 'next/head';
+
 
 export default function Home() {
   return (
@@ -12,7 +15,7 @@ export default function Home() {
           <a href='#' className="text-2xl p-4 font-bold text-white">About</a>
           <a href='#' className="text-2xl p-4 font-bold text-white">Sponsors</a>
           <a href='#' className="text-2xl p-4 font-bold text-white">Contact</a>
-          <a href='#' className="text-2xl p-4 font-bold text-white">Schedule</a>
+          <a href='/Schedule' className="text-2xl p-4 font-bold text-white">Schedule</a>
         </div>
       </nav>
       <section className='flex items-center justify-center'>
