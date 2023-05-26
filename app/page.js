@@ -1,9 +1,52 @@
 import Image from 'next/image'
 import 'tailwindcss/tailwind.css';
 import Head from 'next/head';
-
+import SponsorCard from '../components/SponsorCard';
 
 export default function Home() {
+  const amazon = {
+    name: 'Amazon',
+    logo: '/sponsors/Amazon.svg',
+    link: 'https://www.amazon.jobs/en/',
+  };
+  const redbull = {
+    name: 'Redbull',
+    logo: '/sponsors/Redbull.svg',
+    link: 'https://www.amazon.jobs/en/',
+  };
+  const dominoes = {
+    name: 'Dominoes',
+    logo: '/sponsors/Dominoes.svg',
+    link: 'https://www.amazon.jobs/en/',
+  };
+  const otpp = {
+    name: 'Ontario Teachers Pension Plan',
+    logo: '/sponsors/OTPP.svg',
+    link: 'https://www.amazon.jobs/en/',
+  };
+  const kingstonutilities = {
+    name: 'Kingston Utilities',
+    logo: '/sponsors/KingstonUtilities.svg',
+    link: 'https://www.amazon.jobs/en/',
+  };
+  const ece = {
+    name: 'Queence Engineering',
+    logo: '/sponsors/ECE.svg',
+    link: 'https://www.amazon.jobs/en/',
+  };
+  const queensComputing = {
+    name: 'Queens Computing',
+    logo: '/sponsors/QueensComputing.svg',
+    link: 'https://www.amazon.jobs/en/',
+  };
+  const voiceflow = {
+    name: 'Voiceflow',
+    logo: '/sponsors/Voiceflow.svg',
+    link: 'https://www.amazon.jobs/en/',
+  };
+
+
+
   return (
     <main className="flex min-h-screen flex-col items-left  bg-gray-950 ">
       <Image className="absolute top-0 right-20" src="/MLH.svg" alt="Major Hacking Leaguge Logo" width={127} height={222}/>
@@ -90,10 +133,41 @@ export default function Home() {
         </div>
       </section>
 
-      <section>
-
+      <section className='relative my-32 mx-32'>
+        <div className='flex flex-row justify-between'>
+          <Image className=' pointer-events-none ' src="\NetworkingGraphic.svg" alt="" width={350} height={350}/>
+          <div className='flex flex-col w-7/12 justify-center'>
+            <h1 className='text-white text-5xl font-bold'>Grow your <span className='text-transparent text-5xl bg-clip-text bg-gradient-to-r from-red-500 to-orange-600' >Network.</span></h1>
+            <p className='text-white text-xl auto'>
+              With hundreds of talented, ambitious, and like-minded individuals all in one place, 
+              QHacks is the perfect playground for any tech enthusiast! Over the weekend, 
+              immerse yourself in the community, meet new people and talk shop with other 
+              students and companies
+            </p>
+          </div>
+        </div>
       </section>
 
+      <section className='relative mx-32'>
+        <div className='flex flex-col w-7/12 justify-center'>
+          <h1 className='text-white text-5xl font-bold'>Showcase To <span className='text-transparent text-5xl bg-clip-text bg-gradient-to-r from-red-500 to-orange-600' >Experts.</span></h1>
+          <p className='text-white text-xl auto'>
+          This year, we’re bringing together a diverse group of mentors, speakers, sponsors and other industry professionals. Chat one-on-one, learn about current tech trends and opportunities
+          </p>
+        </div>
+      </section>
+
+      <section className='relative my-32 mx-32'>
+        <div className='flex flex-row p-8 border'>
+          <SponsorCard sponsor={redbull} />  
+          <SponsorCard sponsor={amazon} />
+          <SponsorCard sponsor={otpp} />
+          <SponsorCard sponsor={kingstonutilities} />
+          <SponsorCard sponsor={ece} />
+          <SponsorCard sponsor={queensComputing} />
+          <SponsorCard sponsor={voiceflow} />
+        </div>
+      </section>
 
       <footer className='pt-48'>
         <div className='flex justify-center items-center py-5'>
