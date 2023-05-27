@@ -2,7 +2,7 @@
 
 import wavesSrc from '../../assets/waves-saturated.png';
 import React, { useEffect } from 'react'
-import { BsEyeSlash } from 'react-icons/bs';
+import { FaEyeSlash, FaEye } from 'react-icons/fa';
 
 export default function SignUp() {
 
@@ -26,19 +26,39 @@ export default function SignUp() {
 
             <form id="signup-card" className='text-white z-[1] p-[50px] bg-zinc-900 rounded-[15px] flex flex-col justify-center items-center gap-[30px]'>
                 <h2 className='text-3xl font-bold'>Welcome</h2>
-                <input type='email' className='placeholder-white w-[280px] border-b border-solid border-[#717171] focus:outline-none' style={{
+                <input type='email' className='w-[280px] border-b border-solid border-[#717171] focus:outline-none' style={{
                     background: 'none',
                 }} placeholder='Email' />
                 <div className='relative'>
-                    <input type='password' className='placeholder-white w-[280px] border-b border-solid border-[#717171] focus:outline-none' style={{
+                    <input id='password-input' type='password' className='w-[280px] border-b border-solid border-[#717171] focus:outline-none' style={{
                         background: 'none',
                     }} placeholder='Password' />
-                    <BsEyeSlash className='placeholder-white absolute right-[10px] top-[10px] text-white' />
+                    <div id="password-icon-cont" onClick={(e) => {
+                        const parent = 
+                        [...document.querySelector("#password-icon-cont").children].forEach(child => child.classList.toggle('hidden'))
+
+                        const passwordInput = document.querySelector("#password-input");
+                        passwordInput.type = passwordInput.type === 'password' ? 'text' : 'password';
+                    }}>
+                        <FaEyeSlash className='cursor-pointer absolute w-4 -translate-y-1/2 right-[10px] top-[10px] text-white font-bold' />
+                        <FaEye className='hidden cursor-pointer absolute w-4 -translate-y-1/2 right-[10px] top-[10px] text-white font-bold' />
+                    </div>
                 </div>
                 <div className='relative'>
-                    <input type='password' className='placeholder-white w-[280px] border-b border-solid border-[#717171] focus:outline-none' style={{
+                    <input id='confirm-input' type='password' className='w-[280px] border-b border-solid border-[#717171] focus:outline-none' style={{
                         background: 'none',
                     }} placeholder='Confirm Password' />
+
+                    <div id="confirm-icon-cont" onClick={(e) => {
+                        const parent = 
+                        [...document.querySelector("#confirm-icon-cont").children].forEach(child => child.classList.toggle('hidden'))
+
+                        const confirmInput = document.querySelector("#confirm-input");
+                        confirmInput.type = confirmInput.type === 'password' ? 'text' : 'password';
+                    }}>
+                        <FaEyeSlash className='cursor-pointer placeholder-white absolute w-4 -translate-y-1/2 right-[10px] top-[10px] text-white font-bold' />
+                        <FaEye className='hidden cursor-pointer placeholder-white absolute w-4 -translate-y-1/2 right-[10px] top-[10px] text-white font-bold' />
+                    </div>
                 </div>
                 <input type="submit" value="Create Account" className='cursor-pointer font-semibold w-[280px] text-xl px-5 py-3 rounded-xl' style={{
                     background: "linear-gradient(90deg, rgba(255, 0, 0, 0.72) -6.16%, rgba(255, 138, 0, 0.83) 60.41%)"
