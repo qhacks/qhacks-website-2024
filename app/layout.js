@@ -12,7 +12,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className + " flex min-h-screen flex-col items-left bg-gray-950"}>
-        <nav className="flex flex-row justify-between">
+        <nav className="flex flex-row justify-between bg-gray-950">
           <div className="flex flex-row items-left justify-left">
             <a href='#' className="text-2xl p-4 font-bold text-white">Home</a>
             <a href='#about' className="text-2xl p-4 font-bold text-white">About</a>
