@@ -3,18 +3,18 @@ import React from 'react'
 
 export default function SignUp() {
     return ( 
-        <div className='h-[800px]'>
+        <div className='h-[800px] bg-gray-950'>
             <form id='signup-container' className='flex flex-col justify-center items-center w-full h-1/4 bg-repeat-x bg-bottom h-full' style={{
                 backgroundImage: `url(${wavesSrc.src})`,
                 backgroundSize: '1200px 300px'
             }}>
 
-            <div id="qhacks-banner" className='absolute top-[calc(50% - 100px)] -translate-y-1/2
+            {/* <div id="qhacks-banner" className='absolute top-[calc(50% - 100px)] -translate-y-1/2
             text-3xl font-yaro max-w-screen '>
                 <div className='overflow-hidden whitespace-nowrap'>QHACKS QHACKS QHACKS QHACKS QHACKS QHACKS QHACKS</div>
                 <div className='overflow-hidden whitespace-nowrap'>QHACKS QHACKS QHACKS QHACKS QHACKS QHACKS QHACKS</div>
                 <div className='overflow-hidden whitespace-nowrap'>QHACKS QHACKS QHACKS QHACKS QHACKS QHACKS QHACKS</div>
-            </div>
+            </div> */}
 
             <div id="signup-card" className='text-white z-[1] p-[50px] bg-zinc-900 rounded-[15px] flex flex-col justify-center items-center gap-[30px]'>
                 <h2 className='text-3xl font-bold'>Welcome</h2>
