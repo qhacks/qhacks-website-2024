@@ -4,7 +4,7 @@ import React from 'react'
 export default function SignUp() {
     return ( 
         <div className='h-[800px] bg-gray-950'>
-            <form id='signup-container' className='flex flex-col justify-center items-center w-full h-1/4 bg-repeat-x bg-bottom h-full' style={{
+            <div id='signup-container' className='flex flex-col justify-center items-center w-full h-1/4 bg-repeat-x bg-bottom h-full' style={{
                 backgroundImage: `url(${wavesSrc.src})`,
                 backgroundSize: '1200px 300px'
             }}>
@@ -16,7 +16,7 @@ export default function SignUp() {
                 <div className='overflow-hidden whitespace-nowrap'>QHACKS QHACKS QHACKS QHACKS QHACKS QHACKS QHACKS</div>
             </div> */}
 
-            <div id="signup-card" className='text-white z-[1] p-[50px] bg-zinc-900 rounded-[15px] flex flex-col justify-center items-center gap-[30px]'>
+            <form id="signup-card" className='text-white z-[1] p-[50px] bg-zinc-900 rounded-[15px] flex flex-col justify-center items-center gap-[30px]'>
                 <h2 className='text-3xl font-bold'>Welcome</h2>
                 <input type='email' className='w-[280px] border-b border-solid border-[#717171] focus:outline-none' style={{
                     background: 'none',
@@ -33,10 +33,10 @@ export default function SignUp() {
                 
                 <div className='text-xs font-light'>Already signed up? <a className='font-semibold hover:underline' href="#">Log In</a></div>
                 <div className='text-xs font-light'>return <a className='font-semibold hover:underline' href="/">Home</a></div>
-            </div>
-
-
             </form>
+
+
+            </div>
         </div>
      );
 }
