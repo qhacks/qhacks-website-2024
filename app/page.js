@@ -48,9 +48,8 @@ export default function Home() {
 
 
   return (
-    <main className="">
+    <main className="bg-gray-950">
       <Image className="absolute top-0 right-20" src="/MLH.svg" alt="Major Hacking Leaguge Logo" width={127} height={222}/>
-
 
       <section className='flex items-center justify-center'>
         <div className=' flex flex-row justify-between'>

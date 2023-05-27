@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
 
         {children}
         
-        <footer className='pt-48'>
+        <footer className='pb-8 pt-48 bg-gradient-to-b from-gray-950 to-blue-900'>
           <div className='flex justify-center items-center py-5'>
             <a className='px-[3%] z-2 ' href='https://www.instagram.com/qhacks24/'><span className='text-5xl'><i class="fab fa-instagram text-white"></i></span></a>
             <a className='px-[3%] z-2 ' href='https://twitter.com/QHacks23'><span className='text-5xl'><i class="fab fa-twitter text-white"></i></span></a>
