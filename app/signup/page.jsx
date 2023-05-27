@@ -2,6 +2,7 @@
 
 import wavesSrc from '../../assets/waves-saturated.png';
 import React, { useEffect } from 'react'
+import { BsEyeSlash } from 'react-icons/bs';
 
 export default function SignUp() {
 
@@ -25,16 +26,21 @@ export default function SignUp() {
 
             <form id="signup-card" className='text-white z-[1] p-[50px] bg-zinc-900 rounded-[15px] flex flex-col justify-center items-center gap-[30px]'>
                 <h2 className='text-3xl font-bold'>Welcome</h2>
-                <input type='email' className='w-[280px] border-b border-solid border-[#717171] focus:outline-none' style={{
+                <input type='email' className='placeholder-white w-[280px] border-b border-solid border-[#717171] focus:outline-none' style={{
                     background: 'none',
-                }} placeholder='Email'></input>
-                <input type='password' className='w-[280px] border-b border-solid border-[#717171] focus:outline-none' style={{
-                    background: 'none',
-                }} placeholder='Password'></input>
-                <input type='password' className='w-[280px] border-b border-solid border-[#717171] focus:outline-none' style={{
-                    background: 'none',
-                }} placeholder='Confirm Password'></input>
-                <input type="submit" value="Create Account" className='font-semibold w-[280px] text-xl px-5 py-3 rounded-xl' style={{
+                }} placeholder='Email' />
+                <div className='relative'>
+                    <input type='password' className='placeholder-white w-[280px] border-b border-solid border-[#717171] focus:outline-none' style={{
+                        background: 'none',
+                    }} placeholder='Password' />
+                    <BsEyeSlash className='placeholder-white absolute right-[10px] top-[10px] text-white' />
+                </div>
+                <div className='relative'>
+                    <input type='password' className='placeholder-white w-[280px] border-b border-solid border-[#717171] focus:outline-none' style={{
+                        background: 'none',
+                    }} placeholder='Confirm Password' />
+                </div>
+                <input type="submit" value="Create Account" className='cursor-pointer font-semibold w-[280px] text-xl px-5 py-3 rounded-xl' style={{
                     background: "linear-gradient(90deg, rgba(255, 0, 0, 0.72) -6.16%, rgba(255, 138, 0, 0.83) 60.41%)"
                 }}/>
                 
