@@ -13,8 +13,12 @@ module.exports = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       fontFamily: {
-        'font-awesome': ['Font Awesome 5 Free']
+        'font-awesome': ['Font Awesome 5 Free'],
+        'yaro': ['Yaro']
       },
+      maxWidth: {
+        'screen': '100vw'
+      }
     },
   },
   variants: {},
