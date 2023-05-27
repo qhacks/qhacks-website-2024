@@ -1,7 +1,14 @@
+"use client"
+
 import wavesSrc from '../../assets/waves-saturated.png';
-import React from 'react'
+import React, { useEffect } from 'react'
 
 export default function SignUp() {
+
+    useEffect(() => {
+        document.querySelector("footer").style.background = "#f8ba15";
+    }, [])
+
     return ( 
         <div className='h-[800px] bg-gray-950'>
             <div id='signup-container' className='flex flex-col justify-center items-center w-full h-1/4 bg-repeat-x bg-bottom h-full' style={{
