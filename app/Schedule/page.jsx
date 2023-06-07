@@ -11,8 +11,31 @@ const dates = [
     "Sunday • February 4th"
 ]
 
+const rows = [
+    // day 1 
+    [["8:30 PM", "Mitchell Hall", "Opening Ceremonies"], ["8:30 PM", "Mitchell Hall", "Dinner"], ["8:30 PM", "Mitchell Hall", "Late Night Snack"]],
+    // day 2
+    [["9:30 PM", "Mitchell Hall", "Opening Ceremonies"], ["9:30 PM", "Mitchell Hall", "Dinner"], ["9:30 PM", "Mitchell Hall", "Late Night Snack"]],
+    // day 3
+    [["10:30 PM", "Mitchell Hall", "Opening Ceremonies"], ["10:30 PM", "Mitchell Hall", "Dinner"], ["10:30 PM", "Mitchell Hall", "Late Night Snack"]]
+]
+
 function Schedule() {
     const [pageIndex, setPageIndex] = useState(0)
+
+    const rowComponents = rows[pageIndex].map((row, index) => {
+        return (
+            <tr key={"row-" + index}>
+            {
+                row.map((cell, index) => {
+                    return (
+                        <td key={"data-" + index}>{cell}</td>
+                    )
+                })
+            }
+            </tr>
+        )
+    })
 
     return ( 
         <div className='bg-gray-950 flex flex-col justify-start text-white items-center'>
@@ -22,9 +45,9 @@ function Schedule() {
             height: "70px",
             marginInline: "200px"
             }}>
-                <DayButton index="1" color="#262261" />
-                <DayButton index="2" color="#FAAF40" />
-                <DayButton index="3" color="#FF0000" />
+                <DayButton index="0" color="#262261" setPageIndex={setPageIndex}/>
+                <DayButton index="1" color="#FAAF40" setPageIndex={setPageIndex}/>
+                <DayButton index="2" color="#FF0000" setPageIndex={setPageIndex}/>
             </div>
 
             <div id="schedule-date" style={{
@@ -34,8 +57,9 @@ function Schedule() {
                 <h1 className='text-white text-center text-3xl'>{dates[pageIndex]}</h1>
             </div>
             
-            <PagedView id="paged-table" pageIndex={pageIndex}>
-               <table id="day-1-table">
+            <div id="paged-table">
+
+            <table id={`day-${pageIndex - 1}-table`}>
                     <tr>
                         <th>Time</th>
                         <th>Location</th>
@@ -52,25 +76,10 @@ function Schedule() {
                             <div></div>
                         </td>
                     </tr>
-                    <tr>
-                        <td>8:30 PM</td>
-                        <td>Mitchell Hall</td>
-                        <td>Opening Ceremonies</td>
-                    </tr>
-                    <tr>
-                        <td>8:30 PM</td>
-                        <td>Mitchell Hall</td>
-                        <td>Dinner</td>
-                    </tr>
-                    <tr>
-                        <td>8:30 PM</td>
-                        <td>Mitchell Hall</td>
-                        <td>Late Night Snack</td>
-                    </tr>
+                    {rowComponents}
                     
-               </table>
-            </PagedView>
-
+                </table>
+            </div>
         </div>
      );
 }

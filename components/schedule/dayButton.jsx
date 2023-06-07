@@ -9,7 +9,13 @@ function DayButton(props) {
             flexGrow: 1,
             fontSize: "30px",
             cursor: "pointer"
-        }}>Day {props.index}
+        }}
+        onClick={
+            () => {
+                props.setPageIndex(props.index)
+            }
+        }
+        >Day {Number(props.index) + 1}
         </h1>
      );
 }
