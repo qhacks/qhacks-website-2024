@@ -1,3 +1,31 @@
+#day-button-container {
+    margin-top: 40px;
+    display: flex;
+    gap: 5px;
+    width: 80vw;
+    max-width: 1000px;
+    height: 70px;
+
+}
+
+.day-button:first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    overflow: hidden;
+    margin-right: -20px;
+}
+
+.day-button:nth-child(2) {
+    margin-inline: -20px;
+}
+
+.day-button:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    overflow: hidden;
+    margin-left: -20px;
+}
+
 #paged-table th {
     padding: 5px;
     width: 200px;
@@ -80,5 +108,22 @@
 }
 
 #paged-table table {
-    margin-bottom: 40px
+    margin-bottom: 40px;
+    max-width: 1000px;
+    width: 80vw;
+}
+
+.triangle {
+    position: relative;
+    width: 40px;
+    height: 70px;
+    background-color: inherit;
+}
+
+.left-triangle {
+    clip-path: polygon(100% 0, 100% 100%, 0% 100%);
+}
+
+.right-triangle {
+    clip-path: polygon(0% 0, 100% 0, 0% 100%);
 }

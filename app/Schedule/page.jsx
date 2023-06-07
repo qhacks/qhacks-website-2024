@@ -39,15 +39,28 @@ function Schedule() {
 
     return ( 
         <div className='bg-gray-950 flex flex-col justify-start text-white items-center'>
-            <div className='flex flex-row justify-center items-center text-center' style={{
-            width: "calc(100% - 100px)",
-            minWidth: "400px",
-            height: "70px",
+            <div id='day-button-container'  className='flex flex-row justify-center items-center text-center' style={{
             marginInline: "200px"
             }}>
-                <DayButton index="0" color="#262261" setPageIndex={setPageIndex}/>
-                <DayButton index="1" color="#FAAF40" setPageIndex={setPageIndex}/>
-                <DayButton index="2" color="#FF0000" setPageIndex={setPageIndex}/>
+                <DayButton index="0" color="#262261" setPageIndex={setPageIndex} after={
+                    <div className='triangle right-triangle' style={{
+                        backgroundColor: "#262261",
+                    }}></div>
+                }/>
+                <DayButton index="1" color="#FAAF40" setPageIndex={setPageIndex} before={
+                    <div className='triangle left-triangle' style={{
+                        backgroundColor: "#FAAF40",
+                    }}></div>
+                } after={
+                    <div className='triangle right-triangle' style={{
+                        backgroundColor: "#FAAF40",
+                    }}></div>
+                }/>
+                <DayButton index="2" color="#FF0000" setPageIndex={setPageIndex} before={
+                    <div className='triangle left-triangle' style={{
+                        backgroundColor: "#FF0000",
+                    }}/>
+                }/>
             </div>
 
             <div id="schedule-date" style={{
