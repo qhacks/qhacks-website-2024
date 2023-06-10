@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import Image from 'next/image'
 
 const SponsorCard = ({ sponsor }) => {
-  const { name, logo, description } = sponsor;
+  const { name, logo, link, borderColor } = sponsor;
 
   return (
-    <div className="border justify-center flex h-32">
-      <img src={logo} alt={`${name} logo`} className="border"/>
+    <div className={`justify-center flex h-32 p-2 ${borderColor}`}>
+      <img src={logo} alt={`${name} logo`} className=""/>
     </div>
   );
 };
