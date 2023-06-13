@@ -1,0 +1,32 @@
+{
+    "DanDesjardins":{
+      "name": "Dan Desjardins",
+      "title": "CEO",
+      "image": "/speakers/Dan Desjardins.png"
+    },
+    "MinamiAlguire":{
+      "name": "Minami Alguire",
+      "title": "Lead Campus Recruiter",
+      "image": "/speakers/Minami Alguire.png"
+    },
+    "SeanMonteiro":{
+      "name": "Sean Monteiro",
+      "title": "CEO and Founder",
+      "image": "/speakers/Sean Monteiro.png"
+    },
+    "ChloeBeisheim":{
+      "name": "Chloe Beisheim",
+      "title": "Outreach Manager",
+      "image": "/speakers/Chloe Beisheim.png"
+    },
+    "MalcomEade":{
+      "name": "Malcom Eade",
+      "title": "Co-Founder",
+      "image": "/speakers/Malcom Eade.png"
+    },
+    "JimMcLennan":{
+      "name": "Jim McLennan",
+      "title": "Co-Founder/Academic Director",
+      "image": "/speakers/Jim McLennan.png"
+    }
+}

@@ -11,19 +11,22 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className + " flex min-h-screen flex-col items-left bg-gray-950"}>
-        <nav className="flex flex-row justify-between">
-          <div className="flex flex-row items-left justify-left">
-            <a href='#' className="text-2xl p-4 font-bold text-white">Home</a>
-            <a href='#about' className="text-2xl p-4 font-bold text-white">About</a>
-            <a href='#' className="text-2xl p-4 font-bold text-white">Sponsors</a>
-            <a href='#' className="text-2xl p-4 font-bold text-white">Contact</a>
+      <body className={inter.className + " flex min-h-screen flex-col"}>
+        
+        {/* Navbar */}
+        <nav className="flex flex-row justify-between py-8 px-32 bg-gray-950">
+          <div className="flex flex-row items-left justify-left fixed px-8 bg-gray-900 rounded-full z-1">
+            <a href='#'         className="text-2xl p-4 font-bold text-white">Home</a>
+            <a href='#about'    className="text-2xl p-4 font-bold text-white">About</a>
+            <a href='#sponsors' className="text-2xl p-4 font-bold text-white">Sponsors</a>
+            <a href='#contact'  className="text-2xl p-4 font-bold text-white">Contact</a>
             <a href='/Schedule' className="text-2xl p-4 font-bold text-white">Schedule</a>
           </div>
         </nav>
 
         {children}
         
+        {/* footer */}
         <footer className='pb-8 pt-48 bg-gradient-to-b from-gray-950 to-blue-900'>
           <div className='flex justify-center items-center py-5'>
             <a className='px-[3%] z-2 ' href='https://www.instagram.com/qhacks24/'><span className='text-5xl'><i class="fab fa-instagram text-white"></i></span></a>

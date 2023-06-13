@@ -19,13 +19,13 @@ const testimonials = [
     name: 'Jordan Curnew',
     team: 'Parallel Fourier Computing',
     image: '/testimonials/Jordan Curnew.png',
-    testimonial: "QHacks provided an exciting opportunity to put the skills I’ve learned in school to the test and network with industry professionals (which led to a job offer!). My team built an application for computing Fourier Transforms utilizing parallel processing on a distributed network – I never thought I’d be able to make something like that in 36 hours!",
+    testimonial: "QHacks provided an exciting opportunity to put the skills I've learned in school to the test and network with industry professionals (which led to a job offer!). My team built an application for computing Fourier Transforms utilizing parallel processing on a distributed network – I never thought I’d be able to make something like that in 36 hours!",
   },
   {
     name: 'Amy Lu',
     team: 'Reeltube',
     image: '/testimonials/Amy Lu.png',
-    testimonial: "In high school, I’d never opened a single computer science course brochure, and now I will be an incoming graduate student in machine learning. QHacks gave me a taster of what tech really was - a creative endeavour with technical tools as the paint brush, and societal-level solution pitching as the frame.",
+    testimonial: "In high school, I'd never opened a single computer science course brochure, and now I will be an incoming graduate student in machine learning. QHacks gave me a taster of what tech really was - a creative endeavour with technical tools as the paint brush, and societal-level solution pitching as the frame.",
   },
   {
     name: 'Cooper Leong',
@@ -51,23 +51,20 @@ const TestimonialsCarousel = () => {
   return (
     <div className='p-8'>
       <Carousel className='w-'>
-        <div className='w-100 h-96 flex justify-center text-center text-white'>
-          <div className='flex '>
+        <div className='h-96 flex justify-center'>
             <TestimonialsCard speaker={testimonials[0]}/>
             <TestimonialsCard speaker={testimonials[1]}/>
-            <TestimonialsCard speaker={testimonials[2]}/>
-          </div>
         </div>
-        <div className='w-100 h-96 flex justify-center text-center text-white'>
-          <div className='flex justify-between'>
-            <TestimonialsCard speaker={testimonials[3]}/>
-            <TestimonialsCard speaker={testimonials[4]}/>
-            <TestimonialsCard speaker={testimonials[5]}/>
-          </div>
+        <div className='h-96 flex justify-center'>
+          <TestimonialsCard speaker={testimonials[2]}/>
+          <TestimonialsCard speaker={testimonials[3]}/>
+        </div>
+        <div className='h-96 flex justify-center'>
+          <TestimonialsCard speaker={testimonials[4]}/>
+          <TestimonialsCard speaker={testimonials[5]}/>
         </div>
       </Carousel>
     </div>
-    
   );
 };
 

@@ -1,14 +1,70 @@
+"use client";
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 import Image from 'next/image'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLinkedin, faInstagram, faGithub } from "@fortawesome/free-brands-svg-icons";
+import { motion, AnimatePresence } from "framer-motion";
 
 const TeamBubble = ({ teamMember }) => {
     const { name, role, image, linkedin, github, instagram, color } = teamMember;
+    const [isInfoVisible, setIsInfoVisible] = useState(false);
+
+    const toggleInfoVisibility = () => {
+        setIsInfoVisible(!isInfoVisible);
+    };
+
 
     return (
-        <div className='relative text-white border-2 p-4 w-80 h-80 rounded-full'>
-            <Image height={150} width={150} src={image}></Image>
-            <h3 className="text-center font-bold text-sm ">{name}</h3>
-            <h5 className="text-center text-xs">{role}</h5>
+        <div className='
+            w-40 
+            h-40 
+            rounded-full
+        '>
+            <motion.div 
+                className='w-40 h-40 rounded-full'
+                whileHover={{
+                    scale: 1.3,
+                    zIndex: 10,
+                }}
+            >
+                <Image 
+                    id="team_image"
+                    height={500} 
+                    width={500} 
+                    src={image} 
+                    onMouseOut={toggleInfoVisibility}
+                    onMouseEnter={toggleInfoVisibility} 
+                    className='rounded-full w-28 h-28'
+                />
+            </motion.div>
+                <AnimatePresence>
+                    {isInfoVisible && (
+                        <motion.div
+                            initial={{ 
+                                opacity: 0,
+                                y: -40,
+                            }}
+                            animate={{ 
+                                opacity: 1,
+                                y: 40,
+                            }}
+                            exit={{ 
+                                opacity: 0,
+                                y: -40, 
+                            }}
+                        >
+                            <p className="text-white text-center font-bold text-sm">{name}</p>
+                            <p className="text-white text-center text-xs">{role}</p>
+                            <div className='flex flex-row justify-center'>
+                                <a className='p-2' href={linkedin}><FontAwesomeIcon icon={faLinkedin} className="text-white text-4xl" /></a>
+                                <a className='p-2' href={instagram}><FontAwesomeIcon icon={faInstagram} className="text-white text-4xl" /></a>
+                                <a className='p-2' href={github}><FontAwesomeIcon icon={faGithub} className="text-white text-4xl" /></a>
+                            </div>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
+            
         </div>
     );
 };

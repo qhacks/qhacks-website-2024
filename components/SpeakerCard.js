@@ -6,7 +6,7 @@ const SpeakerCard = ({ speaker }) => {
   const { name, title, image } = speaker;
 
   return (
-    <div className="w-{375} h-96 border mx-4">
+    <div className="w-{375} mx-4">
       <img src={image} alt={`${name}`}/>
       <h2 className='text-white'>{name}</h2>
       <h5 className='text-white'>{title}</h5>

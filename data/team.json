@@ -1,0 +1,256 @@
+
+{
+    "EricMedina":{
+        "name": "Eric Medina",
+        "role": "Co-Chair",
+        "image": "/../public/team/eric_medina.png",
+        "linkedin": "https://www.linkedin.com/in/eric-a-medina/",
+        "github": "",
+        "instagram": "https://www.instagram.com/eric_medina456/",
+        "color":"red-500"
+    },
+    "DominiqueMercier":{
+        "name": "Dominique Mercier",
+        "role": "Co-Chair",
+        "image": "/../public/team/dominique_mercier.png",
+        "linkedin": "https://www.linkedin.com/in/dominique-mercier/",
+        "github": "",
+        "instagram": "https://www.instagram.com/dominique.mercier_/",
+        "color":"yellow-300"
+    },
+    "JeremySelwin":{
+        "name": "Jeremy Selwin",
+        "role": "Co-Chair",
+        "image": "/../public/team/jeremy_selwin.png",
+        "linkedin": "https://www.linkedin.com/in/jeremy-selwin/",
+        "github": "",
+        "instagram": "https://www.instagram.com/jeremyselwin/",
+        "color":"green-500"
+    },
+    "MonicaStef":{
+        "name": "Monica Stef",
+        "role": "Marketing Director",
+        "image": "/../public/team/monica_stef.png",
+        "linkedin": "https://www.linkedin.com/in/monica-stef-729b89230/",
+        "github": "",
+        "instagram": "https://www.instagram.com/monicastefff/",
+        "color":"blue-500"
+    },
+    "EthanWang":{
+        "name": "Ethan Wang",
+        "role": "Marketing Officer",
+        "image": "/../public/team/ethan_wang.png",
+        "linkedin": "https://www.linkedin.com/in/ethan-wang-qu/",
+        "github": "",
+        "instagram": "https://www.instagram.com/e.thnx_w/",
+        "color":"blue-500"
+    },
+    "LacshmiGaneshananda":{
+        "name": "Lacshmi Ganeshananda",
+        "role": "Marketing Officer",
+        "image": "/../public/team/lacshmi_ganeshananda.png",
+        "linkedin": "https://www.linkedin.com/in/lacshmi-ganeshananda/",
+        "github": "",
+        "instagram": "https://www.instagram.com/lacshmi.g/",
+        "color":"blue-500"
+    },
+    "EricaFry":{
+        "name": "Erica Fry",
+        "role": "Marketing Officer",
+        "image": "/../public/team/erica_fry.png",
+        "linkedin": "https://www.linkedin.com/in/erica-fry",
+        "github": "",
+        "instagram": "https://www.instagram.com/ericaafry/",
+        "color":"blue-500"
+    },
+    "MichaelaLi":{
+        "name": "Michaela Li",
+        "role": "Operations Director",
+        "image": "/../public/team/michaela_li.png",
+        "linkedin": "",
+        "github": "",
+        "instagram": "https://www.instagram.com/_michaela.li/",
+        "color":"blue-500"
+    },
+    "MayaGoodman":{
+        "name": "Maya Goodman",
+        "role": "Operations Officer",
+        "image": "/../public/team/maya_goodman.png",
+        "linkedin": "https://www.linkedin.com/in/maya-goodman-631b14221",
+        "github": "",
+        "instagram": "https://www.instagram.com/maya.goodman /",
+        "color":"blue-500"
+    },
+    "NicholasLykopoulos":{
+        "name": "Nicholas Lykopoulos",
+        "role": "Operations Officer",
+        "image": "/../public/team/nicholas_lykopoulos.png",
+        "linkedin": "https://www.linkedin.com/in/nicholas-lykopoulos-13565423a/",
+        "github": "",
+        "instagram": "https://www.instagram.com/nicholaslyko/",
+        "color":"blue-500"
+    },
+    "LeejaeKim":{
+        "name": "Leejae Kim",
+        "role": "Finance Director",
+        "image": "/../public/team/leejae_kim.png",
+        "linkedin": "https://www.linkedin.com/in/leejaekim/",
+        "github": "",
+        "instagram": "https://www.instagram.com/leejae.kim/",
+        "color":"blue-500"
+    },
+    "EthanChin":{
+        "name": "Ethan Chin",
+        "role": "Finance Director",
+        "image": "/../public/team/ethan_chin.png",
+        "linkedin": "https://www.linkedin.com/in/ethan-chin",
+        "github": "",
+        "instagram": "https://www.instagram.com/_ethanchin/",
+        "color":"blue-500"
+    },
+    "JoashMathew":{
+        "name": "Joash Mathew",
+        "role": "Technology Director (Back-end)",
+        "image": "/../public/team/joash_mathew.png",
+        "linkedin": "https://www.linkedin.com/in/joashmathew/",
+        "github": "",
+        "instagram": "https://www.instagram.com/j0ashm/",
+        "color":"blue-500"
+    },
+    "SchuylerGood":{
+        "name": "Schuyler Good",
+        "role": "Technology Director (Front-end)",
+        "image": "/../public/team/schuyler_good.png",
+        "linkedin": "https://www.linkedin.com/in/schuyler-good-19043018a/",
+        "github": "",
+        "instagram": "https://www.instagram.com/skygood7/",
+        "color":"blue-500"
+    },
+    "StefanPitigoi":{
+        "name": "Stefan Pitigoi",
+        "role": "Front-end tech officer",
+        "image": "/../public/team/stefan_pitigoi.png",
+        "linkedin": "https://www.linkedin.com/in/stefan-pitigoi/",
+        "github": "",
+        "instagram": "https://www.instagram.com/stefanppit/",
+        "color":"blue-500"
+    },
+    "JacobTepperman":{
+        "name": "Jacob Tepperman",
+        "role": "Front-end tech officer",
+        "image": "/../public/team/jacob_tepperman.png",
+        "linkedin": "https://www.linkedin.com/in/jtepp",
+        "github": "",
+        "instagram": "https://www.instagram.com/jtepp_/",
+        "color":"blue-500"
+    },
+    "AkshayDesale":{
+        "name": "Akshay Desale",
+        "role": "Back-end tech officer",
+        "image": "/../public/team/akshay_laxman_desale.png",
+        "linkedin": "https://www.linkedin.com/in/akshay-desale-74026b202/",
+        "github": "",
+        "instagram": "https://www.instagram.com/USERNAME_HERE/",
+        "color":"blue-500"
+    },
+    "CalvinZheng":{
+        "name": "Calvin Zheng",
+        "role": "Partnerships Director",
+        "image": "/../public/team/calvin_zheng.png",
+        "linkedin": "https://www.linkedin.com/in/zheng-calvin/",
+        "github": "",
+        "instagram": "https://www.instagram.com/calv.zheng/",
+        "color":"blue-500"
+    },
+    "EricLam":{
+        "name": "Eric Lam",
+        "role": "Partnerships Director",
+        "image": "/../public/team/eric_lam.png",
+        "linkedin": "https://www.linkedin.com/in/eric-lam-a3774720b/",
+        "github": "",
+        "instagram": "https://www.instagram.com/cire_mal/",
+        "color":"blue-500"
+    },
+    "MatangyKanesamoorthy":{
+        "name": "Matangy Kanesamoorthy",
+        "role": "Partnerships Officer",
+        "image": "/../public/team/matangy_kanesamoorthy.png",
+        "linkedin": "http://www.linkedin.com/in/matangy-kanesamoorthy",
+        "github": "",
+        "instagram": "https://www.instagram.com/k_matangy/",
+        "color":"blue-500"
+    },
+    "AdamRaco":{
+        "name": "Adam Raco",
+        "role": "Partnerships Officer",
+        "image": "/../public/team/adam_raco.png",
+        "linkedin": "https://www.linkedin.com/in/adam-raco/",
+        "github": "",
+        "instagram": "https://www.instagram.com/adam.raco/",
+        "color":"blue-500"
+    },
+    "OliviaStewart":{
+        "name": "Olivia Stewart",
+        "role": "Partnerships Officer",
+        "image": "/../public/team/olivia_stewart.png",
+        "linkedin": "",
+        "github": "",
+        "instagram": "https://www.instagram.com/liviistewart/",
+        "color":"blue-500"
+    },
+    "NoahSerhan":{
+        "name": "Noah Serhan",
+        "role": "Partnerships Officer",
+        "image": "/../public/team/noah_serhan.png",
+        "linkedin": "https://www.linkedin.com/in/noahserhan/",
+        "github": "",
+        "instagram": "https://www.instagram.com/noahserhan/",
+        "color":"blue-500"
+    },
+    "AdiGroumoutis":{
+        "name": "Adi Groumoutis",
+        "role": "Partnerships Officer",
+        "image": "/../public/team/adi_groumoutis.png",
+        "linkedin": "linkedin.com/in/adi-groumoutis",
+        "github": "",
+        "instagram": "https://www.instagram.com/adigroumoutis/",
+        "color":"blue-500"
+    },
+    "IlyasErdogan":{
+        "name": "Ilyas Erdogan",
+        "role": "Logistics Director",
+        "image": "/../public/team/ilyas_erdogan.png",
+        "linkedin": "https://www.linkedin.com/in/ilyas-erdogan/",
+        "github": "",
+        "instagram": "https://www.instagram.com/ilyas_egn/",
+        "color":"blue-500"
+    },
+    "AlexanderZhao":{
+        "name": "Alexander Zhao",
+        "role": "Logistics Officer",
+        "image": "/../public/team/alexander_zhao.png",
+        "linkedin": "https://www.linkedin.com/in/alexander-zhao-926225211/",
+        "github": "",
+        "instagram": "https://www.instagram.com/alexzhaoooo/",
+        "color":"blue-500"
+    },
+    "AndrewTerry":{
+        "name": "Andrew Terry",
+        "role": "Logistics Officer",
+        "image": "/../public/team/andrew_terry.png",
+        "linkedin": "https://www.linkedin.com/in/andrew-terry-364ba2206/",
+        "github": "",
+        "instagram": "https://www.instagram.com/USERNAME_HERE/",
+        "color":"blue-500"
+    },
+    "MichaelKwon":{
+        "name": "Michael Kwon",
+        "role": "Logistics Officer",
+        "image": "/../public/team/michael_kwon.png",
+        "linkedin": "https://www.linkedin.com/in/michaelkwon5/",
+        "github": "",
+        "instagram": "https://www.instagram.com/mchl.kwn/",
+        "color":"blue-500"
+    }
+}
+    
