@@ -10,7 +10,7 @@ import Image from 'next/image';
 import TestimonialsCard from '../components/TestimonialCard';
 import SpeakerCarousel from '../components/SpeakerCarousel';
 import TestimonialsCarousel from '../components/TestimonialsCarousel';
-import ThreeDCrown from '../components/ThreeDCrown';
+import Crown from "../components/Crown";
 import TeamBubble from '../components/TeamBubble';
 import FAQDropdown from "../components/FAQDropdown";
 import SponsorCard from '../components/SponsorCard';
@@ -20,17 +20,18 @@ import sponsors from '../data/sponsors.json';
 import team from '../data/team.json';
 import faq from '../data/faq.json';
 
+
 export default function Home() {
 
   return (
     <main className="bg-gray-950 -z-1">
       <Image className="absolute top-0 right-20" src="/MLH.svg" alt="Major Hacking Leaguge Logo" width={127} height={222}/>
 
-      <section className=' flex items-center justify-center'>
+      <section className=' flex items-center justify-center my-96'>
         <div className=' flex flex-row justify-between'>
           <div className='flex items-center'>
             <div className='flex-None flex-colitems-center justify-center'>
-              <h1 className="m-5 text-6xl font-bold text-white font-Arial ">QHACKS</h1>
+              <h1 className="m-5 text-6xl font-bold text-white font-Yaro ">QHACKS</h1>
               <p className='text-2xl text-white m-5 w-96 p-2'>Get ready to innovate and make a difference! Join QHacks, the ultimate hackathon experience.</p>
               <p className='m-5 font-extrabold text-transparent text-2xl bg-clip-text bg-gradient-to-r from-red-500 to-orange-600'>In-person!  •  February 2nd - 4th    </p>
               <motion.a 
@@ -42,19 +43,19 @@ export default function Home() {
               </motion.a>
             </div>
           </div>
-          <div className='flex-None'>
-            <Image src="/Qhacks Crown.svg" alt="QHacks Logo" width={800} height={800}/>
-            {/* <ThreeDCrown/> */}
-          </div>
+          {/* <Image src="/Qhacks Crown.svg" alt="QHacks Logo" width={800} height={800} className="border-2"/> */}
+          <motion.div className="hidden md:block">
+            <Crown/>
+          </motion.div>
         </div>
       </section>
 
       {/* ABOUT US */}
       <section id="about" className='pt-32 relative pb-96'>
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, x: 500 }}  
           whileInView={{ opacity: 1, x: 0, transition: { duration: 1 } }}
-        >
+        > */}
           <Image 
             className='pointer-events-none absolute -top-32 right-0' 
             src="/Goodwin Drawing.svg" 
@@ -62,7 +63,7 @@ export default function Home() {
             width={800}
             height={800}
           />
-        </motion.div>
+        {/* </motion.div> */}
         
         <div className='mx-48 items-left justify-left'>
           <h1 className='text-white text-5xl font-bold'>Join Us<span className='text-transparent text-5xl bg-clip-text bg-gradient-to-r from-red-500 to-orange-600'> In Person!</span></h1>
@@ -225,7 +226,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="sponsors" className=' relative pt-32 mx-48 h-96'>
+      <section id="sponsors" className=' relative pt-32 mx-48 my-24'>
         <h1 className='text-white text-center text-5xl font-bold mb-4'>Thanks To <span className='text-transparent text-5xl bg-clip-text bg-gradient-to-r from-red-500 to-orange-600' >Our Sponsors.</span></h1>
         <div className='flex justify-center'>
           <div className='flex flex-row flex-wrap items-center justify-center w-2/3 p-0 space-x-4 space-y-4 '>
@@ -257,18 +258,18 @@ export default function Home() {
       </section>
 
       {/* Speaker Section */}
-      <section className='my-96 mx-48 py-32'>
+      <section className='my-24 py-32 xs:mx-2 sm:mx-8 md:mx-12 lg:mx-12 xl:mx-80 2xl:mx-96'>
         <h1 className='text-white text-5xl font-bold mb-8'>With our <span className='text-transparent text-5xl bg-clip-text bg-gradient-to-r from-red-500 to-orange-600' >Amazing Speakers</span></h1>
         <SpeakerCarousel/>
       </section>
 
       {/* Testimonials Section */}
-      <section className=' my-32 mx-48'>
+      <section className='xs:mx-2 sm:mx-8 md:mx-12 lg:mx-12 xl:mx-80 2xl:mx-96'>
         <TestimonialsCarousel/>
       </section>
 
       {/* FAQ Section */}
-      <section id="contact" className=' flex-col justify-center pt-32 mx-48'>
+      <section id="contact" className='flex-col justify-center pt-32 xs:mx-2 sm:mx-8 md:mx-12 lg:mx-12 xl:mx-80 2xl:mx-96'>
         <div className='w-full max-w-screen-lg '>
           <h1 className='text-white text-5xl font-bold'>FAQ's</h1>
           
@@ -294,7 +295,7 @@ export default function Home() {
             </div>
             <div className="flex flex-row justify-between">
               <div className="flex flex-col">
-                  <Image className='border-2' width={300} height={300} src="/Qhacks Crown.svg"></Image>
+                  <Image width={300} height={300} src="/Qhacks Crown.svg"></Image>
                   <div className="flex justify-center">
                       <h3 className="text-white font-bold text-center text-2xl">More Questions?<br/>Send us a message!</h3>
                   </div>

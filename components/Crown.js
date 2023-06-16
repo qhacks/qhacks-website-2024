@@ -1,41 +1,56 @@
 'use client';
-import { useEffect, useRef } from 'react';
-import * as THREE from 'three';
+import { Canvas, useFrame, useThree  } from '@react-three/fiber';
+import React, { useRef, useEffect } from 'react';
+import { useLoader } from '@react-three/fiber'
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
 
-const Crown = () => {
-  const canvasRef = useRef(null);
-
-  useEffect(() => {
-    // Set up Three.js scene
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(
-      75,
-      window.innerWidth / window.innerHeight,
-      0.1,
-      1000
-    );
-    const renderer = new THREE.WebGLRenderer({ canvas: canvasRef.current });
-    renderer.setSize(window.innerWidth, window.innerHeight);
-
-    // Render loop
-    const animate = () => {
-      requestAnimationFrame(animate);
-
-      // Perform any updates to your scene here
-
-      renderer.render(scene, camera);
-    };
-
-    animate();
-
-    // Clean up
-    return () => {
-      renderer.dispose();
-    };
-  }, []);
-
-  return <canvas ref={canvasRef} />;
+const CameraController = () => {
+  const { camera, gl } = useThree();
+  useEffect(
+     () => {
+        const controls = new OrbitControls(camera, gl.domElement);
+        controls.minDistance = 3;
+        controls.maxDistance = 20;
+        return () => { controls.dispose(); };
+     },
+     [camera, gl]
+  );
+  return null;
 };
 
-export default Crown;
+function CrownObj() {
+  // const crown = useLoader(GLTFLoader, './Crown.gltf')
+  const crown = useLoader(GLTFLoader, './QhacksCrown.gltf')
+  const meshRef = useRef(null);
+
+  useFrame(() => {
+    if (!meshRef.current) {
+      return;
+    }
+    meshRef.current.rotation.x += 0.000;
+    meshRef.current.rotation.y += 0.001;
+  })
+
+  return (
+    <mesh ref={meshRef}>
+      <primitive object={crown.scene} args={[5,5,5]}>
+        <meshStandardMaterial/>
+      </primitive>
+    </mesh>
+  )
+}
+
+export default function Crown() {
+  return (
+    <div className='h-96 w-96'>
+      <Canvas style={{ background:"transparent" }} > 
+      <CameraController />
+        <ambientLight/>
+        <pointLight position={[0,0,10]}/>
+        <CrownObj />
+      </Canvas>
+    </div>
+  );
+}
