@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
             <a href='#' className="text-2xl p-4 font-bold text-white">Home</a>
             <a href='#about' className="text-2xl p-4 font-bold text-white">About</a>
             <a href='#' className="text-2xl p-4 font-bold text-white">Sponsors</a>
-            <a href='#' className="text-2xl p-4 font-bold text-white">Contact</a>
+            <a href='/info1' className="text-2xl p-4 font-bold text-white">Contact</a>
             <a href='/Schedule' className="text-2xl p-4 font-bold text-white">Schedule</a>
           </div>
         </nav>
