@@ -17,8 +17,10 @@ const TeamBubble = ({ teamMember }) => {
 
     return (
         <div className='
-            w-40 
-            h-40 
+            w-28 
+            h-28 
+            m-2
+            md:m-5
             rounded-full
         '>
             <motion.div 

@@ -30,7 +30,7 @@ function CrownObj() {
       return;
     }
     meshRef.current.rotation.x += 0.000;
-    meshRef.current.rotation.y += 0.001;
+    meshRef.current.rotation.y += 0.0035;
   })
 
   return (

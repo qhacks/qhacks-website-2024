@@ -11,21 +11,23 @@ const FAQDropdown = ({ faq }) => {
     };
 
     return (
-        <div className="text-left p-2">
+        <div className="text-left p-2 ">
             <button onClick={toggleDropdown} className="
                 text-white 
                 font-medium
                 text-2xl
                 py-2.5
                 text-left
-                hover:text-gray-500"
+                hover:text-gray-500
+                flex
+                "
             >
                 {question}
             </button>
             <AnimatePresence>
                 {isOpen && (
                     <motion.div 
-                        className="w-3/5 mt-4 pt-2 pb-8 px-4 text-xl"
+                        className="mt-4 pt-2 pb-8 px-4 text-xl flex-1"
                         initial={{ 
                                 opacity: 0,
                                 y: -40,

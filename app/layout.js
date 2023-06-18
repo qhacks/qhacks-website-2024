@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
         
         {/* Navbar */}
         <nav className="hidden flex-row justify-between py-8 bg-gray-950 z-3 xs:px-2 sm:px-8 md:px-12 lg:px-12 xl:px-80 2xl:px-96 md:flex">
-          <div className="flex flex-row items-left justify-left fixed px-8 bg-gray-900 rounded-full z-3">
+          <div className="flex flex-row items-left justify-left absolute px-8 bg-gray-900 rounded-full z-3">
             <a href='#'         className="lg:text-2xl sm:p-2 lg:p-4 font-bold text-white z-3 ">Home</a>
             <a href='#about'    className="lg:text-2xl sm:p-2 lg:p-4 font-bold text-white z-3 ">About</a>
             <a href='#sponsors' className="lg:text-2xl sm:p-2 lg:p-4 font-bold text-white z-3 ">Sponsors</a>
@@ -78,6 +78,8 @@ export default function RootLayout({ children }) {
         
         {/* footer */}
         <footer className='pb-8 pt-48 bg-gradient-to-b from-gray-950 to-blue-900'>
+
+          {/* SOCIALS */}
           <div className='flex justify-center items-center py-5'>
             <a className='px-[3%] z-2 ' href='https://www.instagram.com/qhacks24/'><span className='text-5xl'><i class="fab fa-instagram text-white"></i></span></a>
             <a className='px-[3%] z-2 ' href='https://twitter.com/QHacks23'><span className='text-5xl'><i class="fab fa-twitter text-white"></i></span></a>
@@ -85,20 +87,24 @@ export default function RootLayout({ children }) {
             <a className='px-[3%] z-2 ' href='https://www.facebook.com/QHacks/'><span className='text-5xl'><i class="fab fa-facebook text-white"></i></span></a>
             <a className='px-[3%] z-2 ' href='https://www.linkedin.com/company/qhacks/'><span className='text-5xl'><i class="fab fa-linkedin text-white"></i></span></a>
           </div>
-          <div className='flex justify-center items-center py-2'>
-            <a href='https://qhacks.io/' className='text-white hover:text-blue-400 px-[3%]'>QHacks 2023</a>
-            <a href='https://ghw.mlh.io/' className='text-white hover:text-blue-400 px-[3%]'>Local Hack Day</a>
-            <a href='https://medium.com/@qhacks' className='text-white hover:text-blue-400 px-[3%]'>QHacks Blog</a>
-            <a href='https://www.youtube.com/watch?v=a3Z7zEc7AXQ' className='text-white hover:text-blue-400 px-[3%]'>Hack Day Tips</a>
-            <a href='https://static.mlh.io/docs/mlh-code-of-conduct.pdf' className='text-white hover:text-blue-400 px-[3%]'>MLH Code of Conduct</a>
-          </div>
-          <div>
 
+          {/* LINKS */}
+          <div className='
+            flex justify-center items-center text-white
+            pb-2 py-4 md:py-2  
+            text-xs xs:text-sm'>
+            <a className=' hover:text-blue-400 md:px-[3%] text-center' href='https://qhacks.io/'>QHacks 2023</a>
+            <a className=' hover:text-blue-400 md:px-[3%] text-center' href='https://ghw.mlh.io/'>Local Hack Day</a>
+            <a className=' hover:text-blue-400 md:px-[3%] text-center' href='https://medium.com/@qhacks'>QHacks Blog</a>
+            <a className=' hover:text-blue-400 md:px-[3%] text-center' href='https://www.youtube.com/watch?v=a3Z7zEc7AXQ'>Hack Day Tips</a>
+            <a className=' hover:text-blue-400 md:px-[3%] text-center' href='https://static.mlh.io/docs/mlh-code-of-conduct.pdf'>MLH Code of Conduct</a>
           </div>
-          <div className='flex justify-center items-center pb-2'>
-            <p className='text-white px-2'>Queen's University</p>
-            <p className='text-white px-2'>99 University Ave, Kingston ON</p>
-            <p className='text-white px-2'>Copyright © 2023 QHACKS</p>
+          
+          {/* SITE INFO */}
+          <div className='flex justify-center items-center pb-2 text-xs xs:text-sm text-white'>
+            <p className='px-2 lg:px-[2%] text-center'>Queen's University</p>
+            <p className='px-2 lg:px-[2%] text-center'>99 University Ave, Kingston ON</p>
+            <p className='px-2 lg:px-[2%] text-center'>Copyright © 2023 QHACKS</p>
           </div>
         </footer>
       </body>
