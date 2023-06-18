@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import 'tailwindcss/tailwind.css';
 
 const info1 = () => {
   const [selectedOption, setSelectedOption] = useState("");
@@ -17,14 +18,14 @@ const info1 = () => {
   };
 
   return (
-    <div className="h-[800px] bg-gray-950">
+    <div className=" bg-gray-950 text-white">
       <div>
-        <div clas>
+        <div>
           <h2>Tell us about yourself</h2>
           <button>Save and Quit</button>
         </div>
 
-        <div className="'flex flex-col justify-center items-center w-full h-1/4 bg-repeat-x bg-bottom h-full'">
+        <div className="flex flex-col justify-center items-center w-full h-1/4 bg-repeat-x bg-bottom h-full">
           <label htmlFor="firstName">First Name</label>
           <input
             type="text"
