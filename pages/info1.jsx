@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import 'tailwindcss/tailwind.css';
+import "tailwindcss/tailwind.css";
+import Dropdown from "../components/dropDown";
 
 const info1 = () => {
   const [selectedOption, setSelectedOption] = useState("");
@@ -17,15 +18,52 @@ const info1 = () => {
     setSelectedOption3(event.target.value);
   };
 
+  const [ageSelect, setAgeSelect] = useState(null);
+  const handleAgeSelect = (selectedOption) => {
+    setAgeSelect(selectedOption);
+  };
+
+  const ageOptions = [
+    { label: "17", value: "17" },
+    { label: "18", value: "18" },
+    { label: "19", value: "19" },
+    { label: "20", value: "20" },
+    { label: "21", value: "21" },
+    { label: "22", value: "22" },
+    { label: "23", value: "23" },
+  ];
+
+  const [countrySelect, setCountrySelect] = useState(null);
+  const handleCountrySelect = (selectedOption) => {
+    setAgeSelect(selectedOption);
+  };
+
+  const countryOptions = [
+    { label: "Canada", value: "Canada" },
+    { label: "USA", value: "USA" },
+    { label: "China", value: "China" },
+    { label: "Japan", value: "Japan" },
+    { label: "India", value: "India" },
+    { label: "Uk", value: "Uk" },
+    { label: "Other", value: "Other" },
+  ];
+
   return (
     <div className=" bg-gray-950 text-white">
       <div>
-        <div>
+        <div className="flex justify-center">
           <h2>Tell us about yourself</h2>
-          <button>Save and Quit</button>
+          <button
+            className="cursor-pointer font-semibold w-[150px] text-sm px-5 py-3 rounded-xl"
+            style={{
+              background: "rgba(38, 34, 97, 1)",
+            }}
+          >
+            Save and Quit
+          </button>
         </div>
 
-        <div className="flex flex-col justify-center items-center w-full h-1/4 bg-repeat-x bg-bottom h-full">
+        <div className="flex flex-col w-full h-1/4 bg-repeat-x bg-bottom h-full">
           <label htmlFor="firstName">First Name</label>
           <input
             type="text"
@@ -306,10 +344,51 @@ const info1 = () => {
             />
             <span className="ml-2">Prefer not to Answer</span>
           </label>
-        </div>
 
+          {/* use Dropdown to create dropdown for age */}
+          <label htmlFor="age">What is your age?</label>
+          <Dropdown
+            options={ageOptions}
+            value={ageSelect}
+            onChange={handleAgeSelect}
+            placeholder="Select an option"
+          />
+          <label htmlFor="country">Country of Residence</label>
+          <Dropdown
+            options={countryOptions}
+            value={countrySelect}
+            onChange={handleCountrySelect}
+            placeholder="Select an option"
+          />
+          {/* create input for phone number */}
+          <label htmlFor="phone">Phone Number</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="123-456-7890"
+            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+            required
+          />
+          {/* create input for github Link*/}
+          <label htmlFor="github">Github Link</label>
+          <input type="url" id="github" name="github" />
+          {/* create input for linkedin Link*/}
+          <label htmlFor="linkedin">Linkedin Link</label>
+          <input type="url" id="linkedin" name="linkedin" />
+          {/* create input for portfolio Link*/}
+          <label htmlFor="portfolio">Website</label>
+          <input type="url" id="portfolio" name="portfolio" />
+        </div>
         <div>
-          <button>Next Page</button>
+          <button
+            className="cursor-pointer font-semibold w-[150px] text-sm px-5 py-3 rounded-xl"
+            style={{
+              background: "rgba(250, 175, 64, 1)",
+            }}
+          >
+            Next Page
+          </button>
         </div>
       </div>
     </div>
