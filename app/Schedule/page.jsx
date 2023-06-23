@@ -4,38 +4,18 @@ import React, { useState } from 'react'
 import DayButton from '../../components/schedule/dayButton'
 import PagedView from '../../components/schedule/PagedView'
 import '../../css/schedule.css'
-
-const dates = [
-    "Friday • February 2nd",
-    "Saturday • February 3rd",
-    "Sunday • February 4th"
-]
-
-const rows = [
-    // day 1 
-    [["8:30 PM", "Mitchell Hall", "Opening Ceremonies"], ["8:30 PM", "Mitchell Hall", "Dinner"], ["8:30 PM", "Mitchell Hall", "Late Night Snack"]],
-    // day 2
-    [["9:30 PM", "Mitchell Hall", "Opening Ceremonies"], ["9:30 PM", "Mitchell Hall", "Dinner"], ["9:30 PM", "Mitchell Hall", "Late Night Snack"]],
-    // day 3
-    [["10:30 PM", "Mitchell Hall", "Opening Ceremonies"], ["10:30 PM", "Mitchell Hall", "Dinner"], ["10:30 PM", "Mitchell Hall", "Late Night Snack"]]
-]
+import rowData from './rows.json'
 
 function Schedule() {
     const [pageIndex, setPageIndex] = useState(0)
 
-    const rowComponents = rows[pageIndex].map((row, index) => {
-        return (
-            <tr key={"row-" + index}>
-            {
-                row.map((cell, index) => {
-                    return (
-                        <td key={"data-" + index}>{cell}</td>
-                    )
-                })
-            }
-            </tr>
-        )
-    })
+    const rowComponents = Object.entries(Object.values(rowData)[pageIndex]).map(([key, value]) => 
+        <tr>
+            <td>{key}</td>
+            <td>{value.Location}</td>
+            <td>{value.Event}</td>
+        </tr>
+    )
 
     return ( 
         <div className='bg-gray-950 flex flex-col justify-start text-white items-center'>
@@ -67,7 +47,7 @@ function Schedule() {
                 fontWeight: "600",
                 marginBlock: 30
             }}>
-                <h1 className='text-white text-center text-3xl'>{dates[pageIndex]}</h1>
+                <h1 className='text-white text-center text-3xl'>{Object.keys(rowData)[pageIndex]}</h1>
             </div>
             
             <div id="paged-table">

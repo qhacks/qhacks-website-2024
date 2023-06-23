@@ -5,7 +5,6 @@
     width: 80vw;
     max-width: 1000px;
     height: 70px;
-
 }
 
 .day-button:first-child {
@@ -121,9 +120,11 @@
 }
 
 .left-triangle {
-    clip-path: polygon(100% 0, 100% 100%, 0% 100%);
+    clip-path: polygon(calc(100% - 1px) 0, 100% 0, 100% 100%, calc(100% - 1px) 100%, 0% 100%);
+    right: -1px;
 }
 
 .right-triangle {
-    clip-path: polygon(0% 0, 100% 0, 0% 100%);
+    clip-path: polygon(0% 0, 100% 0, 1px 100%, 0px 100%);
+    left: -1px
 }
