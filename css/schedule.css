@@ -4,7 +4,7 @@
     gap: 5px;
     width: 80vw;
     max-width: 1000px;
-    height: 70px;
+    height: 60px;
 }
 
 .day-button:first-child {
@@ -115,7 +115,7 @@
 .triangle {
     position: relative;
     width: 40px;
-    height: 70px;
+    height: 100%;
     background-color: inherit;
 }
 
