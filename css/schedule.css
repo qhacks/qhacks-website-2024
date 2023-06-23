@@ -46,15 +46,15 @@
     border-bottom-left-radius: 30px;
 }
 
-#paged-table tr:last-of-type>tr:last-child {
-    border-bottom-right-radius: 30px;
+#paged-table tr:not(.decorative-row) {
+    height: 44px;
 }
 
-#paged-table tr:last-of-type>td:first-child {
+#paged-table tr.last-row td:first-child {
     border-bottom-left-radius: 30px;
 }
 
-#paged-table tr:last-of-type>td:last-child {
+#paged-table tr.last-row td:last-child {
     border-bottom-right-radius: 30px;
 }
 
