@@ -1,6 +1,6 @@
 "use client"
 
-import wavesSrc from '../../assets/waves-saturated.png';
+import wavesSrc from '../../assets/waves.svg';
 import React, { useEffect } from 'react'
 import { FaEyeSlash, FaEye } from 'react-icons/fa';
 
@@ -14,15 +14,8 @@ export default function SignUp() {
         <div className='h-[800px] bg-gray-950'>
             <div id='signup-container' className='flex flex-col justify-center items-center w-full h-1/4 bg-repeat-x bg-bottom h-full' style={{
                 backgroundImage: `url(${wavesSrc.src})`,
-                backgroundSize: '1200px 300px'
+                backgroundSize: 'cover'
             }}>
-
-            {/* <div id="qhacks-banner" className='absolute top-[calc(50% - 100px)] -translate-y-1/2
-            text-3xl font-yaro max-w-screen '>
-                <div className='overflow-hidden whitespace-nowrap'>QHACKS QHACKS QHACKS QHACKS QHACKS QHACKS QHACKS</div>
-                <div className='overflow-hidden whitespace-nowrap'>QHACKS QHACKS QHACKS QHACKS QHACKS QHACKS QHACKS</div>
-                <div className='overflow-hidden whitespace-nowrap'>QHACKS QHACKS QHACKS QHACKS QHACKS QHACKS QHACKS</div>
-            </div> */}
 
             <form id="signup-card" className='text-white z-[1] p-[50px] bg-zinc-900 rounded-[15px] flex flex-col justify-center items-center gap-[30px]'>
                 <h2 className='text-3xl font-bold'>Welcome</h2>
