@@ -4,7 +4,7 @@ import wavesSrc from '../../assets/waves.svg';
 import React, { useEffect } from 'react'
 import { FaEyeSlash, FaEye } from 'react-icons/fa';
 
-export default function SignUp() {
+export default function LogIn() {
 
     useEffect(() => {
         document.querySelector("footer").style.background = "#f8ba15";
@@ -12,12 +12,12 @@ export default function SignUp() {
 
     return ( 
         <div className='h-[800px] bg-gray-950'>
-            <div id='signup-container' className='flex flex-col justify-center items-center w-full h-1/4 bg-repeat-x bg-bottom h-full' style={{
+            <div id='login-container' className='flex flex-col justify-center items-center w-full bg-repeat-x bg-bottom h-full' style={{
                 backgroundImage: `url(${wavesSrc.src})`,
                 backgroundSize: 'cover'
             }}>
 
-            <form id="signup-card" className='text-white z-[1] p-[50px] bg-zinc-900 rounded-[15px] flex flex-col justify-center items-center gap-[30px]'>
+            <form id="login-card" className='text-white z-[1] bg-zinc-900 rounded-[15px] flex flex-col justify-center items-center gap-[30px] p-[30px] sm:p-[50px]'>
                 <h2 className='text-3xl font-bold'>Welcome Back</h2>
                 <input type='email' className='mt-[25px] w-[280px] border-b border-solid border-[#717171] focus:outline-none' style={{
                     background: 'none',

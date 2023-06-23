@@ -17,7 +17,7 @@ export default function SignUp() {
                 backgroundSize: 'cover'
             }}>
 
-            <form id="signup-card" className='text-white z-[1] p-[50px] bg-zinc-900 rounded-[15px] flex flex-col justify-center items-center gap-[30px]'>
+            <form id="signup-card" className='text-white z-[1] bg-zinc-900 rounded-[15px] flex flex-col justify-center items-center gap-[30px] p-[30px] sm:p-[50px]'>
                 <h2 className='text-3xl font-bold'>Welcome</h2>
                 <input type='email' className='w-[280px] border-b border-solid border-[#717171] focus:outline-none' style={{
                     background: 'none',
