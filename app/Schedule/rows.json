@@ -1,0 +1,56 @@
+{
+    "Friday • February 2nd": {
+        "8:30 PM": {
+            "Location": "Mitchell Hall",
+            "Event": "Opening Ceremonies"
+        },
+        "9:30 PM": {
+            "Location": "Mitchell Hall",
+            "Event": "Dinner"
+        },
+        "10:30 PM": {
+            "Location": "Mitchell Hall",
+            "Event": "Late Night Snack"
+        }
+    },
+    "Saturday • February 3rd": {
+        "8:00 AM": {
+            "Location": "Mitchell Hall",
+            "Event": "Breakfast"
+        },
+        "9:00 AM": {
+            "Location": "Mitchell Hall",
+            "Event": "Hacking Begins"
+        },
+        "12:00 PM": {
+            "Location": "Mitchell Hall",
+            "Event": "Lunch"
+        },
+        "6:00 PM": {
+            "Location": "Mitchell Hall",
+            "Event": "Dinner"
+        },
+        "10:00 PM": {
+            "Location": "Mitchell Hall",
+            "Event": "Late Night Snack"
+        }
+    },
+    "Sunday • February 4th": {
+        "8:00 AM": {
+            "Location": "Mitchell Hall",
+            "Event": "Breakfast"
+        },
+        "9:00 AM": {
+            "Location": "Mitchell Hall",
+            "Event": "Hacking Ends"
+        },
+        "9:30 AM": {
+            "Location": "Mitchell Hall",
+            "Event": "Judging Begins"
+        },
+        "11:00 AM": {
+            "Location": "Mitchell Hall",
+            "Event": "Closing Ceremonies"
+        }
+    }
+}
