@@ -8,7 +8,7 @@ const TestimonialsCard = ({ speaker }) => {
   const { name, team, image, testimonial } = speaker;
 
   return (
-    <div class="rounded-xl w-[430px] h-[300px] bg-gray-900">
+    <div class="rounded-xl w-[430px] h-[300px] m-5 bg-gray-900">
       <div class="flex flex-row px-4 pt-4">
         <div className="aspect-w-1 aspect-h-1"><Image src={image} alt={`${name}`} width={500} height={500} className='w-24 h-24 rounded-full'/></div>
         <div className='flex flex-col ml-8 justify-center'>

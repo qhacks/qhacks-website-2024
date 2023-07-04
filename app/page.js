@@ -31,7 +31,7 @@ export default function Home() {
       <img className="absolute top-0 right-2 md:right-20 w-[75px] h-[125px] lg:w-[127px] lg:h-[222px]" src="/MLH.svg" alt="Major Hacking Leaguge Logo"/>
       <section className='
         flex items-center justify-center 
-        my-24 lg:my-96
+        my-24 lg:my-60
         px-1
       '>
         <div className=' flex flex-row justify-between'>
@@ -53,29 +53,23 @@ export default function Home() {
       </section>
 
       {/* ABOUT US */}
-      <section id="about" className='pt-2 md:pt-32 relative pb-24 lg:pb-80 mx-2 sm:mx-8 md:mx-12 lg:mx-12 xl:mx-80 2xl:mx-96'>
-        {/* <motion.div
-          initial={{ opacity: 0, x: 500 }}  
-          whileInView={{ opacity: 1, x: 0, transition: { duration: 1 } }}
-        > */}
+      <section id="about" className='pt-2 md:pt-32 relative lg:  pb-24 lg:pb-80 mx-2 sm:mx-8 md:mx-12 lg:mx-12 xl:mx-80 2xl:mx-96'>
           <Image 
-            className='md:absolute md:-top-32 md:right-0' 
+            className='lg:absolute md:-top-32 md:right-0' 
             src="/Goodwin Drawing.svg" 
             alt="QHacks Logo" 
-            width={800}
-            height={800}
+            width={650}
+            height={650}
           />
-        {/* </motion.div> */}
-        
-        <div className=' items-left justify-left m-5'>
-          <h1 className='text-white text-3xl md:text-5xl mb-2 md:mb-0 font-bold'>Join Us<span className='text-transparent text-3xl md:text-5xl bg-clip-text bg-gradient-to-r from-red-500 to-orange-600'> In Person!</span></h1>
-            <p className='text-white text-lg md:text-xl mb-4'> 
+        <div className=' items-left justify-left m-5 '>
+          <h1 className='text-white text-3xl md:text-5xl mb-2 md:mb-0 font-bold '>Join Us<span className='text-transparent text-3xl md:text-5xl bg-clip-text bg-gradient-to-r from-red-500 to-orange-600'> In Person!</span></h1>
+            <p className='text-white text-lg md:text-xl mb-4 w-2/5'> 
               Join over 500 hackers, speakers and mentors 
               to create, learn and share your ideas. Attend
               our workshops and hacker challenges and
               meet industry professionals
             </p>
-            <p className='text-white text-lg md:text-xl'>
+            <p className='text-white text-lg md:text-xl w-2/5'>
               Innovators and creatives from all faculties and skill levels are encouraged to attend!
             </p>
         </div>
@@ -164,7 +158,7 @@ export default function Home() {
           {/*  */}
           <div>
             <div className="flex flex-col text-left">
-              <div className="flex flex-col md:flex-row text-left mb-24 ">
+              <div className="flex flex-col md:flex-row text-left mb-24">
                 <div className="md:w-1/2">
                   <FAQDropdown faq={faq.faq1}/>
                   <FAQDropdown faq={faq.faq2}/>
@@ -181,19 +175,18 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="flex flex-col md:flex-row justify-between">
-              <div className="flex flex-col">
-                <Image width={300} height={300} src="/Qhacks Crown.svg"></Image>
-                <div className="flex justify-center">
-                  <h3 className="text-white font-bold text-center text-2xl">More Questions?<br/>Send us a message!</h3>
-                </div>
+            <div className="flex flex-col md:flex-row justify-center">
+              <div className="flex flex-col justify-center items-center p-3">
+                <Image width={300} height={300} src="/QCrown.svg"></Image>
               </div>
-              <div className="flex flex-col justify-center">
-                <form className="flex flex-col">
+              <div className="flex flex-col justify-center ">
+                <h3 className="text-white font-bold text-center text-2xl">More Questions?</h3>
+                <h3 className="text-white font-bold text-center text-2xl pb-6">Send us a message!</h3>
+                <form className="flex flex-col justify-center items-center">
                   <input placeholder="Name" className="text-white placeholder:text-gray-500 pl-[14px] focus:outline-none border border-gray-500 w-80 mx-4 my-1 h-12 rounded-md bg-slate-800"></input>
                   <input placeholder="Email" className="text-white placeholder:text-gray-500 pl-[14px] focus:outline-none border border-gray-500 w-80 mx-4 my-1 h-12 rounded-md bg-slate-800"></input>
-                  <input placeholder="Message" className="text-white placeholder:text-gray-500 pl-[14px] focus:outline-none border border-gray-500 w-80 mx-4 my-1 h-12 rounded-md bg-slate-800"></input>
-                  <div className='flex justify-center'>
+                  <textarea rows="4" placeholder="Message" className="text-white placeholder:text-gray-500 pl-[14px] focus:outline-none border border-gray-500 w-80 mx-4 my-1 h-12 rounded-md bg-slate-800"></textarea>
+                  <div className='flex justify-center py-6'>
                     <button className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 mx-4 my-1 w-24 rounded">Submit</button>
                   </div>
                 </form>

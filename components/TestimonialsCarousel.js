@@ -10,15 +10,15 @@ const TestimonialsCarousel = () => {
     <div>
       <div className='p-3 hidden lg:block'>
         <Carousel showStatus={false}>
-          <div className='h-96 flex justify-between'>
+          <div className='h-96 flex justify-center items-center'>
               <TestimonialsCard speaker={testimonials.GregWang}/>
               <TestimonialsCard speaker={testimonials.JordanCurnew}/>
           </div>
-          <div className='h-96 flex justify-between'>
+          <div className='h-96 flex justify-center items-center'>
             <TestimonialsCard speaker={testimonials.AmyLu}/>
             <TestimonialsCard speaker={testimonials.CooperLeong}/>
           </div>
-          <div className='h-96 flex justify-between'>
+          <div className='h-96 flex justify-center items-center'>
             <TestimonialsCard speaker={testimonials.BenjaminBeggs}/>
             <TestimonialsCard speaker={testimonials.JacobLaframboise}/>
           </div>

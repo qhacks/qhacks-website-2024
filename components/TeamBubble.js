@@ -14,32 +14,36 @@ const TeamBubble = ({ teamMember }) => {
         setIsInfoVisible(!isInfoVisible);
     };
 
+    if (color == 'bg-red-500') {
+        let color2 = 'bg-red-500';
+      } else if (color == 'bg-yellow-300') {
+        let color2 = 'bg-yellow-300';
+      } else if (color == 'bg-blue-500') {
+        let color2 = 'bg-blue-500';
+      }
 
     return (
-        <div className='
-            w-28 
-            h-28 
-            m-2
-            md:m-5
-            rounded-full
-        '>
+        <div className='flex w-28 h-28 m-2 md:m-5 '>
             <motion.div 
-                className='w-40 h-40 rounded-full'
+                className={`w-28 h-28 ${color} rounded-full`}
                 whileHover={{
-                    scale: 1.3,
+                    scale: 1.5,
                     zIndex: 10,
                 }}
+                
             >
-                <Image 
-                    id="team_image"
-                    height={500} 
-                    width={500} 
-                    src={image} 
-                    onMouseOut={toggleInfoVisibility}
-                    onMouseEnter={toggleInfoVisibility} 
-                    className='rounded-full w-28 h-28'
-                />
-            </motion.div>
+                <div className='flex justify-center'>
+                    <Image 
+                        id="team_image"
+                        height={500} 
+                        width={500} 
+                        src={image} 
+                        onMouseOut={toggleInfoVisibility}
+                        onMouseEnter={toggleInfoVisibility} 
+                        className='rounded-full w-28 h-28 '
+                    />
+                </div>
+                
                 <AnimatePresence>
                     {isInfoVisible && (
                         <motion.div
@@ -49,12 +53,13 @@ const TeamBubble = ({ teamMember }) => {
                             }}
                             animate={{ 
                                 opacity: 1,
-                                y: 40,
+                                y: 0,
                             }}
                             exit={{ 
                                 opacity: 0,
                                 y: -40, 
                             }}
+                            className={`${color} rounded-full`}
                         >
                             <p className="text-white text-center font-bold text-sm">{name}</p>
                             <p className="text-white text-center text-xs">{role}</p>
@@ -66,6 +71,7 @@ const TeamBubble = ({ teamMember }) => {
                         </motion.div>
                     )}
                 </AnimatePresence>
+            </motion.div>
             
         </div>
     );
