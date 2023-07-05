@@ -5,10 +5,10 @@ import { useState } from 'react';
 
 const inter = Inter({ subsets: ['latin'] })
 
-export const metadata = {
-  title: 'QHacks 2024 | Queens University',
-  description: 'Queen’s University’s only annual hackathon. Join us for a weekend of innovation, creativity, and fun! February 2nd - 4th, 2024.',
-}
+// export const metadata = {
+//   title: 'QHacks 2024 | Queens University',
+//   description: 'Queen’s University’s only annual hackathon. Join us for a weekend of innovation, creativity, and fun! February 2nd - 4th, 2024.',
+// }
 
 export default function RootLayout({ children }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -78,11 +78,11 @@ export default function RootLayout({ children }) {
         
         <footer className='pb-8 pt-48 bg-gradient-to-b from-gray-950 to-blue-900'>
           <div className='flex justify-center items-center py-5'>
-            <a className='px-[3%] z-2 ' href='https://www.instagram.com/qhacks24/'><span className='text-5xl'><i class="fab fa-instagram text-white"></i></span></a>
-            <a className='px-[3%] z-2 ' href='https://twitter.com/QHacks23'><span className='text-5xl'><i class="fab fa-twitter text-white"></i></span></a>
-            <a className='px-[3%] z-2 ' href='mailto:hello@qhacks.io'><span className='text-5xl'><i class="far fa-envelope text-white"></i></span></a>
-            <a className='px-[3%] z-2 ' href='https://www.facebook.com/QHacks/'><span className='text-5xl'><i class="fab fa-facebook text-white"></i></span></a>
-            <a className='px-[3%] z-2 ' href='https://www.linkedin.com/company/qhacks/'><span className='text-5xl'><i class="fab fa-linkedin text-white"></i></span></a>
+            <a className='px-[3%] z-2 ' href='https://www.instagram.com/qhacks24/'><span className='text-5xl'><i className="fab fa-instagram text-white"></i></span></a>
+            <a className='px-[3%] z-2 ' href='https://twitter.com/QHacks23'><span className='text-5xl'><i className="fab fa-twitter text-white"></i></span></a>
+            <a className='px-[3%] z-2 ' href='mailto:hello@qhacks.io'><span className='text-5xl'><i className="far fa-envelope text-white"></i></span></a>
+            <a className='px-[3%] z-2 ' href='https://www.facebook.com/QHacks/'><span className='text-5xl'><i className="fab fa-facebook text-white"></i></span></a>
+            <a className='px-[3%] z-2 ' href='https://www.linkedin.com/company/qhacks/'><span className='text-5xl'><i className="fab fa-linkedin text-white"></i></span></a>
           </div>
 
           {/* LINKS */}

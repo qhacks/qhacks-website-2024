@@ -22,7 +22,7 @@ const CameraController = () => {
 
 function CrownObj() {
   // const crown = useLoader(GLTFLoader, './Crown.gltf')
-  const crown = useLoader(GLTFLoader, './QhacksCrown.gltf')
+  const crown = useLoader(GLTFLoader, './QHacksCrown.gltf')
   const meshRef = useRef(null);
 
   useFrame(() => {
