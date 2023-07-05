@@ -26,7 +26,7 @@ function Schedule() {
                         <th>Location</th>
                         <th>Event</th>
                     </tr>
-                    <tr class='decorative-row'>
+                    <tr className='decorative-row'>
                         <td>
                             <div></div>
                         </td>
@@ -51,7 +51,7 @@ function Schedule() {
                         </td>
                     </tr>
                     ) : null}
-                    <tr class='last-row'>
+                    <tr className='last-row'>
                         <td>
                             <div></div>
                         </td>
