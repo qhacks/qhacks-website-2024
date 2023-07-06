@@ -21,15 +21,15 @@ const TeamBubble = ({ teamMember }) => {
                     />
                 </div>
 
-                {/* <div className={`team-bubble-back`}>
-                    <p className="text-white text-center font-bold text-sm">{name}</p>
-                    <p className="text-white text-center text-xs">{role}</p>
-                    <div className='flex flex-row justify-center'>
-                        <a className='p-2' href={linkedin}><FontAwesomeIcon icon={faLinkedin} className="text-white text-4xl" /></a>
-                        <a className='p-2' href={instagram}><FontAwesomeIcon icon={faInstagram} className="text-white text-4xl" /></a>
-                        <a className='p-2' href={github}><FontAwesomeIcon icon={faGithub} className="text-white text-4xl" /></a>
+                <div className={`team-bubble-back`}>
+                        <div className='team-bubble-name'>{name}</div>
+                        <div className='team-bubble-role'>{role}</div>
+                    <div className='team-bubble-button-container'>
+                        <a href={linkedin}><FontAwesomeIcon className='team-bubble-button' icon={faLinkedin} /></a>
+                        <a href={instagram}><FontAwesomeIcon className='team-bubble-button' icon={faInstagram} /></a>
+                        <a href={github}><FontAwesomeIcon className='team-bubble-button' icon={faGithub} /></a>
                     </div>
-                </div> */}
+                </div>
             </div>
             
     );
