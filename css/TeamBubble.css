@@ -1,0 +1,36 @@
+.bubble-bg-blue-500 {
+    background-color: rgb(59 130 246);
+}
+
+.bubble-bg-green-500 {
+    background-color: rgb(34 197 94);
+}
+
+.bubble-bg-yellow-300 {
+    background-color: rgb(253 224 71);
+}
+
+.bubble-bg-red-500 {
+    background-color: rgb(239 68 68);
+}
+
+.team-bubble {
+    padding: 4px;
+    margin: 4px;
+    position: relative;
+    /* overflow: ; */
+    border-radius: 50%;
+    width: 110px;
+    height: 110px;
+}
+
+.team-bubble-img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.team-bubble-back {
+    position: absolute;
+    inset: 0;
+}
