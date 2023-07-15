@@ -41,7 +41,7 @@ export default function Home() {
               <p className= 'text-white m-5 text-lg  lg:text-2xl lg:w-96 p-2'>Get ready to innovate and make a difference! Join QHacks, the ultimate hackathon experience.</p>
               <p className= '             m-5 text-lg  lg:text-2xl  bg-clip-text font-extrabold text-transparent  bg-gradient-to-r from-red-500 to-orange-600'>In-person!  •  February 2nd - 4th    </p>
               
-              <motion.a href="#" className='text-white bg-green-500 px-5 py-3 m-5 rounded-xl' whileHover={{scale: 1.5, margin: 14}}>
+              <motion.a href="/signup" className='text-white bg-green-500 px-5 py-3 m-5 rounded-xl' whileHover={{scale: 1.5}}>
                 Register Here
               </motion.a>
             </div>
