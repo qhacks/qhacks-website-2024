@@ -13,9 +13,25 @@ module.exports = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       fontFamily: {
-        'font-awesome': ['Font Awesome 5 Free']
+        'font-awesome': ['Font Awesome 5 Free'],
+        Yaro: ['Yaro'],
       },
+      spacing: { 
+        // '1/2': '50%',
+        // '1/3': '33.333333%',
+      },
+      maxWidth: {
+        'screen': '100vw'
+      }
     },
+    screens: {
+      'xs': '475px',
+      'sm': '640px',
+      'md': '768px',
+      'lg': '1024px',
+      'xl': '1280px',
+      '2xl': '1536px',
+    }
   },
   variants: {},
   plugins: [],
