@@ -175,6 +175,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
+            {/* ------------ */}
             <div className="flex flex-col md:flex-row justify-center">
               <div className="flex flex-col justify-center items-center p-3">
                 <Image width={300} height={300} src="/QCrown.svg"></Image>
@@ -192,6 +193,7 @@ export default function Home() {
                 </form>
               </div>
             </div>
+            {/* ---------A_-- */}
           </div>
         </div>
       </section>
