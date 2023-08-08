@@ -22,18 +22,22 @@ import StatsSection from '../components/StatsSection';
 import sponsors from '../data/sponsors.json';
 import team from '../data/team.json';
 import faq from '../data/faq.json';
+import { useEffect, useState } from "react";
+import LoadingScreen from "../components/LoadingScreen";
 
 
 export default function Home() {
-
+  const [showLoadingScreen, setShowLoadingScreen] = useState(true)
+useEffect(() =>
+{
+  setShowLoadingScreen(false)
+}, [setShowLoadingScreen])
   return (
     <main className="bg-gray-950">
+      <LoadingScreen showLoadingScreen={showLoadingScreen} className="fixed top-0 left-0 w-full h-full z-50"/>
       <img className="absolute top-0 right-2 md:right-20 w-[75px] h-[125px] lg:w-[127px] lg:h-[222px]" src="/MLH.svg" alt="Major Hacking Leaguge Logo"/>
       <section className='
-        flex items-center justify-center 
-        my-24 lg:my-60
-        px-1
-      '>
+        flex items-center justify-center my-24 lg:my-60 px-1'>
         <div className=' flex flex-row justify-between'>
           <div className='flex items-center'>
             <div className='flex-None flex-colitems-center justify-center'>
