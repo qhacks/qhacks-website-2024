@@ -15,6 +15,7 @@ module.exports = {
       fontFamily: {
         'font-awesome': ['Font Awesome 5 Free'],
         Yaro: ['Yaro'],
+        'Inter': ['Inter']
       },
       spacing: { 
         // '1/2': '50%',

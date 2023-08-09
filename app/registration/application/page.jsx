@@ -84,7 +84,7 @@ export default function Info() {
             </filter>
           </defs>
         </svg>
-        <svg xmlns="http://www.w3.org/2000/svg" width="955" height="901" viewBox="0 0 955 901" fill="none" className="absolute right-0 mt-[700px]">
+        <svg xmlns="http://www.w3.org/2000/svg" width="955" height="901" viewBox="0 0 955 901" fill="none" className="absolute right-0 mt-[800px]">
           <g filter="url(#filter0_f_179_257)">
             <path d="M536.702 942.546C450.713 905.436 351.014 859.191 340.869 797.166C330.626 735.16 409.918 657.276 473.223 583.073C536.43 508.891 583.65 438.388 666.255 390.653C748.86 342.917 866.968 318.026 940.231 364.273C1013.49 410.52 1041.91 527.905 1051.74 636.746C1061.64 745.468 1052.96 845.645 1002.5 910.788C952.015 975.833 859.78 1005.94 777.493 1006.86C695.128 1007.9 622.711 979.753 536.702 942.546Z" fill="#262261"/>
           </g>
@@ -113,7 +113,7 @@ export default function Info() {
         </div>
 
         <div className="flex flex-col bg-[#202020] py-[4rem] px-[3rem] mt-[1rem] rounded-lg">
-          <div className="flex flex-col mb-[1rem]">
+          <div className="flex flex-col mb-[3rem]">
             <label htmlFor="teammates">{`Let us know if you have a team! Enter the names of your teammates.`}<br></br>{`(Maximum of 4 people per team. This can be changed at any point until the event weekend. EACH INDIVIDUAL TEAMMATE MUST APPLY)`}</label>
             <div name="teammates" id="teammates" className="flex flex-row justify-between">
               <input
