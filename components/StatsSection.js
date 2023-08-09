@@ -21,6 +21,8 @@ const StatsSection = () => {
             font-bold
             '
             whileHover={{scale: 1.2, margin: 14}}
+            initial="offscreen"
+            whileInView="onscreen"
           >
             <h1 className='text-4xl'>10</h1>
             <h5 className='text-center'>Workshops</h5>

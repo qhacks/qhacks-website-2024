@@ -2,6 +2,7 @@
 import './globals.css';
 import { Inter } from 'next/font/google';
 import { useState } from 'react';
+import { motion } from "framer-motion";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -23,11 +24,36 @@ export default function RootLayout({ children }) {
         {/* Navbar */}
         <nav className="hidden flex-row justify-between py-8 bg-gray-950 z-3 xs:px-2 sm:px-8 md:px-12 lg:px-12 xl:px-80 2xl:px-96 md:flex">
           <div className="flex flex-row items-left justify-left absolute px-8 bg-gray-900 rounded-full z-3">
-            <a href='/#'         className="lg:text-2xl sm:p-2 lg:p-4 font-bold text-white z-3 ">Home</a>
-            <a href='/#about'    className="lg:text-2xl sm:p-2 lg:p-4 font-bold text-white z-3 ">About</a>
-            <a href='/#sponsors' className="lg:text-2xl sm:p-2 lg:p-4 font-bold text-white z-3 ">Sponsors</a>
-            <a href='/#contact'  className="lg:text-2xl sm:p-2 lg:p-4 font-bold text-white z-3 ">Contact</a>
-            <a href='/Schedule' className="lg:text-2xl sm:p-2 lg:p-4 font-bold text-white z-3 ">Schedule</a>
+            <motion.a 
+              href='/#'
+              className="lg:text-2xl sm:p-2 lg:p-4 font-bold text-white z-3 "
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >Home</motion.a>
+            <motion.a 
+              href='/#about'
+              className="lg:text-2xl sm:p-2 lg:p-4 font-bold text-white z-3 "
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >About</motion.a>
+            <motion.a 
+              href='/#sponsors'
+              className="lg:text-2xl sm:p-2 lg:p-4 font-bold text-white z-3 "
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >Sponsors</motion.a>
+            <motion.a 
+              href='/#contact'
+              className="lg:text-2xl sm:p-2 lg:p-4 font-bold text-white z-3 "
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >Contact</motion.a>
+            <motion.a 
+              href='/Schedule'
+              className="lg:text-2xl sm:p-2 lg:p-4 font-bold text-white z-3 "
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >Schedule</motion.a>
           </div>
         </nav>
 

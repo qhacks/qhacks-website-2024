@@ -1,56 +1,15 @@
-'use client';
-import { Canvas, useFrame, useThree  } from '@react-three/fiber';
-import React, { useRef, useEffect } from 'react';
-import { useLoader } from '@react-three/fiber'
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+// import Spline from '@splinetool/react-spline';
 
+// export default function Crown() {
+//   return (
+//     <Spline scene="https://prod.spline.design/90Yi9N-dAHhFegtQ/scene.splinecode" />
+//   );
+// }
 
-const CameraController = () => {
-  const { camera, gl } = useThree();
-  useEffect(
-     () => {
-        const controls = new OrbitControls(camera, gl.domElement);
-        controls.minDistance = 3;
-        controls.maxDistance = 20;
-        return () => { controls.dispose(); };
-     },
-     [camera, gl]
-  );
-  return null;
-};
+import Spline from '@splinetool/react-spline';
 
-function CrownObj() {
-  // const crown = useLoader(GLTFLoader, './Crown.gltf')
-  const crown = useLoader(GLTFLoader, './QHacksCrown.gltf')
-  const meshRef = useRef(null);
-
-  useFrame(() => {
-    if (!meshRef.current) {
-      return;
-    }
-    meshRef.current.rotation.x += 0.000;
-    meshRef.current.rotation.y += 0.0035;
-  })
-
+export default function App() {
   return (
-    <mesh ref={meshRef}>
-      <primitive object={crown.scene} args={[5,5,5]}>
-        <meshStandardMaterial/>
-      </primitive>
-    </mesh>
-  )
-}
-
-export default function Crown() {
-  return (
-    <div className='h-96 w-96'>
-      <Canvas style={{ background:"transparent" }} > 
-      <CameraController />
-        <ambientLight/>
-        <pointLight position={[0,0,10]}/>
-        <CrownObj />
-      </Canvas>
-    </div>
+    <Spline scene="https://prod.spline.design/T3ZgJ-KXLZwWHiG2/scene.splinecode" />
   );
 }
