@@ -7,7 +7,6 @@ import 'tailwindcss/tailwind.css';
 import Image from 'next/image';
 
 // Custom Components
-import TestimonialsCard from '../components/TestimonialCard';
 import SpeakerCarousel from '../components/SpeakerCarousel';
 import TestimonialsCarousel from '../components/TestimonialsCarousel';
 import Crown from "../components/Crown";
