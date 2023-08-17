@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react'
 import DayButton from '../../components/schedule/dayButton'
-import PagedView from '../../components/schedule/PagedView'
 import '../../css/schedule.css'
 import rowData from './rows.json'
 
