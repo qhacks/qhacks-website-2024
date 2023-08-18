@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 // Styling and Tailwind Components
 import "tailwindcss/tailwind.css";
 import Image from "next/image";
+import { Inter } from 'next/font/google';
 
 // Custom Components
 import SpeakerCarousel from '../components/SpeakerCarousel';
@@ -16,6 +17,9 @@ import TeamBubble from "../components/TeamBubble";
 import FAQDropdown from "../components/FAQDropdown";
 import SponsorCard from "../components/SponsorCard";
 
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+
 // Sections
 import StatsSection from "../components/StatsSection";
 
@@ -26,6 +30,8 @@ import faq from "../data/faq.json";
 import { useEffect, useState } from "react";
 import LoadingScreen from "../components/LoadingScreen";
 
+const inter = Inter({ subsets: ['latin'] });
+
 export default function Home() {
 	const [showLoadingScreen, setShowLoadingScreen] = useState(true);
 	useEffect(() => {
@@ -33,47 +39,63 @@ export default function Home() {
 	}, [setShowLoadingScreen]);
 
 	return (
-		<main className="bg-gray-950">
+		<main className="bg-gray-950 w-screen">
+			<Navbar />
+			{/* Loader */}
 			<LoadingScreen
 				showLoadingScreen={showLoadingScreen}
 				className="fixed top-0 left-0 w-full h-full z-50"
 			/>
+			{/* This is the MLH Banner */}
 			<motion.img
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
+				initial={{ opacity: 0 }}
+				whileInView={{ opacity: 1 }}
+				transition={{ duration: 1 }}
 				className="absolute top-0 right-2 md:right-20 w-[75px] h-[125px] lg:w-[127px] lg:h-[222px]"
 				src="/MLH.svg"
 				alt="Major Hacking Leaguge Logo"
 			/>
-			<section className="flex items-center justify-center my-24 lg:my-60 px-1">
+			<section className="flex items-center justify-center mt-24 lg:my-48 px-1">
 				<div className=" flex flex-row justify-between">
 					<div className="flex items-center">
-						<div className="flex-None flex-colitems-center justify-center">
-							<h1 className="text-white m-5 text-[100px] lg:[140px] font-bold font-Yaro ">
+						<div className="flex-None flex-col items-center justify-center">
+							<motion.h1 
+								className="text-white m-5 text-[100px] lg:[140px] font-bold font-Yaro "
+								initial={{ opacity: 0 }}
+								whileInView={{ opacity: 1 }}
+							>
 								QHACKS
-							</h1>
-							<p className="text-white m-5 text-[24px]  lg:[100px] lg:w-96 p-2">
+							</motion.h1>
+							<motion.p 
+								className="text-white m-5 text-[24px]  lg:[100px] lg:w-96 p-2" 
+								initial={{ opacity: 0 }}
+								whileInView={{ opacity: 1 }}
+								transition={{ duration: 2 }}
+							>
 								Get ready to innovate and make a difference!
 								Join QHacks, the ultimate hackathon experience.
-							</p>
-							<p className="m-5 text-lg  lg:text-2xl  bg-clip-text font-extrabold text-transparent  bg-gradient-to-r from-red-500 to-orange-600">
-								In-person! • February 2nd - 4th{" "}
-							</p>
+							</motion.p>
+							<motion.p 
+								className="m-5 text-lg  lg:text-2xl  bg-clip-text font-extrabold text-transparent  bg-gradient-to-r from-red-500 to-orange-600"
+								initial={{ opacity: 0 }}
+								whileInView={{ opacity: 1 }}
+								transition={{ duration: 2 }}
+							>
+								In-person! • February 2nd - 4th
+							</motion.p>
 							<motion.a
+								whileHover={{ scale: 1.2 }}
+								whileTap={{ scale: 0.8 }}
 								href="/signup"
-								className="text-white bg-green-500 px-5 py-3 m-5 rounded-xl"
-								whileHover={{ scale: 1.5 }}
+								className="text-white bg-green-500 px-5 py-3 m-5 z-5 rounded-xl font-bold"
 							>
 								Register Here
 							</motion.a>
 						</div>
 					</div>
-					<motion.div
-						className=" w-[750px] h-[500px] hidden md:block"
-						whileInView={{ opacity: 1 }}
-					>
+					<div className=" w-[750px] h-[500px] hidden xl:block">
 						<Crown />
-					</motion.div>
+					</div>
 				</div>
 			</section>
 
@@ -83,43 +105,44 @@ export default function Home() {
 			<motion.section
 				initial={{ opacity: 0 }}
 				whileInView={{ opacity: 1 }}
+				transition={{ duration: 2 }}
 				id="about"
-				className="pt-2 md:pt-32 relative lg:  pb-24 lg:pb-80 mx-2 sm:mx-8 md:mx-12 lg:mx-12 xl:mx-80 2xl:mx-96"
+				className="h-full flex flex-row justify-between pt-2 md:pt-32 lg:pb-24 mx-2 sm:mx-8 md:mx-12 lg:mx-12 xl:mx-64 2xl:mx-64"
 			>
-				<Image
-					className="lg:absolute md:-top-32 md:right-0"
-					src="/Goodwin Drawing.svg"
-					alt="QHacks Logo"
-					width={650}
-					height={650}
-				/>
-				<div className=" items-left justify-left m-5 ">
-					<h1 className="text-white text-3xl md:text-5xl mb-2 md:mb-0 font-bold ">
+				<div className="flex-auto flex-col flex justify-center items-center w-96">
+				<div>
+					<h1 className="align-left text-white text-3xl md:text-5xl mb-2 md:mb-0 font-bold ">
 						Join Us
 						<span className="text-transparent text-3xl md:text-5xl bg-clip-text bg-gradient-to-r from-red-500 to-orange-600">
 							{" "}
 							In Person!
 						</span>
 					</h1>
-					<p className="text-white text-lg md:text-xl mb-4 w-2/5">
+					<p className="text-white text-lg md:text-xl mb-4 ">
 						Join over 500 hackers, speakers and mentors to create,
 						learn and share your ideas. Attend our workshops and
 						hacker challenges and meet industry professionals
 					</p>
-					<p className="text-white text-lg md:text-xl w-2/5">
+					<p className="text-white text-lg md:text-xl ">
 						Innovators and creatives from all faculties and skill
 						levels are encouraged to attend!
 					</p>
+				</div>
+					
+				</div>
+				<div className="flex-auto hidden md:flex justify-center">
+					<img
+						className="w-[500px] h-[500px]"
+						src="/Goodwin Drawing.svg"
+						alt="QHacks Logo"
+					/>
 				</div>
 			</motion.section>
 
 
 
       {/* Stats Section */}
-			<motion.section 
-        initial={{ opacity: 0 }}
-				whileInView={{ opacity: 1 }}
-        className="my-4 lg:my-32 mx-2 sm:mx-8 md:mx-12 lg:mx-12 xl:mx-80 2xl:mx-96">
+			<motion.section className="my-4 lg:my-32 mx-2 sm:mx-8 md:mx-12 lg:mx-12 xl:mx-80 2xl:mx-96">
 				<StatsSection />
 			</motion.section>
 
@@ -366,8 +389,7 @@ export default function Home() {
 					{/* <TeamBubble teamMember={team.MichaelKwon}/> */}
 				</div>
 			</section>
-
-			{/* <section className="my-32 mx-32"></section> */}
+			<Footer />
 		</main>
 	);
 }
