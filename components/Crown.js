@@ -7,8 +7,13 @@
 // }
 
 import Spline from '@splinetool/react-spline';
+import { useEffect } from 'react';
 
-export default function App() {
+export default function App(props) {
+  useEffect(() => {
+    fetch("https://prod.spline.design/T3ZgJ-KXLZwWHiG2/scene.splinecode")
+    .then(() => props.setShowLoadingScreen(false))
+  })
   return (
     <Spline scene="https://prod.spline.design/T3ZgJ-KXLZwWHiG2/scene.splinecode" />
   );

@@ -34,9 +34,9 @@ const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
 	const [showLoadingScreen, setShowLoadingScreen] = useState(true);
-	useEffect(() => {
-		setShowLoadingScreen(false);
-	}, [setShowLoadingScreen]);
+	// useEffect(() => {
+	// 	setShowLoadingScreen(false);
+	// }, [setShowLoadingScreen]);
 
 	return (
 		<main className="bg-gray-950 w-screen">
@@ -94,7 +94,7 @@ export default function Home() {
 						</div>
 					</div>
 					<div className=" w-[750px] h-[500px] hidden xl:block">
-						<Crown />
+						<Crown setShowLoadingScreen={setShowLoadingScreen} />
 					</div>
 				</div>
 			</section>
