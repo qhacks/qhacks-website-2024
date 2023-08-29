@@ -14,9 +14,9 @@ const SponsorCard = ({ sponsor }) => {
 
 
   return (
-    <div className={`justify-center flex h-32 p-2 ${borderColor} border-4 rounded-xl`}>
+    <a href={link} className={`justify-center flex h-32 p-2 ${borderColor} border-4 rounded-xl`}>
       <img src={logo} alt={`${name} logo`} className=""/>
-    </div>
+    </a>
   );
 };
 

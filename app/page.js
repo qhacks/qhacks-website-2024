@@ -24,7 +24,7 @@ import Footer from '../components/Footer';
 import StatsSection from "../components/StatsSection";
 
 // JSON Data
-import sponsors from "../data/sponsors.json";
+import pastSponsors from "../data/pastSponsors.json";
 import team from "../data/team.json";
 import faq from "../data/faq.json";
 import { useEffect, useState } from "react";
@@ -93,7 +93,7 @@ export default function Home() {
 							</motion.a>
 						</div>
 					</div>
-					<div className=" w-[750px] h-[500px] hidden xl:block">
+					<div className=" w-[750px] h-[500px] hidden xl:flex">
 						<Crown setShowLoadingScreen={setShowLoadingScreen} />
 					</div>
 				</div>
@@ -200,32 +200,57 @@ export default function Home() {
       {/* Sponsors Section */}
 			<section
 				id="sponsors"
-				className=" 
-        relative 
-        pt-32 
-        mx-2 sm:mx-8 md:mx-12 lg:mx-12 xl:mx-80 2xl:mx-96
-        my-24
-      "
-			>
+				className="relative pt-32 mx-2 sm:mx-8 md:mx-12 lg:mx-12 xl:mx-64 2xl:mx-80 my-24"
+		  	>
 				<h1 className="text-white text-center text-3xl md:text-5xl font-bold mb-4">
 					Thanks To{" "}
 					<span className="text-transparent text-3xl md:text-5xl bg-clip-text bg-gradient-to-r from-red-500 to-orange-600">
-						Our Sponsors.
+						Our Past Sponsors.
 					</span>
 				</h1>
 				<div className="flex justify-center">
 					<motion.div
 						initial={{ opacity: 0 }}
 						whileInView={{ opacity: 1 }}
-						className="flex flex-row flex-wrap items-center justify-center w-2/3 p-0 space-x-4 space-y-4 "
+						className="flex flex-row flex-wrap items-center justify-center w-full p-0 space-x-4 space-y-4"
 					>
-						<SponsorCard sponsor={sponsors.redbull} />
-						<SponsorCard sponsor={sponsors.amazon} />
-						<SponsorCard sponsor={sponsors.otpp} />
-						<SponsorCard sponsor={sponsors.kingstonutilities} />
-						<SponsorCard sponsor={sponsors.ece} />
-						<SponsorCard sponsor={sponsors.queensComputing} />
-						<SponsorCard sponsor={sponsors.voiceflow} />
+						<SponsorCard sponsor={pastSponsors.assemblyAI} />
+						<SponsorCard sponsor={pastSponsors.axure} />
+						<SponsorCard sponsor={pastSponsors.bounce} />
+						<SponsorCard sponsor={pastSponsors.centered} />
+						<SponsorCard sponsor={pastSponsors.codology} />
+						<SponsorCard sponsor={pastSponsors.convictional} />
+						<SponsorCard sponsor={pastSponsors.gameloft} />
+						<SponsorCard sponsor={pastSponsors.github} />
+						<SponsorCard sponsor={pastSponsors.kingston} />
+						<SponsorCard sponsor={pastSponsors.leadingLearners} />
+						<SponsorCard sponsor={pastSponsors.mosaic} />
+						<SponsorCard sponsor={pastSponsors.pwc} />
+						<SponsorCard sponsor={pastSponsors.sleek} />
+						<SponsorCard sponsor={pastSponsors.taskade} />
+						<SponsorCard sponsor={pastSponsors.whoosh} />
+						<SponsorCard sponsor={pastSponsors.wolfram} />
+						<SponsorCard sponsor={pastSponsors.amazon} />
+						<SponsorCard sponsor={pastSponsors.redbull} />
+						<SponsorCard sponsor={pastSponsors.dominoes} />
+						<SponsorCard sponsor={pastSponsors.otpp} />
+						<SponsorCard sponsor={pastSponsors.kingstonUtilities} />
+						<SponsorCard sponsor={pastSponsors.ece} />
+						<SponsorCard sponsor={pastSponsors.queensComputing} />
+						<SponsorCard sponsor={pastSponsors.voiceflow} />
+						<SponsorCard sponsor={pastSponsors.amd} />
+						<SponsorCard sponsor={pastSponsors.bmo} />
+						<SponsorCard sponsor={pastSponsors.echo} />
+						<SponsorCard sponsor={pastSponsors.ibm} />
+						<SponsorCard sponsor={pastSponsors.kbc} />
+						<SponsorCard sponsor={pastSponsors.kenworth} />
+						<SponsorCard sponsor={pastSponsors.mapbox} />
+						<SponsorCard sponsor={pastSponsors.mars} />
+						<SponsorCard sponsor={pastSponsors.scotiabank} />
+						<SponsorCard sponsor={pastSponsors.smileCDR} />
+						<SponsorCard sponsor={pastSponsors.stanAI} />
+						<SponsorCard sponsor={pastSponsors.standOutStickers} />
+						<SponsorCard sponsor={pastSponsors.xyz} />
 					</motion.div>
 				</div>
 				<div className="flex justify-center items-center mt-4">

@@ -11,10 +11,10 @@ import { useEffect } from 'react';
 
 export default function App(props) {
   useEffect(() => {
-    fetch("https://prod.spline.design/T3ZgJ-KXLZwWHiG2/scene.splinecode")
+    fetch("https://prod.spline.design/02uq3OS0Uhmz07TK/scene.splinecode")
     .then(() => props.setShowLoadingScreen(false))
   })
   return (
-    <Spline scene="https://prod.spline.design/T3ZgJ-KXLZwWHiG2/scene.splinecode" />
+    <Spline scene="https://prod.spline.design/02uq3OS0Uhmz07TK/scene.splinecode" />
   );
 }
