@@ -40,6 +40,7 @@ export default function Home() {
 
 	return (
 		<main className="bg-gray-950 w-screen">
+		<img className="w-full absolute top-0 -z-1" src="/warmWaves.svg" alt="a graphic of some warm colred waves"/>
 			<Navbar />
 			{/* Loader */}
 			<LoadingScreen
@@ -56,6 +57,8 @@ export default function Home() {
 				alt="Major Hacking Leaguge Logo"
 			/>
 			<section className="flex items-center justify-center mt-24 lg:my-48 px-1">
+				
+				
 				<div className=" flex flex-row justify-between">
 					<div className="flex items-center">
 						<div className="flex-None flex-col items-center justify-center">

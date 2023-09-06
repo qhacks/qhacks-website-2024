@@ -49,10 +49,10 @@ export default function Navbar(){
             </nav>
 
             {/* Mobile Navbar */}
-            <nav className="justify-between p-4 bg-gray-900 text-white md:hidden">
-            <div className="flex items-center md:hidden">
+            <nav className="justify-between p-4 bg-gray-900 text-white md:hidden z-10">
+            <div className="flex items-center md:hidden z-10">
             <button
-                className="block md:hidden text-white hover:text-gray-400 focus:outline-none"
+                className="block md:hidden text-white hover:text-gray-400 focus:outline-none z-10"
                 onClick={toggleMenu}
             >
                 <svg
