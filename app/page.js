@@ -58,10 +58,7 @@ export default function Home() {
 
 
 	return (
-		<main className="bg-gray-950 w-screen">
-			<a href="#" className="fixed bottom-4 left-4">
-				Back to top
-			</a>
+		<main className="bg-gray-950 w-screen overflow-hidden">
 			<div className="absolute top-0 w-full h-64 overflow-hidden">
 				{/* <motion.div
 					className="w-full overflow-hidden border h-48"
@@ -140,8 +137,6 @@ export default function Home() {
 				alt="Major Hacking Leaguge Logo"
 			/>
 			<section className="flex items-center justify-center mt-24 lg:my-48 px-1">
-				
-				
 				<div className=" flex flex-row justify-between">
 					<div className="flex items-center">
 						<div className="flex-None flex-col items-center justify-center">
@@ -175,7 +170,7 @@ export default function Home() {
 								href="/signup"
 								className="text-white bg-green-500 px-5 py-3 m-5 z-5 rounded-xl font-bold"
 							>
-								Register Here
+								Registration opens soon!
 							</motion.a>
 						</div>
 					</div>
@@ -185,13 +180,26 @@ export default function Home() {
 				</div>
 			</section>
 
+			{/* Quick info section */}
+			<section className="m-12 flex items-center justify-center">
+				<div className="text-white font-bold">
+					<h5>Interested in partnering?</h5><p>Contact us at: </p> <a className="text-white hover:text-gray-500" href="mailto:partnerships@qhacks.io">partnerships@qhacks.io</a>
+					<a
+						href="https://qhacks.io/static/media/QHacks2023PartnershipPackage.997d0440621386f825c1.pdf"
+						className="text-white hover:text-sky-500"
+					>
+						<motion.p whileHover={{scale:1.1}} className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-600">Partnerships Package</motion.p>
+					</a>
+				</div>
+				
+			</section>
 
 
 			{/* ABOUT US */}
-			<img className="w-full -z-1" src="/grayWarm.svg" alt="a graphic of some gray waves"/>
+			<img className="w-full -z-1 transform scaleX(-1)" src="/grayWarm.svg" alt="a graphic of some gray waves"/>
 			<section
 				id="about"
-				className="bg-[#181717] h-full flex flex-row justify-between pt-2 md:pt-32 lg:pb-24 px-2 sm:px-8 pd:px-12 lg:px-12 xl:px-64 2xl:px-64"
+				className="bg-[#181717] h-full flex flex-row justify-between pt-2 lg:pb-24 px-2 sm:px-8 pd:px-12 lg:px-12 xl:px-64 2xl:px-64"
 			>
 				<div className="flex-auto flex-col flex justify-center items-center w-96">
 				<div>
@@ -338,7 +346,7 @@ export default function Home() {
 						<SponsorCard sponsor={pastSponsors.xyz} />
 					</motion.div>
 				</div>
-				<div className="flex justify-center items-center mt-4">
+				<div id="sponsor-link" className="flex justify-center items-center mt-4">
 					<div className="border-2 rounded-2xl w-96 p-4 flex flex-row">
 						<div className="text-white text-3xl font-bold">
 							<Image
@@ -349,7 +357,7 @@ export default function Home() {
 								height={122}
 							/>
 						</div>
-						<div className="flex justify-center">
+						<div  className="flex justify-center">
 							<div className="text-center">
 								<h4 className="text-white font-bold">
 									Interested in Partnering?
@@ -365,7 +373,7 @@ export default function Home() {
 									href="https://qhacks.io/static/media/QHacks2023PartnershipPackage.997d0440621386f825c1.pdf"
 									className="text-white hover:text-sky-500"
 								>
-									<p>Partnerships Package</p>
+									<motion.p whileHover={{scale:1.1}} className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-600">Partnerships Package</motion.p>
 								</a>
 							</div>
 						</div>
@@ -379,7 +387,7 @@ export default function Home() {
 			<section className="my-24 py-32 mx-2 sm:mx-8 md:mx-12 lg:mx-12 xl:mx-80 2xl:mx-96">
 				<h1 className="text-white text-3xl md:text-5xl font-bold mb-8">
 					With our{" "}
-					<span className="text-transparent text-3xl md:text-5xl bg-clip-text bg-gradient-to-r from-red-500 to-orange-600">
+					<span className="text-3xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-600">
 						Amazing Speakers
 					</span>
 				</h1>
