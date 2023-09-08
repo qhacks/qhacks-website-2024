@@ -40,7 +40,15 @@ export default function Home() {
 
 	return (
 		<main className="bg-gray-950 w-screen">
-		<img className="w-full absolute top-0 -z-1" src="/warmWaves.svg" alt="a graphic of some warm colred waves"/>
+			<motion.div
+				className="w-full overflow-hidden border h-48"
+				initial={{ x: '0%' }}
+				animate={{ x: '100%' }}
+				transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
+			>
+				<img className="w-[5000px] absolute top-0 -z-1" src="/warmWaves.svg" alt="a graphic of some warm colred waves" width={4000}/>
+			</motion.div>
+		
 			<Navbar />
 			{/* Loader */}
 			<LoadingScreen
@@ -105,12 +113,10 @@ export default function Home() {
 
 
 			{/* ABOUT US */}
-			<motion.section
-				initial={{ opacity: 0 }}
-				whileInView={{ opacity: 1 }}
-				transition={{ duration: 2 }}
+			<img className="w-full -z-1" src="/grayWarm.svg" alt="a graphic of some gray waves"/>
+			<section
 				id="about"
-				className="h-full flex flex-row justify-between pt-2 md:pt-32 lg:pb-24 mx-2 sm:mx-8 md:mx-12 lg:mx-12 xl:mx-64 2xl:mx-64"
+				className="bg-[#181717] h-full flex flex-row justify-between pt-2 md:pt-32 lg:pb-24 px-2 sm:px-8 pd:px-12 lg:px-12 xl:px-64 2xl:px-64"
 			>
 				<div className="flex-auto flex-col flex justify-center items-center w-96">
 				<div>
@@ -140,7 +146,8 @@ export default function Home() {
 						alt="QHacks Logo"
 					/>
 				</div>
-			</motion.section>
+			</section>
+			<img className="w-full -z-1 transform rotate-180" src="/grayWarm.svg" alt="a graphic of some gray waves"/>
 
 
 
