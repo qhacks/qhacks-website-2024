@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Image from 'next/image'
+import { motion } from "framer-motion";
 
 const SponsorCard = ({ sponsor }) => {
   const { name, logo, link, borderColor } = sponsor;
@@ -14,9 +15,13 @@ const SponsorCard = ({ sponsor }) => {
 
 
   return (
-    <a href={link} className={`justify-center flex h-32 p-2 ${borderColor} border-4 rounded-xl`}>
+    <motion.a 
+      href={link} 
+      className={`justify-center flex h-44 p-2 ${borderColor} border-4 rounded-xl bg-white`}
+      whileHover={{ scale: 1.1 }}
+    >
       <img src={logo} alt={`${name} logo`} className=""/>
-    </a>
+    </motion.a>
   );
 };
 

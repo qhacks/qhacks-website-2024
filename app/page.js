@@ -24,7 +24,7 @@ import Footer from '../components/Footer';
 import StatsSection from "../components/StatsSection";
 
 // JSON Data
-import pastSponsors from "../data/pastSponsors.json";
+import sponsorsJSON from "../data/sponsors.json";
 import team from "../data/team.json";
 import faq from "../data/faq.json";
 import { useEffect, useState } from "react";
@@ -58,17 +58,10 @@ export default function Home() {
 
 
 	return (
-		<main className="bg-gray-950 w-screen overflow-hidden">
-			<div className="absolute top-0 w-full h-64 overflow-hidden">
-				{/* <motion.div
-					className="w-full overflow-hidden border h-48"
-					initial={{ x: '0%' }}
-					animate={{ x: '100%' }}
-					transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-				>
-					<img className="w-[5000px] absolute top-0 -z-1" src="/warmWaves.svg" alt="a graphic of some warm colred waves" width={4000}/>
-				</motion.div> */}
-				
+		<main className="bg-gray-950 w-screen overflow-hidden">\
+
+			{/* Warm colored animate waves */}
+			<div className="absolute top-0 w-full h-64 overflow-hidden">				
 				<motion.div
 					className="absolute w-[2200px] h-full overflow-hidden top-0 "
 					initial={{ x: "0%" }} 
@@ -121,17 +114,17 @@ export default function Home() {
 				</motion.div>
 			</div>
 
+			{/* Navbar */}
 			<Navbar />
+
 			{/* Loader */}
 			<LoadingScreen
 				showLoadingScreen={showLoadingScreen}
 				className="fixed top-0 left-0 w-full h-full z-50"
 			/>
-			{/* This is the MLH Banner */}
-			<motion.img
-				initial={{ opacity: 0 }}
-				whileInView={{ opacity: 1 }}
-				transition={{ duration: 1 }}
+
+			{/* MLH Banner */}
+			<img
 				className="absolute top-0 right-2 md:right-20 w-[75px] h-[125px] lg:w-[127px] lg:h-[222px]"
 				src="/MLH.svg"
 				alt="Major Hacking Leaguge Logo"
@@ -167,7 +160,7 @@ export default function Home() {
 							<motion.a
 								whileHover={{ scale: 1.2 }}
 								whileTap={{ scale: 0.8 }}
-								href="/signup"
+								// href="/signup"
 								className="text-white bg-green-500 px-5 py-3 m-5 z-5 rounded-xl font-bold"
 							>
 								Registration opens soon!
@@ -182,6 +175,7 @@ export default function Home() {
 
 			{/* Quick info section */}
 			<section className="m-12 flex items-center justify-center">
+				
 				<div className="text-white font-bold">
 					<h5>Interested in partnering?</h5><p>Contact us at: </p> <a className="text-white hover:text-gray-500" href="mailto:partnerships@qhacks.io">partnerships@qhacks.io</a>
 					<a
@@ -190,16 +184,16 @@ export default function Home() {
 					>
 						<motion.p whileHover={{scale:1.1}} className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-600">Partnerships Package</motion.p>
 					</a>
+					<p className="text-white font-bold">Were currently recruiting for first year reps by sept 22nd</p>
 				</div>
-				
 			</section>
 
 
 			{/* ABOUT US */}
-			<img className="w-full -z-1 transform scaleX(-1)" src="/grayWarm.svg" alt="a graphic of some gray waves"/>
+			<img className="w-full -z-1 transform scaleX(-1) overflow-hidden" src="/grayWaves.svg" alt="a graphic of some gray waves"/>
 			<section
 				id="about"
-				className="bg-[#181717] h-full flex flex-row justify-between pt-2 lg:pb-24 px-2 sm:px-8 pd:px-12 lg:px-12 xl:px-64 2xl:px-64"
+				className="overflow-hidden bg-[#181717] h-full flex flex-row justify-between pt-2 lg:pb-24 px-2 sm:px-8 pd:px-12 lg:px-12 xl:px-64 2xl:px-64"
 			>
 				<div className="flex-auto flex-col flex justify-center items-center w-96">
 				<div>
@@ -230,7 +224,7 @@ export default function Home() {
 					/>
 				</div>
 			</section>
-			<img className="w-full -z-1 transform rotate-180" src="/grayWarm.svg" alt="a graphic of some gray waves"/>
+			<img className="w-full -z-1 transform rotate-180 overflow-hidden" src="/grayWaves.svg" alt="a graphic of some gray waves"/>
 
 
 
@@ -298,53 +292,65 @@ export default function Home() {
 				<h1 className="text-white text-center text-3xl md:text-5xl font-bold mb-4">
 					Thanks To{" "}
 					<span className="text-transparent text-3xl md:text-5xl bg-clip-text bg-gradient-to-r from-red-500 to-orange-600">
+						Our Current Sponsors.
+					</span>
+				</h1>
+				<div className="flex justify-center pb-16">
+					<div
+						className="flex flex-row flex-wrap items-center justify-center w-full space-x-4 space-y-4"
+					>
+						<SponsorCard sponsor={sponsorsJSON.nationalBank} />
+						<SponsorCard sponsor={sponsorsJSON.manulife} />
+						<SponsorCard sponsor={sponsorsJSON.kenworth} />
+						<SponsorCard sponsor={sponsorsJSON.kingston} />
+						<SponsorCard sponsor={sponsorsJSON.otpp} />
+						<SponsorCard sponsor={sponsorsJSON.queensComputing} />
+						<SponsorCard sponsor={sponsorsJSON.ece} />
+
+					</div>
+				</div>
+				<h1 className="text-white text-center text-3xl md:text-5xl font-bold mb-4">
+					Thanks To{" "}
+					<span className="text-transparent text-3xl md:text-5xl bg-clip-text bg-gradient-to-r from-red-500 to-orange-600">
 						Our Past Sponsors.
 					</span>
 				</h1>
 				<div className="flex justify-center">
-					<motion.div
-						initial={{ opacity: 0 }}
-						whileInView={{ opacity: 1 }}
+					<div
 						className="flex flex-row flex-wrap items-center justify-center w-full p-0 space-x-4 space-y-4"
 					>
-						<SponsorCard sponsor={pastSponsors.assemblyAI} />
-						<SponsorCard sponsor={pastSponsors.axure} />
-						<SponsorCard sponsor={pastSponsors.bounce} />
-						<SponsorCard sponsor={pastSponsors.centered} />
-						<SponsorCard sponsor={pastSponsors.codology} />
-						<SponsorCard sponsor={pastSponsors.convictional} />
-						<SponsorCard sponsor={pastSponsors.gameloft} />
-						<SponsorCard sponsor={pastSponsors.github} />
-						<SponsorCard sponsor={pastSponsors.kingston} />
-						<SponsorCard sponsor={pastSponsors.leadingLearners} />
-						<SponsorCard sponsor={pastSponsors.mosaic} />
-						<SponsorCard sponsor={pastSponsors.pwc} />
-						<SponsorCard sponsor={pastSponsors.sleek} />
-						<SponsorCard sponsor={pastSponsors.taskade} />
-						<SponsorCard sponsor={pastSponsors.whoosh} />
-						<SponsorCard sponsor={pastSponsors.wolfram} />
-						<SponsorCard sponsor={pastSponsors.amazon} />
-						<SponsorCard sponsor={pastSponsors.redbull} />
-						<SponsorCard sponsor={pastSponsors.dominoes} />
-						<SponsorCard sponsor={pastSponsors.otpp} />
-						<SponsorCard sponsor={pastSponsors.kingstonUtilities} />
-						<SponsorCard sponsor={pastSponsors.ece} />
-						<SponsorCard sponsor={pastSponsors.queensComputing} />
-						<SponsorCard sponsor={pastSponsors.voiceflow} />
-						<SponsorCard sponsor={pastSponsors.amd} />
-						<SponsorCard sponsor={pastSponsors.bmo} />
-						<SponsorCard sponsor={pastSponsors.echo} />
-						<SponsorCard sponsor={pastSponsors.ibm} />
-						<SponsorCard sponsor={pastSponsors.kbc} />
-						<SponsorCard sponsor={pastSponsors.kenworth} />
-						<SponsorCard sponsor={pastSponsors.mapbox} />
-						<SponsorCard sponsor={pastSponsors.mars} />
-						<SponsorCard sponsor={pastSponsors.scotiabank} />
-						<SponsorCard sponsor={pastSponsors.smileCDR} />
-						<SponsorCard sponsor={pastSponsors.stanAI} />
-						<SponsorCard sponsor={pastSponsors.standOutStickers} />
-						<SponsorCard sponsor={pastSponsors.xyz} />
-					</motion.div>
+						<SponsorCard sponsor={sponsorsJSON.assemblyAI} />
+						{/* <SponsorCard sponsor={sponsorsJSON.axure} /> */}
+						<SponsorCard sponsor={sponsorsJSON.bounce} />
+						{/* <SponsorCard sponsor={sponsorsJSON.codology} /> */}
+						<SponsorCard sponsor={sponsorsJSON.convictional} />
+						<SponsorCard sponsor={sponsorsJSON.gameloft} />
+						<SponsorCard sponsor={sponsorsJSON.github} />
+						{/* <SponsorCard sponsor={sponsorsJSON.leadingLearners} /> */}
+						<SponsorCard sponsor={sponsorsJSON.mosaic} />
+						<SponsorCard sponsor={sponsorsJSON.pwc} />
+						{/* <SponsorCard sponsor={sponsorsJSON.sleek} /> */}
+						{/* <SponsorCard sponsor={sponsorsJSON.taskade} /> */}
+						<SponsorCard sponsor={sponsorsJSON.whoosh} />
+						{/* <SponsorCard sponsor={sponsorsJSON.wolfram} /> */}
+						<SponsorCard sponsor={sponsorsJSON.amazon} />
+						<SponsorCard sponsor={sponsorsJSON.redbull} />
+						{/* <SponsorCard sponsor={sponsorsJSON.dominoes} /> */}
+						<SponsorCard sponsor={sponsorsJSON.kingstonUtilities} />
+						<SponsorCard sponsor={sponsorsJSON.voiceflow} />
+						<SponsorCard sponsor={sponsorsJSON.amd} />
+						<SponsorCard sponsor={sponsorsJSON.bmo} />
+						{/* <SponsorCard sponsor={sponsorsJSON.echo} /> */}
+						<SponsorCard sponsor={sponsorsJSON.ibm} />
+						{/* <SponsorCard sponsor={sponsorsJSON.kbc} /> */}
+						<SponsorCard sponsor={sponsorsJSON.mapbox} />
+						<SponsorCard sponsor={sponsorsJSON.mars} />
+						<SponsorCard sponsor={sponsorsJSON.scotiabank} />
+						{/* <SponsorCard sponsor={sponsorsJSON.smileCDR} /> */}
+						<SponsorCard sponsor={sponsorsJSON.stanAI} />
+						<SponsorCard sponsor={sponsorsJSON.standOutStickers} />
+						{/* <SponsorCard sponsor={sponsorsJSON.xyz} /> */}
+					</div>
 				</div>
 				<div id="sponsor-link" className="flex justify-center items-center mt-4">
 					<div className="border-2 rounded-2xl w-96 p-4 flex flex-row">
