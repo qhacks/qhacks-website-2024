@@ -357,6 +357,7 @@ export default function Home() {
 									Send us a message!
 								</h3>
 								<form className="flex flex-col justify-center items-center" data-netlify="true" name="contact" method="POST">
+									<input type="hidden" name="form-name" value="contact" />
 									<input
 										placeholder="Name"
 										className="text-white placeholder:text-gray-500 pl-[14px] focus:outline-none border border-gray-500 w-80 mx-4 my-1 h-12 rounded-md bg-slate-800"
