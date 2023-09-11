@@ -1,32 +1,7 @@
-import { Inter } from 'next/font/google';
-import { useState, useEffect } from 'react';
-import { motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 import ScrollIntoView from 'react-scroll-into-view';
 
 export default function DesktopNav(){
- 
-    // Scroll Detection
-    const [scrolling, setScrolling] = useState(false);
-    const controls = useAnimation();
-
-    useEffect(() => {
-        const handleScroll = () => {
-        if (window.scrollY > 0 && !scrolling) {
-            setScrolling(true);
-            controls.start({ y: -100, opacity: 0 });
-        } else if (window.scrollY === 0 && scrolling) {
-            setScrolling(false);
-            controls.start({ y: 0, opacity: 1 });
-        }
-        };
-
-        window.addEventListener('scroll', handleScroll);
-
-        return () => {
-        window.removeEventListener('scroll', handleScroll);
-        };
-    }, [scrolling, controls]);
-    
     return(
         <nav className='fixed w-full h-auto'>
             <div className="flex flex-row justify-center items-center mt-10">

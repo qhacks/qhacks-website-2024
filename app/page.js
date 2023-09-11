@@ -52,7 +52,7 @@ export default function Home() {
 				src="/MLH.svg"
 				alt="Major Hacking Leaguge Logo"
 			/>
-			<section className=" flex items-center justify-center mt-40 lg:mt-80 mb-32 px-1">
+			<section className=" flex items-center justify-center h-screen px-1">
 				<div className=" flex flex-row justify-between">
 					<div className="flex items-center text-center lg:text-left">
 						<div className="flex-None flex-col items-center justify-center">
