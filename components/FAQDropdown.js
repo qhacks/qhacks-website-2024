@@ -27,7 +27,7 @@ const FAQDropdown = ({ faq }) => {
             <AnimatePresence>
                 {isOpen && (
                     <motion.div 
-                        className="mt-4 pt-2 pb-8 px-4 text-xl flex-1"
+                        className="mt-4 pt-2 pb-8 px-4 text-white text-xl flex-1"
                         initial={{ 
                                 opacity: 0,
                                 y: -40,
@@ -41,7 +41,7 @@ const FAQDropdown = ({ faq }) => {
                                 opacity: 0,
                                 y: -40, 
                             }}
-                    >{answer}</motion.div>
+                    >Hello world {answer}</motion.div>
                 )}
             </AnimatePresence>
             
