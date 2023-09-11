@@ -8,17 +8,18 @@ import '../css/TeamBubble.css'
 
 const TeamBubble = ({ teamMember }) => {
     const { name, role, image, linkedin, github, instagram, color } = teamMember;
-
+    console.log(image);
     return (
         <div className={`team-bubble bubble-${color}`}>
                 <div className='team-bubble-img-container'>
-                    <Image 
+                    {/* <Image 
                         id="team_image"
                         height={500} 
                         width={500} 
                         src={image} 
-                        className='rounded-full w-28 h-28 team-bubble-img'
-                    />
+                        className=''
+                    /> */}
+                    <img id='team_image' src={image} className="rounded-full w-28 h-28 team-bubble-img"/>
                 </div>
 
                 <div className={`team-bubble-back`}>

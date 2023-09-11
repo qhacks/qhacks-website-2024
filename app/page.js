@@ -367,36 +367,37 @@ export default function Home() {
 			{/* Team Section */}
 			<section className=" my-32 mx-2 md:mx-48">
 				<div className="flex flex-row flex-wrap justify-center">
-					<TeamBubble teamMember={team.EricMedina} />
+					{/* <TeamBubble teamMember={team.EricMedina} /> */}
 					<TeamBubble teamMember={team.DominiqueMercier} />
 					{/* <TeamBubble teamMember={team.JeremySelwin}/> */}
-					<TeamBubble teamMember={team.MonicaStef} />
-					<TeamBubble teamMember={team.EthanWang} />
+					{/* <TeamBubble teamMember={team.MonicaStef} /> */}
+					{/* <TeamBubble teamMember={team.EthanWang} /> */}
 					{/* <TeamBubble teamMember={team.LacshmiGaneshananda}/> */}
 					{/* <TeamBubble teamMember={team.EricaFry}/> */}
 					{/* <TeamBubble teamMember={team.MichaelaLi}/> */}
 					{/* <TeamBubble teamMember={team.MayaGoodman}/> */}
 					{/* <TeamBubble teamMember={team.NicholasLykopoulos}/> */}
-					<TeamBubble teamMember={team.LeejaeKim} />
+					{/* <TeamBubble teamMember={team.LeejaeKim} /> */}
 					{/* <TeamBubble teamMember={team.EthanChin}/> */}
-					<TeamBubble teamMember={team.JoashMathew} />
-					<TeamBubble teamMember={team.SchuylerGood} />
+					{/* <TeamBubble teamMember={team.JoashMathew} /> */}
+					{/* <TeamBubble teamMember={team.SchuylerGood} /> */}
 					{/* <TeamBubble teamMember={team.StefanPitigoi}/> */}
 					{/* <TeamBubble teamMember={team.JacobTepperman}/> */}
 					{/* <TeamBubble teamMember={team.AkshayDesale}/> */}
-					<TeamBubble teamMember={team.CalvinZheng} />
+					{/* <TeamBubble teamMember={team.CalvinZheng} /> */}
 					{/* <TeamBubble teamMember={team.EricLam}/> */}
 					{/* <TeamBubble teamMember={team.MatangyKanesamoorthy}/> */}
 					{/* <TeamBubble teamMember={team.AdamRaco}/> */}
 					{/* <TeamBubble teamMember={team.OliviaStewart}/> */}
 					{/* <TeamBubble teamMember={team.NoahSerhan}/> */}
 					{/* <TeamBubble teamMember={team.AdiGroumoutis}/> */}
-					<TeamBubble teamMember={team.IlyasErdogan} />
-					<TeamBubble teamMember={team.AlexanderZhao} />
-					<TeamBubble teamMember={team.AndrewTerry} />
+					{/* <TeamBubble teamMember={team.IlyasErdogan} /> */}
+					{/* <TeamBubble teamMember={team.AlexanderZhao} /> */}
+					{/* <TeamBubble teamMember={team.AndrewTerry} /> */}
 					{/* <TeamBubble teamMember={team.MichaelKwon}/> */}
 				</div>
 			</section>
+			<img src="/dominique_mercier.svg" alt="a graphic of some gray waves" className="w-full transform scaleX(-1)"/>
 			<Footer />
 		</main>
 	);
