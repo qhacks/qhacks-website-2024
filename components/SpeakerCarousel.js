@@ -25,19 +25,19 @@ const SpeakerCarousel = () => {
           {
             numofspeakers1.map((num, index) => {
               return (
-                <div key={index} className=' mb-8  h-[410px] flex justify-center text-center text-white'>
-                  <div className='flex justify-between'>
-                    <div className="w-{375} mx-4">
+                <div key={index} className='h-[410px] flex justify-center text-center text-white'>
+                  <div className='flex justify-between gap-8'>
+                    <div className="w-{375}">
                       <img src={speakers[num].image} alt={`${speakers[num].name}`}/>
                       <h2 className='text-white font-bold text-2xl'>{speakers[num].name}</h2>
                       <h5 className='text-white'>{speakers[num].title}</h5>
                     </div>
-                    <div className="w-{375} mx-4">
+                    <div className="w-{375}">
                       <img src={speakers[num+1].image} alt={`${speakers[num+1].name}`}/>
                       <h2 className='text-white font-bold text-2xl'>{speakers[num+1].name}</h2>
                       <h5 className='text-white'>{speakers[num+1].title}</h5>
                     </div>
-                    <div className="w-{375} mx-4">
+                    <div className="w-{375}">
                       <img src={speakers[num+2].image} alt={`${speakers[num+2].name}`}/>
                       <h2 className='text-white font-bold text-2xl'>{speakers[num+2].name}</h2>
                       <h5 className='text-white'>{speakers[num+2].title}</h5>

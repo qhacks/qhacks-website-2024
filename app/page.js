@@ -201,7 +201,7 @@ export default function Home() {
 			</section>
 
 			{/* Speaker Section */}
-			<section className="my-24 py-32 mx-2 sm:mx-8 md:mx-12 lg:mx-12 xl:mx-80 2xl:mx-96">
+			<section className="mt-12 pt-16 mb-8 mx-2 sm:mx-8 md:mx-12 lg:mx-12 xl:mx-80 2xl:mx-96">
 				<h1 className="text-white text-3xl md:text-5xl font-bold mb-8">
 					Some of Our{" "}
 					<span className="text-3xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-600">
@@ -214,13 +214,13 @@ export default function Home() {
 
 			{/* Testimonials Section */}
 			<section className="mx-2 sm:mx-8 md:mx-12 lg:mx-12 xl:mx-80 2xl:mx-96">
-					<TestimonialsCarousel />
-				</section>
+				<TestimonialsCarousel />
+			</section>
 
 			{/* Sponsors Section */}
 			<section
 				id="sponsors"
-				className="relative pt-32 mx-2 sm:mx-8 md:mx-12 lg:mx-12 xl:mx-64 2xl:mx-80 my-24"
+				className="relative pt-16 mx-2 sm:mx-8 md:mx-12 lg:mx-12 xl:mx-64 2xl:mx-80 my-24"
 			>
 				<h1 className="text-white text-center text-3xl md:text-5xl font-bold mb-4">
 					Thanks To Our{" "}
