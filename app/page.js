@@ -332,22 +332,26 @@ export default function Home() {
 								<h3 className="text-white font-bold text-center text-2xl pb-6">
 									Send us a message!
 								</h3>
-								<form className="flex flex-col justify-center items-center">
+								<form className="flex flex-col justify-center items-center" data-netlify="true" name="contact" method="POST">
+									<input type="hidden" name="form-name" value="contact" />
 									<input
 										placeholder="Name"
-										className="text-white placeholder:text-gray-500 pl-[14px] focus:outline-none border border-gray-500 w-64 md:w-80 mx-4 my-1 h-12 rounded-md bg-slate-800"
+										className="text-white placeholder:text-gray-500 pl-[14px] focus:outline-none border border-gray-500 w-80 mx-4 my-1 h-12 rounded-md bg-slate-800"
+										name="name"
 									></input>
 									<input
 										placeholder="Email"
-										className="text-white placeholder:text-gray-500 pl-[14px] focus:outline-none border border-gray-500 w-64 md:w-80 mx-4 my-1 h-12 rounded-md bg-slate-800"
+										className="text-white placeholder:text-gray-500 pl-[14px] focus:outline-none border border-gray-500 w-80 mx-4 my-1 h-12 rounded-md bg-slate-800"
+										name="email"
 									></input>
 									<textarea
 										rows="4"
 										placeholder="Message"
 										className="text-white placeholder:text-gray-500 pl-[14px] focus:outline-none border border-gray-500 w-64 md:w-80 mx-4 my-1 h-12 rounded-md bg-slate-800"
+										name="message"
 									></textarea>
 									<div className="flex justify-center py-6">
-										<button className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 mx-4 my-1 w-24 rounded">
+										<button className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 mx-4 my-1 w-24 rounded" type="submit">
 											Submit
 										</button>
 									</div>
