@@ -17,7 +17,7 @@ const SponsorCard = ({ sponsor }) => {
   return (
     <motion.a 
       href={link} 
-      className={`justify-center flex h-20 xs:h-44 ${borderColor} xs:m-2 m-1 border-4 rounded-xl bg-white`}
+      className={`justify-center flex h-20 xs:h-44 w-32 xs:w-[264px] ${borderColor} xs:m-2 m-1 border-4 rounded-xl bg-white`}
       whileHover={{ scale: 1.1 }}
     >
       <img src={logo} alt={`${name} logo`} className="rounded-xl"/>

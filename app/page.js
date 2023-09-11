@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 // Styling and Tailwind Components
 import "tailwindcss/tailwind.css";
 import Image from "next/image";
+import '../css/background.css';
+import '../css/ScrollBar.css';
 
 // Custom Components
 import SpeakerCarousel from '../components/SpeakerCarousel';
@@ -34,6 +36,12 @@ import { useEffect, useState } from 'react';
 import LoadingScreen from "../components/LoadingScreen";
 
 
+
+// DIFFERENT CUSTOM BACKGROUNDS FROM background.css
+//
+// bg-dots: puts a series of dots onto the background
+// bg-topogrophy: displays an image of topogrophy on the background
+
 export default function Home() {
 	const [showLoadingScreen, setShowLoadingScreen] = useState(true);
 
@@ -52,31 +60,25 @@ export default function Home() {
 				src="/MLH.svg"
 				alt="Major Hacking Leaguge Logo"
 			/>
-			<section className=" flex items-center justify-center h-screen px-1">
+			<section className=" flex items-center justify-center px-1 w-full h-screen bg-topogrophy">
+
+				{/* Add this for a cool feature down below: " p-40 bg-gray-950 rounded-[50px] bg-opacity-80" */}
 				<div className=" flex flex-row justify-between">
 					<div className="flex items-center text-center lg:text-left">
 						<div className="flex-None flex-col items-center justify-center">
 							<motion.h1 
-								className="text-white m-5 text-[70px] lg:text-[100px] font-bold font-Yaro "
-								initial={{ opacity: 0 }}
-								whileInView={{ opacity: 1 }}
+								className="text-white m-5 text-[70px] lg:text-[100px] font-bold font-Yaro"
 							>
 								QHACKS
 							</motion.h1>
 							<motion.p 
-								className="text-white m-5 text-center lg:text-left text-[20px] leading-[1.4rem] lg:leading-auto lg:text-[24px] lg:w-96 p-2" 
-								initial={{ opacity: 0 }}
-								whileInView={{ opacity: 1 }}
-								transition={{ duration: 2 }}
+								className="text-white m-5 text-center lg:text-left text-[20px] leading-[1.4rem] lg:leading-auto lg:text-[24px] lg:w-96 p-2"  
 							>
 								Get ready to innovate and make a difference!
 								Join QHacks, the ultimate hackathon experience.
 							</motion.p>
 							<motion.p 
 								className="m-5 text-center lg:text-left text-lg  lg:text-2xl  bg-clip-text font-extrabold text-transparent  bg-gradient-to-r from-red-500 to-orange-600"
-								initial={{ opacity: 0 }}
-								whileInView={{ opacity: 1 }}
-								transition={{ duration: 2 }}
 							>
 								In-person! • February 2nd - 4th
 							</motion.p>
@@ -305,14 +307,12 @@ export default function Home() {
 									<FAQAccordion faq={faq.faq2} />
 									<FAQAccordion faq={faq.faq3} />
 									<FAQAccordion faq={faq.faq4} />
-									<FAQAccordion faq={faq.faq5} />
 								</div>
 								<div className="lg:w-1/2 p-4">
-									<FAQAccordion faq={faq.faq1} />
-									<FAQAccordion faq={faq.faq2} />
-									<FAQAccordion faq={faq.faq3} />
-									<FAQAccordion faq={faq.faq4} />
 									<FAQAccordion faq={faq.faq5} />
+									<FAQAccordion faq={faq.faq6} />
+									<FAQAccordion faq={faq.faq7} />
+									<FAQAccordion faq={faq.faq8} />
 								</div>
 							</div>
 						</div>
@@ -367,37 +367,36 @@ export default function Home() {
 			{/* Team Section */}
 			<section className=" my-32 mx-2 md:mx-48">
 				<div className="flex flex-row flex-wrap justify-center">
-					{/* <TeamBubble teamMember={team.EricMedina} /> */}
+					<TeamBubble teamMember={team.EricMedina} />
 					<TeamBubble teamMember={team.DominiqueMercier} />
-					{/* <TeamBubble teamMember={team.JeremySelwin}/> */}
-					{/* <TeamBubble teamMember={team.MonicaStef} /> */}
-					{/* <TeamBubble teamMember={team.EthanWang} /> */}
-					{/* <TeamBubble teamMember={team.LacshmiGaneshananda}/> */}
-					{/* <TeamBubble teamMember={team.EricaFry}/> */}
-					{/* <TeamBubble teamMember={team.MichaelaLi}/> */}
-					{/* <TeamBubble teamMember={team.MayaGoodman}/> */}
-					{/* <TeamBubble teamMember={team.NicholasLykopoulos}/> */}
-					{/* <TeamBubble teamMember={team.LeejaeKim} /> */}
-					{/* <TeamBubble teamMember={team.EthanChin}/> */}
-					{/* <TeamBubble teamMember={team.JoashMathew} /> */}
-					{/* <TeamBubble teamMember={team.SchuylerGood} /> */}
-					{/* <TeamBubble teamMember={team.StefanPitigoi}/> */}
-					{/* <TeamBubble teamMember={team.JacobTepperman}/> */}
-					{/* <TeamBubble teamMember={team.AkshayDesale}/> */}
-					{/* <TeamBubble teamMember={team.CalvinZheng} /> */}
-					{/* <TeamBubble teamMember={team.EricLam}/> */}
-					{/* <TeamBubble teamMember={team.MatangyKanesamoorthy}/> */}
-					{/* <TeamBubble teamMember={team.AdamRaco}/> */}
-					{/* <TeamBubble teamMember={team.OliviaStewart}/> */}
-					{/* <TeamBubble teamMember={team.NoahSerhan}/> */}
-					{/* <TeamBubble teamMember={team.AdiGroumoutis}/> */}
-					{/* <TeamBubble teamMember={team.IlyasErdogan} /> */}
-					{/* <TeamBubble teamMember={team.AlexanderZhao} /> */}
-					{/* <TeamBubble teamMember={team.AndrewTerry} /> */}
-					{/* <TeamBubble teamMember={team.MichaelKwon}/> */}
+					<TeamBubble teamMember={team.JeremySelwin}/>
+					<TeamBubble teamMember={team.MonicaStef} />
+					<TeamBubble teamMember={team.EthanWang} />
+					<TeamBubble teamMember={team.LacshmiGaneshananda}/>
+					<TeamBubble teamMember={team.EricaFry}/>
+					<TeamBubble teamMember={team.MichaelaLi}/>
+					<TeamBubble teamMember={team.MayaGoodman}/>
+					<TeamBubble teamMember={team.NicholasLykopoulos}/>
+					<TeamBubble teamMember={team.LeejaeKim} />
+					<TeamBubble teamMember={team.EthanChin}/>
+					<TeamBubble teamMember={team.JoashMathew} />
+					<TeamBubble teamMember={team.SchuylerGood} />
+					<TeamBubble teamMember={team.StefanPitigoi}/>
+					<TeamBubble teamMember={team.JacobTepperman}/>
+					<TeamBubble teamMember={team.AkshayDesale}/>
+					<TeamBubble teamMember={team.CalvinZheng} />
+					<TeamBubble teamMember={team.EricLam}/>
+					<TeamBubble teamMember={team.MatangyKanesamoorthy}/>
+					<TeamBubble teamMember={team.AdamRaco}/>
+					<TeamBubble teamMember={team.OliviaStewart}/>
+					<TeamBubble teamMember={team.NoahSerhan}/>
+					<TeamBubble teamMember={team.AdiGroumoutis}/>
+					<TeamBubble teamMember={team.IlyasErdogan} />
+					<TeamBubble teamMember={team.AlexanderZhao} />
+					<TeamBubble teamMember={team.AndrewTerry} />
+					<TeamBubble teamMember={team.MichaelKwon}/>
 				</div>
 			</section>
-			<img src="/dominique_mercier.svg" alt="a graphic of some gray waves" className="w-full transform scaleX(-1)"/>
 			<Footer />
 		</main>
 	);

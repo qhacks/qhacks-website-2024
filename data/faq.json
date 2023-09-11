@@ -18,5 +18,17 @@
     "faq5": {
         "question": "What if I don't have a team?",
         "answer": "No problem! We will have team formation events before the hackathon, and you can also find teammates on our Discord server."
+    },
+    "faq6":{
+        "question":"When do hacker applications come out?",
+        "answer":"Hacker applications will be released late October. Follow us on social media to stay updated!"
+    },
+    "faq7":{
+        "question":"What is this years hackathon theme?",
+        "answer":"This years hackathon theme will be anounced closer to the ."
+    },
+    "faq8":{
+        "question":"How many people can I have on a team?",
+        "answer":"Teams can be formed with groups of 1-4 people."
     }
 }

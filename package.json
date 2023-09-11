@@ -41,6 +41,7 @@
     "tw-elements": "^1.0.0-beta2"
   },
   "devDependencies": {
+    "@svgr/webpack": "^8.1.0",
     "@tailwindcss/forms": "^0.5.4"
   }
 }
