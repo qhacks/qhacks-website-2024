@@ -60,19 +60,19 @@ export default function Home() {
 				src="/MLH.svg"
 				alt="Major Hacking Leaguge Logo"
 			/>
-			<section className=" flex items-center justify-center px-1 w-full h-screen bg-topogrophy">
+			<section className=" flex items-center justify-center px-1 w-full h-screen bg-topogrophy-dark">
 
 				{/* Add this for a cool feature down below: " p-40 bg-gray-950 rounded-[50px] bg-opacity-80" */}
 				<div className=" flex flex-row justify-between">
 					<div className="flex items-center text-center lg:text-left">
 						<div className="flex-None flex-col items-center justify-center">
 							<motion.h1 
-								className="text-white m-5 text-[70px] lg:text-[100px] font-bold font-Yaro"
+								className="text-white mx-5 text-[70px] lg:text-[100px] font-bold font-Yaro"
 							>
 								QHACKS
 							</motion.h1>
 							<motion.p 
-								className="text-white m-5 text-center lg:text-left text-[20px] leading-[1.4rem] lg:leading-auto lg:text-[24px] lg:w-96 p-2"  
+								className="text-white mx-5 text-center lg:text-left text-[20px] lg:text-[24px] lg:w-96 p-2"  
 							>
 								Get ready to innovate and make a difference!
 								Join QHacks, the ultimate hackathon experience.

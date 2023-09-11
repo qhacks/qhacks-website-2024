@@ -6,6 +6,14 @@
 
 }
 
+.bg-topogrophy-dark {
+    background-image: url('../public/TopographyDark.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 1;
+
+}
+
 .bg-dots {
     background-image: url('../public/dotsBackground.svg');
     background-repeat: repeat;

@@ -17,7 +17,7 @@ export default function FirstYearCard() {
             <div  className="2xl:px-3 flex justify-center">
                 <div className="text-center p-4">
                     <h4 className="text-white 2xl:text-2xl font-bold">
-                        Were currently recruiting for first year reps by sept 22nd
+                        We're currently recruiting for first year reps by sept 22nd
                     </h4>
                     <a
                         href="https://docs.google.com/forms/d/e/1FAIpQLSeFeu7YHRbxE5tzoKgG6KtCCpqJMrji00e430VOLTaFVKUWVg/viewform"
