@@ -6,21 +6,21 @@ import { motion } from "framer-motion";
 const SponsorCard = ({ sponsor }) => {
   const { name, logo, link, borderColor } = sponsor;
   if (borderColor == 'border-indigo-600') {
-    let color = 'border-indigo-600';
+    let color1 = 'border-indigo-600';
   } else if (borderColor == 'border-red-600') {
-    let color = 'border-red-600';
+    let color2 = 'border-red-600';
   } else if (borderColor == 'border-yellow-600') {
-    let color = 'border-yellow-600';
+    let color3 = 'border-yellow-600';
   }
 
 
   return (
     <motion.a 
       href={link} 
-      className={`justify-center flex h-44 p-2 ${borderColor} border-4 rounded-xl bg-white`}
+      className={`justify-center flex h-20 xs:h-44 ${borderColor} xs:m-2 m-1 border-4 rounded-xl bg-white`}
       whileHover={{ scale: 1.1 }}
     >
-      <img src={logo} alt={`${name} logo`} className=""/>
+      <img src={logo} alt={`${name} logo`} className="rounded-xl"/>
     </motion.a>
   );
 };

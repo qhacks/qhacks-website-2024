@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 // Styling and Tailwind Components
 import "tailwindcss/tailwind.css";
 import Image from "next/image";
-import { Inter } from 'next/font/google';
 
 // Custom Components
 import SpeakerCarousel from '../components/SpeakerCarousel';
@@ -19,6 +18,10 @@ import SponsorCard from "../components/SponsorCard";
 
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import WarmWaves from '../components/WarmWaves';
+import PartneringCard from "../components/PartneringCard";
+import FirstYearCard from "../components/FirstYearCard";
+import FAQAccordion from "../components/FAQAccordion";
 
 // Sections
 import StatsSection from "../components/StatsSection";
@@ -27,97 +30,17 @@ import StatsSection from "../components/StatsSection";
 import sponsorsJSON from "../data/sponsors.json";
 import team from "../data/team.json";
 import faq from "../data/faq.json";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import LoadingScreen from "../components/LoadingScreen";
 
-const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
 	const [showLoadingScreen, setShowLoadingScreen] = useState(true);
 
-	const [windowWidth, setWindowWidth] = useState(0);
-	useEffect(() => {
-		// Function to update window width
-		const updateWindowWidth = () => {
-		setWindowWidth(window.innerWidth);
-		};
-
-		// Initial update
-		updateWindowWidth();
-
-		// Add a resize event listener to update width when the window is resized
-		window.addEventListener("resize", updateWindowWidth);
-
-		// Clean up the event listener when the component unmounts
-		return () => {
-		window.removeEventListener("resize", updateWindowWidth);
-		};
-	}, []);
-
-	console.log(windowWidth);
-
-
 	return (
-		<main className="bg-gray-950 w-screen overflow-hidden">\
-
-			{/* Warm colored animate waves */}
-			<div className="absolute top-0 w-full h-64 overflow-hidden">				
-				<motion.div
-					className="absolute w-[2200px] h-full overflow-hidden top-0 "
-					initial={{ x: "0%" }} 
-					animate={{ x: "-18%" }} 
-					exit={{ x: "18%" }} 
-					transition={{ duration: 14, repeat: Infinity, ease: "easeOut", repeatType: "reverse"  }} // Animation duration and easing
-
-				>
-					<img className="w-full absolute top-0 rotate-180 transform" src="/wave1.svg" alt=""></img>
-				</motion.div>
-				<motion.div
-					className="absolute w-[2200px] h-full overflow-hidden top-0"
-					initial={{ x: "0%" }} 
-					animate={{ x: "-18%" }} 
-					exit={{ x: "18%" }} 
-					transition={{ duration: 16, repeat: Infinity, ease: "easeOut", repeatType: "reverse"  }} // Animation duration and easing
-
-				>
-					<img className="w-full absolute top-0 rotate-180 transform" src="/wave2.svg" alt=""></img>
-				</motion.div>
-				<motion.div
-					className="absolute w-[2200px] h-full overflow-hidden top-0"
-					initial={{ x: "0%" }} 
-					animate={{ x: "18%" }} 
-					exit={{ x: "-18%" }} 
-					transition={{ duration: 13, repeat: Infinity, ease: "easeOut", repeatType: "reverse"  }} // Animation duration and easing
-
-				>
-					<img className="w-full absolute top-0 rotate-180 transform" src="/wave3.svg" alt=""></img>
-				</motion.div>
-				<motion.div
-					className="absolute w-[2200px] h-full overflow-hidden top-0"
-					initial={{ x: "0%" }} 
-					animate={{ x: "-18%" }} 
-					exit={{ x: "18%" }} 
-					transition={{ duration: 17, repeat: Infinity, ease: "easeOut", repeatType: "reverse"  }} // Animation duration and easing
-
-				>
-					<img className="w-full absolute top-0 rotate-180 transform" src="/wave4.svg" alt=""></img>
-				</motion.div>
-				<motion.div
-					className="absolute w-[2200px] h-full overflow-hidden top-0"
-					initial={{ x: "0%" }} 
-					animate={{ x: "18%" }} 
-					exit={{ x: "-18%" }} 
-					transition={{ duration: 18, repeat: Infinity, ease: "easeOut", repeatType: "reverse"  }} // Animation duration and easing
-
-				>
-					<img className="w-full absolute top-0 rotate-180 transform" src="/wave5.svg" alt=""></img>
-				</motion.div>
-			</div>
-
-			{/* Navbar */}
+		<main className="bg-gray-950 w-screen overflow-hidden">
 			<Navbar />
-
-			{/* Loader */}
+			<WarmWaves />
 			<LoadingScreen
 				showLoadingScreen={showLoadingScreen}
 				className="fixed top-0 left-0 w-full h-full z-50"
@@ -174,17 +97,10 @@ export default function Home() {
 			</section>
 
 			{/* Quick info section */}
-			<section className="m-12 flex items-center justify-center">
-				
-				<div className="text-white font-bold">
-					<h5>Interested in partnering?</h5><p>Contact us at: </p> <a className="text-white hover:text-gray-500" href="mailto:partnerships@qhacks.io">partnerships@qhacks.io</a>
-					<a
-						href="https://qhacks.io/static/media/QHacks2023PartnershipPackage.997d0440621386f825c1.pdf"
-						className="text-white hover:text-sky-500"
-					>
-						<motion.p whileHover={{scale:1.1}} className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-600">Partnerships Package</motion.p>
-					</a>
-					<p className="text-white font-bold">Were currently recruiting for first year reps by sept 22nd</p>
+			<section className="my-20 md:my-12 flex items-center justify-center">
+				<div className="flex items-center justify-center flex-col md:flex-row">
+					<PartneringCard />
+					<FirstYearCard />
 				</div>
 			</section>
 
@@ -282,22 +198,37 @@ export default function Home() {
 				</div>
 			</section>
 
+			{/* Speaker Section */}
+			<section className="my-24 py-32 mx-2 sm:mx-8 md:mx-12 lg:mx-12 xl:mx-80 2xl:mx-96">
+				<h1 className="text-white text-3xl md:text-5xl font-bold mb-8">
+					Some of Our{" "}
+					<span className="text-3xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-600">
+						{/* Amazing */}
+						Past Speakers
+					</span>
+				</h1>
+				<SpeakerCarousel />
+			</section>
 
+			{/* Testimonials Section */}
+			<section className="mx-2 sm:mx-8 md:mx-12 lg:mx-12 xl:mx-80 2xl:mx-96">
+					<TestimonialsCarousel />
+				</section>
 
-      {/* Sponsors Section */}
+			{/* Sponsors Section */}
 			<section
 				id="sponsors"
 				className="relative pt-32 mx-2 sm:mx-8 md:mx-12 lg:mx-12 xl:mx-64 2xl:mx-80 my-24"
-		  	>
+			>
 				<h1 className="text-white text-center text-3xl md:text-5xl font-bold mb-4">
-					Thanks To{" "}
+					Thanks To Our{" "}
 					<span className="text-transparent text-3xl md:text-5xl bg-clip-text bg-gradient-to-r from-red-500 to-orange-600">
-						Our Current Sponsors.
+						Current Sponsors.
 					</span>
 				</h1>
 				<div className="flex justify-center pb-16">
 					<div
-						className="flex flex-row flex-wrap items-center justify-center w-full space-x-4 space-y-4"
+						className="flex flex-row flex-wrap items-center justify-center w-full"
 					>
 						<SponsorCard sponsor={sponsorsJSON.nationalBank} />
 						<SponsorCard sponsor={sponsorsJSON.manulife} />
@@ -310,14 +241,14 @@ export default function Home() {
 					</div>
 				</div>
 				<h1 className="text-white text-center text-3xl md:text-5xl font-bold mb-4">
-					Thanks To{" "}
+					Some of Our{" "}
 					<span className="text-transparent text-3xl md:text-5xl bg-clip-text bg-gradient-to-r from-red-500 to-orange-600">
-						Our Past Sponsors.
+						Past Sponsors.
 					</span>
 				</h1>
 				<div className="flex justify-center">
 					<div
-						className="flex flex-row flex-wrap items-center justify-center w-full p-0 space-x-4 space-y-4"
+						className="flex flex-row flex-wrap items-center justify-center w-full"
 					>
 						<SponsorCard sponsor={sponsorsJSON.assemblyAI} />
 						{/* <SponsorCard sponsor={sponsorsJSON.axure} /> */}
@@ -352,88 +283,36 @@ export default function Home() {
 						{/* <SponsorCard sponsor={sponsorsJSON.xyz} /> */}
 					</div>
 				</div>
-				<div id="sponsor-link" className="flex justify-center items-center mt-4">
-					<div className="border-2 rounded-2xl w-96 p-4 flex flex-row">
-						<div className="text-white text-3xl font-bold">
-							<Image
-								className=""
-								src="/Handshake.svg"
-								alt="Handshake image"
-								width={122}
-								height={122}
-							/>
-						</div>
-						<div  className="flex justify-center">
-							<div className="text-center">
-								<h4 className="text-white font-bold">
-									Interested in Partnering?
-								</h4>
-								<p className="text-white">Contact us at:</p>
-								<a
-									href="mailto:partnerships@qhacks.io"
-									className="text-white hover:text-gray-500"
-								>
-									partnerships@qhacks.io
-								</a>
-								<a
-									href="https://qhacks.io/static/media/QHacks2023PartnershipPackage.997d0440621386f825c1.pdf"
-									className="text-white hover:text-sky-500"
-								>
-									<motion.p whileHover={{scale:1.1}} className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-600">Partnerships Package</motion.p>
-								</a>
-							</div>
-						</div>
-					</div>
+				<div id="sponsor-link" className="flex justify-center items-center mt-8 2xl:mt-40">
+					<PartneringCard />
 				</div>
 			</section>
-
-
-
-			{/* Speaker Section */}
-			<section className="my-24 py-32 mx-2 sm:mx-8 md:mx-12 lg:mx-12 xl:mx-80 2xl:mx-96">
-				<h1 className="text-white text-3xl md:text-5xl font-bold mb-8">
-					With our{" "}
-					<span className="text-3xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-600">
-						Amazing Speakers
-					</span>
-				</h1>
-				<SpeakerCarousel />
-			</section>
-
-
-
-			{/* Testimonials Section */}
-			<section className="mx-2 sm:mx-8 md:mx-12 lg:mx-12 xl:mx-80 2xl:mx-96">
-				<TestimonialsCarousel />
-			</section>
-
-
 
 			{/* FAQ Section */}
 			<section
 				id="contact"
-				className="flex-col justify-center pt-32 xs:mx-4 sm:mx-8 md:mx-12 lg:mx-12 xl:mx-80 2xl:mx-96"
+				className="flex h-auto items-center justify-center pt-32 xs:mx-4 sm:mx-8 md:mx-12 lg:mx-12 xl:mx-80 2xl:mx-96"
 			>
-				<div className="w-full max-w-screen-lg ">
+				<div className=" w-full flex flex-col items-center justify-center max-w-screen-lg ">
 					<h1 className="text-white text-3xl md:text-5xl font-bold">
 						FAQ's
 					</h1>
 					<div>
 						<div className="flex flex-col text-left">
 							<div className="flex flex-col md:flex-row text-left mb-24">
-								<div className="md:w-1/2">
-									<FAQDropdown faq={faq.faq1} />
-									<FAQDropdown faq={faq.faq2} />
-									<FAQDropdown faq={faq.faq3} />
-									<FAQDropdown faq={faq.faq4} />
-									<FAQDropdown faq={faq.faq5} />
+								<div className="lg:w-1/2 p-4">
+									<FAQAccordion faq={faq.faq1} />
+									<FAQAccordion faq={faq.faq2} />
+									<FAQAccordion faq={faq.faq3} />
+									<FAQAccordion faq={faq.faq4} />
+									<FAQAccordion faq={faq.faq5} />
 								</div>
-								<div className="md:w-1/2">
-									<FAQDropdown faq={faq.faq1} />
-									<FAQDropdown faq={faq.faq2} />
-									<FAQDropdown faq={faq.faq3} />
-									<FAQDropdown faq={faq.faq4} />
-									<FAQDropdown faq={faq.faq5} />
+								<div className="lg:w-1/2 p-4">
+									<FAQAccordion faq={faq.faq1} />
+									<FAQAccordion faq={faq.faq2} />
+									<FAQAccordion faq={faq.faq3} />
+									<FAQAccordion faq={faq.faq4} />
+									<FAQAccordion faq={faq.faq5} />
 								</div>
 							</div>
 						</div>
@@ -443,6 +322,7 @@ export default function Home() {
 									width={300}
 									height={300}
 									src="/QCrown.svg"
+									className="w-1/2 h-2/3 md:w-[300px] md:h-[300px]"
 								></Image>
 							</div>
 							<div className="flex flex-col justify-center ">
@@ -455,16 +335,16 @@ export default function Home() {
 								<form className="flex flex-col justify-center items-center">
 									<input
 										placeholder="Name"
-										className="text-white placeholder:text-gray-500 pl-[14px] focus:outline-none border border-gray-500 w-80 mx-4 my-1 h-12 rounded-md bg-slate-800"
+										className="text-white placeholder:text-gray-500 pl-[14px] focus:outline-none border border-gray-500 w-64 md:w-80 mx-4 my-1 h-12 rounded-md bg-slate-800"
 									></input>
 									<input
 										placeholder="Email"
-										className="text-white placeholder:text-gray-500 pl-[14px] focus:outline-none border border-gray-500 w-80 mx-4 my-1 h-12 rounded-md bg-slate-800"
+										className="text-white placeholder:text-gray-500 pl-[14px] focus:outline-none border border-gray-500 w-64 md:w-80 mx-4 my-1 h-12 rounded-md bg-slate-800"
 									></input>
 									<textarea
 										rows="4"
 										placeholder="Message"
-										className="text-white placeholder:text-gray-500 pl-[14px] focus:outline-none border border-gray-500 w-80 mx-4 my-1 h-12 rounded-md bg-slate-800"
+										className="text-white placeholder:text-gray-500 pl-[14px] focus:outline-none border border-gray-500 w-64 md:w-80 mx-4 my-1 h-12 rounded-md bg-slate-800"
 									></textarea>
 									<div className="flex justify-center py-6">
 										<button className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 mx-4 my-1 w-24 rounded">

@@ -5,6 +5,9 @@ import DayButton from '../../components/schedule/dayButton'
 import '../../css/schedule.css'
 import rowData from './rows.json'
 
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
+
 function Schedule() {
     const [pageIndex, setPageIndex] = useState(0)
 
@@ -68,6 +71,7 @@ function Schedule() {
 
     return ( 
         <div className='bg-gray-950 flex flex-col justify-start text-white items-center'>
+            <Navbar />
             <div id='day-button-container'  className='flex flex-row justify-center items-center text-center' style={{
             marginInline: "200px"
             }}>
@@ -100,6 +104,7 @@ function Schedule() {
             </div>
             
             {table}
+            <Footer />
         </div>
      );
 }
