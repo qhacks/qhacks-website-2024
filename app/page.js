@@ -30,7 +30,7 @@ import StatsSection from "../components/StatsSection";
 import sponsorsJSON from "../data/sponsors.json";
 import team from "../data/team.json";
 import faq from "../data/faq.json";
-import { useState } from "react";
+import { useEffect, useState } from 'react';
 import LoadingScreen from "../components/LoadingScreen";
 
 
@@ -39,8 +39,8 @@ export default function Home() {
 
 	return (
 		<main className="bg-gray-950 w-screen overflow-hidden">
-			<Navbar />
 			<WarmWaves />
+			<Navbar />
 			<LoadingScreen
 				showLoadingScreen={showLoadingScreen}
 				className="fixed top-0 left-0 w-full h-full z-50"
@@ -52,19 +52,19 @@ export default function Home() {
 				src="/MLH.svg"
 				alt="Major Hacking Leaguge Logo"
 			/>
-			<section className="flex items-center justify-center mt-24 lg:my-48 px-1">
+			<section className=" flex items-center justify-center mt-40 lg:mt-80 mb-32 px-1">
 				<div className=" flex flex-row justify-between">
-					<div className="flex items-center">
+					<div className="flex items-center text-center lg:text-left">
 						<div className="flex-None flex-col items-center justify-center">
 							<motion.h1 
-								className="text-white m-5 text-[100px] lg:[140px] font-bold font-Yaro "
+								className="text-white m-5 text-[70px] lg:text-[100px] font-bold font-Yaro "
 								initial={{ opacity: 0 }}
 								whileInView={{ opacity: 1 }}
 							>
 								QHACKS
 							</motion.h1>
 							<motion.p 
-								className="text-white m-5 text-[24px]  lg:[100px] lg:w-96 p-2" 
+								className="text-white m-5 text-center lg:text-left text-[20px] leading-[1.4rem] lg:leading-auto lg:text-[24px] lg:w-96 p-2" 
 								initial={{ opacity: 0 }}
 								whileInView={{ opacity: 1 }}
 								transition={{ duration: 2 }}
@@ -73,7 +73,7 @@ export default function Home() {
 								Join QHacks, the ultimate hackathon experience.
 							</motion.p>
 							<motion.p 
-								className="m-5 text-lg  lg:text-2xl  bg-clip-text font-extrabold text-transparent  bg-gradient-to-r from-red-500 to-orange-600"
+								className="m-5 text-center lg:text-left text-lg  lg:text-2xl  bg-clip-text font-extrabold text-transparent  bg-gradient-to-r from-red-500 to-orange-600"
 								initial={{ opacity: 0 }}
 								whileInView={{ opacity: 1 }}
 								transition={{ duration: 2 }}
@@ -84,13 +84,13 @@ export default function Home() {
 								whileHover={{ scale: 1.2 }}
 								whileTap={{ scale: 0.8 }}
 								// href="/signup"
-								className="text-white bg-green-500 px-5 py-3 m-5 z-5 rounded-xl font-bold"
+								className="lg:flex w-56 lg:w-auto text-white justify-center  bg-green-500 px-5 py-3 m-5 z-5 rounded-xl font-bold"
 							>
 								Registration opens soon!
 							</motion.a>
 						</div>
 					</div>
-					<div className=" w-[750px] h-[500px] hidden xl:flex">
+					<div className="w-[750px] h-[500px] hidden xl:flex">
 						<Crown setShowLoadingScreen={setShowLoadingScreen} />
 					</div>
 				</div>
@@ -106,10 +106,10 @@ export default function Home() {
 
 
 			{/* ABOUT US */}
-			<img className="w-full -z-1 transform scaleX(-1) overflow-hidden" src="/grayWaves.svg" alt="a graphic of some gray waves"/>
+			<img className="w-full transform scaleX(-1)" src="/grayWaves.svg" alt="a graphic of some gray waves"/>
 			<section
 				id="about"
-				className="overflow-hidden bg-[#181717] h-full flex flex-row justify-between pt-2 lg:pb-24 px-2 sm:px-8 pd:px-12 lg:px-12 xl:px-64 2xl:px-64"
+				className=" bg-[#181717] h-full flex flex-row justify-between pt-2 lg:pb-24 px-2 sm:px-8 pd:px-12 lg:px-12 xl:px-64 2xl:px-64"
 			>
 				<div className="flex-auto flex-col flex justify-center items-center w-96">
 				<div>
@@ -140,7 +140,7 @@ export default function Home() {
 					/>
 				</div>
 			</section>
-			<img className="w-full -z-1 transform rotate-180 overflow-hidden" src="/grayWaves.svg" alt="a graphic of some gray waves"/>
+			<img className="w-full transform rotate-180" src="/grayWaves.svg" alt="a graphic of some gray waves"/>
 
 
 

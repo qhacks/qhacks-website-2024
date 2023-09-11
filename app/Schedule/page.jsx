@@ -69,43 +69,47 @@ function Schedule() {
             </div>
     )
 
-    return ( 
-        <div className='bg-gray-950 flex flex-col justify-start text-white items-center'>
+    return (
+        <div>
             <Navbar />
-            <div id='day-button-container'  className='flex flex-row justify-center items-center text-center' style={{
-            marginInline: "200px"
-            }}>
-                <DayButton index="0" color="#262261" setPageIndex={setPageIndex} after={
-                    <div className='triangle right-triangle' style={{
-                        backgroundColor: "#262261",
-                    }}></div>
-                }/>
-                <DayButton index="1" color="#FAAF40" setPageIndex={setPageIndex} before={
-                    <div className='triangle left-triangle' style={{
-                        backgroundColor: "#FAAF40",
-                    }}></div>
-                } after={
-                    <div className='triangle right-triangle' style={{
-                        backgroundColor: "#FAAF40",
-                    }}></div>
-                }/>
-                <DayButton index="2" color="#FF0000" setPageIndex={setPageIndex} before={
-                    <div className='triangle left-triangle' style={{
-                        backgroundColor: "#FF0000",
-                    }}/>
-                }/>
-            </div>
+            <div className='bg-gray-950 flex flex-col justify-start text-white items-center'>
+                
+                <div id='day-button-container'  className='flex flex-row justify-center items-center text-center' style={{
+                marginInline: "200px"
+                }}>
+                    <DayButton index="0" color="#262261" setPageIndex={setPageIndex} after={
+                        <div className='triangle right-triangle' style={{
+                            backgroundColor: "#262261",
+                        }}></div>
+                    }/>
+                    <DayButton index="1" color="#FAAF40" setPageIndex={setPageIndex} before={
+                        <div className='triangle left-triangle' style={{
+                            backgroundColor: "#FAAF40",
+                        }}></div>
+                    } after={
+                        <div className='triangle right-triangle' style={{
+                            backgroundColor: "#FAAF40",
+                        }}></div>
+                    }/>
+                    <DayButton index="2" color="#FF0000" setPageIndex={setPageIndex} before={
+                        <div className='triangle left-triangle' style={{
+                            backgroundColor: "#FF0000",
+                        }}/>
+                    }/>
+                </div>
 
-            <div id="schedule-date" style={{
-                fontWeight: "600",
-                marginBlock: 30
-            }}>
-                <h1 className='text-white text-center text-3xl'>{Object.keys(rowData)[pageIndex]}</h1>
+                <div id="schedule-date" style={{
+                    fontWeight: "600",
+                    marginBlock: 30
+                }}>
+                    <h1 className='text-white text-center text-3xl'>{Object.keys(rowData)[pageIndex]}</h1>
+                </div>
+                
+                {table}
+                <Footer />
             </div>
-            
-            {table}
-            <Footer />
         </div>
+        
      );
 }
 

@@ -3,27 +3,27 @@ import { useEffect, useState } from "react";
 
 export default function WarmWaves(){
 
-    const [windowWidth, setWindowWidth] = useState(0);
-	useEffect(() => {
-		// Function to update window width
-		const updateWindowWidth = () => {
-		setWindowWidth(window.innerWidth);
-		};
+    // const [windowWidth, setWindowWidth] = useState(0);
+	// useEffect(() => {
+	// 	// Function to update window width
+	// 	const updateWindowWidth = () => {
+	// 	setWindowWidth(window.innerWidth);
+	// 	};
 
-		// Initial update
-		updateWindowWidth();
+	// 	// Initial update
+	// 	updateWindowWidth();
 
-		// Add a resize event listener to update width when the window is resized
-		window.addEventListener("resize", updateWindowWidth);
+	// 	// Add a resize event listener to update width when the window is resized
+	// 	window.addEventListener("resize", updateWindowWidth);
 
-		// Clean up the event listener when the component unmounts
-		return () => {
-		window.removeEventListener("resize", updateWindowWidth);
-		};
-	}, []);
+	// 	// Clean up the event listener when the component unmounts
+	// 	return () => {
+	// 	window.removeEventListener("resize", updateWindowWidth);
+	// 	};
+	// }, []);
 
     return(
-        <div>
+        <div className="hidden md:inline">
             <div className="absolute w-full -top-20 h-64 overflow-hidden">				
                 <motion.div
                     className="absolute w-[2200px] h-full overflow-hidden top-0 "
