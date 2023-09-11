@@ -3,7 +3,7 @@ import ScrollIntoView from 'react-scroll-into-view';
 
 export default function DesktopNav(){
     return(
-        <nav className='fixed w-full h-auto'>
+        <nav className='fixed w-full h-auto z-50'>
             <div className="flex flex-row justify-center items-center mt-10">
                 <div className="flex flex-row items-left justify-left absolute px-8 bg-gray-900 rounded-full">
                     <motion.span 
