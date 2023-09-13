@@ -1,44 +1,46 @@
 "use client";
+
 // Dependencies
 import { motion } from "framer-motion";
 
 // Styling and Tailwind Components
 import "tailwindcss/tailwind.css";
-import Image from "next/image";
 import '../css/background.css';
 import '../css/ScrollBar.css';
 
 // Custom Components
+import Crown from "../components/Crown";
+import LoadingScreen from "../components/LoadingScreen";
+import WarmWaves from '../components/WarmWaves';
+
+// Carousel Components
 import SpeakerCarousel from '../components/SpeakerCarousel';
 import TestimonialsCarousel from '../components/TestimonialsCarousel';
-import Crown from "../components/Crown";
-import Qhacks3DText from "../components/Qhacks3DText";
-import Scene from "../components/Scene";
-import TeamBubble from "../components/TeamBubble";
-import FAQDropdown from "../components/FAQDropdown";
-import SponsorCard from "../components/SponsorCard";
 
+// Navbar and Footer
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import WarmWaves from '../components/WarmWaves';
+
+// Cards
 import PartneringCard from "../components/PartneringCard";
 import FirstYearCard from "../components/FirstYearCard";
 import FAQAccordion from "../components/FAQAccordion";
 
 // Sections
 import StatsSection from "../components/StatsSection";
+import TeamSection from "../components/TeamSection";
+import SponsorSection from "../components/SponsorSection";
 
 // JSON Data
 import sponsorsJSON from "../data/sponsors.json";
-import team from "../data/team.json";
 import faq from "../data/faq.json";
-import { useEffect, useState } from 'react';
-import LoadingScreen from "../components/LoadingScreen";
+
+// React Hooks
+import { useState } from 'react';
 
 
 
 // DIFFERENT CUSTOM BACKGROUNDS FROM background.css
-//
 // bg-dots: puts a series of dots onto the background
 // bg-topogrophy: displays an image of topogrophy on the background
 
@@ -47,12 +49,21 @@ export default function Home() {
 
 	return (
 		<main className="bg-gray-950 w-screen overflow-hidden">
+			
+			{/* Waves Feature */}
 			<WarmWaves />
+			
+
+
+			{/* Navbar */}
 			<Navbar />
-			<LoadingScreen
-				showLoadingScreen={showLoadingScreen}
-				className="fixed top-0 left-0 w-full h-full z-50"
-			/>
+
+
+
+			{/* Loading Screen */}
+			<LoadingScreen showLoadingScreen={showLoadingScreen} className="fixed top-0 left-0 w-full h-full z-50"/>
+
+
 
 			{/* MLH Banner */}
 			<img
@@ -60,6 +71,10 @@ export default function Home() {
 				src="/MLH.svg"
 				alt="Major Hacking Leaguge Logo"
 			/>
+
+
+
+			{/* Splash Screen Section */}
 			<section className=" flex items-center justify-center px-1 w-full h-screen bg-topogrophy-dark">
 
 				{/* Add this for a cool feature down below: " p-40 bg-gray-950 rounded-[50px] bg-opacity-80" */}
@@ -98,6 +113,8 @@ export default function Home() {
 				</div>
 			</section>
 
+
+
 			{/* Quick info section */}
 			<section className="my-20 md:my-12 flex items-center justify-center">
 				<div className="flex items-center justify-center flex-col md:flex-row">
@@ -107,7 +124,8 @@ export default function Home() {
 			</section>
 
 
-			{/* ABOUT US */}
+
+			{/* About Us Section 1 */}
 			<img className="w-full transform scaleX(-1)" src="/grayWaves.svg" alt="a graphic of some gray waves"/>
 			<section
 				id="about"
@@ -146,22 +164,17 @@ export default function Home() {
 
 
 
-      {/* Stats Section */}
-			<motion.section className="my-4 lg:my-32 mx-2 sm:mx-8 md:mx-12 lg:mx-12 xl:mx-80 2xl:mx-96">
+      		{/* Stats Section */}
+			<section className="my-4 lg:my-32 mx-2 sm:mx-8 md:mx-12 lg:mx-12 xl:mx-80 2xl:mx-96">
 				<StatsSection />
-			</motion.section>
+			</section>
 
 
 
+			{/* About Us Section 2 */}
 			<section className=" relative my-32 mx-2 sm:mx-8 md:mx-12 lg:mx-12 xl:mx-80 2xl:mx-96">
 				<div className="flex flex-col-reverse md:flex-row justify-between ">
-					<Image
-						className=" pointer-events-none "
-						src="\NetworkingGraphic.svg"
-						alt=""
-						width={350}
-						height={350}
-					/>
+					<img className="w-[350px] h-[350px]" src="/NetworkingGraphic.svg" alt="" />
 					<div className="flex flex-col md:w-7/12 justify-center">
 						<h1 className="text-white mx-5 text-3xl md:text-5xl font-bold">
 							Grow your{" "}
@@ -180,9 +193,6 @@ export default function Home() {
 					</div>
 				</div>
 			</section>
-
-
-
 			<section className=" relative mx-2 sm:mx-8 md:mx-12 lg:mx-12 xl:mx-80 2xl:mx-96">
 				<div className="flex flex-col md:w-7/12 justify-center">
 					<h1 className="text-white  mx-5 text-3xl md:text-5xl font-bold">
@@ -200,6 +210,8 @@ export default function Home() {
 				</div>
 			</section>
 
+
+
 			{/* Speaker Section */}
 			<section className="mt-12 pt-16 mb-8 mx-2 sm:mx-8 md:mx-12 lg:mx-12 xl:mx-80 2xl:mx-96">
 				<h1 className="text-white text-3xl md:text-5xl font-bold mb-8">
@@ -212,83 +224,24 @@ export default function Home() {
 				<SpeakerCarousel />
 			</section>
 
+
+
 			{/* Testimonials Section */}
 			<section className="mx-2 sm:mx-8 md:mx-12 lg:mx-12 xl:mx-80 2xl:mx-96">
 				<TestimonialsCarousel />
 			</section>
+
+
 
 			{/* Sponsors Section */}
 			<section
 				id="sponsors"
 				className="relative pt-16 mx-2 sm:mx-8 md:mx-12 lg:mx-12 xl:mx-64 2xl:mx-80 my-24"
 			>
-				<h1 className="text-white text-center text-3xl md:text-5xl font-bold mb-4">
-					Thanks To Our{" "}
-					<span className="text-transparent text-3xl md:text-5xl bg-clip-text bg-gradient-to-r from-red-500 to-orange-600">
-						Current Sponsors.
-					</span>
-				</h1>
-				<div className="flex justify-center pb-16">
-					<div
-						className="flex flex-row flex-wrap items-center justify-center w-full"
-					>
-						<SponsorCard sponsor={sponsorsJSON.nationalBank} />
-						<SponsorCard sponsor={sponsorsJSON.manulife} />
-						<SponsorCard sponsor={sponsorsJSON.kenworth} />
-						<SponsorCard sponsor={sponsorsJSON.kingston} />
-						<SponsorCard sponsor={sponsorsJSON.otpp} />
-						<SponsorCard sponsor={sponsorsJSON.queensComputing} />
-						<SponsorCard sponsor={sponsorsJSON.ece} />
-
-					</div>
-				</div>
-				<h1 className="text-white text-center text-3xl md:text-5xl font-bold mb-4">
-					Some of Our{" "}
-					<span className="text-transparent text-3xl md:text-5xl bg-clip-text bg-gradient-to-r from-red-500 to-orange-600">
-						Past Sponsors.
-					</span>
-				</h1>
-				<div className="flex justify-center">
-					<div
-						className="flex flex-row flex-wrap items-center justify-center w-full"
-					>
-						<SponsorCard sponsor={sponsorsJSON.assemblyAI} />
-						{/* <SponsorCard sponsor={sponsorsJSON.axure} /> */}
-						<SponsorCard sponsor={sponsorsJSON.bounce} />
-						{/* <SponsorCard sponsor={sponsorsJSON.codology} /> */}
-						<SponsorCard sponsor={sponsorsJSON.convictional} />
-						<SponsorCard sponsor={sponsorsJSON.gameloft} />
-						<SponsorCard sponsor={sponsorsJSON.github} />
-						{/* <SponsorCard sponsor={sponsorsJSON.leadingLearners} /> */}
-						<SponsorCard sponsor={sponsorsJSON.mosaic} />
-						<SponsorCard sponsor={sponsorsJSON.pwc} />
-						{/* <SponsorCard sponsor={sponsorsJSON.sleek} /> */}
-						{/* <SponsorCard sponsor={sponsorsJSON.taskade} /> */}
-						<SponsorCard sponsor={sponsorsJSON.whoosh} />
-						{/* <SponsorCard sponsor={sponsorsJSON.wolfram} /> */}
-						<SponsorCard sponsor={sponsorsJSON.amazon} />
-						<SponsorCard sponsor={sponsorsJSON.redbull} />
-						{/* <SponsorCard sponsor={sponsorsJSON.dominoes} /> */}
-						<SponsorCard sponsor={sponsorsJSON.kingstonUtilities} />
-						<SponsorCard sponsor={sponsorsJSON.voiceflow} />
-						<SponsorCard sponsor={sponsorsJSON.amd} />
-						<SponsorCard sponsor={sponsorsJSON.bmo} />
-						{/* <SponsorCard sponsor={sponsorsJSON.echo} /> */}
-						<SponsorCard sponsor={sponsorsJSON.ibm} />
-						{/* <SponsorCard sponsor={sponsorsJSON.kbc} /> */}
-						<SponsorCard sponsor={sponsorsJSON.mapbox} />
-						<SponsorCard sponsor={sponsorsJSON.mars} />
-						<SponsorCard sponsor={sponsorsJSON.scotiabank} />
-						{/* <SponsorCard sponsor={sponsorsJSON.smileCDR} /> */}
-						<SponsorCard sponsor={sponsorsJSON.stanAI} />
-						<SponsorCard sponsor={sponsorsJSON.standOutStickers} />
-						{/* <SponsorCard sponsor={sponsorsJSON.xyz} /> */}
-					</div>
-				</div>
-				<div id="sponsor-link" className="flex justify-center items-center mt-8 2xl:mt-40">
-					<PartneringCard />
-				</div>
+				<SponsorSection></SponsorSection>
 			</section>
+
+
 
 			{/* FAQ Section */}
 			<section
@@ -318,12 +271,7 @@ export default function Home() {
 						</div>
 						<div className="flex flex-col md:flex-row justify-center">
 							<div className="flex flex-col justify-center items-center p-3">
-								<Image
-									width={300}
-									height={300}
-									src="/QCrown.svg"
-									className="w-1/2 h-2/3 md:w-[300px] md:h-[300px]"
-								></Image>
+								<motion.img whileHover={{scale:1.1}} src="/QCrown.svg" alt="" className="w-1/2 h-2/3 md:w-[300px] md:h-[300px]"/>
 							</div>
 							<div className="flex flex-col justify-center ">
 								<h3 className="text-white font-bold text-center text-2xl">
@@ -351,9 +299,9 @@ export default function Home() {
 										name="message"
 									></textarea>
 									<div className="flex justify-center py-6">
-										<button className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 mx-4 my-1 w-24 rounded" type="submit">
+										<motion.button whileHover={{scale:1.1, backgroundColor:"#16A34A"}} className="bg-green-500 text-white font-bold py-2 px-4 mx-4 my-1 w-24 rounded" type="submit">
 											Submit
-										</button>
+										</motion.button>
 									</div>
 								</form>
 							</div>
@@ -366,37 +314,12 @@ export default function Home() {
 
 			{/* Team Section */}
 			<section className=" my-32 mx-2 md:mx-48">
-				<div className="flex flex-row flex-wrap justify-center">
-					<TeamBubble teamMember={team.EricMedina} />
-					<TeamBubble teamMember={team.DominiqueMercier} />
-					<TeamBubble teamMember={team.JeremySelwin}/>
-					<TeamBubble teamMember={team.MonicaStef} />
-					<TeamBubble teamMember={team.EthanWang} />
-					<TeamBubble teamMember={team.LacshmiGaneshananda}/>
-					<TeamBubble teamMember={team.EricaFry}/>
-					<TeamBubble teamMember={team.MichaelaLi}/>
-					<TeamBubble teamMember={team.MayaGoodman}/>
-					<TeamBubble teamMember={team.NicholasLykopoulos}/>
-					<TeamBubble teamMember={team.LeejaeKim} />
-					<TeamBubble teamMember={team.EthanChin}/>
-					<TeamBubble teamMember={team.JoashMathew} />
-					<TeamBubble teamMember={team.SchuylerGood} />
-					<TeamBubble teamMember={team.StefanPitigoi}/>
-					<TeamBubble teamMember={team.JacobTepperman}/>
-					<TeamBubble teamMember={team.AkshayDesale}/>
-					<TeamBubble teamMember={team.CalvinZheng} />
-					<TeamBubble teamMember={team.EricLam}/>
-					<TeamBubble teamMember={team.MatangyKanesamoorthy}/>
-					<TeamBubble teamMember={team.AdamRaco}/>
-					<TeamBubble teamMember={team.OliviaStewart}/>
-					<TeamBubble teamMember={team.NoahSerhan}/>
-					<TeamBubble teamMember={team.AdiGroumoutis}/>
-					<TeamBubble teamMember={team.IlyasErdogan} />
-					<TeamBubble teamMember={team.AlexanderZhao} />
-					<TeamBubble teamMember={team.AndrewTerry} />
-					<TeamBubble teamMember={team.MichaelKwon}/>
-				</div>
+				<TeamSection/>
 			</section>
+
+
+
+			{/* Footer */}
 			<Footer />
 		</main>
 	);
