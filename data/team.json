@@ -43,7 +43,7 @@
         "linkedin": "https://www.linkedin.com/in/ethan-wang-qu/",
         "github": null,
         "instagram": "https://www.instagram.com/e.thnx_w/",
-        "color":"bg-yellow-500"
+        "color":"bg-yellow-300"
     },
     "LacshmiGaneshananda":{
         "name": "Lacshmi Ganeshananda",
@@ -70,7 +70,7 @@
         "linkedin": null,
         "github": null,
         "instagram": "https://www.instagram.com/_michaela.li/",
-        "color":"bg-yellow-500"
+        "color":"bg-yellow-300"
     },
     "MayaGoodman":{
         "name": "Maya Goodman",
@@ -97,7 +97,7 @@
         "linkedin": "https://www.linkedin.com/in/leejaekim/",
         "github": null,
         "instagram": "https://www.instagram.com/leejae.kim/",
-        "color":"bg-yellow-500"
+        "color":"bg-yellow-300"
     },
     "EthanChin":{
         "name": "Ethan Chin",
@@ -115,7 +115,7 @@
         "linkedin": "https://www.linkedin.com/in/joashmathew/",
         "github": null,
         "instagram": "https://www.instagram.com/j0ashm/",
-        "color":"bg-yellow-500"
+        "color":"bg-yellow-300"
     },
     "SchuylerGood":{
         "name": "Schuyler Good",
@@ -142,7 +142,7 @@
         "linkedin": "https://www.linkedin.com/in/jtepp",
         "github": null,
         "instagram": "https://www.instagram.com/jtepp_/",
-        "color":"bg-yellow-500"
+        "color":"bg-yellow-300"
     },
     "AkshayDesale":{
         "name": "Akshay Desale",
@@ -169,7 +169,7 @@
         "linkedin": "https://www.linkedin.com/in/eric-lam-a3774720b/",
         "github": null,
         "instagram": "https://www.instagram.com/cire_mal/",
-        "color":"bg-yellow-500"
+        "color":"bg-yellow-300"
     },
     "MatangyKanesamoorthy":{
         "name": "Matangy Kanesamoorthy",
@@ -196,7 +196,7 @@
         "linkedin": null,
         "github": null,
         "instagram": "https://www.instagram.com/liviistewart/",
-        "color":"bg-yellow-500"
+        "color":"bg-yellow-300"
     },
     "NoahSerhan":{
         "name": "Noah Serhan",
@@ -223,7 +223,7 @@
         "linkedin": "https://www.linkedin.com/in/ilyas-erdogan/",
         "github": "https://github.com/Ilyas-Erdogan",
         "instagram": "https://www.instagram.com/ilyas_egn/",
-        "color":"bg-yellow-500"
+        "color":"bg-yellow-300"
     },
     "AlexanderZhao":{
         "name": "Alexander Zhao",
@@ -250,7 +250,7 @@
         "linkedin": "https://www.linkedin.com/in/michaelkwon5/",
         "github": null,
         "instagram": "https://www.instagram.com/mchl.kwn/",
-        "color":"bg-yellow-500"
+        "color":"bg-yellow-300"
     }
 }
     
