@@ -32,7 +32,7 @@ const TestimonialsCarousel = () => {
                         <span className="text-sm text-white text-left">{testimonials[num].team}</span>
                       </div>
                     </div>
-                    <div className="flex mt-2 mx-4 text-gray-300 text-left tracking-[-1px] text-xs md:text-sm">{testimonials[num].text}</div>
+                    <div className="flex mt-2 mx-4 text-gray-300 text-left tracking-[-1px] text-xs sm:text-sm">{testimonials[num].text}</div>
                   </div>
                   <div className="rounded-xl w-[430px] h-[300px] m-5 bg-gray-900">
                     <div className="flex flex-row px-4 pt-4">
@@ -44,7 +44,7 @@ const TestimonialsCarousel = () => {
                         <span className="text-sm text-white text-left">{testimonials[num+1].team}</span>
                       </div>
                     </div>
-                    <div className="flex mt-2 mx-4 text-gray-300 text-left tracking-[-1px] text-xs md:text-sm">{testimonials[num+1].text}</div>
+                    <div className="flex mt-2 mx-4 text-gray-300 text-left tracking-[-1px] text-xs sm:text-sm">{testimonials[num+1].text}</div>
                   </div>
                 </div>
               </div>
