@@ -62,7 +62,7 @@ export default function Home() {
 
 
 			{/* Loading Screen */}
-			{/* <LoadingScreen showLoadingScreen={showLoadingScreen} className="fixed top-0 left-0 w-full h-full z-50"/> */}
+			<LoadingScreen showLoadingScreen={showLoadingScreen} className="fixed top-0 left-0 w-full h-full z-50"/>
 
 
 

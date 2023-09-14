@@ -51,7 +51,7 @@ TeamBubble.propTypes = {
         role: PropTypes.string.isRequired,
         image: PropTypes.string.isRequired,
         linkedin: PropTypes.string.isRequired,
-        github: PropTypes.string.isRequired,
+        github: PropTypes.string,
         instagram: PropTypes.string.isRequired,
         color: PropTypes.string.isRequired,
     }).isRequired,
