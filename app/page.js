@@ -10,6 +10,7 @@ import '../css/ScrollBar.css';
 
 // Custom Components
 import Crown from "../components/Crown";
+import CrownV2 from "../components/CrownV2";
 import LoadingScreen from "../components/LoadingScreen";
 import WarmWaves from '../components/WarmWaves';
 
@@ -61,7 +62,7 @@ export default function Home() {
 
 
 			{/* Loading Screen */}
-			<LoadingScreen showLoadingScreen={showLoadingScreen} className="fixed top-0 left-0 w-full h-full z-50"/>
+			{/* <LoadingScreen showLoadingScreen={showLoadingScreen} className="fixed top-0 left-0 w-full h-full z-50"/> */}
 
 
 
@@ -107,8 +108,9 @@ export default function Home() {
 							</motion.a>
 						</div>
 					</div>
-					<div className="w-[750px] h-[500px] hidden xl:flex">
-						<Crown setShowLoadingScreen={setShowLoadingScreen} />
+					<div className="w-[750px] h-[500px] hidden xl:flex justify-center items-center ">
+						{/* <Crown setShowLoadingScreen={setShowLoadingScreen} />  This is the deprecated crown that took 5 seconds to load */}
+						<CrownV2 setShowLoadingScreen={setShowLoadingScreen}/>
 					</div>
 				</div>
 			</section>
@@ -129,7 +131,7 @@ export default function Home() {
 			<img className="w-full transform scaleX(-1)" src="/grayWaves.svg" alt="a graphic of some gray waves"/>
 			<section
 				id="about"
-				className=" bg-[#181717] h-full flex flex-row justify-between pt-2 lg:pb-24 px-2 sm:px-8 pd:px-12 lg:px-12 xl:px-64 2xl:px-64"
+				className=" bg-[#181717] h-full flex flex-row justify-between pt-2 lg:pb-24 px-8 sm:px-8 md:px-12 lg:px-12 xl:px-80 2xl:px-96"
 			>
 				<div className="flex-auto flex-col flex justify-center items-center w-96">
 				<div>
