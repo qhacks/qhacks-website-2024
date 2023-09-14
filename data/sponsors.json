@@ -31,13 +31,13 @@
     },
     "gameloft":{
       "name": "Gameloft",
-      "logo": "/sponsors/Gameloft.svg",
+      "logo": "/sponsors/gameloft.svg",
       "link": "https://www.gameloft.com/corporate/en/jobs/apply/",
       "borderColor": "border-indigo-600"
     },
     "github":{
-      "name": "Github",
-      "logo": "/sponsors/Github.svg",
+      "name": "GitHub",
+      "logo": "/sponsors/github.svg",
       "link": "https://github.com/about/careers",
       "borderColor": "border-red-600"
     },
@@ -217,7 +217,7 @@
     },
     "manulife":{
       "name": "Manulife Financial",
-      "logo": "/sponsors/Manulife.svg",
+      "logo": "/sponsors/ManuLife.svg",
       "link": "https://www.manulife.ca/careers.html",
       "borderColor": "border-yellow-600"
     },
