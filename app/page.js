@@ -102,7 +102,7 @@ export default function Home() {
 								whileHover={{ scale: 1.2 }}
 								whileTap={{ scale: 0.8 }}
 								// href="/signup"
-								className="lg:flex w-56 lg:w-auto text-white justify-center  bg-green-500 px-5 py-3 m-5 z-5 rounded-xl font-bold"
+								className="lg:flex w-56 lg:w-auto text-white justify-center  bg-green-500 px-5 py-3 m-5 z-5 rounded-xl font-bold opacity-40"
 							>
 								Registration opens soon!
 							</motion.a>
@@ -216,7 +216,7 @@ export default function Home() {
 
 			{/* Speaker Section */}
 			<section className="mt-12 pt-16 mb-8 mx-2 sm:mx-8 md:mx-12 lg:mx-12 xl:mx-80 2xl:mx-96">
-				<h1 className="text-white text-3xl md:text-5xl font-bold mb-8">
+				<h1 className="text-center text-white text-3xl md:text-5xl font-bold mb-8">
 					Some of Our{" "}
 					<span className="text-3xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-600">
 						{/* Amazing */}
@@ -229,7 +229,13 @@ export default function Home() {
 
 
 			{/* Testimonials Section */}
-			<section className="mx-2 sm:mx-8 md:mx-12 lg:mx-12 xl:mx-80 2xl:mx-96">
+			<section className="mt-24 mx-2 sm:mx-8 md:mx-12 lg:mx-12 xl:mx-80 2xl:mx-96">
+				<h1 className="text-center text-white text-3xl md:text-5xl font-bold ">
+					Words From Our{" "}
+					<span className="text-3xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-600">
+						Previous Hackers
+					</span>
+				</h1>
 				<TestimonialsCarousel />
 			</section>
 
