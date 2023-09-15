@@ -45,9 +45,15 @@ export default function MobileNav(){
                         transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
                     >
                         <motion.div>
-                            <motion.a href="/" className="block mx-4 py-2">
+                            {/* <motion.a href="/" className="block mx-4 py-2">
                                 Home
-                            </motion.a>
+                            </motion.a> */}
+                            <motion.span className="block mx-4 py-2">
+                                <ScrollIntoView selector="#home">
+                                    Home
+                                </ScrollIntoView>
+                                
+                            </motion.span>
                             <motion.span className="block mx-4 py-2">
                                 <ScrollIntoView selector="#about">
                                     About

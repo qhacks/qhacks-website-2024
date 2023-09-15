@@ -84,7 +84,7 @@ export default function Home() {
 
 
 			{/* Splash Screen Section */}
-			<section className=" flex items-center justify-center px-1 w-full h-screen bg-topogrophy-dark">
+			<section id="home" className=" flex items-center justify-center px-1 w-full h-screen bg-topogrophy-dark">
 
 				{/* Add this for a cool feature down below: " p-40 bg-gray-950 rounded-[50px] bg-opacity-80" */}
 				<div className=" flex flex-row justify-between">
