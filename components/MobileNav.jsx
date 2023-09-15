@@ -5,10 +5,10 @@ import ScrollIntoView from 'react-scroll-into-view';
 
 export default function MobileNav(){
     const [isExpanded, setExpanded] = useState(false);
-
+ 
     return(
         <motion.nav
-            className="w-full fixed top-0 justify-between p-4 bg-gray-900 text-white"
+            className="w-full fixed top-0 justify-between p-4 bg-gray-900 text-white z-50"
         >
             <div className="flex items-center">
                 <motion.div
@@ -45,12 +45,9 @@ export default function MobileNav(){
                         transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
                     >
                         <motion.div>
-                            <motion.span className="block mx-4 py-2">
-                                <ScrollIntoView selector="#">
-                                    Home
-                                </ScrollIntoView>
-                                
-                            </motion.span>
+                            <motion.a href="/" className="block mx-4 py-2">
+                                Home
+                            </motion.a>
                             <motion.span className="block mx-4 py-2">
                                 <ScrollIntoView selector="#about">
                                     About

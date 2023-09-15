@@ -2,37 +2,37 @@
     {
       "name": "Greg Wang",
       "team": "Beat Party",
-      "image": "/testimonials/Greg Wang.png",
+      "image": "/testimonials/1.svg",
       "text": "Qhacks was a great experience that taught me a lot about how to stay productive whilst under a time limit. I had a fun time and was proud of the project our group created in just 48 hours."
     },
     {
       "name": "Jordan Curnew",
       "team": "Parallel Fourier Computing",
-      "image": "/testimonials/Jordan Curnew.png",
+      "image": "/testimonials/2.svg",
       "text": "QHacks provided an exciting opportunity to put the skills I've learned in school to the test and network with industry professionals (which led to a job offer!). My team built an application for computing Fourier Transforms utilizing parallel processing on a distributed network – I never thought I’d be able to make something like that in 36 hours!"
     },
     {
       "name": "Amy Lu",
       "team": "Reeltube",
-      "image": "/testimonials/Amy Lu.png",
+      "image": "/testimonials/3.svg",
       "text": "In high school, I'd never opened a single computer science course brochure, and now I will be an incoming graduate student in machine learning. QHacks gave me a taster of what tech really was - a creative endeavour with technical tools as the paint brush, and societal-level solution pitching as the frame."
     },
     {
       "name": "Cooper Leong",
       "team": "ESPECT",
-      "image": "/testimonials/Cooper Leong.png",
+      "image": "/testimonials/4.svg",
       "text": "Events such as QHacks have allowed me to delve into topics without fear. I used to find it time consuming and intimidating to learn enough to feel confident about a topic, but now I can tackle it head on. It has been just under a year since my first hackathon, and I can say that it has changed my life for the best, and I look forward to participating in many more!"
     },
     {
       "name": "Benjamin Beggs",
       "team": "Parallel Fourier Computing",
-      "image": "/testimonials/Benjamin Beggs.png",
+      "image": "/testimonials/5.svg",
       "text": "QHacks 2021 gave me the opportunity to showcase my problem-solving and creativity in a 'team; setting while working on the Parallel Fourier Computing project. The hackathon is also filled with great networking and knowledge building sessions which make this 36-hour event a deeply enriching and valuable experience."
     },
     {
       "name": "Jacob Laframboise",
       "team": "No Spoiling!",
-      "image": "/testimonials/Jacob Laframboise.png",
+      "image": "/testimonials/6.svg",
       "text": "QHacks was an exciting environment to learn and code in, and I really enjoyed the challenge. The sponsors were really cool and the event was a lot of fun!"
     }
 ]

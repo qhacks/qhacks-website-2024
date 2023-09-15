@@ -6,15 +6,14 @@ export default function DesktopNav(){
         <nav className='fixed w-full h-auto z-50'>
             <div className="flex flex-row justify-center items-center mt-10">
                 <div className="flex flex-row items-left justify-left absolute px-8 bg-gray-900 rounded-full">
-                    <motion.span 
+                    <motion.a
+                        href='/'
                         className="hover:cursor-pointer lg:text-2xl sm:p-2 lg:p-4 font-bold text-white"
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
                     >
-                        <ScrollIntoView selector="#">
-                            Home
-                        </ScrollIntoView>
-                    </motion.span>
+                        Home
+                    </motion.a>
                     <motion.span 
                         
                         className="hover:cursor-pointer lg:text-2xl sm:p-2 lg:p-4 font-bold text-white"

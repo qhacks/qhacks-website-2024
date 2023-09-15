@@ -1,7 +1,7 @@
 {
     "faq1": {
         "question": "Will QHACKS 2023 be in-person or virtual?",
-        "answer": "QHacks will be fully in-person this year! QHacks will be hosted on campus, at Queen's University!"
+        "answer": "QHacks will be fully in-person this year! QHacks will be hosted on campus, at Queen's University, Kingston, ON!"
     },
     "faq2": {
         "question": "What is a hackathon?",
@@ -17,7 +17,7 @@
     },
     "faq5": {
         "question": "What if I don't have a team?",
-        "answer": "No problem! We will have team formation events before the hackathon, and you can also find teammates on our Discord server."
+        "answer": "No problem! We will have team formation events before the hackathon. You can also find teammates on our Discord server, which will be released after application have closed. "
     },
     "faq6":{
         "question":"When do hacker applications come out?",
@@ -25,7 +25,7 @@
     },
     "faq7":{
         "question":"What is this years hackathon theme?",
-        "answer":"This years hackathon theme will be anounced closer to the ."
+        "answer":"This years hackathon theme will be anounced closer towards the event. Follow us on social medias to stay updated!"
     },
     "faq8":{
         "question":"How many people can I have on a team?",
