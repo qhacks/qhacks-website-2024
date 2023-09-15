@@ -37,7 +37,7 @@ import SponsorSection from "../components/SponsorSection";
 import faq from "../data/faq.json";
 
 // React Hooks
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 
 
@@ -47,6 +47,13 @@ import { useState } from 'react';
 
 export default function Home() {
 	const [showLoadingScreen, setShowLoadingScreen] = useState(true);
+
+	useEffect(() => {
+		const crownElement = document.querySelector("#crown-container")
+		if (crownElement.classList.contains('hidden')) {
+			setShowLoadingScreen(false)
+		}
+	})
 
 	return (
 		<main className="bg-gray-950 w-screen overflow-hidden">
@@ -62,10 +69,8 @@ export default function Home() {
 
 
 			{/* Loading Screen */}
-			<div className="hidden lg:block">
-				<LoadingScreen showLoadingScreen={showLoadingScreen} className="fixed top-0 left-0 w-full h-full z-50"/>
-			</div>
-			
+			<LoadingScreen showLoadingScreen={showLoadingScreen} className="fixed top-0 left-0 w-full h-full z-50"/>
+
 
 
 
@@ -112,7 +117,7 @@ export default function Home() {
 							</motion.a>
 						</div>
 					</div>
-					<div className="w-[750px] h-[500px] hidden xl:flex justify-center items-center ">
+					<div id="crown-container" className="w-[750px] h-[500px] hidden xl:flex justify-center items-center ">
 						{/* <Crown setShowLoadingScreen={setShowLoadingScreen} />  This is the deprecated crown that took 5 seconds to load */}
 						<CrownV2 setShowLoadingScreen={setShowLoadingScreen}/>
 					</div>
