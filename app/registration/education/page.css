@@ -1,0 +1,25 @@
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 6px;
+    border-radius: 5px;
+    background: rgb(197,24,9);
+    background: linear-gradient(90deg, rgba(197,24,9,1) 0%, rgba(217,120,6,1) 100%);
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    border-radius: 20px;
+    width: 10px;
+    height: 30px;
+    background: #FFF;
+    cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+    width: 13px; /* Set a specific slider handle width */
+    height: 40px; /* Slider handle height */
+    background: #FFF; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+}

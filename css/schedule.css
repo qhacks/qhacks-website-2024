@@ -1,0 +1,130 @@
+#day-button-container {
+    margin-top: 40px;
+    display: flex;
+    gap: 5px;
+    width: 80vw;
+    max-width: 1000px;
+    height: 60px;
+}
+
+.day-button:first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    overflow: hidden;
+    margin-right: -20px;
+}
+
+.day-button:nth-child(2) {
+    margin-inline: -20px;
+}
+
+.day-button:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    overflow: hidden;
+    margin-left: -20px;
+}
+
+#paged-table th {
+    padding: 5px;
+    width: 200px;
+    text-align: center;
+    background-color: #2b2b2b;
+    color: white;
+    font-size: 20px;
+}
+
+#paged-table th:first-child {
+    border-top-left-radius: 30px;
+}
+
+#paged-table th:last-child {
+    border-top-right-radius: 30px;
+}
+
+#paged-table tr:last-of-type>tr:first-child {
+    border-bottom-left-radius: 30px;
+}
+
+#paged-table tr:not(.decorative-row) {
+    height: 44px;
+}
+
+#paged-table tr.last-row td:first-child {
+    border-bottom-left-radius: 30px;
+}
+
+#paged-table tr.last-row td:last-child {
+    border-bottom-right-radius: 30px;
+}
+
+.decorative-row {
+    height: 20px;
+}
+
+.decorative-row td {
+    height: 8px;
+}
+
+.decorative-row {
+    background-color: transparent !important;
+}
+
+
+.decorative-row>td>div {
+    height: 5px;
+}
+
+.decorative-row>td:nth-child(1)>div {
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    background-color: #262261;
+}
+
+.decorative-row>td:nth-child(2)>div {
+    background-color: #FAAF40;
+}
+
+.decorative-row>td:nth-child(3)>div {
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    background-color: #FF0000;
+}
+
+#paged-table tr:nth-child(even) {
+    background-color: #151515;
+}
+
+#paged-table tr:nth-child(odd) {
+    background-color: #2b2b2b;
+}
+
+#paged-table tr:not(.decorative-row)>td {
+    padding-block: 10px;
+    padding-left: 20px;
+    width: 200px;
+    text-align: left;
+}
+
+#paged-table table {
+    margin-bottom: 40px;
+    max-width: 1000px;
+    width: 80vw;
+}
+
+.triangle {
+    position: relative;
+    width: 40px;
+    height: 100%;
+    background-color: inherit;
+}
+
+.left-triangle {
+    clip-path: polygon(calc(100% - 1px) 0, 100% 0, 100% 100%, calc(100% - 1px) 100%, 0% 100%);
+    right: -1px;
+}
+
+.right-triangle {
+    clip-path: polygon(0% 0, 100% 0, 1px 100%, 0px 100%);
+    left: -1px
+}

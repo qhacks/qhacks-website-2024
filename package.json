@@ -10,13 +10,38 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.4.0",
+    "@fortawesome/fontawesome-svg-core": "^6.4.0",
+    "@fortawesome/free-brands-svg-icons": "^6.4.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@react-three/drei": "^9.74.14",
+    "@react-three/fiber": "^8.13.3",
+    "@splinetool/loader": "^0.9.411",
+    "@splinetool/r3f-spline": "^1.0.2",
+    "@splinetool/react-spline": "^2.2.6",
+    "@splinetool/runtime": "^0.9.411",
+    "@types/three": "^0.152.1",
     "autoprefixer": "^10.4.14",
     "eslint": "8.40.0",
     "eslint-config-next": "13.4.2",
-    "next": "13.4.2",
+    "framer-motion": "^10.12.16",
+    "html-react-parser": "^4.2.0",
+    "next": "^13.4.4",
     "postcss": "^8.4.23",
-    "react": "18.2.0",
+    "react": "^18.2.0",
+    "react-collapse": "^5.1.1",
     "react-dom": "18.2.0",
-    "tailwindcss": "^3.3.2"
+    "react-easy-swipe": "^0.0.23",
+    "react-icons": "^4.8.0",
+    "react-responsive-carousel": "^3.2.23",
+    "react-scroll-into-view": "^2.0.2",
+    "react-swipe": "^6.0.4",
+    "swipe-js-iso": "^2.1.5",
+    "tailwindcss": "^3.3.2",
+    "three": "^0.153.0",
+    "tw-elements": "^1.0.0-beta2"
+  },
+  "devDependencies": {
+    "@svgr/webpack": "^8.1.0",
+    "@tailwindcss/forms": "^0.5.4"
   }
 }
