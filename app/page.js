@@ -61,7 +61,10 @@ export default function Home() {
 
 
 			{/* Loading Screen */}
-			<LoadingScreen showLoadingScreen={showLoadingScreen} className="hidden lg:fixed top-0 left-0 w-full h-full z-50"/>
+			<div className="hidden lg:block">
+				<LoadingScreen showLoadingScreen={showLoadingScreen} className="fixed top-0 left-0 w-full h-full z-50"/>
+			</div>
+			
 
 
 
