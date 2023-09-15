@@ -11,7 +11,7 @@ const TeamBubble = ({ teamMember }) => {
     return (
         <div className={`team-bubble bubble-${color}`}>
                 <div className='team-bubble-img-container'>
-                    <img id='team_image' src={image} className="rounded-full w-28 h-28 team-bubble-img"/>
+                    <Image width={112} height={112} id='team_image' src={image} className="rounded-full w-28 h-28 team-bubble-img"/>
                 </div>
 
                 <div className={`team-bubble-back`}>
