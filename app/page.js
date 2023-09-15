@@ -67,11 +67,11 @@ export default function Home() {
 
 
 			{/* MLH Banner */}
-			<img
+			{/* <img
 				className="absolute top-0 right-2 md:right-20 w-[75px] h-[125px] lg:w-[127px] lg:h-[222px]"
 				src="/MLH.svg"
 				alt="Major Hacking Leaguge Logo"
-			/>
+			/> */}
 
 
 
@@ -99,12 +99,13 @@ export default function Home() {
 								In-person! • February 2nd - 4th
 							</motion.p>
 							<motion.a
-								whileHover={{ scale: 1.2 }}
-								whileTap={{ scale: 0.8 }}
+								// whileHover={{ scale: 1.2 }}
+								// whileTap={{ scale: 0.8 }}
 								// href="/signup"
-								className="lg:flex w-56 lg:w-auto text-white justify-center  bg-green-500 px-5 py-3 m-5 z-5 rounded-xl font-bold opacity-40"
+								// className="lg:flex w-56 lg:w-auto text-white justify-center  bg-green-500 px-5 py-3 m-5 z-5 rounded-xl font-bold opacity-40"
+								className="lg:flex w-56 lg:w-auto text-white justify-center bg-neutral-800 px-5 py-3 m-5 z-5 rounded-xl font-bold opacity-90"
 							>
-								Registration opens soon!
+								Registration opens late October!
 							</motion.a>
 						</div>
 					</div>
@@ -229,7 +230,7 @@ export default function Home() {
 
 
 			{/* Testimonials Section */}
-			<section className="mt-24 mx-2 sm:mx-8 md:mx-12 lg:mx-12 xl:mx-80 2xl:mx-96">
+			<section className="mt-24 mx-2 sm:mx-8 md:mx-12 lg:mx-12 xl:mx-44 2xl:mx-64">
 				<h1 className="text-center text-white text-3xl md:text-5xl font-bold ">
 					Words From Our{" "}
 					<span className="text-3xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-600">
