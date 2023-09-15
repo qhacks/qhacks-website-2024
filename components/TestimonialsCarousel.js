@@ -61,7 +61,7 @@ const TestimonialsCarousel = () => {
             testimonials.map((testimonial, index) => {
               return (
                 <div key={index}>
-                  <div className='flex justify-center'>
+                  <div className='h-[420px] flex justify-center'>
                     <div className="rounded-xl w-[90%] h-[350px] sm:w-[500px] sm:h-[350px] m-5 bg-gray-900">
                       <div className="flex flex-row px-4 pt-4">
                         <div className="">
