@@ -175,9 +175,11 @@ export default function Home() {
 
 
 			{/* About Us Section 2 */}
-			<section className=" relative my-32 mx-2 sm:mx-8 md:mx-12 lg:mx-12 xl:mx-80 2xl:mx-96">
+			<section className=" relative my-32 mx-2 sm:mx-8 md:mx-12 lg:mx-32 xl:mx-80 2xl:mx-[25%]">
 				<div className="flex flex-col-reverse md:flex-row justify-between ">
-					<img className="w-[350px] h-[350px]" src="/NetworkingGraphic.svg" alt="" />
+					<div className="flex justify-center items-center">
+						<img className="w-[350px] h-[350px]" src="/NetworkingGraphic.svg" alt="" />
+					</div>
 					<div className="flex flex-col md:w-7/12 justify-center">
 						<h1 className="text-white mx-5 text-3xl md:text-5xl font-bold">
 							Grow your{" "}
@@ -196,7 +198,7 @@ export default function Home() {
 					</div>
 				</div>
 			</section>
-			<section className=" relative mx-2 sm:mx-8 md:mx-12 lg:mx-12 xl:mx-80 2xl:mx-96">
+			<section className=" relative my-32 mx-2 sm:mx-8 md:mx-12 lg:mx-32 xl:mx-80 2xl:mx-[25%]">
 				<div className="flex flex-col md:w-7/12 justify-center">
 					<h1 className="text-white  mx-5 text-3xl md:text-5xl font-bold">
 						Showcase To{" "}
@@ -304,7 +306,7 @@ export default function Home() {
 									<textarea
 										rows="4"
 										placeholder="Message"
-										className="text-white placeholder:text-gray-500 pl-[14px] focus:outline-none border border-gray-500 w-64 md:w-80 mx-4 my-1 h-12 rounded-md bg-slate-800"
+										className="text-white placeholder:text-gray-500 pl-[14px] focus:outline-none border border-gray-500 w-80 md:w-80 mx-4 my-1 h-12 rounded-md bg-slate-800"
 										name="message"
 									></textarea>
 									<div className="flex justify-center py-6">
