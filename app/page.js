@@ -33,7 +33,6 @@ import TeamSection from "../components/TeamSection";
 import SponsorSection from "../components/SponsorSection";
 
 // JSON Data
-import sponsorsJSON from "../data/sponsors.json";
 import faq from "../data/faq.json";
 
 // React Hooks
@@ -62,7 +61,7 @@ export default function Home() {
 
 
 			{/* Loading Screen */}
-			<LoadingScreen showLoadingScreen={showLoadingScreen} className="fixed top-0 left-0 w-full h-full z-50"/>
+			<LoadingScreen showLoadingScreen={showLoadingScreen} className="hidden lg:fixed top-0 left-0 w-full h-full z-50"/>
 
 
 
@@ -181,7 +180,7 @@ export default function Home() {
 						<img className="w-[350px] h-[350px]" src="/NetworkingGraphic.svg" alt="" />
 					</div>
 					<div className="flex flex-col md:w-7/12 justify-center">
-						<h1 className="text-white mx-5 text-3xl md:text-5xl font-bold">
+						<h1 className="mb-3 text-white mx-5 text-3xl md:text-5xl font-bold">
 							Grow your{" "}
 							<span className="text-transparent text-3xl md:text-5xl bg-clip-text bg-gradient-to-r from-red-500 to-orange-600">
 								Network.
@@ -200,7 +199,7 @@ export default function Home() {
 			</section>
 			<section className=" relative my-32 mx-2 sm:mx-8 md:mx-12 lg:mx-32 xl:mx-80 2xl:mx-[25%]">
 				<div className="flex flex-col md:w-7/12 justify-center">
-					<h1 className="text-white  mx-5 text-3xl md:text-5xl font-bold">
+					<h1 className="mb-3 text-white  mx-5 text-3xl md:text-5xl font-bold">
 						Showcase To{" "}
 						<span className="text-transparent text-3xl md:text-5xl bg-clip-text bg-gradient-to-r from-red-500 to-orange-600">
 							Experts.
@@ -266,13 +265,13 @@ export default function Home() {
 					<div>
 						<div className="flex flex-col text-left">
 							<div className="flex flex-col md:flex-row text-left mb-24">
-								<div className="lg:w-1/2 p-4">
+								<div className="lg:w-1/2 md:p-4 ">
 									<FAQAccordion faq={faq.faq1} />
 									<FAQAccordion faq={faq.faq2} />
 									<FAQAccordion faq={faq.faq3} />
 									<FAQAccordion faq={faq.faq4} />
 								</div>
-								<div className="lg:w-1/2 p-4">
+								<div className="lg:w-1/2 md:p-4">
 									<FAQAccordion faq={faq.faq5} />
 									<FAQAccordion faq={faq.faq6} />
 									<FAQAccordion faq={faq.faq7} />
