@@ -14,7 +14,6 @@ export default function Model(props) {
 
   useState(() => {
     if (progress >= 100) {
-      console.log("hiding loading screen now :)")
       props.setShowLoadingScreen(false)
     }
   }, [progress])

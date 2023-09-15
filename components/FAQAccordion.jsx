@@ -14,7 +14,7 @@ const FAQAccordion = ({ faq }) => {
                 animate={{color: isExpanded ? "#FBBF24" : "#ffffff"}}
                 onClick={() => setExpanded(!isExpanded)}
                 transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
-                className="text-white font-medium text-2xl py-2.5 text-left flex hover:text-gray-500 hover:cursor-pointer"
+                className="text-white font-medium text-2xl px-3 py-2.5 text-left flex hover:text-gray-500 hover:cursor-pointer"
             >
                 {question}
             </motion.h1>
