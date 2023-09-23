@@ -20,7 +20,9 @@ const StatsSection = () => {
             text-white 
             font-bold
             '
-            whileHover={{scale: 1.2, margin: 14}}
+            whileHover={{scale: 1.5, margin: 14, y:-50}}
+            initial={{opacity: 0}}
+            whileInView={{opacity: 1}}
           >
             <h1 className='text-4xl'>10</h1>
             <h5 className='text-center'>Workshops</h5>
@@ -40,7 +42,7 @@ const StatsSection = () => {
               text-white 
               font-bold
             '
-            whileHover={{scale: 1.2, margin: 14}}
+            whileHover={{scale: 1.4, margin: 14, y:50, x:-15}}
           >
             <h1 className='text-4xl'>11</h1>
             <h5 className='text-center'>Schools</h5>
@@ -61,7 +63,7 @@ const StatsSection = () => {
               text-white 
               font-bold
             '
-            whileHover={{scale: 1.2, margin: 14}}
+            whileHover={{scale: 1.3, margin: 14,y:-60,x:15}}
           >
             <h1 className='text-4xl'>500+</h1>
             <h5 className='text-center'>Hackers</h5>
@@ -82,7 +84,7 @@ const StatsSection = () => {
               text-white 
               font-bold
             '
-            whileHover={{scale: 1.2, margin: 14}}
+            whileHover={{scale: 1.6, margin: 14, y:60}}
           >
             <h1 className='text-4xl'>25+</h1>
             <h5 className='text-center'>Mentors</h5>
@@ -103,7 +105,7 @@ const StatsSection = () => {
               text-white 
               font-bold
             '
-            whileHover={{scale: 1.2, margin: 14}}
+            whileHover={{scale: 1.45, margin: 14, y:-90,x:-10}}
           >
             <h1 className='text-4xl'>200</h1>
             <h5 className='text-center'>Projects Sumbitted</h5>
@@ -124,7 +126,7 @@ const StatsSection = () => {
               h-32 
               text-white 
               font-bold'
-              whileHover={{scale: 1.2, margin: 14}}
+              whileHover={{scale: 1.5, margin: 14, y:50, x:10}}
           >
             <h1 className='text-4xl'>10</h1>
             <h5 className='text-center'>Workshops</h5>

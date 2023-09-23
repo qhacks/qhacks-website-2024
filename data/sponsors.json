@@ -1,50 +1,230 @@
 {
-    "amazon" : {
+    "assemblyAI":{
+      "name": "Assembly AI",
+      "logo": "/sponsors/AssemblyAI.svg",
+      "link": "https://apply.workable.com/assemblyai/",
+      "borderColor": "border-indigo-600"
+    },
+    "axure":{
+      "name": "Axure",
+      "logo": "/sponsors/Axure.svg",
+      "link": "https://www.axure.com/careers/",
+      "borderColor": "border-red-600"
+    },
+    "bounce":{
+      "name": "Bounce",
+      "logo": "/sponsors/Bounce.svg",
+      "link": "https://www.bouncelife.com/",
+      "borderColor": "border-yellow-600"
+    },
+    "codology":{
+      "name": "Codology",
+      "logo": "/sponsors/Codology.svg",
+      "link": "https://www.codology.org/",
+      "borderColor": "border-red-600"
+    },
+    "convictional":{
+      "name": "Convictional",
+      "logo": "/sponsors/Convictional.svg",
+      "link": "https://jobs.ashbyhq.com/convictional",
+      "borderColor": "border-yellow-600"
+    },
+    "gameloft":{
+      "name": "Gameloft",
+      "logo": "/sponsors/gameloft.svg",
+      "link": "https://www.gameloft.com/corporate/en/jobs/apply/",
+      "borderColor": "border-indigo-600"
+    },
+    "github":{
+      "name": "GitHub",
+      "logo": "/sponsors/github.svg",
+      "link": "https://github.com/about/careers",
+      "borderColor": "border-red-600"
+    },
+    "kingston":{
+      "name": "Kingston",
+      "logo": "/sponsors/Kingston.svg",
+      "link": "https://innovation-challenge.cityofkingston.ca/",
+      "borderColor": "border-yellow-600"
+    },
+    "leadingLearners":{
+      "name": "Leading Learners",
+      "logo": "/sponsors/LeadingLearners.svg",
+      "link": "https://www.leading-learners.com/careers",
+      "borderColor": "border-indigo-600"
+    },
+    "mosaic":{
+      "name": "Mosaic",
+      "logo": "/sponsors/Mosaic.svg",
+      "link": "https://www.mosaicmfg.com/",
+      "borderColor": "border-red-600"
+    },
+    "pwc":{
+      "name": "PWC",
+      "logo": "/sponsors/PWC.svg",
+      "link": "https://www.mosaicmfg.com/",
+      "borderColor": "border-yellow-600"
+    },
+    "sleek":{
+      "name": "Sleek",
+      "logo": "/sponsors/Sleek.svg",
+      "link": "https://apply.workable.com/careers-at-sleek/?lng=en",
+      "borderColor": "border-indigo-600"
+    },
+    "taskade":{
+      "name": "Taskade",
+      "logo": "/sponsors/Taskade.svg",
+      "link": "https://www.taskade.com/jobs",
+      "borderColor": "border-red-600"
+    },
+    "whoosh":{
+      "name": "Whoosh",
+      "logo": "/sponsors/Whoosh.svg",
+      "link": "https://ca.whoosh.com/",
+      "borderColor": "border-yellow-600"
+    },
+    "wolfram":{
+      "name": "Wolfram",
+      "logo": "/sponsors/Wolfram.svg",
+      "link": "https://www.wolfram.com/company/careers/opportunities/",
+      "borderColor": "border-indigo-600"
+    },
+    "amazon":{
       "name": "Amazon",
       "logo": "/sponsors/Amazon.svg",
       "link": "https://www.amazon.jobs/en/",
-      "borderColor": "border-indigo-600"
+      "borderColor": "border-red-600"
     },
-    "redbull" : {
+    "redbull":{
       "name": "Redbull",
       "logo": "/sponsors/Redbull.svg",
-      "link": "https://www.amazon.jobs/en/",
-      "borderColor": "border-red-600"
+      "link": "https://jobs.redbull.com/ca-en",
+      "borderColor": "border-yellow-600"
     },
-    "dominoes" : {
+    "dominoes":{
       "name": "Dominoes",
       "logo": "/sponsors/Dominoes.svg",
-      "link": "https://www.amazon.jobs/en/",
+      "link": "https://www.dominos.ca/",
       "borderColor": "border-indigo-600"
     },
-    "otpp" : {
+    "otpp":{
       "name": "Ontario Teachers Pension Plan",
       "logo": "/sponsors/OTPP.svg",
-      "link": "https://www.amazon.jobs/en/",
-      "borderColor": "border-yellow-600"
+      "link": "https://www.otpp.com/en-ca/careers/",
+      "borderColor": "border-red-600"
     },
-    "kingstonutilities" : {
+    "kingstonUtilities":{
       "name": "Kingston Utilities",
       "logo": "/sponsors/KingstonUtilities.svg",
-      "link": "https://www.amazon.jobs/en/",
-      "borderColor": "border-red-600"
-    },
-    "ece" : {
-      "name": "Queence Engineering",
-      "logo": "/sponsors/ECE.svg",
-      "link": "https://www.amazon.jobs/en/",
-      "borderColor": "border-indigo-600"
-    },
-    "queensComputing" : {
-      "name": "Queens Computing",
-      "logo": "/sponsors/QueensComputing.svg",
-      "link": "https://www.amazon.jobs/en/",
+      "link": "https://utilitieskingston.com/",
       "borderColor": "border-yellow-600"
     },
-    "voiceflow" : {
+    "ece":{
+      "name": "Queence Engineering",
+      "logo": "/sponsors/ECE.svg",
+      "link": "https://www.ece.queensu.ca/about-us/employment-opportunities.html",
+      "borderColor": "border-indigo-600"
+    },
+    "queensComputing":{
+      "name": "Queens Computing",
+      "logo": "/sponsors/QueensComputing.svg",
+      "link": "https://www.cs.queensu.ca/",
+      "borderColor": "border-red-600"
+    },
+    "voiceflow":{
       "name": "Voiceflow",
       "logo": "/sponsors/Voiceflow.svg",
-      "link": "https://www.amazon.jobs/en/",
+      "link": "https://www.voiceflow.com/",
+      "borderColor": "border-yellow-600"
+    },
+    "amd":{
+      "name": "AMD",
+      "logo": "/sponsors/AMD.svg",
+      "link": "https://www.amd.com/en/corporate/careers",
+      "borderColor": "border-indigo-600"
+    },
+    "bmo":{
+      "name": "BMO",
+      "logo": "/sponsors/BMO.svg",
+      "link": "https://jobs.bmo.com/ca/en",
       "borderColor": "border-red-600"
+    },
+    "echo":{
+      "name": "Echo",
+      "logo": "/sponsors/Echo.svg",
+      "link": "https://www.echo3d.co/",
+      "borderColor": "border-yellow-600"
+    },
+    "ibm":{
+      "name": "IBM",
+      "logo": "/sponsors/IBM.svg",
+      "link": "https://www.ibm.com/ca-en/employment/",
+      "borderColor": "border-indigo-600"
+    },
+    "kbc":{
+      "name": "Kingston Bouldering Club",
+      "logo": "/sponsors/KBC.svg",
+      "link": "https://kingstonboulderingcoop.com/",
+      "borderColor": "border-red-600"
+    },
+    "kenworth":{
+      "name": "Kenworth",
+      "logo": "/sponsors/Kenworth.svg",
+      "link": "https://www.kenworth.com/careers/",
+      "borderColor": "border-yellow-600"
+    },
+    "mapbox":{
+      "name": "Mapbox",
+      "logo": "/sponsors/Mapbox.svg",
+      "link": "https://www.mapbox.com/careers",
+      "borderColor": "border-indigo-600"
+    },
+    "mars":{
+      "name": "MaRS",
+      "logo": "/sponsors/MaRS.svg",
+      "link": "https://marsdd.com/",
+      "borderColor": "border-red-600"
+    },
+    "scotiabank":{
+      "name": "Scotiabank",
+      "logo": "/sponsors/Scotiabank.svg",
+      "link": "https://www.scotiabank.com/careers/en/careers.html",
+      "borderColor": "border-yellow-600"
+    },
+    "smileCDR":{
+      "name": "SmileCDR",
+      "logo": "/sponsors/SmileCDR.svg",
+      "link": "https://www.smilecdr.com/careers",
+      "borderColor": "border-red-600"
+    },
+    "stanAI":{
+      "name": "StanAI",
+      "logo": "/sponsors/StanAI.svg",
+      "link": "https://www.stanintelligence.com/",
+      "borderColor": "border-yellow-600"
+    },
+    "standOutStickers":{
+      "name": "Stand Out Stickers",
+      "logo": "/sponsors/StandOutStickers.svg",
+      "link": "http://hackp.ac/mlh-StandOutStickers-hackathons",
+      "borderColor": "border-indigo-600"
+    },
+    "xyz":{
+      "name": "XYZ",
+      "logo": "/sponsors/XYZ.svg",
+      "link": "https://gen.xyz/",
+      "borderColor": "border-red-600"
+    },
+    "manulife":{
+      "name": "Manulife Financial",
+      "logo": "/sponsors/ManuLife.svg",
+      "link": "https://www.manulife.ca/careers.html",
+      "borderColor": "border-yellow-600"
+    },
+    "nationalBank":{
+      "name": "National Bank of Canada",
+      "logo": "/sponsors/NationalBank.svg",
+      "link": "https://emplois.bnc.ca/fr_CA/careers",
+      "borderColor": "border-indigo-600"
     }
   }
