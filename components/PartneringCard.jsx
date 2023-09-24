@@ -27,7 +27,7 @@ export default function PartneringCard() {
                         <motion.p whileHover={{scale:1.1, color: "#FBBF24"}}>partnerships@qhacks.io</motion.p>
                     </motion.a>
                     <a
-                        href="https://qhacks.io/static/media/QHacks2024PartnershipPackage.b65e978fd0fbffd5b8f2.pdf"
+                        href="https://drive.google.com/file/d/1zkrt4qKh9HaB_tRDXZ45H5J7J1RSR3jk/view?usp=drive_link"
                         className="text-white hover:text-sky-500"
                     >
                         <motion.p whileHover={{scale:1.1}} className="2xl:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-600">Partnerships Package</motion.p>
