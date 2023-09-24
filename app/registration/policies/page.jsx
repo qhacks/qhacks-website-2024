@@ -11,7 +11,7 @@ export default function Policies() {
     <div className="flex justify-center text-white">
 
       {/* BACKGROUND */}
-      <div className="absolute z-[-1] w-full h-full bg-[#111010]">
+      <div className="absolute z-[-1] w-full h-full bg-[#111010] overflow-hidden">
         <svg xmlns="http://www.w3.org/2000/svg" width="914" height="1050" viewBox="0 0 914 1050" fill="none" className="absolute right-0">
           <g filter="url(#filter0_f_179_250)">
             <path d="M795.733 43.0597C838.033 70.5597 879.933 95.5597 906.133 132.56C932.333 169.46 942.733 218.36 940.833 266.06C938.933 313.86 924.833 360.46 906.933 411.86C889.133 463.26 867.633 519.36 827.233 581.36C786.833 643.36 727.433 711.26 668.533 710.56C609.633 709.86 551.133 640.46 500.633 584.26C450.133 528.16 407.533 485.16 377.833 434.46C348.033 383.86 331.133 325.46 342.633 273.86C354.233 222.16 394.233 177.16 420.433 120.26C446.533 63.4597 458.833 -5.34028 497.833 -34.6403C536.833 -63.9403 602.433 -53.9403 656.633 -34.0403C710.833 -14.0403 753.433 15.6597 795.733 43.0597Z" fill="#EE4036"/>
@@ -60,7 +60,7 @@ export default function Policies() {
             </filter>
           </defs>
         </svg>
-        <svg xmlns="http://www.w3.org/2000/svg" width="1060" height="1280" viewBox="0 0 1060 1280" fill="none" className="absolute left-0 mt-[800px]">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1060" height="1280" viewBox="0 0 1060 1280" fill="none" className="absolute left-0 mt-[960px]">
           <g filter="url(#filter0_f_179_253)">
             <path d="M472.496 372.538C536.696 405.538 591.496 459.038 639.996 522.838C688.496 586.638 730.696 660.738 717.596 727.338C704.396 793.938 635.896 852.938 589.296 919.938C542.596 986.838 517.796 1061.84 466.696 1102.04C415.596 1142.14 338.196 1147.54 259.396 1150.14C180.596 1152.74 100.196 1152.54 33.9959 1121.14C-32.3041 1089.74 -84.4041 1027.04 -86.9041 957.538C-89.4041 887.938 -42.3041 811.438 -35.8041 738.738C-29.3041 665.938 -63.5041 596.938 -42.1041 559.938C-20.8041 523.038 56.0959 518.138 115.796 482.438C175.596 446.838 218.196 380.338 276.396 353.538C334.596 326.638 408.196 339.438 472.496 372.538Z" fill="#FAAF40"/>
           </g>
@@ -72,7 +72,7 @@ export default function Policies() {
             </filter>
           </defs>
         </svg>
-        <svg xmlns="http://www.w3.org/2000/svg" width="955" height="901" viewBox="0 0 955 901" fill="none" className="absolute right-0 mt-[1100px]">
+        <svg xmlns="http://www.w3.org/2000/svg" width="955" height="901" viewBox="0 0 955 901" fill="none" className="absolute right-0 mt-[1340px]">
           <g filter="url(#filter0_f_179_257)">
             <path d="M536.702 942.546C450.713 905.436 351.014 859.191 340.869 797.166C330.626 735.16 409.918 657.276 473.223 583.073C536.43 508.891 583.65 438.388 666.255 390.653C748.86 342.917 866.968 318.026 940.231 364.273C1013.49 410.52 1041.91 527.905 1051.74 636.746C1061.64 745.468 1052.96 845.645 1002.5 910.788C952.015 975.833 859.78 1005.94 777.493 1006.86C695.128 1007.9 622.711 979.753 536.702 942.546Z" fill="#262261"/>
           </g>
@@ -87,8 +87,8 @@ export default function Policies() {
       </div>
 
 
-      <div className="z-[10] w-[60%] flex flex-col justify-start mt-[6rem]">
-        <div className="flex justify-between">
+      <div className="z-[10] w-full md:w-[60%] flex flex-col justify-start items-center md:mt-[6rem]">
+        <div className="md:flex justify-between items-center w-[80%] md:w-full hidden">
           <h1 className="text-3xl font-bold">Policies</h1>
           <button
             className="cursor-pointer font-light text-sm px-5 py-2 rounded-xl"
@@ -100,7 +100,19 @@ export default function Policies() {
           </button>
         </div>
 
-        <div className="flex flex-col bg-[#202020] py-[4rem] px-[3rem] mt-[1rem] rounded-lg">
+        <div className="flex flex-col bg-[#202020] py-[3rem] md:py-[4rem] px-[3rem] md:mt-[1rem] md:rounded-lg">
+          <div className="flex justify-between items-center md:hidden mb-[2rem]">
+            <h1 className="text-2xl md:text-3xl font-bold">Policies</h1>
+            <button
+              className="cursor-pointer font-light text-sm px-5 py-2 rounded-xl"
+              style={{
+                background: "rgba(38, 34, 97, 1)",
+              }}
+            >
+              Save & Quit
+            </button>
+          </div>
+
           <div className="flex flex-col mb-[1rem]">
             <h1 className="text-[20px] font-bold">{`Qhacks Privacy Policy`}</h1>
             <p className="text-[16px] mb-5">{`Your privacy is important to us. It is QHacks' policy to respect your privacy regarding any information we may collect from you across`} <u>our website</u> {`and other sites we own and operate`}</p>
@@ -226,10 +238,10 @@ export default function Policies() {
           
         </div>
 
-        <div className="flex flex-row justify-center bg-[#202020] py-[1rem] mt-[1rem] mb-[6rem] rounded-lg">
-          <div className="w-[25%] flex justify-center items-center text-center bg-[#FAAF40] rounded-lg py-3">Previous Page</div>
+        <div className="flex flex-row w-full justify-center bg-[#202020] md:py-[10px] pb-10 md:mt-[1rem] md:mb-[6rem] md:rounded-lg">
+          <div className="w-[150px] md:w-[300px] flex justify-center items-center text-center bg-[#FAAF40] rounded-lg py-2 md:py-3">Previous Page</div>
           <div className="h-full w-[2px] bg-white mx-[1rem]"></div>
-          <div className="w-[25%] flex justify-center items-center text-center bg-[#EE4036] rounded-lg py-3">Finish</div>
+          <div className="w-[150px] md:w-[300px] flex justify-center items-center text-center bg-[#EE4036] rounded-lg py-2 md:py-3">Next Page</div>
         </div>
       </div>
     </div>
