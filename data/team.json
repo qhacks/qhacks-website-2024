@@ -90,15 +90,6 @@
         "instagram": "https://www.instagram.com/nicholaslyko/",
         "color":"bg-red-500"
     },
-    "LeejaeKim":{
-        "name": "Leejae Kim",
-        "role": "Finance Director",
-        "image": "/team/leejae_kim.svg",
-        "linkedin": "https://www.linkedin.com/in/leejaekim/",
-        "github": null,
-        "instagram": "https://www.instagram.com/leejae.kim/",
-        "color":"bg-yellow-300"
-    },
     "EthanChin":{
         "name": "Ethan Chin",
         "role": "Finance Director",
