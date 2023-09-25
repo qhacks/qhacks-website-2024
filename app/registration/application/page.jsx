@@ -20,7 +20,7 @@ export default function Info() {
   };
 
   return (
-    <div className="flex justify-center text-white bg-[#111010]">
+    <div className="flex justify-center text-white bg-[#111010] border">
 
       {/* BACKGROUND */}
       <div className="hidden md:block absolute w-full h-full bg-transparent">
@@ -225,9 +225,9 @@ export default function Info() {
         </div>
 
         <div className="flex flex-row w-full justify-center bg-[#202020] md:py-[10px] pb-10 md:mt-[1rem] md:mb-[6rem] md:rounded-lg">
-          <div className="w-[150px] md:w-[300px] flex justify-center items-center text-center bg-[#FAAF40] rounded-lg py-2 md:py-3">Previous Page</div>
+          <a href="/registration/education" className="w-7/10 md:w-[300px] flex justify-center items-center text-center bg-[#FAAF40] rounded-lg py-2 md:py-3">Previous Page</a>
           <div className="h-full w-[2px] bg-white mx-[1rem]"></div>
-          <div className="w-[150px] md:w-[300px] flex justify-center items-center text-center bg-[#EE4036] rounded-lg py-2 md:py-3">Next Page</div>
+          <a href="/registration/policies" className="w-7/10 md:w-[300px] flex justify-center items-center text-center bg-[#EE4036] rounded-lg py-2 md:py-3">Next Page</a>
         </div>
       </div>
     </div>

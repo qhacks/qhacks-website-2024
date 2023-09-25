@@ -58,10 +58,10 @@ export default function About() {
   ];
 
   return (
-    <div className="flex justify-center text-white bg-[#111010]">
+    <div className=" w-screen flex justify-center text-white bg-[#111010]">
 
       {/* BACKGROUND */}
-      <div className="hidden md:block absolute w-full h-full bg-transparent">
+      <div className="hidden md:block absolute w-full h-full bg-transparent border">
         <svg xmlns="http://www.w3.org/2000/svg" width="914" height="1050" viewBox="0 0 914 1050" fill="none" className="absolute right-0">
           <g filter="url(#filter0_f_179_250)">
             <path d="M795.733 43.0597C838.033 70.5597 879.933 95.5597 906.133 132.56C932.333 169.46 942.733 218.36 940.833 266.06C938.933 313.86 924.833 360.46 906.933 411.86C889.133 463.26 867.633 519.36 827.233 581.36C786.833 643.36 727.433 711.26 668.533 710.56C609.633 709.86 551.133 640.46 500.633 584.26C450.133 528.16 407.533 485.16 377.833 434.46C348.033 383.86 331.133 325.46 342.633 273.86C354.233 222.16 394.233 177.16 420.433 120.26C446.533 63.4597 458.833 -5.34028 497.833 -34.6403C536.833 -63.9403 602.433 -53.9403 656.633 -34.0403C710.833 -14.0403 753.433 15.6597 795.733 43.0597Z" fill="#EE4036"/>
@@ -318,7 +318,7 @@ export default function About() {
         </div>
 
         <div className="flex flex-row w-full justify-center bg-[#202020] md:py-[10px] pb-10 md:mt-[1rem] md:mb-[6rem] md:rounded-lg">
-          <div className="w-[150px] md:w-[300px] flex justify-center items-center text-center bg-[#FAAF40] rounded-lg py-2 md:py-3">Next Page</div>
+          <a href="/registration/education" className="w-[150px] md:w-[300px] flex justify-center items-center text-center bg-[#FAAF40] rounded-lg py-2 md:py-3">Next Page</a>
         </div>
       </div>
     </div>

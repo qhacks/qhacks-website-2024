@@ -239,9 +239,9 @@ export default function Policies() {
         </div>
 
         <div className="flex flex-row w-full justify-center bg-[#202020] md:py-[10px] pb-10 md:mt-[1rem] md:mb-[6rem] md:rounded-lg">
-          <div className="w-[150px] md:w-[300px] flex justify-center items-center text-center bg-[#FAAF40] rounded-lg py-2 md:py-3">Previous Page</div>
+          <a href="/registration/application" className="w-[150px] md:w-[300px] flex justify-center items-center text-center bg-[#FAAF40] rounded-lg py-2 md:py-3">Previous Page</a>
           <div className="h-full w-[2px] bg-white mx-[1rem]"></div>
-          <div className="w-[150px] md:w-[300px] flex justify-center items-center text-center bg-[#EE4036] rounded-lg py-2 md:py-3">Next Page</div>
+          <a href="/registration/completion" className="w-[150px] md:w-[300px] flex justify-center items-center text-center bg-[#EE4036] rounded-lg py-2 md:py-3">Next Page</a>
         </div>
       </div>
     </div>
