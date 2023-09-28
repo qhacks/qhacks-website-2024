@@ -40,11 +40,14 @@ export default function Info() {
       </div>
 
 
-        <div className="z-[10] w-[60%] flex flex-col justify-center">
+        <div className="z-[10] w-[60%] h-[100vh] flex flex-col justify-center items-center">
             <div className="flex flex-col gap-[1rem] justify-between bg-[#202020] py-[4rem] px-[3rem] mt-[1rem] rounded-lg">
                 <h1 className="text-[35px] font-bold">{`All Set!`}</h1>
                 <p className="text-[22px]">{`You have completed the application form for QHacks 2023. You have been sent an email with confirmation of your completion. Our team will be reviewing applications after the dashboard closes, so keep an eye out for your status of admission. At any point in time until December 9th, you are able to edit the submission of each page separately by making changes and clicking the "Save and Submit" button. Thank you for applying to QHacks 2023!`}</p>
-                <button className="rounded-[5px] w-[20%] bg-[#EE4036] py-[0.5rem] text-[22px] font-medium self-end">Your Profile</button>
+                <a 
+                    className="rounded-[5px] w-[20%] bg-[#EE4036] py-[0.75rem] text-[22px] font-medium self-end text-center"
+                    href="/dashboard"
+                >Your Profile</a>
             </div>
         </div>
     </div>

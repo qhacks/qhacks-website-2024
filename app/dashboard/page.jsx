@@ -9,7 +9,10 @@ export default function Dashboard() {
             <div className="h-full w-full flex flex-row justify-center items-start pt-[3rem]">
                 <div className='h-[90%] w-[23%] flex justify-center items-center m-4 flex-col'>
                     <div className='w-full h-50px flex'>
-                        <a className='bg-[#FE0000] w-[160px] h-[50px] rounded-full flex justify-center items-center text-xl text-white font-bold mb-[10px]'>Home</a>
+                        <a 
+                            className='bg-[#FE0000] w-[160px] h-[50px] rounded-full flex justify-center items-center text-xl text-white font-bold mb-[10px]'
+                            href='/'
+                        >Home</a>
                     </div>
                     <div className='bg-[#202020] w-full min-w-fit h-[600px] flex flex-col justify-center items-center rounded-2xl mx-4 my-2 py-3'>
                         <h3 className='text-white font-bold text-2xl mb-1 text-center'>Application Tracker</h3>
@@ -19,19 +22,25 @@ export default function Dashboard() {
                             - 1: yellow Go (incomplete and available)
                             - 2: green Edit (complete and available)
                             */}
-                            <ApplicationLinkButton title="About" status={2} dest={null}/>
-                            <ApplicationLinkButton title="Education" status={2} dest={null}/>
-                            <ApplicationLinkButton title="Additional Info" status={1} dest={null}/>
-                            <ApplicationLinkButton title="Policies" status={0} dest={null}/>
+                            <ApplicationLinkButton title="About" status={2} dest={"/registration/about"}/>
+                            <ApplicationLinkButton title="Education" status={2} dest={"/registration/education"}/>
+                            <ApplicationLinkButton title="Additional Info" status={1} dest={"/registration/application"}/>
+                            <ApplicationLinkButton title="Policies" status={0} dest={"/registration/policies"}/>
                         </div>
                     </div>
                     <div className='bg-[#202020] w-full h-96 flex flex-col justify-center items-center rounded-2xl mx-4 my-2'>
                         <h3 className='text-white font-bold text-2xl mb-8'>Need a team?</h3>
-                        <a className='bg-[#FAAF40] w-[160px] h-[50px] rounded-full flex justify-center items-center text-xl text-white font-bold'>Home</a>
+                        <a 
+                            className='bg-[#FAAF40] w-[160px] h-[50px] rounded-full flex justify-center items-center text-xl text-white font-bold'
+                            href='/'
+                        >More Info</a>
                     </div>
                     <div className='bg-[#202020] w-full h-96 flex flex-col justify-center items-center rounded-2xl mx-4 my-2'>
                         <h3 className='text-white font-bold text-2xl mb-8'>Need a bus?</h3>
-                        <a className='bg-[#FAAF40] w-[160px] h-[50px] rounded-full flex justify-center items-center text-xl text-white font-bold'>Home</a>
+                        <a 
+                            className='bg-[#FAAF40] w-[160px] h-[50px] rounded-full flex justify-center items-center text-xl text-white font-bold'
+                            href='/'    
+                        >More Info</a>
                     </div>
                 </div>
                 

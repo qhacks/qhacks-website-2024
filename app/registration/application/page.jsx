@@ -102,14 +102,12 @@ export default function Info() {
       <div className="z-[10] w-[60%] flex flex-col justify-start mt-[6rem]">
         <div className="flex justify-between">
           <h1 className="text-3xl font-bold">More Info</h1>
-          <button
-            className="cursor-pointer font-light text-sm px-5 py-2 rounded-xl"
-            style={{
-              background: "rgba(38, 34, 97, 1)",
-            }}
+          <a
+            className="font-bold cursor-pointer text-sm px-5 py-2 rounded-xl bg-[#262261]"
+            href="/dashboard"
           >
             Save & Quit
-          </button>
+          </a>
         </div>
 
         <div className="flex flex-col bg-[#202020] py-[4rem] px-[3rem] mt-[1rem] rounded-lg">
@@ -213,9 +211,15 @@ export default function Info() {
         </div>
 
         <div className="flex flex-row justify-center bg-[#202020] py-[1rem] mt-[1rem] mb-[6rem] rounded-lg">
-          <div className="w-[25%] flex justify-center items-center text-center bg-[#FAAF40] rounded-lg py-3">Previous Page</div>
+          <a 
+            className="w-[25%] flex justify-center items-center text-center bg-[#FAAF40] rounded-lg font-bold py-3"
+            href="/registration/education"
+          >Previous Page</a>
           <div className="h-full w-[2px] bg-white mx-[1rem]"></div>
-          <div className="w-[25%] flex justify-center items-center text-center bg-[#EE4036] rounded-lg py-3">Next Page</div>
+          <a 
+            className="w-[25%] flex justify-center items-center text-center bg-[#EE4036] rounded-lg font-bold py-3"
+            href="/registration/policies"
+          >Next Page</a>
         </div>
       </div>
     </div>

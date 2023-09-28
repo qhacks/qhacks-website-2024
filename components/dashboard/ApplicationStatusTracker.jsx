@@ -6,7 +6,7 @@ function ApplicationStatusTracker(props) {
             <div className='text-white text-4xl font-semibold py-[1.5rem]'>
                 Application Status
             </div>
-            <div className='w-[calc(100%-3rem)] h-[62px] mb-[20px]'>
+            <div className='w-[calc(100%-3rem)] h-[62px] mb-[20px] flex justify-center'>
                 <img src={`/application-status/${props.status}.svg`} alt="" srcset="" />
             </div>
         </div>
