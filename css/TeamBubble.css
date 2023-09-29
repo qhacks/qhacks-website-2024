@@ -66,9 +66,10 @@
 .team-bubble-name {
     /* font-weight: 00; */
     font-size: 9px;
-    margin-top: -1px;
+    margin-top: 5px;
     height: 12px;
     line-height: 6.5px;
+    transition: margin-top var(--_transition);
 }
 
 .team-bubble-role {
@@ -103,6 +104,9 @@
     height: 50px;
 }
 
+.team-bubble:hover .team-bubble-name {
+    margin-top: -1px;
+}
 .team-bubble:hover .team-bubble-back {
     margin-top: 0;
 }
