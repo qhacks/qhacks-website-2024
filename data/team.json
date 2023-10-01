@@ -1,247 +1,236 @@
-
 {
-    "EricMedina":{
+    "EricMedina": {
         "name": "Eric Medina",
         "role": "Co-Chair",
         "image": "/team/eric_medina.svg",
         "linkedin": "https://www.linkedin.com/in/eric-a-medina/",
         "github": null,
         "instagram": "https://www.instagram.com/eric_medina456/",
-        "color":"bg-red-500"
+        "color": "bg-red-500"
     },
-    "DominiqueMercier":{
+    "DominiqueMercier": {
         "name": "Dominique Mercier",
         "role": "Co-Chair",
         "image": "/team/dominique_mercier.svg",
         "linkedin": "https://www.linkedin.com/in/dominique-mercier/",
         "github": null,
         "instagram": "https://www.instagram.com/dominique.mercier_/",
-        "color":"bg-yellow-300"
+        "color": "bg-yellow-300"
     },
-    "JeremySelwin":{
+    "JeremySelwin": {
         "name": "Jeremy Selwin",
         "role": "Co-Chair",
         "image": "/team/jeremy_selwin.svg",
         "linkedin": "https://www.linkedin.com/in/jeremy-selwin/",
         "github": "https://github.com/selwinjeremy",
         "instagram": "https://www.instagram.com/jeremyselwin/",
-        "color":"bg-blue-500"
+        "color": "bg-blue-500"
     },
-    "MonicaStef":{
+    "MonicaStef": {
         "name": "Monica Stef",
         "role": "Marketing Director",
         "image": "/team/monica_stef.svg",
         "linkedin": "https://www.linkedin.com/in/monica-stef-729b89230/",
         "github": null,
         "instagram": "https://www.instagram.com/monicastefff/",
-        "color":"bg-red-500"
+        "color": "bg-red-500"
     },
-    "EthanWang":{
+    "EthanWang": {
         "name": "Ethan Wang",
         "role": "Marketing Officer",
         "image": "/team/ethan_wang.svg",
         "linkedin": "https://www.linkedin.com/in/ethan-wang-qu/",
         "github": null,
         "instagram": "https://www.instagram.com/e.thnx_w/",
-        "color":"bg-yellow-300"
+        "color": "bg-yellow-300"
     },
-    "LacshmiGaneshananda":{
+    "LacshmiGaneshananda": {
         "name": "Lacshmi Ganeshananda",
         "role": "Marketing Officer",
         "image": "/team/lacshmi_ganeshananda.svg",
         "linkedin": "https://www.linkedin.com/in/lacshmi-ganeshananda/",
         "github": null,
         "instagram": "https://www.instagram.com/lacshmi.g/",
-        "color":"bg-blue-500"
+        "color": "bg-blue-500"
     },
-    "EricaFry":{
+    "EricaFry": {
         "name": "Erica Fry",
         "role": "Marketing Officer",
         "image": "/team/erica_fry.svg",
         "linkedin": "https://www.linkedin.com/in/erica-fry",
         "github": null,
         "instagram": "https://www.instagram.com/ericaafry/",
-        "color":"bg-red-500"
+        "color": "bg-red-500"
     },
-    "MichaelaLi":{
+    "MichaelaLi": {
         "name": "Michaela Li",
         "role": "Operations Director",
         "image": "/team/michaela_li.svg",
         "linkedin": null,
         "github": null,
         "instagram": "https://www.instagram.com/_michaela.li/",
-        "color":"bg-yellow-300"
+        "color": "bg-yellow-300"
     },
-    "MayaGoodman":{
+    "MayaGoodman": {
         "name": "Maya Goodman",
         "role": "Operations Officer",
         "image": "/team/maya_goodman.svg",
         "linkedin": "https://www.linkedin.com/in/maya-goodman-631b14221",
         "github": null,
         "instagram": "https://www.instagram.com/maya.goodman /",
-        "color":"bg-blue-500"
+        "color": "bg-blue-500"
     },
-    "NicholasLykopoulos":{
+    "NicholasLykopoulos": {
         "name": "Nicholas Lykopoulos",
         "role": "Operations Officer",
         "image": "/team/nicholas_lykopoulos.svg",
         "linkedin": "https://www.linkedin.com/in/nicholas-lykopoulos-13565423a/",
         "github": null,
         "instagram": "https://www.instagram.com/nicholaslyko/",
-        "color":"bg-red-500"
+        "color": "bg-red-500"
     },
-    "EthanChin":{
+    "EthanChin": {
         "name": "Ethan Chin",
         "role": "Finance Director",
         "image": "/team/ethan_chin.svg",
         "linkedin": "https://www.linkedin.com/in/ethan-chin",
         "github": null,
         "instagram": "https://www.instagram.com/_ethanchin/",
-        "color":"bg-red-500"
+        "color": "bg-red-500"
     },
-    "JoashMathew":{
+    "JoashMathew": {
         "name": "Joash Mathew",
         "role": "Technology Director (Back-end)",
         "image": "/team/joash_mathew.svg",
         "linkedin": "https://www.linkedin.com/in/joashmathew/",
         "github": "https://github.com/j0ashm",
         "instagram": "https://www.instagram.com/j0ashm/",
-        "color":"bg-yellow-300"
+        "color": "bg-yellow-300"
     },
-    "SchuylerGood":{
+    "SchuylerGood": {
         "name": "Schuyler Good",
         "role": "Technology Director (Front-end)",
         "image": "/team/schuyler_good.svg",
         "linkedin": "https://www.linkedin.com/in/schuyler-good-19043018a/",
         "github": "https://github.com/SchuylerGood",
         "instagram": "https://www.instagram.com/skygood7/",
-        "color":"bg-blue-500"
+        "color": "bg-blue-500"
     },
-    "StefanPitigoi":{
+    "StefanPitigoi": {
         "name": "Stefan Pitigoi",
         "role": "Front-end tech officer",
         "image": "/team/stefan_pitigoi.svg",
         "linkedin": "https://www.linkedin.com/in/stefan-pitigoi/",
         "github": "https://github.com/stefpi",
         "instagram": "https://www.instagram.com/stefanppit/",
-        "color":"bg-red-500"
+        "color": "bg-red-500"
     },
-    "JacobTepperman":{
+    "JacobTepperman": {
         "name": "Jacob Tepperman",
         "role": "Front-end tech officer",
         "image": "/team/jacob_tepperman.svg",
         "linkedin": "https://www.linkedin.com/in/jtepp",
         "github": "https://www.github.com/jtepp",
         "instagram": "https://www.instagram.com/jtepp_/",
-        "color":"bg-yellow-300"
+        "color": "bg-yellow-300"
     },
-    "AkshayDesale":{
+    "AkshayDesale": {
         "name": "Akshay Desale",
         "role": "Back-end tech officer",
         "image": "/team/akshay_desale.svg",
         "linkedin": "https://www.linkedin.com/in/akshay-desale-74026b202/",
         "github": null,
         "instagram": "https://www.instagram.com/USERNAME_HERE/",
-        "color":"bg-blue-500"
+        "color": "bg-blue-500"
     },
-    "CalvinZheng":{
+    "CalvinZheng": {
         "name": "Calvin Zheng",
         "role": "Partnerships Director",
         "image": "/team/calvin_zheng.svg",
         "linkedin": "https://www.linkedin.com/in/zheng-calvin/",
         "github": "https://github.com/calvinz168",
         "instagram": "https://www.instagram.com/calv.zheng/",
-        "color":"bg-red-500"
+        "color": "bg-red-500"
     },
-    "EricLam":{
+    "EricLam": {
         "name": "Eric Lam",
         "role": "Partnerships Director",
         "image": "/team/eric_lam.svg",
         "linkedin": "https://www.linkedin.com/in/eric-lam-a3774720b/",
         "github": null,
         "instagram": "https://www.instagram.com/cire_mal/",
-        "color":"bg-yellow-300"
+        "color": "bg-yellow-300"
     },
-    "MatangyKanesamoorthy":{
+    "MatangyKanesamoorthy": {
         "name": "Matangy Kanesamoorthy",
         "role": "Partnerships Officer",
         "image": "/team/matangy_kanesamoorthy.svg",
         "linkedin": "http://www.linkedin.com/in/matangy-kanesamoorthy",
         "github": null,
         "instagram": "https://www.instagram.com/k_matangy/",
-        "color":"bg-blue-500"
+        "color": "bg-blue-500"
     },
-    "AdamRaco":{
+    "AdamRaco": {
         "name": "Adam Raco",
         "role": "Partnerships Officer",
         "image": "/team/adam_raco.svg",
         "linkedin": "https://www.linkedin.com/in/adam-raco/",
         "github": "https://www.github.com/TheBugAssassin",
         "instagram": "https://www.instagram.com/adam.raco/",
-        "color":"bg-red-500"
+        "color": "bg-red-500"
     },
-    "OliviaStewart":{
+    "OliviaStewart": {
         "name": "Olivia Stewart",
         "role": "Partnerships Officer",
         "image": "/team/olivia_stewart.svg",
         "linkedin": null,
         "github": null,
         "instagram": "https://www.instagram.com/liviistewart/",
-        "color":"bg-yellow-300"
+        "color": "bg-yellow-300"
     },
-    "NoahSerhan":{
+    "NoahSerhan": {
         "name": "Noah Serhan",
         "role": "Partnerships Officer",
         "image": "/team/noah_serhan.svg",
         "linkedin": "https://www.linkedin.com/in/noahserhan/",
         "github": null,
         "instagram": "https://www.instagram.com/noahserhan/",
-        "color":"bg-blue-500"
+        "color": "bg-blue-500"
     },
-    "AdiGroumoutis":{
+    "AdiGroumoutis": {
         "name": "Adi Groumoutis",
         "role": "Partnerships Officer",
         "image": "/team/adi_groumoutis.svg",
         "linkedin": "linkedin.com/in/adi-groumoutis",
         "github": null,
         "instagram": "https://www.instagram.com/adigroumoutis/",
-        "color":"bg-red-500"
+        "color": "bg-red-500"
     },
-    "IlyasErdogan":{
+    "IlyasErdogan": {
         "name": "Ilyas Erdogan",
         "role": "Logistics Director",
         "image": "/team/ilyas_erdogan.svg",
         "linkedin": "https://www.linkedin.com/in/ilyas-erdogan/",
         "github": "https://github.com/Ilyas-Erdogan",
         "instagram": "https://www.instagram.com/ilyas_egn/",
-        "color":"bg-yellow-300"
+        "color": "bg-yellow-300"
     },
-    "AlexanderZhao":{
-        "name": "Alexander Zhao",
-        "role": "Logistics Officer",
-        "image": "/team/alexander_zhao.svg",
-        "linkedin": "https://www.linkedin.com/in/alexander-zhao-926225211/",
-        "github": "https://github.com/alexzhaoo",
-        "instagram": "https://www.instagram.com/alexzhaoooo/",
-        "color":"bg-blue-500"
-    },
-    "AndrewTerry":{
+    "AndrewTerry": {
         "name": "Andrew Terry",
         "role": "Logistics Officer",
         "image": "/team/andrew_terry.svg",
         "linkedin": "https://www.linkedin.com/in/andrew-terry-364ba2206/",
         "github": null,
         "instagram": "https://www.instagram.com/USERNAME_HERE/",
-        "color":"bg-red-500"
+        "color": "bg-red-500"
     },
-    "MichaelKwon":{
+    "MichaelKwon": {
         "name": "Michael Kwon",
         "role": "Logistics Officer",
         "image": "/team/michael_kwon.svg",
         "linkedin": "https://www.linkedin.com/in/michaelkwon5/",
         "github": null,
         "instagram": "https://www.instagram.com/mchl.kwn/",
-        "color":"bg-yellow-300"
+        "color": "bg-yellow-300"
     }
 }
-    

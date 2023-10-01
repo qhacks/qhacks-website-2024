@@ -19,7 +19,6 @@ const TeamSection = () => {
 			<TeamBubble teamMember={team.SchuylerGood} />
 			<TeamBubble teamMember={team.StefanPitigoi}/>
 			<TeamBubble teamMember={team.JacobTepperman}/>
-			<TeamBubble teamMember={team.AkshayDesale}/>
 			<TeamBubble teamMember={team.CalvinZheng} />
 			<TeamBubble teamMember={team.EricLam}/>
 			<TeamBubble teamMember={team.MatangyKanesamoorthy}/>
@@ -28,7 +27,6 @@ const TeamSection = () => {
 			<TeamBubble teamMember={team.NoahSerhan}/>
 			<TeamBubble teamMember={team.AdiGroumoutis}/>
 			<TeamBubble teamMember={team.IlyasErdogan} />
-			<TeamBubble teamMember={team.AlexanderZhao} />
 			<TeamBubble teamMember={team.AndrewTerry} />
 			<TeamBubble teamMember={team.MichaelKwon}/>
 		</div>
