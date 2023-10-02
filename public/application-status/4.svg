@@ -12,22 +12,15 @@
 <circle cx="521" cy="20" r="20" fill="#474747"/>
 <circle cx="641" cy="20" r="20" fill="#474747"/>
 <rect x="36" y="15" width="610" height="10" fill="#474747"/>
-<rect x="521" y="18" width="120" height="4" fill="url(#paint0_linear_720_452)"/>
-<circle cx="641" cy="20" r="15" fill="#FAAF40"/>
 <circle cx="41" cy="20" r="15" fill="#41AD3F"/>
 <circle cx="521" cy="20" r="15" fill="#41AD3F"/>
 <rect x="401" y="18" width="120" height="4" fill="#41AD3F"/>
+<circle cx="641" cy="20" r="15" fill="#41AD3F"/>
+<rect x="521" y="18" width="120" height="4" fill="#41AD3F"/>
 <circle cx="281" cy="20" r="15" fill="#41AD3F"/>
 <rect x="161" y="18" width="120" height="4" fill="#41AD3F"/>
 <circle cx="161" cy="20" r="15" fill="#41AD3F"/>
 <rect x="41" y="18" width="120" height="4" fill="#41AD3F"/>
 <circle cx="401" cy="20" r="15" fill="#41AD3F"/>
 <rect x="281" y="18" width="120" height="4" fill="#41AD3F"/>
-<path d="M641.866 46.5C641.481 47.1667 640.519 47.1667 640.134 46.5L634.938 37.5C634.553 36.8333 635.034 36 635.804 36L646.196 36C646.966 36 647.447 36.8333 647.062 37.5L641.866 46.5Z" fill="#474747"/>
-<defs>
-<linearGradient id="paint0_linear_720_452" x1="536.5" y1="20" x2="626" y2="20" gradientUnits="userSpaceOnUse">
-<stop stop-color="#41AD3F"/>
-<stop offset="1" stop-color="#FAAF40"/>
-</linearGradient>
-</defs>
 </svg>
