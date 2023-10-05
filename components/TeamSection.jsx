@@ -29,6 +29,10 @@ const TeamSection = () => {
 			<TeamBubble teamMember={team.IlyasErdogan} />
 			<TeamBubble teamMember={team.AndrewTerry} />
 			<TeamBubble teamMember={team.MichaelKwon}/>
+			<TeamBubble teamMember={team.AnaCoelho}/>
+			<TeamBubble teamMember={team.EdwardTanurkov}/>
+			<TeamBubble teamMember={team.EricLee}/>
+			<TeamBubble teamMember={team.NavyaBajwa}/>
 		</div>
     );
 }
