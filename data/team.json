@@ -96,7 +96,7 @@
         "linkedin": "https://www.linkedin.com/in/ethan-chin",
         "github": null,
         "instagram": "https://www.instagram.com/_ethanchin/",
-        "color": "bg-red-500"
+        "color": "bg-yellow-300"
     },
     "JoashMathew": {
         "name": "Joash Mathew",
@@ -105,7 +105,7 @@
         "linkedin": "https://www.linkedin.com/in/joashmathew/",
         "github": "https://github.com/j0ashm",
         "instagram": "https://www.instagram.com/j0ashm/",
-        "color": "bg-yellow-300"
+        "color": "bg-blue-500"
     },
     "SchuylerGood": {
         "name": "Schuyler Good",
@@ -114,7 +114,7 @@
         "linkedin": "https://www.linkedin.com/in/schuyler-good-19043018a/",
         "github": "https://github.com/SchuylerGood",
         "instagram": "https://www.instagram.com/skygood7/",
-        "color": "bg-blue-500"
+        "color": "bg-red-500"
     },
     "StefanPitigoi": {
         "name": "Stefan Pitigoi",
@@ -123,7 +123,7 @@
         "linkedin": "https://www.linkedin.com/in/stefan-pitigoi/",
         "github": "https://github.com/stefpi",
         "instagram": "https://www.instagram.com/stefanppit/",
-        "color": "bg-red-500"
+        "color": "bg-yellow-300"
     },
     "JacobTepperman": {
         "name": "Jacob Tepperman",
@@ -132,7 +132,7 @@
         "linkedin": "https://www.linkedin.com/in/jtepp",
         "github": "https://www.github.com/jtepp",
         "instagram": "https://www.instagram.com/jtepp_/",
-        "color": "bg-yellow-300"
+        "color": "bg-blue-500"
     },
     "CalvinZheng": {
         "name": "Calvin Zheng",
@@ -213,7 +213,7 @@
         "linkedin": "https://www.linkedin.com/in/andrew-terry-364ba2206/",
         "github": null,
         "instagram": null,
-        "color": "bg-red-500"
+        "color": "bg-blue-500"
     },
     "MichaelKwon": {
         "name": "Michael Kwon",
@@ -222,6 +222,42 @@
         "linkedin": "https://www.linkedin.com/in/michaelkwon5/",
         "github": null,
         "instagram": "https://www.instagram.com/mchl.kwn/",
+        "color": "bg-red-500"
+    },
+    "AnaCoelho": {
+        "name": "Ana Coelho",
+        "role": "Logistics Officer",
+        "image": "/team-webp/AnaCoelho.webp",
+        "linkedin": "https://https://www.linkedin.com/in/ana-coelho-04a90a1b8/",
+        "github": null,
+        "instagram": "https://www.instagram.com/anarcxo_/",
+        "color": "bg-yellow-300"
+    },
+    "EdwardTanurkov": {
+        "name": "Edward Tanurkov",
+        "role": "First-Year Representative",
+        "image": "/team-webp/EdwardTanurkov.webp",
+        "linkedin": "https://www.linkedin.com/in/edward-tanurkov/",
+        "github": null,
+        "instagram": "https://www.instagram.com/edster28/",
+        "color": "bg-blue-500"
+    },
+    "EricLee": {
+        "name": "Eric Lee",
+        "role": "First-Year Representative",
+        "image": "/team-webp/EricLee.webp",
+        "linkedin": "https://www.linkedin.com/in/eric-lee-1b1b3a1b2/",
+        "github": null,
+        "instagram": "https://www.instagram.com/eric.leeeeee/",
+        "color": "bg-red-500"
+    },
+    "NavyaBajwa": {
+        "name": "Navya Bajwa",
+        "role": "First-Year Representative",
+        "image": "/team-webp/NavyaBajwa.webp",
+        "linkedin": "https://www.linkedin.com/in/navyabajwa",
+        "github": null,
+        "instagram": "https://www.instagram.com/navyabajwa/",
         "color": "bg-yellow-300"
     }
 }
