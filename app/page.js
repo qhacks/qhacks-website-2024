@@ -130,7 +130,6 @@ export default function Home() {
 			<section className="my-20 md:my-12 flex items-center justify-center">
 				<div className="flex items-center justify-center flex-col md:flex-row">
 					<PartneringCard />
-					<FirstYearCard />
 				</div>
 			</section>
 
