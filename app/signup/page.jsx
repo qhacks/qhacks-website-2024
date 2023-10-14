@@ -25,12 +25,31 @@ export default function SignUp() {
             return;
         }
 
-        await signUp(email, password).then(() => {
+        const { result, error } = await signUp(email, password);
+        if (error)
+        {
+            console.log(error.code, error.name);
+            if (error.code == 'auth/weak-password')
+            {
+                // TODO: Add message saying minimum requirements not met. (Minimum is 6)
+            }
+            else if (error.code == 'auth/email-already-in-use')
+            {
+                // TODO: Add message saying email already in use.
+            }
+            else if (error.code == 'auth/invalid-email')
+            {
+                // TODO: Add message saying email is invalid.
+            }
+            alert(error);
+            return;
+        }
+        else
+        {
+            console.log(result);
+            alert('Account created!');
             window.location.href = '/login';
-            alert('Account created successfully');
-        }).catch((e) => {
-            console.log(e);
-        });
+        }
     }
 
     return ( 
