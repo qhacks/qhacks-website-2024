@@ -2,8 +2,11 @@
 import '../../css/background.css';
 import ApplicationLinkButton from '../../components/dashboard/ApplicationLinkButton';
 import ApplicationStatusTracker from '../../components/dashboard/ApplicationStatusTracker';
+import { useAuth } from '../../contexts/AuthContext';
 
 export default function Dashboard() {
+    const { currentUser } = useAuth();
+    console.log(currentUser);
     return(
         <div className='h-fit md:h-screen w-full bg-[#111010] bg-topogrophy-dark flex flex-col'>
             {/* Home Button */}
@@ -50,13 +53,17 @@ export default function Dashboard() {
                     <div className='m-2 bg-[#202020] rounded-2xl h-full'>
                         <ApplicationStatusTracker status={0} />
                         <div className='w-full h-[500px] rounded-2xl text-white py-[3rem] px-[2rem]'>
-                            <div className='text-2xl mb-2 font-bold'>QHacks Application</div>
+                            <div className='text-2xl mb-2 font-bold'>Hi there, {currentUser.email}!</div>
 
                             <div>
-                            QHacks is Queen's University's largest Hackathon! Join over 500 hackers, speakers and mentors to create, learn and share your ideas. Attend our workshops and hacker challenges and meet industry professionals, Innovators, and creatives from all faculties and skill levels are welcomed.
+                            We're super excited to see you're interested in participating at QHacks this year!
+                            <br />
+                            QHacks is Queen's University's largest Hackathon! This year we expect to welcome over 500 hackers, speakers and mentors to create, learn and share your ideas. At the event, you will have the opportunity to attend our workshops and meet industry professionals, innovators, and creatives from all faculties with varying skill levels.
+                            <br />
+                            We look forward to seeing you at the event.
                             <br />
                             <br />
-                            Are you from out of town? No worries! QHacks offers reimbursement for Mega bus tickets.
+                            Are you from out of town? No worries! QHacks offers a bus service from Toronto to Kingston, seats are limited and will be allotted on a first-come, first-serve basis. Additionally, we also have a limited amount of funds earmarked to reimburse costs of Megabus travel for participants. Reimbursement can be claimed at the front-desk during the event.
                             </div>
                         </div>
                     </div>
