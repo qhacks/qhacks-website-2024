@@ -1,23 +1,61 @@
 "use client";
+import { useState } from 'react';
 import wavesSrc from '../../assets/waves.svg';
 import { FaEyeSlash, FaEye } from 'react-icons/fa';
+import login from '../../firebase/auth/login';
 
 export default function LogIn() {
+    const [email, setEmail] = useState(null);
+    const [password, setPassword] = useState(null);
+
+    async function handleSubmit(e)
+    {
+        e.preventDefault();
+
+        if (email === null || password === null || confirm === null)
+        {
+            alert('Please fill out all fields');
+            return;
+        }
+
+        const { result, error } = await login(email, password);
+        if (error)
+        {
+            console.log(error.code, error.name);
+            if (error.code == 'auth/user-not-found')
+            {
+                // TODO: Display message saying no user with that email exists
+            }
+            else if (error.code == 'auth/wrong-password')
+            {
+                // TODO: Display message saying wrong password
+            }
+            else
+            {
+                alert(error);
+                return;
+            }
+        }
+
+        alert('Logged in!');
+        window.location.href = '/dashboard';
+    }
+
     return ( 
         <div className='h-screen bg-gray-950'>
             <div id='login-container' className='flex flex-col justify-center items-center w-full h-full bg-repeat-x bg-bottom ' style={{
                 backgroundImage: `url(${wavesSrc.src})`,
                 backgroundSize: 'cover'
             }}>
-                <form id="login-card" className='text-white z-[1] bg-zinc-900 rounded-[15px] flex flex-col justify-center items-center gap-[30px] p-[30px] sm:p-[50px]'>
+                <form id="login-card" className='text-white z-[1] bg-zinc-900 rounded-[15px] flex flex-col justify-center items-center gap-[30px] p-[30px] sm:p-[50px]' onSubmit={handleSubmit}>
                     <h2 className='text-3xl font-bold'>Welcome Back</h2>
                     <input type='email' className='mt-[25px] w-[280px] border-b border-solid border-[#717171] focus:outline-none' style={{
                         background: 'none',
-                    }} placeholder='Email' />
+                    }} placeholder='Email' onChange={e => setEmail(e.target.value)}/>
                     <div className='relative mb-[25px]'>
                         <input id='password-input' type='password' className='w-[280px] border-b border-solid border-[#717171] focus:outline-none' style={{
                             background: 'none',
-                        }} placeholder='Password' />
+                        }} placeholder='Password' onChange={e => setPassword(e.target.value)}/>
                         <div id="password-icon-cont" onClick={(e) => {
                             const parent = 
                             [...document.querySelector("#password-icon-cont").children].forEach(child => child.classList.toggle('hidden'))
