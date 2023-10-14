@@ -1,23 +1,53 @@
 "use client";
 import wavesSrc from '../../assets/waves.svg';
 import { FaEyeSlash, FaEye } from 'react-icons/fa';
+import { useState } from 'react';
+import signUp from '../../firebase/auth/signup';
 
 export default function SignUp() {
+    const [email, setEmail] = useState(null);
+    const [password, setPassword] = useState(null);
+    const [confirm, setConfirm] = useState(null);
+
+    async function handleSubmit(e)
+    {
+        e.preventDefault();
+     
+        if (email === null || password === null || confirm === null)
+        {
+            alert('Please fill out all fields');
+            return;
+        }
+
+        if (password !== confirm)
+        {
+            alert('Passwords do not match');
+            return;
+        }
+
+        await signUp(email, password).then(() => {
+            window.location.href = '/login';
+            alert('Account created successfully');
+        }).catch((e) => {
+            console.log(e);
+        });
+    }
+
     return ( 
         <div className='h-screen bg-gray-950'>
             <div id='signup-container' className='flex flex-col justify-center items-center w-full h-full bg-repeat-x bg-bottom' style={{
                 backgroundImage: `url(${wavesSrc.src})`,
                 backgroundSize: 'cover'
             }}>
-                <form id="signup-card" className='text-white z-[1] bg-zinc-900 rounded-[15px] flex flex-col justify-center items-center gap-[30px] p-[30px] sm:p-[50px]'>
+                <form id="signup-card" className='text-white z-[1] bg-zinc-900 rounded-[15px] flex flex-col justify-center items-center gap-[30px] p-[30px] sm:p-[50px]' onSubmit={handleSubmit}>
                     <h2 className='text-3xl font-bold'>Welcome</h2>
                     <input type='email' className='w-[280px] border-b border-solid border-[#717171] focus:outline-none' style={{
                         background: 'none',
-                    }} placeholder='Email' />
+                    }} placeholder='Email' onChange={e => setEmail(e.target.value)}/>
                     <div className='relative'>
                         <input id='password-input' type='password' className='w-[280px] border-b border-solid border-[#717171] focus:outline-none' style={{
                             background: 'none',
-                        }} placeholder='Password' />
+                        }} placeholder='Password' onChange={e => setPassword(e.target.value)}/>
                         <div id="password-icon-cont" onClick={(e) => {
                             const parent = 
                             [...document.querySelector("#password-icon-cont").children].forEach(child => child.classList.toggle('hidden'))
@@ -32,7 +62,7 @@ export default function SignUp() {
                     <div className='relative'>
                         <input id='confirm-input' type='password' className='w-[280px] border-b border-solid border-[#717171] focus:outline-none' style={{
                             background: 'none',
-                        }} placeholder='Confirm Password' />
+                        }} placeholder='Confirm Password' onChange={e => setConfirm(e.target.value)}/>
 
                         <div id="confirm-icon-cont" onClick={(e) => {
                             const parent = 
