@@ -1,11 +1,108 @@
 "use client"
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Dropdown from "../../../components/dropDown";
 import parse from "html-react-parser"
+import { toast, ToastContainer } from "react-toastify";
+import { useAuth } from "../../../contexts/AuthContext";
+import 'react-toastify/dist/ReactToastify.css';
+import retrieveUserData from "../../../firebase/firestore/retrieveUserData";
+import updateUser from "../../../firebase/firestore/updateUser";
+
 
 export default function Policies() {
   const textBoxStyle = "rounded px-4 py-1 mt-[2px] text-sm border border-white bg-[#2D2D2D]"
+
+  const { currentUser } = useAuth();
+  const [appData, setAppData] = useState(null);
+
+  useEffect(async () => {
+    if (currentUser === null)
+    {
+      window.location.href = '/login';
+      return;
+    }
+    setAppData((await retrieveUserData(currentUser.uid)).result);
+  }, []);
+
+  console.log(appData);
+  async function saveApplicationData(forceRedirect, path, checkCompletion)
+  {
+    if (appData === null) return;
+    
+    if (forceRedirect)
+    {
+      toast('Application saved!', {
+        theme: 'dark',
+        pauseOnHover: false,
+        type: 'success' 
+      });
+      setAppData({...appData});
+      await updateUser(currentUser.uid, appData);
+      setTimeout(() => { window.location.href = path; }, 3000);
+    }
+    else
+    {
+      if (checkCompletion)
+      {
+        if (areFieldsCompleted() == false)
+        {
+          toast('Please fill out all fields to continue.', {
+            theme: 'dark',
+            pauseOnHover: false,
+            type: 'error'
+          });
+          setAppData({...appData, policiesComplete: false});
+          updateUser(currentUser.uid, appData);
+          return;
+        }
+        else
+        {
+          toast('Information saved!', {
+            theme: 'dark',
+            pauseOnHover: false,
+            type: 'success'
+          });
+    
+          setAppData({...appData, policiesComplete: true});
+          await updateUser(currentUser.uid, appData);
+          setTimeout(() => { window.location.href = path; }, 3000);
+        }
+      }
+      else
+      {
+        if (areFieldsCompleted() == false)
+        {
+          setAppData({...appData, policiesComplete: false});
+          updateUser(currentUser.uid, appData);
+          setTimeout(() => { window.location.href = path; }, 500);
+        }
+        else
+        {
+          toast('Information saved!', {
+            theme: 'dark',
+            pauseOnHover: false,
+            type: 'success'
+          });
+    
+          setAppData({...appData, policiesComplete: true});
+          await updateUser(currentUser.uid, appData);
+          setTimeout(() => { window.location.href = path; }, 3000);
+        }
+      }
+    }
+  }
+
+  function areFieldsCompleted()
+  {
+    return (
+      appData.privacyPolicy != null  &&
+      appData.termsOfService != null &&
+      appData.covidPolicy != null && 
+      appData.codeOfConduct != null &&
+      appData.mlhPromotions != null
+    )
+  }
 
   return (
     <div className="flex justify-center text-white">
@@ -90,17 +187,17 @@ export default function Policies() {
       <div className="z-[10] w-[60%] flex flex-col justify-start mt-[6rem]">
         <div className="flex justify-between">
           <h1 className="text-3xl font-bold">Policies</h1>
-          <a
+          <button
             className="font-bold cursor-pointer text-sm px-5 py-2 rounded-xl bg-[#262261]"
-            href="/dashboard"
+            onClick={() => saveApplicationData(true, '/dashboard')}
           >
             Save & Quit
-          </a>
+          </button>
         </div>
 
         <div className="flex flex-col bg-[#202020] py-[4rem] px-[3rem] mt-[1rem] rounded-lg">
           <div className="flex flex-col mb-[1rem]">
-            <h1 className="text-[20px] font-bold">{`Qhacks Privacy Policy`}</h1>
+            <h1 className="text-[20px] font-bold">{`QHacks Privacy Policy`}</h1>
             <p className="text-[16px] mb-5">{`Your privacy is important to us. It is QHacks' policy to respect your privacy regarding any information we may collect from you across`} <u>our website</u> {`and other sites we own and operate`}</p>
             <div className="text-[16px] h-[325px] rounded-[10px] border-[3px] border-white overflow-scroll p-[2rem]">
                 {parse(`Information We Collect
@@ -225,17 +322,18 @@ export default function Policies() {
         </div>
 
         <div className="flex flex-row justify-center bg-[#202020] py-[1rem] mt-[1rem] mb-[6rem] rounded-lg">
-          <a 
+          <button 
             className="w-[25%] flex justify-center items-center text-center bg-[#FAAF40] rounded-lg py-3 font-bold"
-            href="/registration/application"
-          >Previous Page</a>
+            onClick={() => { saveApplicationData(false, '/registration/about'); }}
+          >Previous Page</button>
           <div className="h-full w-[2px] bg-white mx-[1rem]"></div>
-          <a 
+          <button 
             className="w-[25%] flex justify-center items-center text-center bg-[#EE4036] rounded-lg py-3 font-bold"
-            href="/registration/completion"
-          >Finish</a>
+            onClick={() => { saveApplicationData(false, '/registration/application', true); }}
+          >Finish</button>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };

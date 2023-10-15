@@ -1,8 +1,13 @@
 "use client"
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Dropdown from "../../../components/dropDown";
 import "./page.css"
+import { useAuth } from "../../../contexts/AuthContext";
+import retrieveUserData from "../../../firebase/firestore/retrieveUserData";
+import updateUser from "../../../firebase/firestore/updateUser";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css'
 
 export default function About() {
   const [selectedOption, setSelectedOption] = useState("");
@@ -26,9 +31,99 @@ export default function About() {
     "Masters Program/Graduate School"
   ]
 
-  return (
-    <div className="flex justify-center text-white">
+  const { currentUser } = useAuth();
+  const [appData, setAppData] = useState(null);
 
+  useEffect(async () => {
+    if (currentUser === null)
+    {
+      window.location.href = '/login';
+      return;
+    }
+    setAppData((await retrieveUserData(currentUser.uid)).result);
+  }, []);
+
+  async function saveApplicationData(forceRedirect, path, checkCompletion)
+  {
+    if (appData === null) return;
+    
+    if (forceRedirect)
+    {
+      toast('Application saved!', {
+        theme: 'dark',
+        pauseOnHover: false,
+        type: 'success' 
+      });
+      setAppData({...appData});
+      await updateUser(currentUser.uid, appData);
+      setTimeout(() => { window.location.href = path; }, 3000);
+    }
+    else
+    {
+      if (checkCompletion)
+      {
+        if (areFieldsCompleted() == false)
+        {
+          toast('Please fill out all fields to continue.', {
+            theme: 'dark',
+            pauseOnHover: false,
+            type: 'error'
+          });
+          setAppData({...appData, educationComplete: false});
+          updateUser(currentUser.uid, appData);
+          return;
+        }
+        else
+        {
+          toast('Education information saved!', {
+            theme: 'dark',
+            pauseOnHover: false,
+            type: 'success'
+          });
+    
+          setAppData({...appData, educationComplete: true});
+          await updateUser(currentUser.uid, appData);
+          setTimeout(() => { window.location.href = path; }, 3000);
+        }
+      }
+      else
+      {
+        if (areFieldsCompleted() == false)
+        {
+          setAppData({...appData, educationComplete: false});
+          updateUser(currentUser.uid, appData);
+          setTimeout(() => { window.location.href = path; }, 500);
+        }
+        else
+        {
+          toast('Education information saved!', {
+            theme: 'dark',
+            pauseOnHover: false,
+            type: 'success'
+          });
+    
+          setAppData({...appData, educationComplete: true});
+          await updateUser(currentUser.uid, appData);
+          setTimeout(() => { window.location.href = path; }, 3000);
+        }
+      }
+    }
+  }
+
+  function areFieldsCompleted()
+  {
+    return (
+      appData.school != undefined &&
+      appData.program != undefined &&
+      appData.lvlOfStudy != undefined &&
+      appData.studyYear != undefined &&
+      appData.gradYear != undefined
+    )
+  }
+  
+  return (
+    <>
+      <div className="flex justify-center text-white">
       {/* BACKGROUND */}
       <div className="absolute z-[-1] w-full h-full bg-[#111010]">
         <svg xmlns="http://www.w3.org/2000/svg" width="914" height="1050" viewBox="0 0 914 1050" fill="none" className="absolute right-0">
@@ -109,12 +204,12 @@ export default function About() {
       <div className="z-[10] w-[60%] flex flex-col justify-start mt-[6rem]">
         <div className="flex justify-between">
           <h1 className="text-3xl font-bold">Tell us about yourself</h1>
-          <a
+          <button
             className="font-bold cursor-pointer text-sm px-5 py-2 rounded-xl bg-[#262261]"
-            href="/dashboard"
+            onClick={() => saveApplicationData(true, '/dashboard')}
           >
             Save & Quit
-          </a>
+          </button>
         </div>
 
         <div className="flex flex-col bg-[#202020] py-[4rem] px-[3rem] mt-[1rem] rounded-lg">
@@ -125,7 +220,10 @@ export default function About() {
               name="school"
               id="school"
               placeholder="School"
+              onChange={(e) => { setAppData({...appData, school: e.target.value}); }}
+              value={appData?.school}
               className={`w-[35%] ${textBoxStyle}`}
+              required
             />
           </div>
 
@@ -140,6 +238,7 @@ export default function About() {
                   checked={selectedOption === `${option}`}
                   onChange={handleOptionChange}
                   className="form-radio text-indigo-600 h-4 w-4"
+                  required
                 />
                 <span className="ml-2">{option}</span>
                 </label>
@@ -150,8 +249,9 @@ export default function About() {
                 type="radio"
                 value="other"
                 checked={selectedOption === "other"}
-                onChange={handleOptionChange}
+                onChange={(e) => { handleOptionChange(e); setAppData({...appData, program: e.target.value}); }}
                 className="form-radio text-indigo-600 h-4 w-4"
+                required
               />
               <span className="ml-2">Other: </span>
               <input type="text" className="ml-2 bg-transparent border-b-[1px] text-sm outline-none"></input>
@@ -167,8 +267,8 @@ export default function About() {
                 { label: "PhD" }
               ]}
               value={lvlOfStudySelect}
-              onChange={handlelvlOfStudySelect}
-              placeholder="-- Select a Country --"
+              onChange={(e) => { handlelvlOfStudySelect(e); setAppData({...appData, lvlOfStudy: e.target.value}); }}
+              placeholder="-- Select Level of Study --"
             />
           </div>
 
@@ -178,6 +278,9 @@ export default function About() {
             type="range"
             min="1" max="5" defaultValue="3" step="1"
             className="slider" // needed to use external stylesheet
+            required
+            value={appData?.studyYear}
+            onChange={(e) => { setAppData({...appData, studyYear: e.target.value}); }}
             />
             <div className="flex flex-row justify-between">
               <p>1</p>
@@ -197,6 +300,8 @@ export default function About() {
               placeholder="2023"
               pattern="[0-9]{4}"
               className={`w-[25%] ${textBoxStyle}`}
+              value={appData?.gradYear}
+              onChange={(e) => { setAppData({...appData, gradYear: e.target.value}); }}
               required
             />
           </div>
@@ -204,17 +309,19 @@ export default function About() {
         </div>
 
         <div className="flex flex-row justify-center bg-[#202020] py-[1rem] mt-[1rem] mb-[6rem] rounded-lg">
-          <a 
+          <button 
             className="w-[25%] flex justify-center items-center text-center bg-[#FAAF40] rounded-lg py-3 font-bold"
-            href="/registration/about"
-          >Previous Page</a>
+            onClick={() => { saveApplicationData(false, '/registration/about'); }}
+          >Previous Page</button>
           <div className="h-full w-[2px] bg-white mx-[1rem]"></div>
-          <a 
+          <button 
             className="w-[25%] flex justify-center items-center text-center bg-[#EE4036] rounded-lg py-3 font-bold"
-            href="/registration/application"
-          >Next Page</a>
+            onClick={() => { saveApplicationData(false, '/registration/application', true); }}
+          >Next Page</button>
         </div>
       </div>
-    </div>
+      <ToastContainer />
+      </div>
+    </>
   );
 };

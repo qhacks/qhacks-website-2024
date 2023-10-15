@@ -1,7 +1,12 @@
 "use client"
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Dropdown from "../../../components/dropDown";
+import { useAuth } from "../../../contexts/AuthContext";
+import { ToastContainer, toast } from "react-toastify";
+import updateUser from "../../../firebase/firestore/updateUser";
+import retrieveUserData from "../../../firebase/firestore/retrieveUserData";
+import 'react-toastify/dist/ReactToastify.css'
 
 export default function About() {
   const [selectedOption, setSelectedOption] = useState("");
@@ -53,11 +58,84 @@ export default function About() {
     { label: "China", value: "China" },
     { label: "Japan", value: "Japan" },
     { label: "India", value: "India" },
-    { label: "Uk", value: "Uk" },
+    { label: "UK", value: "UK" },
     { label: "Other", value: "Other" },
   ];
 
+  const {currentUser} = useAuth();
+  const [appData, setAppData] = useState(null);
+
+  useEffect(async () => {
+    if (currentUser === null)
+    {
+      window.location.href = '/login';
+      return;
+    }
+    setAppData((await retrieveUserData(currentUser.uid)).result);
+  }, []);
+
+  async function saveApplicationData(forceRedirect, path, checkCompletion)
+  {
+    if (appData === null) return;
+    
+    if (forceRedirect)
+    {
+      toast('Application saved!', {
+        theme: 'dark',
+        pauseOnHover: false,
+        type: 'success' 
+      });
+      setAppData({...appData});
+      await updateUser(currentUser.uid, appData);
+      setTimeout(() => { window.location.href = path; }, 3000);
+    }
+    else
+    {
+      if (
+        appData.firstName === null ||
+        appData.lastName === null ||
+        appData.pronouns === null ||
+        appData.gender === null ||
+        appData.age === null ||
+        appData.country === null ||
+        appData.phone === null || 
+        appData.githubLink === null ||
+        appData.linkedinLink === null ||
+        appData.portfolioLink === null
+      )
+      {
+        if (checkCompletion)
+        {
+          toast('Please fill out all fields to continue.', {
+            theme: 'dark',
+            pauseOnHover: false,
+            type: 'error'
+          });
+          setAppData({...appData, educationComplete: false});
+          updateUser(currentUser.uid, appData);
+          return;
+        }
+        setAppData({...appData, educationComplete: false});
+        updateUser(currentUser.uid, appData);
+        setTimeout(() => { window.location.href = path; }, 500);
+      }
+      else
+      {
+        toast('Information saved!', {
+          theme: 'dark',
+          pauseOnHover: false,
+          type: 'success'
+        });
+  
+        setAppData({...appData, educationComplete: true});
+        await updateUser(currentUser.uid, appData);
+        setTimeout(() => { window.location.href = path; }, 1500);
+      }
+    }
+  }
+
   return (
+    <>
     <div className="flex justify-center text-white">
 
       {/* BACKGROUND */}
@@ -140,12 +218,12 @@ export default function About() {
       <div className="z-[10] w-[60%] flex flex-col justify-start mt-[6rem]">
         <div className="flex justify-between">
           <h1 className="text-3xl font-bold">Tell us about yourself</h1>
-          <a
+          <button
             className="font-bold cursor-pointer text-sm px-5 py-2 rounded-xl bg-[#262261]"
-            href="/dashboard"
+            onClick={() => saveApplicationData(true, '/dashboard', false)}
           >
             Save & Quit
-          </a>
+          </button>
         </div>
 
         <div className="flex flex-col bg-[#202020] py-[4rem] px-[3rem] mt-[1rem] rounded-lg">
@@ -156,7 +234,10 @@ export default function About() {
               name="firstName"
               id="firstName"
               placeholder="First Name"
+              value={appData?.firstName}
               className={`w-[35%] ${textBoxStyle}`}
+              required
+              onChange={e => setAppData({...appData, firstName: e.target.value})}
             />
           </div>
 
@@ -167,7 +248,10 @@ export default function About() {
               name="lastName"
               id="lastName"
               placeholder="Last Name"
+              value={appData?.lastName}
+              required
               className={`w-[35%] ${textBoxStyle}`}
+              onChange={e => setAppData({...appData, lastName: e.target.value})}
             />
           </div>
 
@@ -180,7 +264,7 @@ export default function About() {
                   type="radio"
                   value={option}
                   checked={selectedOption === `${option}`}
-                  onChange={handleOptionChange}
+                  onChange={(e) => {handleOptionChange(e); setAppData({...appData, pronouns: e.target.value})}}
                   className="form-radio text-indigo-600 h-4 w-4"
                 />
                 <span className="ml-2">{option}</span>
@@ -192,7 +276,7 @@ export default function About() {
                 type="radio"
                 value="other"
                 checked={selectedOption === "other"}
-                onChange={handleOptionChange}
+                onChange={(e) => {handleOptionChange(e); setAppData({...appData, pronouns: e.target.value})}}
                 className="form-radio text-indigo-600 h-4 w-4"
               />
               <span className="ml-2">Other: </span>
@@ -203,7 +287,7 @@ export default function About() {
                 type="radio"
                 value="no_prefer"
                 checked={selectedOption === "no_prefer"}
-                onChange={handleOptionChange}
+                onChange={(e) => {handleOptionChange(e); setAppData({...appData, pronouns: e.target.value})}}
                 className="form-radio text-indigo-600 h-4 w-4"
               />
               <span className="ml-2">Prefer not to answer</span>
@@ -219,7 +303,7 @@ export default function About() {
                   type="radio"
                   value={option}
                   checked={selectedOption === `${option}`}
-                  onChange={handleOptionChange}
+                  onChange={(e) => {handleOptionChange(e); setAppData({...appData, gender: e.target.value})}}
                   className="form-radio text-indigo-600 h-4 w-4"
                 />
                 <span className="ml-2">{option}</span>
@@ -231,7 +315,7 @@ export default function About() {
                 type="radio"
                 value="other"
                 checked={selectedOption === "other"}
-                onChange={handleOptionChange}
+                onChange={(e) => {handleOptionChange(e); setAppData({...appData, gender: e.target.value})}}
                 className="form-radio text-indigo-600 h-4 w-4"
               />
               <span className="ml-2">Other: </span>
@@ -242,7 +326,7 @@ export default function About() {
                 type="radio"
                 value="no_prefer"
                 checked={selectedOption === "no_prefer"}
-                onChange={handleOptionChange}
+                onChange={(e) => {handleOptionChange(e); setAppData({...appData, gender: e.target.value})}}
                 className="form-radio text-indigo-600 h-4 w-4"
               />
               <span className="ml-2">Prefer not to answer</span>
@@ -256,7 +340,10 @@ export default function About() {
                 name="age"
                 id="age"
                 placeholder="Age"
+                value={appData?.age}
+                required
                 className={`w-[25%] ${textBoxStyle}`}
+                onChange={e => setAppData({...appData, age: e.target.value})}
               />
           </div>
 
@@ -265,7 +352,7 @@ export default function About() {
             <Dropdown
               options={countryOptions}
               value={countrySelect}
-              onChange={handleCountrySelect}
+              onChange={(e) =>  {handleCountrySelect(e); setAppData({...appData, country: e.value})}}
               placeholder="Select an option"
             />
           </div>
@@ -279,38 +366,43 @@ export default function About() {
               placeholder="123-456-7890"
               pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
               className={`${textBoxStyle}`}
+              value={appData?.phone}
+              onChange={e => setAppData({...appData, phone: e.target.value})}
               required
             />
           </div>
 
           {/* create input for github Link */}
           <div className="flex flex-col mb-[2rem]">
-            <label htmlFor="github">Github Link</label>
-            <input type="url" id="github" name="github" placeholder="Github" className={`${textBoxStyle}`}/>
+            <label htmlFor="github">GitHub Link</label>
+            <input type="url" id="github" name="github" placeholder="GitHub" className={`${textBoxStyle}`} onChange={e => setAppData({...appData, githubLink: e.target.value})} value={appData?.githubLink} />
           </div>
 
           {/* create input for linkedin Link */}
           <div className="flex flex-col mb-[2rem]">
             <label htmlFor="linkedin">Linkedin Link</label>
-            <input type="url" id="linkedin" name="linkedin" placeholder="LinkedIn" className={`${textBoxStyle}`}/>
+            <input type="url" id="linkedin" name="linkedin" placeholder="LinkedIn" className={`${textBoxStyle}`} onChange={e => setAppData({...appData, linkedinLink: e.target.value})} value={appData?.linkedinLink} />
           </div>
 
           {/* create input for portfolio Link */}
           <div className="flex flex-col">
             <label htmlFor="portfolio">Website</label>
-            <input type="url" id="portfolio" name="portfolio" placeholder="Personal Site" className={`${textBoxStyle}`}/>
+            <input type="url" id="portfolio" name="portfolio" placeholder="Personal Site" className={`${textBoxStyle}`} onChange={e => setAppData({ ...appData, portfolioLink: e.target.value})} value={appData?.portfolioLink} />
           </div>
           
         </div>
 
         <div className="flex flex-row justify-center bg-[#202020] py-[1rem] mt-[1rem] mb-[6rem] rounded-lg">
-          <a 
+          <button 
             className="w-[25%] flex justify-center items-center text-center bg-[#FAAF40] font-bold rounded-lg py-3"
             href="/registration/education"
-          >Next Page</a>
+            onClick={() => {saveApplicationData(false, '/registration/education', true)}}
+          >Next Page</button>
         </div>
       </div>
     </div>
+    <ToastContainer />
+    </>
   );
 };
 

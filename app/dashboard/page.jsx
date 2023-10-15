@@ -3,11 +3,23 @@ import '../../css/background.css';
 import ApplicationLinkButton from '../../components/dashboard/ApplicationLinkButton';
 import ApplicationStatusTracker from '../../components/dashboard/ApplicationStatusTracker';
 import { useAuth } from '../../contexts/AuthContext';
+import checkIfApplicationStarted from '../../firebase/firestore/checkIfApplicationStarted';
+import { useEffect, useState } from 'react';
 
 export default function Dashboard() {
     const { currentUser } = useAuth();
-    console.log(currentUser);
-    return(
+    const [appStarted, setAppStarted] = useState(null);
+
+    useEffect(async () => {
+        if (currentUser === null)
+        {
+            window.location.href = '/login';
+            return;
+        }
+        setAppStarted((await checkIfApplicationStarted(currentUser.uid)).result);
+    }, []);
+
+    return (
         <div className='h-fit md:h-screen w-full bg-[#111010] bg-topogrophy-dark flex flex-col'>
             {/* Home Button */}
             <div className='w-full flex justify-center items-center mt-[3rem]'>
@@ -53,7 +65,7 @@ export default function Dashboard() {
                     <div className='m-2 bg-[#202020] rounded-2xl h-full'>
                         <ApplicationStatusTracker status={0} />
                         <div className='w-full h-[500px] rounded-2xl text-white py-[3rem] px-[2rem]'>
-                            <div className='text-2xl mb-2 font-bold'>Hi there, {currentUser.email}!</div>
+                            <div className='text-2xl mb-2 font-bold'>Hi there, {currentUser?.email}!</div>
 
                             <div>
                             We're super excited to see you're interested in participating at QHacks this year!
@@ -65,6 +77,8 @@ export default function Dashboard() {
                             <br />
                             Are you from out of town? No worries! QHacks offers a bus service from Toronto to Kingston, seats are limited and will be allotted on a first-come, first-serve basis. Additionally, we also have a limited amount of funds earmarked to reimburse costs of Megabus travel for participants. Reimbursement can be claimed at the front-desk during the event.
                             </div>
+                            <br />
+                            {appStarted == false ? <div>It looks like you haven't started your application now. Make sure to apply before the deadline!</div> : null}
                         </div>
                     </div>
                 </div>

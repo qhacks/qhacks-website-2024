@@ -1,7 +1,12 @@
 "use client"
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Dropdown from "../../../components/dropDown";
+import { toast, ToastContainer } from "react-toastify";
+import { useAuth } from "../../../contexts/AuthContext";
+import 'react-toastify/dist/ReactToastify.css';
+import retrieveUserData from "../../../firebase/firestore/retrieveUserData";
+import updateUser from "../../../firebase/firestore/updateUser";
 
 export default function Info() {
   const textBoxStyle = "rounded px-4 py-1 mt-[2px] text-sm border border-white bg-[#2D2D2D]"
@@ -18,6 +23,101 @@ export default function Info() {
   const handleOptionChange = (event) => {
     setTravelOption(event.target.value);
   };
+
+  const { currentUser } = useAuth();
+  const [appData, setAppData] = useState(null);
+
+  console.log(appData);
+  useEffect(async () => {
+    if (currentUser === null)
+    {
+      window.location.href = '/login';
+      return;
+    }
+    setAppData((await retrieveUserData(currentUser.uid)).result);
+  }, []);
+
+  async function saveApplicationData(forceRedirect, path, checkCompletion)
+  {
+    if (appData === null) return;
+    
+    if (forceRedirect)
+    {
+      toast('Application saved!', {
+        theme: 'dark',
+        pauseOnHover: false,
+        type: 'success' 
+      });
+      setAppData({...appData});
+      await updateUser(currentUser.uid, appData);
+      setTimeout(() => { window.location.href = path; }, 3000);
+    }
+    else
+    {
+      if (checkCompletion)
+      {
+        if (areFieldsCompleted() == false)
+        {
+          toast('Please fill out all fields to continue.', {
+            theme: 'dark',
+            pauseOnHover: false,
+            type: 'error'
+          });
+          setAppData({...appData, appQsComplete: false});
+          updateUser(currentUser.uid, appData);
+          return;
+        }
+        else
+        {
+          toast('Information saved!', {
+            theme: 'dark',
+            pauseOnHover: false,
+            type: 'success'
+          });
+    
+          setAppData({...appData, appQsComplete: true});
+          await updateUser(currentUser.uid, appData);
+          setTimeout(() => { window.location.href = path; }, 3000);
+        }
+      }
+      else
+      {
+        if (areFieldsCompleted() == false)
+        {
+          setAppData({...appData, appQsComplete: false});
+          updateUser(currentUser.uid, appData);
+          setTimeout(() => { window.location.href = path; }, 500);
+        }
+        else
+        {
+          toast('Information saved!', {
+            theme: 'dark',
+            pauseOnHover: false,
+            type: 'success'
+          });
+    
+          setAppData({...appData, appQsComplete: true});
+          await updateUser(currentUser.uid, appData);
+          setTimeout(() => { window.location.href = path; }, 3000);
+        }
+      }
+    }
+  }
+
+  function areFieldsCompleted()
+  {
+    return (
+      appData.firstTeammate != null &&
+      appData.secondTeammate != null &&
+      appData.thirdTeammate != null &&
+      appData.reasonForParticipating != null &&
+      appData.projectIdea != null &&
+      appData.previousHackathons != null &&
+      appData.dietaryRestrictions != null &&
+      appData.travelOption != null &&
+      appData.busOption != null
+    )
+  }
 
   return (
     <div className="flex justify-center text-white">
@@ -102,12 +202,12 @@ export default function Info() {
       <div className="z-[10] w-[60%] flex flex-col justify-start mt-[6rem]">
         <div className="flex justify-between">
           <h1 className="text-3xl font-bold">More Info</h1>
-          <a
+          <button
             className="font-bold cursor-pointer text-sm px-5 py-2 rounded-xl bg-[#262261]"
-            href="/dashboard"
+            onClick={() => saveApplicationData(true, '/dashboard')}
           >
             Save & Quit
-          </a>
+          </button>
         </div>
 
         <div className="flex flex-col bg-[#202020] py-[4rem] px-[3rem] mt-[1rem] rounded-lg">
@@ -119,6 +219,8 @@ export default function Info() {
                 name="firstTeammate"
                 id="firstTeammate"
                 placeholder="Teammate 1"
+                onChange={e => setAppData({...appData, firstTeammate: e.target.value})}
+                value={appData?.firstTeammate}
                 className={`w-[32%] ${textBoxStyle}`}
               />
               <input
@@ -126,6 +228,8 @@ export default function Info() {
                 name="secondTeammate"
                 id="secondTeammate"
                 placeholder="Teammate 2"
+                onChange={e => setAppData({...appData, secondTeammate: e.target.value})}
+                value={appData?.secondTeammate}
                 className={`w-[32%] ${textBoxStyle}`}
               />
               <input
@@ -133,6 +237,8 @@ export default function Info() {
                 name="thirdTeammate"
                 id="thirdTeammate"
                 placeholder="Teammate 3"
+                onChange={e => setAppData({...appData, thirdTeammate: e.target.value})}
+                value={appData?.thirdTeammate}
                 className={`w-[32%] ${textBoxStyle}`}
               />
             </div>
@@ -145,6 +251,8 @@ export default function Info() {
               id="reasonForParticipating"
               placeholder="Answer"
               rows="10"
+              onChange={e => setAppData({...appData, reasonForParticipating: e.target.value})}
+              value={appData?.reasonForParticipating}
               className={`w-full resize-none !pt-[0.75rem] ${textBoxStyle}`}
             />
           </div>
@@ -156,6 +264,8 @@ export default function Info() {
               id="projectIdea"
               placeholder="Answer"
               rows="10"
+              onChange={e => setAppData({...appData, projectIdea: e.target.value})}
+              value={appData?.projectIdea}
               className={`w-full resize-none !pt-[0.75rem] ${textBoxStyle}`}
             />
           </div>
@@ -167,6 +277,8 @@ export default function Info() {
                 name="previousHackathons"
                 id="previousHackathons"
                 placeholder="0"
+                onChange={e => setAppData({...appData, previousHackathons: e.target.value})}
+                value={appData?.previousHackathons}
                 className={`w-[25%] ${textBoxStyle}`}
               />
           </div>
@@ -178,6 +290,8 @@ export default function Info() {
                 name="dietaryRestrictions"
                 id="dietaryRestrictions"
                 placeholder="intolerance, vegan, allergies, etc."
+                onChange={e => setAppData({...appData, dietaryRestrictions: e.target.value})}
+                value={appData?.dietaryRestrictions}
                 className={`w-[70%] ${textBoxStyle}`}
               />
           </div>
@@ -191,7 +305,7 @@ export default function Info() {
                   type="radio"
                   value={option}
                   checked={travelOption === `${option}`}
-                  onChange={handleOptionChange}
+                  onChange={(e) => { handleOptionChange(e); setAppData({...appData, travelOption: e.target.value}) }}
                   className="form-radio text-indigo-600 h-4 w-4"
                 />
                 <span className="ml-2">{option}</span>
@@ -203,7 +317,7 @@ export default function Info() {
           <div className="flex flex-col mb-[3rem]">
             <label htmlFor="busOption">Will you be needing bussing from any of the above locations?</label>
             <div className="flex flex-row flex-start items-center">
-              <input type="checkbox" id="busOption" name="busOption" value="" className="w-5 h-5 rounded border border-white bg-[#2D2D2D]"></input>
+              <input type="checkbox" id="busOption" name="busOption" value="" className="w-5 h-5 rounded border border-white bg-[#2D2D2D]" onChange={e => setAppData({...appData, busOption: e.target.value})}></input>
               <label for="busOption" className="pl-[0.5rem]">Yes</label>
             </div>
           </div>
@@ -222,6 +336,7 @@ export default function Info() {
           >Next Page</a>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };

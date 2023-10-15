@@ -3,6 +3,8 @@ import wavesSrc from '../../assets/waves.svg';
 import { FaEyeSlash, FaEye } from 'react-icons/fa';
 import { useState } from 'react';
 import signUp from '../../firebase/auth/signup';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function SignUp() {
     const [email, setEmail] = useState(null);
@@ -25,30 +27,45 @@ export default function SignUp() {
             return;
         }
 
-        const { result, error } = await signUp(email, password);
+        const { error } = await signUp(email, password);
         if (error)
         {
             console.log(error.code, error.name);
             if (error.code == 'auth/weak-password')
             {
-                // TODO: Add message saying minimum requirements not met. (Minimum is 6)
+                toast('Password must be at least 6 characters long!', {
+                    theme: 'dark',
+                    pauseOnHover: false,
+                    type: 'error'
+                });
             }
             else if (error.code == 'auth/email-already-in-use')
             {
-                // TODO: Add message saying email already in use.
+                toast('Email already in use!', {
+                    theme: 'dark',
+                    pauseOnHover: false,
+                    type: 'error'
+                });
             }
             else if (error.code == 'auth/invalid-email')
             {
-                // TODO: Add message saying email is invalid.
+                toast('Invalid email!', {
+                    theme: 'dark',
+                    pauseOnHover: false,
+                    type: 'error'
+                });
             }
-            alert(error);
             return;
         }
         else
         {
-            console.log(result);
-            alert('Account created!');
-            window.location.href = '/login';
+            toast('Account created!', {
+                theme: 'dark',
+                pauseOnHover: false,
+                type: 'success'
+            });
+            
+            setTimeout(() => { window.location.href = '/login'; }, 1500);
         }
     }
 
@@ -102,6 +119,7 @@ export default function SignUp() {
                     <div className='text-xs font-light'>return <a className='font-semibold hover:underline' href="/">Home</a></div>
                 </form>
             </div>
+            <ToastContainer />
         </div>
      );
 }
