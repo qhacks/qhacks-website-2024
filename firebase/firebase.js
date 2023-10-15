@@ -1,6 +1,6 @@
 import { getApps, initializeApp } from 'firebase/app';
 import { getFirestore, connectFirestoreEmulator } from 'firebase/firestore';
-import { getAuth, connectAuthEmulator, createUserWithEmailAndPassword } from 'firebase/auth';
+import { getAuth, connectAuthEmulator } from 'firebase/auth';
 
 const config = {
     apiKey: process.env.FIREBASE_API_KEY,
@@ -13,8 +13,6 @@ const config = {
     measurementId: process.env.FIREBASE_MEASUREMENT_ID
 }
 
-console.log(config);
-
 function initializeServices()
 {
     const isConfigured = getApps().length > 0;
@@ -26,7 +24,7 @@ function initializeServices()
 
 function connectEmulators({ auth, db })
 {
-    connectFirestoreEmulator(db, 'http://localhost:8080');
+    connectFirestoreEmulator(db, 'http://localhost:8090');
     connectAuthEmulator(auth, 'http://localhost:9099');
 }
 
