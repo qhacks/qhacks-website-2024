@@ -5,51 +5,52 @@ import ApplicationStatusTracker from '../../components/dashboard/ApplicationStat
 
 export default function Dashboard() {
     return(
-        <div className='h-fit md:h-screen w-full bg-[#111010] bg-topogrophy-dark flex flex-col'>
+        <div className='w-full h-full bg-[#111010] bg-topogrophy-dark flex flex-col justify-start items-center'>
             {/* Home Button */}
-            <div className='w-full flex justify-center items-center mt-[3rem]'>
-                <div className='w-[90%] md:w-[75%] h-50px flex'>
+            <div className='w-full flex flex-row justify-between items-center mt-[3rem] w-[95%] md:w-[75%]'>
+                <div className=' h-50px flex'>
                     <a href='/' className='bg-[#FE0000] w-[160px] h-[50px] rounded-full flex justify-center items-center text-xl text-white font-bold mb-[10px]'>Home</a>
+                </div>
+                <div className=' h-50px flex'>
+                    <a href='/' className='bg-[#FE0000] w-[160px] h-[50px] rounded-full flex justify-center items-center text-xl text-white font-bold mb-[10px]'>Log Out</a>
                 </div>
             </div>
             
-
-            <div className="h-full w-full flex md:flex-row flex-col-reverse justify-center items-center md:items-start">
-                <div className='h-[90%] w-[90%] md:w-[30%] xl:w-[20%] flex justify-center items-center flex-col'>
-                    <div className='flex flex-col sm:flex-row md:flex-col w-full h-full justify-between'>
-                        {/* Application Tracker */}
-                        <div className='m-2 bg-[#202020] w-auto sm:w-2/3 md:w-full min-w-fit h-[600px] md:h-3/5 flex flex-col justify-center items-center rounded-2xl'>
-                            <h3 className='text-white font-bold text-2xl mb-2 text-center mx-7'>Application Tracker</h3>
-                            <div className='w-full flex flex-col'>
-                                {/* Statuses
-                                - 0: grey Go (incomplete but not available)
-                                - 1: yellow Go (incomplete and available)
-                                - 2: green Edit (complete and available)
-                                */}
-                                <ApplicationLinkButton title="About" status={2} dest={"/registration/about"}/>
-                                <ApplicationLinkButton title="Education" status={2} dest={"/registration/education"}/>
-                                <ApplicationLinkButton title="Additional Info" status={1} dest={"/registration/application"}/>
-                                <ApplicationLinkButton title="Policies" status={0} dest={"/registration/policies"}/>
-                            </div>
-                        </div>
-                        {/* Info Buttons */}
-                        <div className='w-full sm:w-1/3 md:w-auto h-fit sm:h-[600px] md:h-2/5 flex flex-col justify-between'>
-                            <div className='m-2 bg-[#202020] w-auto h-44 sm:h-[48%] md:h-1/2 flex flex-col justify-center items-center rounded-2xl'>
-                                <h3 className='text-white font-bold text-2xl mb-4'>Need a team?</h3>
-                                <a href='/' className='bg-[#FAAF40] w-[160px] h-[50px] rounded-full flex justify-center items-center text-xl text-white font-bold'>More Info</a>
-                            </div>
-                            <div className='m-2 bg-[#202020] w-auto h-44 sm:h-[48%] md:h-1/2 flex flex-col justify-center items-center rounded-2xl'>
-                                <h3 className='text-white font-bold text-2xl mb-4'>Need a bus?</h3>
-                                <a href='/' className='bg-[#FAAF40] w-[160px] h-[50px] rounded-full flex justify-center items-center text-xl text-white font-bold'>More Info</a>
-                            </div>
+            <div className="flex w-[95%] md:w-[75%] md:h-[600px] sm:flex-row flex-col-reverse gap-4 sm:gap-0 justify-start items-center pt-[20px] mb-[3rem]">
+                <div className='flex flex-col items-center justify-between h-[100%] w-full sm:w-[40%] md:w-[25%] gap-4 sm:gap-0'>
+                    {/* Application Tracker */}
+                    <div className='w-full bg-[#202020] flex flex-col justify-center items-center rounded-2xl px-6 py-5'>
+                        <h3 className='text-white font-bold text-xl mb-2 text-center'>Application Tracker</h3>
+                        <div className='w-full flex flex-col'>
+                            {/* Statuses
+                            - 0: grey Go (incomplete but not available)
+                            - 1: yellow Go (incomplete and available)
+                            - 2: green Edit (complete and available)
+                            */}
+                            <ApplicationLinkButton className title="About" status={2} dest={"/registration/about"}/>
+                            <ApplicationLinkButton title="Education" status={2} dest={"/registration/education"}/>
+                            <ApplicationLinkButton title="Additional Info" status={1} dest={"/registration/application"}/>
+                            <ApplicationLinkButton title="Policies" status={0} dest={"/registration/policies"}/>
                         </div>
                     </div>
+                    {/* Info Buttons */}
+                    <div className='w-full bg-[#202020] flex flex-col justify-center items-center rounded-2xl py-2 px-2'>
+                        <h3 className='text-white font-bold text-xl mb-3'>Need a team?</h3>
+                        <a href='/' className='bg-[#FAAF40] w-[50%] h-[40px] rounded-full flex justify-center items-center text-lg text-white font-bold'>More Info</a>
+                    </div>
+                    <div className='w-full bg-[#202020] flex flex-col justify-center items-center rounded-2xl py-2 px-2'>
+                        <h3 className='text-white font-bold text-xl mb-3'>Need a bus?</h3>
+                        <a href='/' className='bg-[#FAAF40] w-[160px] h-[40px] rounded-full flex justify-center items-center text-lg text-white font-bold'>More Info</a>
+                    </div>
+                    {/* <div className='flex flex-col w-full'>
+                        
+                    </div> */}
                 </div>
                 
-                <div className='h-[90%] w-[90%] md:w-[55%] xl:w-[55%] flex flex-col justify-start items-center m-3'>
-                    <div className='m-2 bg-[#202020] rounded-2xl h-full'>
+                <div className='flex flex-col w-full sm:w-[60%] md:w-[75%] sm:h-full justify-start items-center sm:ml-[20px]'>
+                    <div className='bg-[#202020] h-full rounded-2xl py-5 px-5'>
                         <ApplicationStatusTracker status={0} />
-                        <div className='w-full h-[500px] rounded-2xl text-white py-[3rem] px-[2rem]'>
+                        <div className='w-full rounded-2xl text-white mt-[40px]'>
                             <div className='text-2xl mb-2 font-bold'>QHacks Application</div>
 
                             <div>
