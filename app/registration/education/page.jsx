@@ -17,7 +17,7 @@ export default function About() {
 
   const [lvlOfStudySelect, setlvlOfStudySelect] = useState(null);
   const handlelvlOfStudySelect = (selectedOption) => {
-    setAgeSelect(selectedOption);
+    setlvlOfStudySelect(selectedOption);
   };
 
   const textBoxStyle = "rounded px-4 py-1 mt-[2px] text-sm border border-white bg-[#2D2D2D]"
@@ -235,8 +235,8 @@ export default function About() {
                 <input
                   type="radio"
                   value={option}
-                  checked={selectedOption === `${option}`}
-                  onChange={handleOptionChange}
+                  checked={appData?.program === `${option}`}
+                  onChange={(e) => { handleOptionChange(e); setAppData({...appData, program: e.target.value}); }}
                   className="form-radio text-indigo-600 h-4 w-4"
                   required
                 />
@@ -248,7 +248,7 @@ export default function About() {
               <input
                 type="radio"
                 value="other"
-                checked={selectedOption === "other"}
+                checked={appData?.program === "other"}
                 onChange={(e) => { handleOptionChange(e); setAppData({...appData, program: e.target.value}); }}
                 className="form-radio text-indigo-600 h-4 w-4"
                 required
@@ -266,7 +266,7 @@ export default function About() {
                 { label: "Masters" },
                 { label: "PhD" }
               ]}
-              value={lvlOfStudySelect}
+              value={appData?.lvlOfStudy}
               onChange={(e) => { handlelvlOfStudySelect(e); setAppData({...appData, lvlOfStudy: e.target.value}); }}
               placeholder="-- Select Level of Study --"
             />
