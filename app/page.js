@@ -107,13 +107,12 @@ export default function Home() {
 								In-person! • February 2nd - 4th
 							</motion.p>
 							<motion.a
-								// whileHover={{ scale: 1.2 }}
-								// whileTap={{ scale: 0.8 }}
-								// href="/signup"
-								// className="lg:flex w-56 lg:w-auto text-white justify-center  bg-green-500 px-5 py-3 m-5 z-5 rounded-xl font-bold opacity-40"
-								className="lg:flex w-56 lg:w-auto text-white justify-center bg-neutral-800 px-5 py-3 m-5 z-5 rounded-xl font-bold opacity-90"
+								whileHover={{ scale: 1.2 }}
+								whileTap={{ scale: 0.8 }}
+								href="/signup"
+								className="lg:flex w-56 lg:w-auto text-white justify-center  bg-green-500 px-5 py-3 m-5 z-5 rounded-xl font-bold opacity-100"
 							>
-								Registration opens late October!
+								Registration open!
 							</motion.a>
 						</div>
 					</div>
