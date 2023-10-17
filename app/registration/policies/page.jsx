@@ -22,10 +22,11 @@ export default function Policies() {
       window.location.href = '/login';
       return;
     }
+
     setAppData((await retrieveUserData(currentUser.uid)).result);
   }, []);
 
-  console.log(appData);
+
   async function saveApplicationData(forceRedirect, path, checkCompletion)
   {
     if (appData === null) return;
@@ -64,9 +65,18 @@ export default function Policies() {
             type: 'success'
           });
     
-          setAppData({...appData, policiesComplete: true});
-          await updateUser(currentUser.uid, appData);
-          setTimeout(() => { window.location.href = path; }, 3000);
+          if (path == '/registration/completion')
+          {
+            setAppData({ ...appData, appSubmitted: true });
+            await updateUser(currentUser.uid, appData);
+            setTimeout(() => { window.location.href = path; }, 3000);
+          }
+          else
+          {
+            setAppData({...appData, policiesComplete: true});
+            await updateUser(currentUser.uid, appData);
+            setTimeout(() => { window.location.href = path; }, 3000);
+          }
         }
       }
       else
@@ -100,6 +110,7 @@ export default function Policies() {
       appData.termsOfService != null &&
       appData.covidPolicy != null && 
       appData.codeOfConduct != null &&
+      appData.codeOfConduct2 != null &&
       appData.mlhPromotions != null
     )
   }
@@ -239,7 +250,7 @@ export default function Policies() {
 
           <div className="flex flex-col mb-[3rem]">
             <div className="flex flex-row flex-start items-center">
-              <input type="checkbox" id="busOption" name="busOption" value="" className="w-5 h-5 rounded border border-white bg-[#2D2D2D]"></input>
+              <input type="checkbox" id="busOption" name="busOption" checked={appData?.privacyPolicy} className="w-5 h-5 rounded border border-white bg-[#2D2D2D]" onChange={e => setAppData({ ...appData, privacyPolicy: e.target.checked }) }></input>
               <label for="busOption" className="pl-[0.5rem]">I have read and agree to the QHacks Privacy Policy</label>
             </div>
           </div>
@@ -286,7 +297,7 @@ export default function Policies() {
 
           <div className="flex flex-col mb-[3rem]">
             <div className="flex flex-row flex-start items-center">
-              <input type="checkbox" id="busOption" name="busOption" value="" className="w-5 h-5 rounded border border-white bg-[#2D2D2D]"></input>
+              <input type="checkbox" id="busOption" name="busOption" checked={appData?.termsOfService} className="w-5 h-5 rounded border border-white bg-[#2D2D2D]" onChange={e => setAppData({ ...appData, termsOfService: e.target.checked })}></input>
               <label for="busOption" className="pl-[0.5rem]">I have read and agree to the QHacks Terms and Conditions</label>
             </div>
           </div>
@@ -295,7 +306,7 @@ export default function Policies() {
             <h1 className="text-[20px] font-bold mb-1">{`COVID-19 Precautions`}</h1>
             <p className="text-[16px] Inter mb-2">{`QHacks requires all participants to follow COVID-19 safety regulations at the time of the event. QHacks will follow Queen's University's COVID-19 precautions which will not require proof of vaccination.`}</p>
             <div className="flex flex-row flex-start items-center">
-              <input type="checkbox" id="busOption" name="busOption" value="" className="w-5 h-5 rounded border border-white bg-[#2D2D2D]"></input>
+              <input type="checkbox" id="busOption" name="busOption" checked={appData?.covidPolicy} className="w-5 h-5 rounded border border-white bg-[#2D2D2D]" onChange={e => setAppData({ ...appData, covidPolicy: e.target.checked })}></input>
               <label for="busOption" className="pl-[0.5rem]">I agree to the COVID-19 Precautions Agreement</label>
             </div>
           </div>
@@ -303,18 +314,18 @@ export default function Policies() {
           <div className="flex flex-col mb-[4rem]">
             <h1 className="text-[20px] font-bold mb-1">{`MLH Code of Conduct`}</h1>
             <div className="flex flex-row flex-start items-center mb-2">
-              <input type="checkbox" id="busOption" name="busOption" value="" className="w-5 h-5 rounded border border-white bg-[#2D2D2D]"></input>
+              <input type="checkbox" id="busOption" name="busOption" checked={appData?.codeOfConduct} className="w-5 h-5 rounded border border-white bg-[#2D2D2D]" onChange={e => setAppData({ ...appData, codeOfConduct: e.target.checked })}></input>
               <label for="busOption" className="pl-[0.5rem]">{parse(`I have read and agree to the <u><a target="_blank" rel="noreferrer" href="https://github.com/MLH/mlh-policies/blob/main/code-of-conduct.md">MLH Code of Conduct</a></u>`)}</label>
             </div>
             <div className="flex flex-row flex-start mb-1">
-              <input type="checkbox" id="busOption" name="busOption" value="" className="w-5 h-5 rounded border border-white bg-[#2D2D2D] mt-[2px]"></input>
+              <input type="checkbox" id="busOption" name="busOption" checked={appData?.codeOfConduct2} className="w-5 h-5 rounded border border-white bg-[#2D2D2D] mt-[2px]" onChange={e => setAppData({ ...appData, codeOfConduct2: e.target.checked })}></input>
               <label for="busOption" className="pl-[0.5rem]">{parse(`I authorize you to share my application/registration information with Major League Hacking for event administration, ranking, and MLH administration in-line with the <u><a href="https://mlh.io/privacy" target="_blank" rel="noreferrer">MLH Privacy Policy</a></u>. I further agree to the terms of both the <u><a href="https://mlh.io/terms" target="_blank" rel="noreferrer">MLH Contest Terms and Conditions</a></u> and the <u><a href="https://mlh.io/privacy" target="_blank" rel="noreferrer">MLH Privacy Policy</a></u>.`)}</label>
             </div>
           </div>
 
           <div className="flex flex-col">
             <div className="flex flex-row flex-start mb-1">
-              <input type="checkbox" id="busOption" name="busOption" value="" className="w-5 h-5 rounded border border-white bg-[#2D2D2D] mt-[2px]"></input>
+              <input type="checkbox" id="busOption" name="busOption" checked={appData?.mlhPromotions} className="w-5 h-5 rounded border border-white bg-[#2D2D2D] mt-[2px]" onChange={e => setAppData({ ...appData, mlhPromotions: e.target.checked })}></input>
               <label for="busOption" className="pl-[0.5rem]">{parse(`I authorize MLH to send me an email where I can further opt into the MLH Hacker, Events, or Organizer Newsletters and other communications from MLH.`)}</label>
             </div>
           </div>
@@ -324,12 +335,12 @@ export default function Policies() {
         <div className="flex flex-row justify-center bg-[#202020] py-[1rem] mt-[1rem] mb-[6rem] rounded-lg">
           <button 
             className="w-[25%] flex justify-center items-center text-center bg-[#FAAF40] rounded-lg py-3 font-bold"
-            onClick={() => { saveApplicationData(false, '/registration/about'); }}
+            onClick={() => { saveApplicationData(false, '/registration/application'); }}
           >Previous Page</button>
           <div className="h-full w-[2px] bg-white mx-[1rem]"></div>
           <button 
             className="w-[25%] flex justify-center items-center text-center bg-[#EE4036] rounded-lg py-3 font-bold"
-            onClick={() => { saveApplicationData(false, '/registration/application', true); }}
+            onClick={() => { saveApplicationData(false, '/registration/completion', true); }}
           >Finish</button>
         </div>
       </div>
