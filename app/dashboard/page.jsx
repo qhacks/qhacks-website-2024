@@ -5,6 +5,7 @@ import ApplicationStatusTracker from '../../components/dashboard/ApplicationStat
 import { useAuth } from '../../contexts/AuthContext';
 import checkIfApplicationStarted from '../../firebase/firestore/checkIfApplicationStarted';
 import { useEffect, useState } from 'react';
+import logout from '../../firebase/auth/logout';
 
 export default function Dashboard() {
     const { currentUser } = useAuth();
@@ -19,6 +20,12 @@ export default function Dashboard() {
         setAppStarted((await checkIfApplicationStarted(currentUser.uid)).result);
     }, []);
 
+    async function signOut()
+    {
+        await logout();
+        window.location.href = '/';
+    }
+
     return (
         <div className='w-full h-full bg-[#111010] bg-topogrophy-dark flex flex-col justify-start items-center'>
             {/* Home Button */}
@@ -27,7 +34,7 @@ export default function Dashboard() {
                     <a href='/' className='bg-[#FE0000] w-[160px] h-[50px] rounded-full flex justify-center items-center text-xl text-white font-bold mb-[10px]'>Home</a>
                 </div>
                 <div className=' h-50px flex'>
-                    <a href='/' className='bg-[#FE0000] w-[160px] h-[50px] rounded-full flex justify-center items-center text-xl text-white font-bold mb-[10px]'>Log Out</a>
+                    <button href='/' className='bg-[#FE0000] w-[160px] h-[50px] rounded-full flex justify-center items-center text-xl text-white font-bold mb-[10px]' onClick={signOut}>Log Out</button>
                 </div>
             </div>
             
