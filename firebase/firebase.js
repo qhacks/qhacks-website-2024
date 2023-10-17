@@ -1,6 +1,7 @@
 import { getApps, initializeApp } from 'firebase/app';
 import { getFirestore, connectFirestoreEmulator } from 'firebase/firestore';
 import { getAuth, connectAuthEmulator } from 'firebase/auth';
+import { getStorage } from 'firebase/storage';
 
 const config = {
     apiKey: process.env.FIREBASE_API_KEY,
@@ -15,26 +16,27 @@ const config = {
 
 function initializeServices()
 {
-    const isConfigured = getApps().length > 0;
-    const firebaseApp = initializeApp(config);;
+    // const isConfigured = getApps().length > 0;
+    const firebaseApp = initializeApp(config);
     const db = getFirestore(firebaseApp);
     const auth = getAuth(firebaseApp);
-    return { firebaseApp, db, auth, isConfigured };
+    const storage = getStorage(firebaseApp);
+    return { firebaseApp, db, auth, storage /* isConfigured */ };
 }
 
-function connectEmulators({ auth, db })
-{
-    connectFirestoreEmulator(db, 'http://localhost:8090');
-    connectAuthEmulator(auth, 'http://localhost:9099');
-}
+// function connectEmulators({ auth, db })
+// {
+//     connectFirestoreEmulator(db, 'http://localhost:8090');
+//     connectAuthEmulator(auth, 'http://localhost:9099');
+// }
 
 export function getFirebase()
 {
     const services = initializeServices();
-    if (!services.isConfigured)
-    {
-        console.log('emulators connecting');
-        connectEmulators(services);
-    }
+    // if (!services.isConfigured)
+    // {
+    //     console.log('emulators connecting');
+    //     connectEmulators(services);
+    // }
     return services;
 }
