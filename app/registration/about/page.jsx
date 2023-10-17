@@ -285,9 +285,10 @@ export default function About() {
 
           {/* Resume */}
           <div className="">
-            <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="large_size">Large file input</label>
-            <input class="block w-full text-lg text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" id="large_size" type="file"/>
+            <label class="test-sm text-white" for="resume">Resume Upload Less than 3 Mb</label>
+            <input class="block w-full mb-5 text-lg text-grey-500 rounded cursor-pointer border border-white bg-[#2D2D2D]" id="resume" type="file"/>
           </div>
+
           {/* create input for github Link */}
           <div className="flex flex-col mb-[2rem]">
             <label htmlFor="github">Github Link</label>
