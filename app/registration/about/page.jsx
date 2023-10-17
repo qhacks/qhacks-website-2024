@@ -19,19 +19,12 @@ export default function About() {
     setSelectedOption2(event.target.value);
   };
 
-  const [selectedOption3, setSelectedOption3] = useState("");
-  const handleOptionChange3 = (event) => {
-    setSelectedOption3(event.target.value);
-  };
-
   const [ageSelect, setAgeSelect] = useState(null);
   const handleAgeSelect = (selectedOption) => {
     setAgeSelect(selectedOption);
   };
 
-
   const textBoxStyle = "rounded px-4 py-1 mt-[2px] text-sm border border-white bg-[#2D2D2D]"
-
 
   const pronounOptions = [
     "She/Her",
@@ -49,7 +42,7 @@ export default function About() {
 
   const [countrySelect, setCountrySelect] = useState(null);
   const handleCountrySelect = (selectedOption) => {
-    setAgeSelect(selectedOption);
+    setCountrySelect(selectedOption);
   };
 
   const countryOptions = [
@@ -302,8 +295,8 @@ export default function About() {
                 <input
                   type="radio"
                   value={option}
-                  checked={selectedOption === `${option}`}
-                  onChange={(e) => {handleOptionChange(e); setAppData({...appData, gender: e.target.value})}}
+                  checked={selectedOption2 === `${option}`}
+                  onChange={(e) => {handleOptionChange2(e); setAppData({...appData, gender: e.target.value})}}
                   className="form-radio text-indigo-600 h-4 w-4"
                 />
                 <span className="ml-2">{option}</span>
@@ -314,8 +307,8 @@ export default function About() {
               <input
                 type="radio"
                 value="other"
-                checked={selectedOption === "other"}
-                onChange={(e) => {handleOptionChange(e); setAppData({...appData, gender: e.target.value})}}
+                checked={selectedOption2 === "other"}
+                onChange={(e) => {handleOptionChange2(e); setAppData({...appData, gender: e.target.value})}}
                 className="form-radio text-indigo-600 h-4 w-4"
               />
               <span className="ml-2">Other: </span>
@@ -325,8 +318,8 @@ export default function About() {
               <input
                 type="radio"
                 value="no_prefer"
-                checked={selectedOption === "no_prefer"}
-                onChange={(e) => {handleOptionChange(e); setAppData({...appData, gender: e.target.value})}}
+                checked={selectedOption2 === "no_prefer"}
+                onChange={(e) => {handleOptionChange2(e); setAppData({...appData, gender: e.target.value})}}
                 className="form-radio text-indigo-600 h-4 w-4"
               />
               <span className="ml-2">Prefer not to answer</span>
