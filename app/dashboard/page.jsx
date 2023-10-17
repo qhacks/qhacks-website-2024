@@ -6,10 +6,14 @@ import { useAuth } from '../../contexts/AuthContext';
 import checkIfApplicationStarted from '../../firebase/firestore/checkIfApplicationStarted';
 import { useEffect, useState } from 'react';
 import logout from '../../firebase/auth/logout';
+import retrieveUserData from '../../firebase/firestore/retrieveUserData';
+
 
 export default function Dashboard() {
     const { currentUser } = useAuth();
     const [appStarted, setAppStarted] = useState(null);
+    const [appData, setAppData] = useState(null);
+    let imageToUse = 0;
 
     useEffect(async () => {
         if (currentUser === null)
@@ -18,12 +22,44 @@ export default function Dashboard() {
             return;
         }
         setAppStarted((await checkIfApplicationStarted(currentUser.uid)).result);
+        setAppData((await retrieveUserData(currentUser.uid)).result);
+        imageToUse = await selectImageToUse();
     }, []);
 
     async function signOut()
     {
         await logout();
         window.location.href = '/';
+    }
+
+    async function selectImageToUse()
+    {
+        let localAppData = await (await retrieveUserData(currentUser.uid)).result;
+        if (localAppData == null)
+        {
+            return '0';
+        }
+
+        if (localAppData.applicationComplete == true)
+        {
+            return '4';
+        }
+        else if (localAppData.aboutComplete == true && localAppData.educationComplete == true && localAppData.appQsComplete == true && localAppData.policiesComplete == true)
+        {
+            return '3';
+        }
+        else if (localAppData.aboutComplete == true && localAppData.educationComplete == true && localAppData.appQsComplete == true && localAppData.policiesComplete == false)
+        {
+            return '2';
+        }
+        else if (localAppData.aboutComplete == true && localAppData.educationComplete == false && localAppData.appQsComplete == false && localAppData.policiesComplete == false)
+        {
+            return '1';
+        }
+        else
+        {
+            return '0';
+        }
     }
 
     return (
@@ -49,10 +85,10 @@ export default function Dashboard() {
                             - 1: yellow Go (incomplete and available)
                             - 2: green Edit (complete and available)
                             */}
-                            <ApplicationLinkButton className title="About" status={2} dest={"/registration/about"}/>
-                            <ApplicationLinkButton title="Education" status={2} dest={"/registration/education"}/>
-                            <ApplicationLinkButton title="Additional Info" status={1} dest={"/registration/application"}/>
-                            <ApplicationLinkButton title="Policies" status={0} dest={"/registration/policies"}/>
+                            <ApplicationLinkButton className title="About" status={(appData?.aboutComplete == true) ? 2 : 1} dest={"/registration/about"}/>
+                            <ApplicationLinkButton title="Education" status={(appData?.educationComplete == true) ? 2 : 1} dest={"/registration/education"}/>
+                            <ApplicationLinkButton title="Additional Info" status={(appData?.appQsComplete == true) ? 2 : 1} dest={"/registration/application"}/>
+                            <ApplicationLinkButton title="Policies" status={(appData?.policiesComplete == true) ? 2 : 1} dest={"/registration/policies"}/>
                         </div>
                     </div>
                     {/* Info Buttons */}
@@ -71,7 +107,7 @@ export default function Dashboard() {
                 
                 <div className='flex flex-col w-full sm:w-[60%] md:w-[75%] sm:h-full justify-start items-center sm:ml-[20px]'>
                     <div className='bg-[#202020] h-full rounded-2xl py-5 px-5'>
-                        <ApplicationStatusTracker status={0} />
+                        <ApplicationStatusTracker status={imageToUse} />
                         <div className='w-full rounded-2xl text-white mt-[40px]'>
                             <div className='text-2xl mb-2 font-bold'>QHacks Application</div>
                             <div>
