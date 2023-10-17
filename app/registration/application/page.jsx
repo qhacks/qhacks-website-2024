@@ -37,6 +37,7 @@ export default function Info() {
     setAppData((await retrieveUserData(currentUser.uid)).result);
   }, []);
 
+  console.log(appData);
   async function saveApplicationData(forceRedirect, path, checkCompletion)
   {
     if (appData === null) return;
@@ -317,7 +318,7 @@ export default function Info() {
           <div className="flex flex-col mb-[3rem]">
             <label htmlFor="busOption">Will you be needing bussing from any of the above locations?</label>
             <div className="flex flex-row flex-start items-center">
-              <input type="checkbox" id="busOption" name="busOption" value="" className="w-5 h-5 rounded border border-white bg-[#2D2D2D]" onChange={e => setAppData({...appData, busOption: e.target.value})}></input>
+              <input type="checkbox" id="busOption" name="busOption" checked={appData?.busOption} className="w-5 h-5 rounded border border-white bg-[#2D2D2D]" onChange={e => setAppData({...appData, busOption: e.target.checked})}></input>
               <label for="busOption" className="pl-[0.5rem]">Yes</label>
             </div>
           </div>
@@ -325,15 +326,15 @@ export default function Info() {
         </div>
 
         <div className="flex flex-row justify-center bg-[#202020] py-[1rem] mt-[1rem] mb-[6rem] rounded-lg">
-          <a 
-            className="w-[25%] flex justify-center items-center text-center bg-[#FAAF40] rounded-lg font-bold py-3"
-            href="/registration/education"
-          >Previous Page</a>
+          <button 
+            className="w-[25%] flex justify-center items-center text-center bg-[#FAAF40] rounded-lg py-3 font-bold"
+            onClick={() => { saveApplicationData(false, '/registration/education'); }}
+          >Previous Page</button>
           <div className="h-full w-[2px] bg-white mx-[1rem]"></div>
-          <a 
-            className="w-[25%] flex justify-center items-center text-center bg-[#EE4036] rounded-lg font-bold py-3"
-            href="/registration/policies"
-          >Next Page</a>
+          <button 
+            className="w-[25%] flex justify-center items-center text-center bg-[#EE4036] rounded-lg py-3 font-bold"
+            onClick={() => { saveApplicationData(false, '/registration/policies', true); }}
+          >Next Page</button>
         </div>
       </div>
       <ToastContainer />
