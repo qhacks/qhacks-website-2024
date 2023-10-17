@@ -5,7 +5,7 @@ const { storage } = getFirebase();
 
 export default async function uploadResume(uid, file)
 {
-  const storageRef = ref(storage, `resumes/${uid}`);
+  const storageRef = ref(storage, `resumes/${uid}/resume.pdf`);
   
   try
   {

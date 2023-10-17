@@ -7,6 +7,7 @@ import { ToastContainer, toast } from "react-toastify";
 import updateUser from "../../../firebase/firestore/updateUser";
 import retrieveUserData from "../../../firebase/firestore/retrieveUserData";
 import 'react-toastify/dist/ReactToastify.css'
+import uploadResume from "../../../firebase/storage/uploadResume";
 
 export default function About() {
   const [selectedOption, setSelectedOption] = useState("");
@@ -23,6 +24,8 @@ export default function About() {
   const handleAgeSelect = (selectedOption) => {
     setAgeSelect(selectedOption);
   };
+
+  const [resumeOK, setResumeOK] = useState(false);
 
   const textBoxStyle = "rounded px-4 py-1 mt-[2px] text-sm border border-white bg-[#2D2D2D]"
 
@@ -137,8 +140,32 @@ export default function About() {
       appData.pronouns !== undefined &&
       appData.gender !== undefined &&
       appData.age !== undefined &&
-      appData.country !== undefined
+      appData.country !== undefined &&
+      resumeOK !== false
     )
+  }
+
+  async function upload(e)
+  {
+    const file = e.target.files[0];
+    if (file.size > 4 * 1024 * 1024)
+    {
+      toast('File size too large! Please upload a file less than 4MB.', {
+        theme: 'dark',
+        pauseOnHover: false,
+        type: 'error'
+      });
+      return;
+    }
+    else
+    {
+      await uploadResume(currentUser.uid, file).then(() => { setResumeOK(true); }).catch(() => { setResumeOK(false); });
+      toast('File uploaded!', {
+        theme: 'dark',
+        pauseOnHover: false,
+        type: 'success'
+      });
+    }
   }
 
   return (
@@ -384,8 +411,8 @@ export default function About() {
 
           {/* Resume */}
           <div className="">
-            <label class="test-sm text-white" for="resume">Resume Upload Less than 3 Mb</label>
-            <input class="block w-full mb-5 text-lg text-grey-500 rounded cursor-pointer border border-white bg-[#2D2D2D]" id="resume" type="file"/>
+            <label class="test-sm text-white" for="resume">Resume - Max file size: 3MB</label>
+            <input class="block w-full mb-5 text-lg text-grey-500 rounded cursor-pointer border border-white bg-[#2D2D2D]" id="resume" type="file" onChange={upload}/>
           </div>
 
           {/* create input for github Link */}
