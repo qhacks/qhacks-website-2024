@@ -382,6 +382,12 @@ export default function About() {
             />
           </div>
 
+          {/* Resume */}
+          <div className="">
+            <label class="test-sm text-white" for="resume">Resume Upload Less than 3 Mb</label>
+            <input class="block w-full mb-5 text-lg text-grey-500 rounded cursor-pointer border border-white bg-[#2D2D2D]" id="resume" type="file"/>
+          </div>
+
           {/* create input for github Link */}
           <div className="flex flex-col mb-[2rem]">
             <label htmlFor="github">GitHub Link</label>
