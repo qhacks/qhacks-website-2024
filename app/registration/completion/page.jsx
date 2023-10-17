@@ -1,14 +1,19 @@
 "use client"
 
-import React, { useState } from "react";
+import React from "react";
+import Image from 'next/image'
 import Dropdown from "../../../components/dropDown";
 import parse from "html-react-parser"
+import RedWave1 from "../../../public/RedWaves1.svg"
+import RedWave2 from "../../../public/RedWaves2.svg"
 
 export default function Info() {
   const textBoxStyle = "rounded px-4 py-1 mt-[2px] text-sm border border-white bg-[#2D2D2D]"
 
   return (
-    <div className="flex justify-center text-white h-[705px]">
+    <div className="flex justify-center text-white w-screen h-screen bg-[#111010]">
+        <Image src={RedWave1} className="absolute right-0 top-0 z-1"/>
+        <Image src={RedWave2} className="absolute left-0 bottom-0 z-1"/>
 
       {/* BACKGROUND */}
       <div className="absolute z-[-1] w-full h-full bg-[#111010]">
@@ -38,16 +43,17 @@ export default function Info() {
             <path d="M0 0.499878C9.6 3.39988 19.1 6.29988 28.1 9.89988C37.1 13.5999 45.5 17.9999 52.8 23.2999C60.2 28.5999 66.5 34.6999 75.1 38.7999C83.8 42.8999 94.7 44.8999 103.4 50.4999C112 56.1999 118.4 65.3999 119.4 75.4999C120.4 85.5999 116.2 96.4999 117.5 106.2C118.8 115.9 125.7 124.5 132.5 133H0V0.499878Z" fill="#FF0000"/>
         </svg>
       </div>
-
-
-        <div className="z-[10] w-[60%] h-[100vh] flex flex-col justify-center items-center">
-            <div className="flex flex-col gap-[1rem] justify-between bg-[#202020] py-[4rem] px-[3rem] mt-[1rem] rounded-lg">
-                <h1 className="text-[35px] font-bold">{`All Set!`}</h1>
-                <p className="text-[22px]">{`You have completed the application form for QHacks 2024. You have been sent an email with confirmation of your completion. Our team will be reviewing applications after the dashboard closes, so keep an eye out for your status of admission. At any point in time until December 9th, you are able to edit the submission of each page separately by making changes and clicking the "Save and Submit" button. Thank you for applying to QHacks 2024!`}</p>
-                <a 
-                    className="rounded-[5px] w-[20%] bg-[#EE4036] py-[0.75rem] text-[22px] font-medium self-end text-center"
-                    href="/dashboard"
-                >Your Profile</a>
+      
+        <div className="z-10 w-[80%] lg:w-[60%] flex flex-col justify-center">
+            <div className="flex flex-col gap-[1rem] justify-between bg-[#202020] py-[2rem] md:py-[4rem] px-[2rem] md:px-[3rem] mt-[1rem] rounded-lg">
+                <h1 className="text-3xl lg:text-[35px] font-bold">{`All Set!`}</h1>
+                <p className="text-lg sm:text-xl lg:text-2xl leading-tight">{`You have completed the application form for QHacks 2023. You have been sent an email with confirmation of your completion. Our team will be reviewing applications after the dashboard closes, so keep an eye out for your status of admission. At any point in time until December 9th, you are able to edit the submission of each page separately by making changes and clicking the "Save and Submit" button. Thank you for applying to QHacks 2023!`}</p>
+                
+                <div className="flex justify-center md:justify-end">
+                    <button onClick={() => {
+                        window.location.href = "/dashboard"
+                    }} className="rounded-[5px] w-[150px] bg-[#EE4036] py-[0.5rem] text-[22px] font-medium self-end">Your Profile</button>
+                </div>
             </div>
         </div>
     </div>
