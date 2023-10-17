@@ -12,7 +12,7 @@ export default async function updateApplicationData(uid, applicationData)
   {
     await setDoc(applicationRef, applicationData, {
       merge: false
-    }).then(() => {console.log('Document successfully written!'); return true; }).catch((e) => console.error('Error writing document: ', e));
+    }).then(() => { return true; }).catch((e) => console.error('Error writing document: ', e));
     return true;
   } catch (e)
   {

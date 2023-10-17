@@ -9,15 +9,12 @@ export default async function retrieveApplicationData(uid)
 
   let result = null;
   let error = null;
-  console.log(uid);
   try
   {
     const userRef = doc(db, 'users', uid);
     const userSnapshot = await getDocs(userRef);
-    console.log(userSnapshot.docs);
     const userData = userSnapshot.data();
     result = userData;
-    console.log(result);
   } catch (e)
   {
     error = e;

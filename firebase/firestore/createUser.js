@@ -12,7 +12,6 @@ export default async function createUser(uid, email)
   {
     const userRef = doc(db, 'users', uid);
     result = await setDoc(userRef, {email, aboutComplete: false, educationComplete: false, additionalInfoComplete: false, policiesComplete: false}).then(() => {
-      console.log('Document successfully written!');
     }).catch((e) => { console.error('Error writing document: ', e); });
   } catch (e)
   {

@@ -14,8 +14,7 @@ export default async function updateUser(uid, data)
     result = await setDoc(userRef, data, {
       merge: true
     }).then(() => {
-      console.log('Document successfully written!');
-    }).catch((e) => { console.error('Error writing document: ', e); });
+    });
   } catch (e)
   {
     error = e;
