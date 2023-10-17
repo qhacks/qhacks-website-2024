@@ -256,7 +256,7 @@ export default function About() {
                 <input
                   type="radio"
                   value={option}
-                  checked={selectedOption === `${option}`}
+                  checked={appData?.pronouns === `${option}`}
                   onChange={(e) => {handleOptionChange(e); setAppData({...appData, pronouns: e.target.value})}}
                   className="form-radio text-indigo-600 h-4 w-4"
                 />
@@ -268,7 +268,7 @@ export default function About() {
               <input
                 type="radio"
                 value="other"
-                checked={selectedOption === "other"}
+                checked={appData?.pronouns === "other"}
                 onChange={(e) => {handleOptionChange(e); setAppData({...appData, pronouns: e.target.value})}}
                 className="form-radio text-indigo-600 h-4 w-4"
               />
@@ -279,7 +279,7 @@ export default function About() {
               <input
                 type="radio"
                 value="no_prefer"
-                checked={selectedOption === "no_prefer"}
+                checked={appData?.pronouns === "no_prefer"}
                 onChange={(e) => {handleOptionChange(e); setAppData({...appData, pronouns: e.target.value})}}
                 className="form-radio text-indigo-600 h-4 w-4"
               />
@@ -295,7 +295,7 @@ export default function About() {
                 <input
                   type="radio"
                   value={option}
-                  checked={selectedOption2 === `${option}`}
+                  checked={appData?.gender === `${option}`}
                   onChange={(e) => {handleOptionChange2(e); setAppData({...appData, gender: e.target.value})}}
                   className="form-radio text-indigo-600 h-4 w-4"
                 />
@@ -307,7 +307,7 @@ export default function About() {
               <input
                 type="radio"
                 value="other"
-                checked={selectedOption2 === "other"}
+                checked={appData?.gender === "other"}
                 onChange={(e) => {handleOptionChange2(e); setAppData({...appData, gender: e.target.value})}}
                 className="form-radio text-indigo-600 h-4 w-4"
               />
@@ -318,7 +318,7 @@ export default function About() {
               <input
                 type="radio"
                 value="no_prefer"
-                checked={selectedOption2 === "no_prefer"}
+                checked={appData?.gender === "no_prefer"}
                 onChange={(e) => {handleOptionChange2(e); setAppData({...appData, gender: e.target.value})}}
                 className="form-radio text-indigo-600 h-4 w-4"
               />
