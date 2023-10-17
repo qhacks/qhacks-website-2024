@@ -40,21 +40,6 @@ export default function About() {
     "Intersex",
   ]
 
-  const [countrySelect, setCountrySelect] = useState(null);
-  const handleCountrySelect = (selectedOption) => {
-    setCountrySelect(selectedOption);
-  };
-
-  const countryOptions = [
-    { label: "Canada", value: "Canada" },
-    { label: "USA", value: "USA" },
-    { label: "China", value: "China" },
-    { label: "Japan", value: "Japan" },
-    { label: "India", value: "India" },
-    { label: "UK", value: "UK" },
-    { label: "Other", value: "Other" },
-  ];
-
   const {currentUser} = useAuth();
   const [appData, setAppData] = useState(null);
 
@@ -84,47 +69,76 @@ export default function About() {
     }
     else
     {
-      if (
-        appData.firstName === null ||
-        appData.lastName === null ||
-        appData.pronouns === null ||
-        appData.gender === null ||
-        appData.age === null ||
-        appData.country === null ||
-        appData.phone === null || 
-        appData.githubLink === null ||
-        appData.linkedinLink === null ||
-        appData.portfolioLink === null
-      )
+      if (checkCompletion)
       {
-        if (checkCompletion)
+        if (areFieldsCompleted() == false)
         {
           toast('Please fill out all fields to continue.', {
             theme: 'dark',
             pauseOnHover: false,
             type: 'error'
           });
-          setAppData({...appData, educationComplete: false});
-          updateUser(currentUser.uid, appData);
+          // Don't ask why I did this - for some reason the commented line of code below doesn't work... but works everywhere else? Stupid. 
+          // OLD: setAppData({...appData, aboutComplete: false});
+          let dup = appData;
+          dup.aboutComplete = false;
+          setAppData(dup);
+          await updateUser(currentUser.uid, appData);
           return;
         }
-        setAppData({...appData, educationComplete: false});
-        updateUser(currentUser.uid, appData);
-        setTimeout(() => { window.location.href = path; }, 500);
+        else
+        {
+          toast('Information saved!', {
+            theme: 'dark',
+            pauseOnHover: false,
+            type: 'success'
+          });
+    
+          let dup = appData;
+          dup.aboutComplete = true;
+          setAppData(dup);
+          await updateUser(currentUser.uid, appData);
+          setTimeout(() => { window.location.href = path; }, 3000);
+        }
       }
       else
       {
-        toast('Information saved!', {
-          theme: 'dark',
-          pauseOnHover: false,
-          type: 'success'
-        });
-  
-        setAppData({...appData, educationComplete: true});
-        await updateUser(currentUser.uid, appData);
-        setTimeout(() => { window.location.href = path; }, 1500);
+        if (areFieldsCompleted() == false)
+        {
+          let dup = appData;
+          dup.aboutComplete = false;
+          setAppData(dup);
+          await updateUser(currentUser.uid, appData);
+          setTimeout(() => { window.location.href = path; }, 500);
+        }
+        else
+        {
+          toast('Information saved!', {
+            theme: 'dark',
+            pauseOnHover: false,
+            type: 'success'
+          });
+    
+          let dup = appData;
+          dup.aboutComplete = true;
+          setAppData(dup);
+          await updateUser(currentUser.uid, appData);
+          setTimeout(() => { window.location.href = path; }, 3000);
+        }
       }
     }
+  }
+
+  function areFieldsCompleted()
+  {
+    return (
+      appData.firstName !== undefined &&
+      appData.lastName !== undefined &&
+      appData.pronouns !== undefined &&
+      appData.gender !== undefined &&
+      appData.age !== undefined &&
+      appData.country !== undefined
+    )
   }
 
   return (
@@ -342,11 +356,14 @@ export default function About() {
 
           <div className="flex flex-col mb-[2rem]">
             <label htmlFor="country">Country of Residence</label>
-            <Dropdown
-              options={countryOptions}
-              value={countrySelect}
-              onChange={(e) =>  {handleCountrySelect(e); setAppData({...appData, country: e.value})}}
-              placeholder="Select an option"
+            <input
+              type="text"
+              id="country"
+              name="country"
+              className={`${textBoxStyle}`}
+              value={appData?.country}
+              onChange={e => setAppData({...appData, country: e.target.value})}
+              required
             />
           </div>
 

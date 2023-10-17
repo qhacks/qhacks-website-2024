@@ -27,7 +27,6 @@ export default function Info() {
   const { currentUser } = useAuth();
   const [appData, setAppData] = useState(null);
 
-  console.log(appData);
   useEffect(async () => {
     if (currentUser === null)
     {
@@ -37,7 +36,6 @@ export default function Info() {
     setAppData((await retrieveUserData(currentUser.uid)).result);
   }, []);
 
-  console.log(appData);
   async function saveApplicationData(forceRedirect, path, checkCompletion)
   {
     if (appData === null) return;
@@ -64,8 +62,10 @@ export default function Info() {
             pauseOnHover: false,
             type: 'error'
           });
-          setAppData({...appData, appQsComplete: false});
-          updateUser(currentUser.uid, appData);
+          let dup = appData;
+          dup.appQsComplete = false;
+          setAppData(dup);
+          await updateUser(currentUser.uid, appData);
           return;
         }
         else
@@ -76,7 +76,9 @@ export default function Info() {
             type: 'success'
           });
     
-          setAppData({...appData, appQsComplete: true});
+          let dup = appData;
+          dup.appQsComplete = true;
+          setAppData(dup);
           await updateUser(currentUser.uid, appData);
           setTimeout(() => { window.location.href = path; }, 3000);
         }
@@ -85,8 +87,10 @@ export default function Info() {
       {
         if (areFieldsCompleted() == false)
         {
-          setAppData({...appData, appQsComplete: false});
-          updateUser(currentUser.uid, appData);
+          let dup = appData;
+          dup.appQsComplete = false;
+          setAppData(dup);
+          await updateUser(currentUser.uid, appData);
           setTimeout(() => { window.location.href = path; }, 500);
         }
         else
@@ -97,7 +101,9 @@ export default function Info() {
             type: 'success'
           });
     
-          setAppData({...appData, appQsComplete: true});
+          let dup = appData;
+          dup.appQsComplete = true;
+          setAppData(dup);
           await updateUser(currentUser.uid, appData);
           setTimeout(() => { window.location.href = path; }, 3000);
         }

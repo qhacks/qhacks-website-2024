@@ -53,27 +53,55 @@ export default function Policies() {
             pauseOnHover: false,
             type: 'error'
           });
-          setAppData({...appData, policiesComplete: false});
-          updateUser(currentUser.uid, appData);
+          let dup = appData;
+          dup.policiesComplete = false;
+          setAppData(dup);
+          await updateUser(currentUser.uid, appData);
           return;
         }
         else
         {
-          toast('Information saved!', {
-            theme: 'dark',
-            pauseOnHover: false,
-            type: 'success'
-          });
-    
           if (path == '/registration/completion')
           {
-            setAppData({ ...appData, appSubmitted: true });
-            await updateUser(currentUser.uid, appData);
-            setTimeout(() => { window.location.href = path; }, 3000);
+            let dup = appData;
+            dup.policiesComplete = true;
+            dup.applicationComplete = true;
+            setAppData(dup);
+            if (appData.aboutComplete && appData.educationComplete && appData.appQsComplete && appData.policiesComplete)
+            {
+              toast('Information saved!', {
+                theme: 'dark',
+                pauseOnHover: false,
+                type: 'success'
+              });
+
+              await updateUser(currentUser.uid, appData);
+              setTimeout(() => { window.location.href = path; }, 3000);
+            }
+            else
+            {
+              toast(
+                'Please complete all sections before submitting your application.',
+                {
+                  theme: 'dark',
+                  pauseOnHover: false,
+                  type: 'error'
+                }
+              );
+              return;
+            }
           }
           else
           {
-            setAppData({...appData, policiesComplete: true});
+            toast('Information saved!', {
+              theme: 'dark',
+              pauseOnHover: false,
+              type: 'success'
+            });
+
+            let dup = appData;
+            dup.policiesComplete = true;
+            setAppData(dup);            
             await updateUser(currentUser.uid, appData);
             setTimeout(() => { window.location.href = path; }, 3000);
           }
@@ -83,8 +111,10 @@ export default function Policies() {
       {
         if (areFieldsCompleted() == false)
         {
-          setAppData({...appData, policiesComplete: false});
-          updateUser(currentUser.uid, appData);
+          let dup = appData;
+          dup.policiesComplete = false;
+          setAppData(dup);
+          await updateUser(currentUser.uid, appData);
           setTimeout(() => { window.location.href = path; }, 500);
         }
         else
@@ -95,7 +125,9 @@ export default function Policies() {
             type: 'success'
           });
     
-          setAppData({...appData, policiesComplete: true});
+          let dup = appData;
+          dup.policiesComplete = true;
+          setAppData(dup);
           await updateUser(currentUser.uid, appData);
           setTimeout(() => { window.location.href = path; }, 3000);
         }

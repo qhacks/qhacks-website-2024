@@ -69,8 +69,10 @@ export default function About() {
             pauseOnHover: false,
             type: 'error'
           });
-          setAppData({...appData, educationComplete: false});
-          updateUser(currentUser.uid, appData);
+          let dup = appData;
+          dup.educationComplete = false;
+          setAppData(dup);
+          await updateUser(currentUser.uid, appData);
           return;
         }
         else
@@ -81,7 +83,9 @@ export default function About() {
             type: 'success'
           });
     
-          setAppData({...appData, educationComplete: true});
+          let dup = appData;
+          dup.educationComplete = true;
+          setAppData(dup);
           await updateUser(currentUser.uid, appData);
           setTimeout(() => { window.location.href = path; }, 3000);
         }
@@ -90,8 +94,10 @@ export default function About() {
       {
         if (areFieldsCompleted() == false)
         {
-          setAppData({...appData, educationComplete: false});
-          updateUser(currentUser.uid, appData);
+          let dup = appData;
+          dup.educationComplete = true;
+          setAppData(dup);
+          await updateUser(currentUser.uid, appData);
           setTimeout(() => { window.location.href = path; }, 500);
         }
         else
@@ -102,7 +108,9 @@ export default function About() {
             type: 'success'
           });
     
-          setAppData({...appData, educationComplete: true});
+          let dup = appData;
+          dup.educationComplete = true;
+          setAppData(dup);
           await updateUser(currentUser.uid, appData);
           setTimeout(() => { window.location.href = path; }, 3000);
         }
@@ -260,15 +268,15 @@ export default function About() {
 
           <div className="flex flex-col mb-[2rem]">
             <label htmlFor="country">Level of Study:</label>
-            <Dropdown
-              options={[
-                { label: "Undergraduate" },
-                { label: "Masters" },
-                { label: "PhD" }
-              ]}
+            <input
+              type="text"
+              id="lvlOfStudy"
+              name="lvlOfStudy"
+              className={`${textBoxStyle}`}
+              placeholder="Undergraduate/Masters/PhD"
               value={appData?.lvlOfStudy}
-              onChange={(e) => { handlelvlOfStudySelect(e); setAppData({...appData, lvlOfStudy: e.target.value}); }}
-              placeholder="-- Select Level of Study --"
+              onChange={e => setAppData({...appData, lvlOfStudy: e.target.value})}
+              required
             />
           </div>
 

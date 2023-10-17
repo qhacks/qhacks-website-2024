@@ -3,6 +3,8 @@ import { useState } from 'react';
 import wavesSrc from '../../assets/waves.svg';
 import { FaEyeSlash, FaEye } from 'react-icons/fa';
 import login from '../../firebase/auth/login';
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css'
 
 export default function LogIn() {
     const [email, setEmail] = useState(null);
@@ -14,30 +16,29 @@ export default function LogIn() {
 
         if (email === null || password === null || confirm === null)
         {
-            alert('Please fill out all fields');
+            toast('Please fill out all fields', { theme: 'dark', type: 'error' });
             return;
         }
 
         const { result, error } = await login(email, password);
         if (error)
         {
-            console.log(error.code, error.name);
             if (error.code == 'auth/user-not-found')
             {
-                // TODO: Display message saying no user with that email exists
+                toast('No user with that email exists', { theme: 'dark', type: 'error' });
             }
             else if (error.code == 'auth/wrong-password')
             {
-                // TODO: Display message saying wrong password
+                toast('Wrong password', { theme: 'dark', type: 'error' });
             }
             else
             {
-                alert(error);
+                toast(error, { theme: 'dark', type: 'error' });
                 return;
             }
         }
 
-        alert('Logged in!');
+        toast('Logged in successfully', { theme: 'dark', type: 'success' });
         window.location.href = '/dashboard';
     }
 
@@ -78,6 +79,7 @@ export default function LogIn() {
                     </div>
                 </form>
             </div>
+            <ToastContainer />
         </div>
      );
 }

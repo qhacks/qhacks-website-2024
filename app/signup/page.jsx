@@ -17,20 +17,19 @@ export default function SignUp() {
      
         if (email === null || password === null || confirm === null)
         {
-            alert('Please fill out all fields');
+            toast('Please fill out all fields', { theme: 'dark', type: 'error' });
             return;
         }
 
         if (password !== confirm)
         {
-            alert('Passwords do not match');
+            toast('Passwords do not match', { theme: 'dark', type: 'error' });
             return;
         }
 
         const { error } = await signUp(email, password);
         if (error)
         {
-            console.log(error.code, error.name);
             if (error.code == 'auth/weak-password')
             {
                 toast('Password must be at least 6 characters long!', {
