@@ -5,10 +5,27 @@ import { FaEyeSlash, FaEye } from 'react-icons/fa';
 import login from '../../firebase/auth/login';
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css'
+import sendPasswordResetEmailToUser from '../../firebase/auth/sendPasswordResetEmail';
 
 export default function LogIn() {
     const [email, setEmail] = useState(null);
     const [password, setPassword] = useState(null);
+
+    async function forgotPassword(e)
+    {
+        e.preventDefault();
+        if (email === null)
+        {
+            toast('Please enter your email in the field and then click forgot password.', { theme: 'dark', type: 'error' });
+            return;
+        }
+
+        await sendPasswordResetEmailToUser(email).then(() => {
+            toast('Password reset email sent!', { theme: 'dark', type: 'success' });
+        }).catch(() => {
+            toast(error, { theme: 'dark', type: 'error' });
+        });
+    }
 
     async function handleSubmit(e)
     {
@@ -73,7 +90,7 @@ export default function LogIn() {
                     }}/>
                     
                     <div className='text-center flex flex-col gap-[10px]'>
-                    <a href="/" className='text-xs font-regular text-blue-600 hover:underline'>Forgot your password?</a>
+                    <button className='text-xs font-regular text-blue-600 hover:underline' onClick={forgotPassword}>Forgot your password?</button>
                     <div className='text-xs font-light'>Don't have an account? <a className='font-semibold hover:underline' href="/signup">Sign Up</a></div>
                     <div className='text-xs font-light'>return <a className='font-semibold hover:underline' href="/">Home</a></div>
                     </div>
