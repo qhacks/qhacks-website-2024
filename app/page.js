@@ -118,7 +118,7 @@ export default function Home() {
 							<motion.a
 								whileHover={{ scale: 1.05 }}
 								whileTap={{ scale: 0.9 }}
-								href="/signin"
+								href="/login"
 								className="lg:flex w-32 lg:w-auto text-white justify-center  bg-blue-500 px-5 py-3 mx-5 mt-3 z-5 rounded-xl font-bold opacity-100"
 							>
 								Sign in
