@@ -63,19 +63,19 @@ export default function Dashboard() {
     }
 
     return (
-        <div className='w-full h-full bg-[#111010] bg-topogrophy-dark flex flex-col justify-start items-center'>
+        <div className='w-full min-h-screen bg-[#111010] bg-topogrophy-dark flex flex-col justify-start items-center'>
             {/* Home Button */}
-            <div className='w-full flex flex-row justify-between items-center mt-[3rem] w-[95%] md:w-[75%]'>
-                <div className=' h-50px flex'>
+            <div className='flex flex-row justify-between items-center mt-[3rem] w-[95%] 2xl:w-[75%]'>
+                <div className='flex'>
                     <a href='/' className='bg-[#FE0000] w-[160px] h-[50px] rounded-full flex justify-center items-center text-xl text-white font-bold mb-[10px]'>Home</a>
                 </div>
-                <div className=' h-50px flex'>
+                <div className='flex'>
                     <button href='/' className='bg-[#FE0000] w-[160px] h-[50px] rounded-full flex justify-center items-center text-xl text-white font-bold mb-[10px]' onClick={signOut}>Log Out</button>
                 </div>
             </div>
             
-            <div className="flex w-[95%] md:w-[75%] md:h-[600px] sm:flex-row flex-col-reverse gap-4 sm:gap-0 justify-start items-center pt-[20px] mb-[3rem]">
-                <div className='flex flex-col items-center justify-between h-[100%] w-full sm:w-[40%] md:w-[25%] gap-4 sm:gap-0'>
+            <div className="flex w-[95%] 2xl:w-[75%] lg:flex-row flex-col-reverse gap-4 justify-start items-start pt-[20px] mb-[3rem]">
+                <div className='flex flex-col items-center justify-between h-full w-full lg:w-[25%] gap-4'>
                     {/* Application Tracker */}
                     <div className='w-full bg-[#202020] flex flex-col justify-center items-center rounded-2xl px-6 py-5'>
                         <h3 className='text-white font-bold text-xl mb-2 text-center'>Application Tracker</h3>
@@ -85,7 +85,7 @@ export default function Dashboard() {
                             - 1: yellow Go (incomplete and available)
                             - 2: green Edit (complete and available)
                             */}
-                            <ApplicationLinkButton className title="About" status={(appData?.aboutComplete == true) ? 2 : 1} dest={"/registration/about"}/>
+                            <ApplicationLinkButton title="About" status={(appData?.aboutComplete == true) ? 2 : 1} dest={"/registration/about"}/>
                             <ApplicationLinkButton title="Education" status={(appData?.educationComplete == true) ? 2 : 1} dest={"/registration/education"}/>
                             <ApplicationLinkButton title="Additional Info" status={(appData?.appQsComplete == true) ? 2 : 1} dest={"/registration/application"}/>
                             <ApplicationLinkButton title="Policies" status={(appData?.policiesComplete == true) ? 2 : 1} dest={"/registration/policies"}/>
@@ -94,18 +94,18 @@ export default function Dashboard() {
                     {/* Info Buttons */}
                     <div className='w-full bg-[#202020] flex flex-col justify-center items-center rounded-2xl py-2 px-2'>
                         <h3 className='text-white font-bold text-xl mb-3'>Need a team?</h3>
-                        <a href='javascript:void(0)' className='bg-[#3f3f46] w-[50%] h-[40px] rounded-full flex justify-center items-center text-lg text-white font-bold'>Coming Soon</a>
+                        <a href='javascript:void(0)' className='bg-[#3f3f46] w-1/2 lg:w-4/5 xl:1/2 h-[40px] rounded-full flex justify-center items-center lg:text-sm text-lg text-white font-bold'>Coming Soon</a>
                     </div>
                     <div className='w-full bg-[#202020] flex flex-col justify-center items-center rounded-2xl py-2 px-2'>
                         <h3 className='text-white font-bold text-xl mb-3'>Need a bus?</h3>
-                        <a href='javascript:void(0)' className='bg-[#3f3f46] w-[50%] h-[40px] rounded-full flex justify-center items-center text-lg text-white font-bold'>Coming Soon</a>
+                        <a href='javascript:void(0)' className='bg-[#3f3f46] w-1/2 lg:w-4/5 xl:1/2 h-[40px] rounded-full flex justify-center items-center lg:text-sm text-lg text-white font-bold'>Coming Soon</a>
                     </div>
                     {/* <div className='flex flex-col w-full'>
                         
                     </div> */}
                 </div>
                 
-                <div className='flex flex-col w-full sm:w-[60%] md:w-[75%] sm:h-full justify-start items-center sm:ml-[20px]'>
+                <div className='flex flex-col w-full lg:w-[85%] sm:h-full justify-start items-center'>
                     <div className='bg-[#202020] h-full rounded-2xl py-5 px-5'>
                         <ApplicationStatusTracker status={imageToUse} />
                         <div className='w-full rounded-2xl text-white mt-[40px]'>

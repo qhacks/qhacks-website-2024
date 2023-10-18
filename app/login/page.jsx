@@ -81,8 +81,8 @@ export default function LogIn() {
                             const passwordInput = document.querySelector("#password-input");
                             passwordInput.type = passwordInput.type === 'password' ? 'text' : 'password';
                         }}>
-                            <FaEyeSlash className='cursor-pointer absolute w-4 -translate-y-1/2 right-[10px] top-[10px] text-white font-bold' />
-                            <FaEye className='hidden cursor-pointer absolute w-4 -translate-y-1/2 right-[10px] top-[10px] text-white font-bold' />
+                            <FaEyeSlash className='cursor-pointer absolute w-4 -translate-y-1/2 right-[10px] top-[20px] text-white font-bold' />
+                            <FaEye className='hidden cursor-pointer absolute w-4 -translate-y-1/2 right-[10px] top-[20px] text-white font-bold' />
                         </div>
                     </div>
                     <input type="submit" value="Log In" className='cursor-pointer font-semibold w-[280px] text-xl px-5 py-3 rounded-xl' style={{
@@ -92,7 +92,7 @@ export default function LogIn() {
                     <div className='text-center flex flex-col gap-[10px]'>
                     <button className='text-xs font-regular text-blue-600 hover:underline' onClick={forgotPassword}>Forgot your password?</button>
                     <div className='text-xs font-light'>Don't have an account? <a className='font-semibold hover:underline' href="/signup">Sign Up</a></div>
-                    <div className='text-xs font-light'>return <a className='font-semibold hover:underline' href="/">Home</a></div>
+                    <div className='text-xs font-light'>Return <a className='font-semibold hover:underline' href="/">Home</a></div>
                     </div>
                 </form>
             </div>

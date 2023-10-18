@@ -106,23 +106,18 @@ export default function Home() {
 							>
 								In-person! • February 2nd - 4th
 							</motion.p>
-							<motion.a
-								whileHover={{ scale: 1.05 }}
-								whileTap={{ scale: 0.9 }}
-								href="/signup"
-								className="lg:flex w-56 lg:w-auto text-white justify-center  bg-green-500 px-5 py-3 m-5 z-5 rounded-xl font-bold opacity-100"
-							>
-								Registration open!
-							</motion.a>
-							<p className="text-white text-center">Already have an account?</p>
-							<motion.a
-								whileHover={{ scale: 1.05 }}
-								whileTap={{ scale: 0.9 }}
-								href="/login"
-								className="lg:flex w-32 lg:w-auto text-white justify-center  bg-blue-500 px-5 py-3 mx-5 mt-3 z-5 rounded-xl font-bold opacity-100"
-							>
-								Sign in
-							</motion.a>
+							<div className="flex justify-center items-center w-full">
+								<motion.a
+									whileHover={{ scale: 1.05 }}
+									whileTap={{ scale: 0.9 }}
+									href="/signup"
+									className="flex w-56 lg:w-full text-white justify-center  bg-green-500 px-5 py-3 mx-5 mt-5 mb-3 z-5 rounded-xl font-bold opacity-100"
+								>
+									Register Here
+								</motion.a>
+							</div>
+							
+							<p className="text-white text-center">Already have an account? <a href="/signin" className="text-blue-400 hover:text-blue-100">sign in</a></p>							
 						</div>
 					</div>
 					<div id="crown-container" className="w-[750px] h-[500px] hidden xl:flex justify-center items-center ">

@@ -90,8 +90,8 @@ export default function SignUp() {
                             const passwordInput = document.querySelector("#password-input");
                             passwordInput.type = passwordInput.type === 'password' ? 'text' : 'password';
                         }}>
-                            <FaEyeSlash className='cursor-pointer absolute w-4 -translate-y-1/2 right-[10px] top-[10px] text-white font-bold' />
-                            <FaEye className='hidden cursor-pointer absolute w-4 -translate-y-1/2 right-[10px] top-[10px] text-white font-bold' />
+                            <FaEyeSlash className='cursor-pointer absolute w-4 -translate-y-1/2 right-[10px] top-[20px] text-white font-bold' />
+                            <FaEye className='hidden cursor-pointer absolute w-4 -translate-y-1/2 right-[10px] top-[20px] text-white font-bold' />
                         </div>
                     </div>
                     <div className='relative'>
@@ -106,8 +106,8 @@ export default function SignUp() {
                             const confirmInput = document.querySelector("#confirm-input");
                             confirmInput.type = confirmInput.type === 'password' ? 'text' : 'password';
                         }}>
-                            <FaEyeSlash className='cursor-pointer placeholder-white absolute w-4 -translate-y-1/2 right-[10px] top-[10px] text-white font-bold' />
-                            <FaEye className='hidden cursor-pointer placeholder-white absolute w-4 -translate-y-1/2 right-[10px] top-[10px] text-white font-bold' />
+                            <FaEyeSlash className='cursor-pointer placeholder-white absolute w-4 -translate-y-1/2 right-[10px] top-[20px] text-white font-bold' />
+                            <FaEye className='hidden cursor-pointer placeholder-white absolute w-4 -translate-y-1/2 right-[10px] top-[20px] text-white font-bold' />
                         </div>
                     </div>
                     <input type="submit" value="Create Account" className='cursor-pointer font-semibold w-[280px] text-xl px-5 py-3 rounded-xl' style={{
@@ -115,7 +115,7 @@ export default function SignUp() {
                     }}/>
                     
                     <div className='text-xs font-light'>Already signed up? <a className='font-semibold hover:underline' href="/login">Log In</a></div>
-                    <div className='text-xs font-light'>return <a className='font-semibold hover:underline' href="/">Home</a></div>
+                    <div className='text-xs font-light'>Return <a className='font-semibold hover:underline' href="/">Home</a></div>
                 </form>
             </div>
             <ToastContainer />
