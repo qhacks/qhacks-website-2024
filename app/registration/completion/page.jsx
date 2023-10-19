@@ -47,7 +47,7 @@ export default function Info() {
         <div className="z-10 w-[80%] lg:w-[60%] flex flex-col justify-center">
             <div className="flex flex-col gap-[1rem] justify-between bg-[#202020] py-[2rem] md:py-[4rem] px-[2rem] md:px-[3rem] mt-[1rem] rounded-lg">
                 <h1 className="text-3xl lg:text-[35px] font-bold">{`All Set!`}</h1>
-                <p className="text-lg sm:text-xl lg:text-2xl leading-tight">{`You have completed the application form for QHacks 2023. You have been sent an email with confirmation of your completion. Our team will be reviewing applications after the dashboard closes, so keep an eye out for your status of admission. At any point in time until December 9th, you are able to edit the submission of each page separately by making changes and clicking the "Save and Submit" button. Thank you for applying to QHacks 2023!`}</p>
+                <p className="text-lg sm:text-xl lg:text-2xl leading-tight">{`You have completed the application form for QHacks 2024. You have been sent an email with confirmation of your completion. Our team will be reviewing applications after the dashboard closes, so keep an eye out for your status of admission. At any point in time until December 9th, you are able to edit the submission of each page separately by making changes and clicking the "Save and Submit" button. Thank you for applying to QHacks 2024!`}</p>
                 
                 <div className="flex justify-center md:justify-end">
                     <button onClick={() => {
