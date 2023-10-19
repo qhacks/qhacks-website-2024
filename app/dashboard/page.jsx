@@ -92,16 +92,13 @@ export default function Dashboard() {
                         </div>
                     </div>
                     {/* Info Buttons */}
-                    <div className='w-full bg-[#202020] flex flex-col justify-center items-center rounded-2xl py-2 px-2'>
+                    {/* <div className='w-full bg-[#202020] flex flex-col justify-center items-center rounded-2xl py-2 px-2'>
                         <h3 className='text-white font-bold text-xl mb-3'>Need a team?</h3>
                         <a href='javascript:void(0)' className='bg-[#3f3f46] w-1/2 lg:w-4/5 xl:1/2 h-[40px] rounded-full flex justify-center items-center lg:text-sm text-lg text-white font-bold'>Coming Soon</a>
                     </div>
                     <div className='w-full bg-[#202020] flex flex-col justify-center items-center rounded-2xl py-2 px-2'>
                         <h3 className='text-white font-bold text-xl mb-3'>Need a bus?</h3>
                         <a href='javascript:void(0)' className='bg-[#3f3f46] w-1/2 lg:w-4/5 xl:1/2 h-[40px] rounded-full flex justify-center items-center lg:text-sm text-lg text-white font-bold'>Coming Soon</a>
-                    </div>
-                    {/* <div className='flex flex-col w-full'>
-                        
                     </div> */}
                 </div>
                 

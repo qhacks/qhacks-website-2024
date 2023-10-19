@@ -271,15 +271,15 @@ export default function About() {
         </div>
 
         <div className="flex flex-row justify-center bg-[#202020] py-[1rem] mt-[1rem] mb-[6rem] rounded-lg">
-          <button 
-            className="w-[25%] flex justify-center items-center text-center bg-[#FAAF40] rounded-lg py-3 font-bold"
-            onClick={() => { saveApplicationData(false, '/registration/about'); }}
-          >Previous Page</button>
+            <button 
+              className="w-[25%] flex justify-center items-center text-center bg-[#FAAF40] rounded-lg py-3 font-bold"
+              onClick={() => { saveApplicationData(false, '/registration/about'); }}
+            >Previous Page</button>
           <div className="h-full w-[2px] bg-white mx-[1rem]"></div>
-          <button 
-            className="w-[25%] flex justify-center items-center text-center bg-[#EE4036] rounded-lg py-3 font-bold"
-            onClick={() => { saveApplicationData(false, '/registration/application', true); }}
-          >Next Page</button>
+            <button 
+              className="w-[25%] flex justify-center items-center text-center bg-[#EE4036] rounded-lg py-3 font-bold"
+              onClick={() => { saveApplicationData(false, '/registration/application', true); }}
+            >Next Page</button>
         </div>
       </div>
       <ToastContainer />
