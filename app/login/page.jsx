@@ -43,10 +43,17 @@ export default function LogIn() {
             if (error.code == 'auth/user-not-found')
             {
                 toast('No user with that email exists', { theme: 'dark', type: 'error' });
+                return;
             }
             else if (error.code == 'auth/wrong-password')
             {
                 toast('Wrong password', { theme: 'dark', type: 'error' });
+                return;
+            }
+            else if (error.code == 'auth/email-not-verified')
+            {
+                toast('Email not verified', { theme: 'dark', type: 'error' });
+                return;
             }
             else
             {

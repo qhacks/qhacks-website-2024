@@ -182,7 +182,7 @@ export default function About() {
               id="school"
               placeholder="School"
               onChange={(e) => { setAppData({...appData, school: e.target.value}); }}
-              value={appData?.school}
+              value={appData?.school || 3}
               required
               className={`w-[80%] md:w-[35%] ${textBoxStyle}`}
             />
