@@ -117,7 +117,7 @@ export default function Home() {
 								</motion.a>
 							</div>
 							
-							<p className="text-white text-center">Already have an account? <a href="/signin" className="text-blue-400 hover:text-blue-100">sign in</a></p>							
+							<p className="text-white text-center">Already have an account? <a href="/login" className="text-blue-400 hover:text-blue-100">log in</a></p>							
 						</div>
 					</div>
 					<div id="crown-container" className="w-[750px] h-[500px] hidden xl:flex justify-center items-center ">
