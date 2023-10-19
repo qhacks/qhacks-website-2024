@@ -15,15 +15,21 @@ export default function Dashboard() {
     const [appData, setAppData] = useState(null);
     let imageToUse = 0;
 
-    useEffect(async () => {
-        if (currentUser === null)
-        {
-            window.location.href = '/login';
-            return;
+    useEffect(() => {
+        async function checkApplicationOnStartup(){
+            if (currentUser === null)
+            {
+                window.location.href = '/login';
+                return;
+            }
+            setAppStarted((await checkIfApplicationStarted(currentUser.uid)).result);
+            setAppData((await retrieveUserData(currentUser.uid)).result);
+            console.log("[0] Calling function: 'selectImageToUse'")
+            imageToUse = await selectImageToUse();
+            console.log("[2] Image to use: " + imageToUse);
         }
-        setAppStarted((await checkIfApplicationStarted(currentUser.uid)).result);
-        setAppData((await retrieveUserData(currentUser.uid)).result);
-        imageToUse = await selectImageToUse();
+        checkApplicationOnStartup();
+        console.log("[4] Process finished" + imageToUse);
     }, []);
 
     async function signOut()
@@ -35,30 +41,29 @@ export default function Dashboard() {
     async function selectImageToUse()
     {
         let localAppData = await (await retrieveUserData(currentUser.uid)).result;
+        // console.log(localAppData);
+
         if (localAppData == null)
         {
-            return '0';
+            return 0;
         }
 
         if (localAppData.applicationComplete == true)
         {
-            return '4';
+            return 4;
         }
-        else if (localAppData.aboutComplete == true && localAppData.educationComplete == true && localAppData.appQsComplete == true && localAppData.policiesComplete == true)
+        else if (localAppData.aboutComplete == true && localAppData.educationComplete == true && localAppData.additionalInfoComplete == true && localAppData.policiesComplete == true)
         {
-            return '3';
+            return 3;
         }
-        else if (localAppData.aboutComplete == true && localAppData.educationComplete == true && localAppData.appQsComplete == true && localAppData.policiesComplete == false)
+        else if (localAppData.aboutComplete == true && localAppData.educationComplete == true && localAppData.additionalInfoComplete == true && localAppData.policiesComplete == false)
         {
-            return '2';
+            return 2;
         }
-        else if (localAppData.aboutComplete == true && localAppData.educationComplete == false && localAppData.appQsComplete == false && localAppData.policiesComplete == false)
+        else if (localAppData.aboutComplete == true && localAppData.educationComplete == false && localAppData.additionalInfoComplete == false && localAppData.policiesComplete == false)
         {
-            return '1';
-        }
-        else
-        {
-            return '0';
+            console.log("[1] About is complete: " + 1);
+            return 1;
         }
     }
 
@@ -104,6 +109,7 @@ export default function Dashboard() {
                 
                 <div className='flex flex-col w-full lg:w-[85%] sm:h-full justify-start items-center'>
                     <div className='bg-[#202020] h-full rounded-2xl py-5 px-5'>
+                        {console.log(imageToUse)}
                         <ApplicationStatusTracker status={imageToUse} />
                         <div className='w-full rounded-2xl text-white mt-[40px]'>
                             <div className='text-2xl mb-2 font-bold'>QHacks Application</div>

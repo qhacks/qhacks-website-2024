@@ -8,6 +8,7 @@ import retrieveUserData from "../../../firebase/firestore/retrieveUserData";
 import updateUser from "../../../firebase/firestore/updateUser";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css'
+import MLHSchoolList from "../../../data/mlhApprovedSchools.json"
 
 import blob1 from "../../../assets/registration/Vector-1.png"
 import blob2 from "../../../assets/registration/Vector-2.png"
@@ -177,7 +178,18 @@ export default function About() {
 
           <div className="flex flex-col mb-[1rem]">
             <label htmlFor="school">School</label>
-            <input
+            <select className="rounded px-4 py-1 mt-[2px] text-sm border border-white bg-[#2D2D2D] block w-full p-2.5 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500">
+              <option className="placeholder-gray-400" value="">Choose a School</option>
+              {
+                MLHSchoolList.map(school => {
+                  return (
+                    <option value={school}>{school}</option>
+                  )
+                })
+              }
+            </select>
+
+            {/* <input
               type="text"
               name="school"
               id="school"
@@ -186,7 +198,7 @@ export default function About() {
               value={appData?.school}
               required
               className={`w-[80%] md:w-[35%] ${textBoxStyle}`}
-            />
+            /> */}
           </div>
 
           <div className="flex flex-col mb-[2rem]">

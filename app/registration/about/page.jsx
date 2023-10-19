@@ -364,7 +364,7 @@ export default function About() {
 
           {/* Resume */}
           <div className="">
-            <label class="test-sm text-white" for="resume">Resume - Max file size: 3MB</label>
+            <label class="test-sm text-white" for="resume">Resume - Max file size: 4MB</label>
             <input class="block w-full mb-5 text-lg text-grey-500 rounded cursor-pointer border border-white bg-[#2D2D2D]" id="resume" type="file" onChange={upload}/>
           </div>
 
