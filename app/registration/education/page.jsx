@@ -48,6 +48,7 @@ export default function About() {
       return;
     }
     setAppData((await retrieveUserData(currentUser.uid)).result);
+    setAppData({...appData, studyYear: 3});
   }, []);
 
   async function saveApplicationData(forceRedirect, path, checkCompletion)
@@ -182,7 +183,7 @@ export default function About() {
               id="school"
               placeholder="School"
               onChange={(e) => { setAppData({...appData, school: e.target.value}); }}
-              value={appData?.school || 3}
+              value={appData?.school}
               required
               className={`w-[80%] md:w-[35%] ${textBoxStyle}`}
             />
@@ -240,7 +241,7 @@ export default function About() {
             min="1" max="5" defaultValue="3" step="1"
             className="slider" // needed to use external stylesheet
             required
-            value={appData?.studyYear}
+            value={appData?.studyYear || 3}
             onChange={(e) => { setAppData({...appData, studyYear: e.target.value}); }}
             />
             <div className="flex flex-row justify-between">
