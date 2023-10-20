@@ -10,6 +10,8 @@ export default function SignUp() {
     const [email, setEmail] = useState(null);
     const [password, setPassword] = useState(null);
     const [confirm, setConfirm] = useState(null);
+    const [visible1, setVisible1] = useState(false);
+    const [visible2, setVisible2] = useState(false);
 
     async function handleSubmit(e)
     {
@@ -79,35 +81,54 @@ export default function SignUp() {
                     <input type='email' className='w-[280px] border-b border-solid border-[#717171] focus:outline-none' style={{
                         background: 'none',
                     }} placeholder='Email' onChange={e => setEmail(e.target.value)}/>
-                    <div className='relative'>
-                        <input id='password-input' type='password' className='w-[280px] border-b border-solid border-[#717171] focus:outline-none' style={{
-                            background: 'none',
-                        }} placeholder='Password' onChange={e => setPassword(e.target.value)}/>
-                        <div id="password-icon-cont" onClick={(e) => {
-                            const parent = 
-                            [...document.querySelector("#password-icon-cont").children].forEach(child => child.classList.toggle('hidden'))
-
-                            const passwordInput = document.querySelector("#password-input");
-                            passwordInput.type = passwordInput.type === 'password' ? 'text' : 'password';
-                        }}>
-                            <FaEyeSlash className='cursor-pointer absolute w-4 -translate-y-1/2 right-[10px] top-[20px] text-white font-bold' />
-                            <FaEye className='hidden cursor-pointer absolute w-4 -translate-y-1/2 right-[10px] top-[20px] text-white font-bold' />
+                    
+                    {/* PASSWORD FIELD */}
+                    <div className='relative w-[280px]'>
+                        <input 
+                            id='password-input'
+                            type={visible1 ? 'text' : 'password'}
+                            placeholder='Password' 
+                            onChange={e => setPassword(e.target.value)}
+                            className='w-full border-b border-solid border-[#717171] focus:outline-none' 
+                            style={{
+                                background: 'none',
+                            }}
+                        />
+                        <div 
+                            onClick={() => setVisible1(!visible1)}
+                        >   
+                            {
+                                visible1 ? 
+                                <FaEye className='absolute cursor-pointer text-white font-bold right-[10px] top-[15px]' />
+                                :
+                                <FaEyeSlash className='absolute cursor-pointer text-white font-bold right-[10px] top-[15px]' />
+                            }
                         </div>
                     </div>
+                    
+                    {/* PASSWORD FIELD */}
                     <div className='relative'>
-                        <input id='confirm-input' type='password' className='w-[280px] border-b border-solid border-[#717171] focus:outline-none' style={{
-                            background: 'none',
-                        }} placeholder='Confirm Password' onChange={e => setConfirm(e.target.value)}/>
+                        <input 
+                            id='confirm-input' 
+                            type={visible2 ? 'text' : 'password'}
+                            placeholder='Confirm Password' 
+                            onChange={e => setConfirm(e.target.value)}
+                            className='w-[280px] border-b border-solid border-[#717171] focus:outline-none' 
+                            style={{
+                                background: 'none',
+                            }} 
+                            
+                        />
 
-                        <div id="confirm-icon-cont" onClick={(e) => {
-                            const parent = 
-                            [...document.querySelector("#confirm-icon-cont").children].forEach(child => child.classList.toggle('hidden'))
-
-                            const confirmInput = document.querySelector("#confirm-input");
-                            confirmInput.type = confirmInput.type === 'password' ? 'text' : 'password';
-                        }}>
-                            <FaEyeSlash className='cursor-pointer placeholder-white absolute w-4 -translate-y-1/2 right-[10px] top-[20px] text-white font-bold' />
-                            <FaEye className='hidden cursor-pointer placeholder-white absolute w-4 -translate-y-1/2 right-[10px] top-[20px] text-white font-bold' />
+                        <div 
+                            onClick={() => setVisible2(!visible2)}
+                        >   
+                            {
+                                visible2 ? 
+                                <FaEye className='absolute cursor-pointer text-white font-bold right-[10px] top-[15px]' />
+                                :
+                                <FaEyeSlash className='absolute cursor-pointer text-white font-bold right-[10px] top-[15px]' />
+                            }
                         </div>
                     </div>
                     <input type="submit" value="Create Account" className='cursor-pointer font-semibold w-[280px] text-xl px-5 py-3 rounded-xl' style={{
