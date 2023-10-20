@@ -5,6 +5,7 @@ import { useState } from 'react';
 import signUp from '../../firebase/auth/signup';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { motion } from 'framer-motion';
 
 export default function SignUp() {
     const [email, setEmail] = useState(null);
@@ -131,9 +132,16 @@ export default function SignUp() {
                             }
                         </div>
                     </div>
-                    <input type="submit" value="Create Account" className='cursor-pointer font-semibold w-[280px] text-xl px-5 py-3 rounded-xl' style={{
-                        background: "linear-gradient(90deg, rgba(255, 0, 0, 0.72) -6.16%, rgba(255, 138, 0, 0.83) 60.41%)"
-                    }}/>
+                    <motion.input 
+                        type="submit" 
+                        value="Create Account" 
+                        className='cursor-pointer font-semibold w-[280px] text-xl px-5 py-3 rounded-xl' 
+                        style={{
+                            background: "linear-gradient(90deg, rgba(255, 0, 0, 0.72) -6.16%, rgba(255, 138, 0, 0.83) 60.41%)"
+                        }}
+                        whileHover={{scale: 1.05}}
+                        whileTap={{scale: 0.95}}
+                    />
                     
                     <div className='text-xs font-light'>Already signed up? <a className='font-semibold hover:underline' href="/login">Log In</a></div>
                     <div className='text-xs font-light'>Return <a className='font-semibold hover:underline' href="/">Home</a></div>

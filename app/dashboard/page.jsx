@@ -7,7 +7,7 @@ import checkIfApplicationStarted from '../../firebase/firestore/checkIfApplicati
 import { useEffect, useState } from 'react';
 import logout from '../../firebase/auth/logout';
 import retrieveUserData from '../../firebase/firestore/retrieveUserData';
-
+import { motion } from 'framer-motion';
 
 export default function Dashboard() {
     const { currentUser } = useAuth();
@@ -72,10 +72,21 @@ export default function Dashboard() {
             {/* Home Button */}
             <div className='flex flex-row justify-between items-center mt-[3rem] w-[95%] 2xl:w-[75%]'>
                 <div className='flex'>
-                    <a href='/' className='bg-[#FE0000] w-[160px] h-[50px] rounded-full flex justify-center items-center text-xl text-white font-bold mb-[10px]'>Home</a>
+                    <motion.a 
+                        href='/' 
+                        className='bg-[#FE0000] w-[160px] h-[50px] rounded-full flex justify-center items-center text-xl text-white font-bold mb-[10px]'
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                    >Home</motion.a>
                 </div>
                 <div className='flex'>
-                    <button href='/' className='bg-[#FE0000] w-[160px] h-[50px] rounded-full flex justify-center items-center text-xl text-white font-bold mb-[10px]' onClick={signOut}>Log Out</button>
+                    <motion.button 
+                        href='/' 
+                        className='bg-[#FE0000] w-[160px] h-[50px] rounded-full flex justify-center items-center text-xl text-white font-bold mb-[10px]' 
+                        onClick={signOut}
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                    >Log Out</motion.button>
                 </div>
             </div>
             
@@ -125,6 +136,8 @@ export default function Dashboard() {
                             </div>
                             <br />
                             {appStarted == false ? <div>It looks like you haven't started your application now. Make sure to apply before the deadline!</div> : null}
+                            <br />
+                            <p>If you encounter any errors with your application please email:  <a target="_blank" href='mailto:hello@qhacks.io'className='hover:text-blue-400 font-bold' >hello@qhacks.io</a></p>
                         </div>
                     </div>
                 </div>
