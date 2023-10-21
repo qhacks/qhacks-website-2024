@@ -50,20 +50,20 @@ export default function Dashboard() {
 
         if (localAppData.applicationComplete == true)
         {
-            return 4;
+            return "4";
         }
         else if (localAppData.aboutComplete == true && localAppData.educationComplete == true && localAppData.additionalInfoComplete == true && localAppData.policiesComplete == true)
         {
-            return 3;
+            return "3";
         }
         else if (localAppData.aboutComplete == true && localAppData.educationComplete == true && localAppData.additionalInfoComplete == true && localAppData.policiesComplete == false)
         {
-            return 2;
+            return "2";
         }
         else if (localAppData.aboutComplete == true && localAppData.educationComplete == false && localAppData.additionalInfoComplete == false && localAppData.policiesComplete == false)
         {
             console.log("[1] About is complete: " + 1);
-            return 1;
+            return "1";
         }
     }
 

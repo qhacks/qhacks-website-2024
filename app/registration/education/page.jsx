@@ -9,6 +9,7 @@ import updateUser from "../../../firebase/firestore/updateUser";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css'
 import MLHSchoolList from "../../../data/mlhApprovedSchools.json"
+import LevelOfStudyList from "../../../data/levelOfStudy.json"
 
 import blob1 from "../../../assets/registration/Vector-1.png"
 import blob2 from "../../../assets/registration/Vector-2.png"
@@ -234,16 +235,23 @@ export default function About() {
 
           <div className="flex flex-col mb-[2rem]">
             <label htmlFor="country">Level of Study:</label>
-            <input
-              type="text"
+            <select 
+              className="rounded px-4 py-1 mt-[2px] text-sm border border-white bg-[#2D2D2D] block w-full p-2.5 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
               id="lvlOfStudy"
               name="lvlOfStudy"
-              className={`${textBoxStyle}`}
-              placeholder="Undergraduate/Masters/PhD"
               value={appData?.lvlOfStudy}
               onChange={e => setAppData({...appData, lvlOfStudy: e.target.value})}
               required
-            />
+            >
+              <option className="placeholder-gray-400" value="">Choose a level of study</option>
+              {
+                LevelOfStudyList.map(levelOfStudy => {
+                  return (
+                    <option value={levelOfStudy} key={levelOfStudy} >{levelOfStudy}</option>
+                  )
+                })
+              }
+            </select>
           </div>
 
           <div className="flex flex-col gap-5 mb-[2rem]">
