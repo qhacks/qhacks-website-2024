@@ -13,7 +13,8 @@ export default function Dashboard() {
     const { currentUser } = useAuth();
     const [appStarted, setAppStarted] = useState(null);
     const [appData, setAppData] = useState(null);
-    let imageToUse = 0;
+    const [imageToUse, setImageToUse] = useState(0); // [0, 1, 2, 3, 4]
+
 
     useEffect(() => {
         async function checkApplicationOnStartup(){
@@ -24,9 +25,7 @@ export default function Dashboard() {
             }
             setAppStarted((await checkIfApplicationStarted(currentUser.uid)).result);
             setAppData((await retrieveUserData(currentUser.uid)).result);
-            console.log("[0] Calling function: 'selectImageToUse'")
-            imageToUse = await selectImageToUse();
-            console.log("[2] Image to use: " + imageToUse);
+            await selectImageToUse();
         }
         checkApplicationOnStartup();
         console.log("[4] Process finished" + imageToUse);
@@ -45,25 +44,24 @@ export default function Dashboard() {
 
         if (localAppData == null)
         {
-            return 0;
+            return setImageToUse(0);
         }
 
         if (localAppData.applicationComplete == true)
         {
-            return "4";
+            return setImageToUse(4);
         }
         else if (localAppData.aboutComplete == true && localAppData.educationComplete == true && localAppData.additionalInfoComplete == true && localAppData.policiesComplete == true)
         {
-            return "3";
+            return setImageToUse(3);
         }
         else if (localAppData.aboutComplete == true && localAppData.educationComplete == true && localAppData.additionalInfoComplete == true && localAppData.policiesComplete == false)
         {
-            return "2";
+            return setImageToUse(2);
         }
         else if (localAppData.aboutComplete == true && localAppData.educationComplete == false && localAppData.additionalInfoComplete == false && localAppData.policiesComplete == false)
         {
-            console.log("[1] About is complete: " + 1);
-            return "1";
+            return setImageToUse(1);
         }
     }
 
