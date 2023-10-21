@@ -192,10 +192,10 @@ export default function Info() {
 
 
   return (
-    <div className="w-screen min-h-screen h-fit m-0 p-0 flex justify-center text-white bg-[#111010]">
+    <div className="w-screen min-h-screen h-fit m-0 p-0 relative text-white bg-[#111010]">
 
       {/* BACKGROUND */}
-      <div className="hidden md:block absolute w-full min-h-screen h-[2000px] bg-transparent overflow-hidden">
+      <div className="hidden md:block absolute inset-0 h-auto w-full bg-transparent overflow-hidden">
         <img src={blob1.src} className="absolute bottom-0 right-0 w-[800px]"></img>
         <img src={blob2.src} className="absolute top-0 right-0 w-[800px]"></img>
         <img src={blob3.src} className="absolute top-[350px] left-0 h-[900px]"></img>
@@ -203,164 +203,164 @@ export default function Info() {
         <img src={blob5.src} className="absolute top-[450px] right-0 h-[1000px]"></img>
         <img src={blob6.src} className="absolute top-[-200px] left-0 w-[800px]"></img>
       </div>
-
-
-      <div className="z-[10] md:w-[60%] flex flex-col justify-start md:mt-[6rem]">
-        <div className="md:flex justify-between hidden">
-          <h1 className="text-3xl font-bold">More Info</h1>
-          <button
-            className="font-bold cursor-pointer text-sm px-5 py-2 rounded-xl bg-[#262261]"
-            onClick={() => saveApplicationData(true, '/dashboard')}
-          >
-            Save & Quit
-          </button>
-        </div>
-
-        <div className="flex flex-col bg-[#202020] py-[4rem] px-[3rem] md:mt-[1rem] md:rounded-lg">
-          <div className="flex justify-between md:hidden mb-[2rem]">
-            <h1 className="text-2xl md:text-3xl font-bold">More Info</h1>
+      <div className="flex justify-center">
+        <div className="z-[10] md:w-[60%] flex flex-col justify-start md:mt-[6rem]">
+          <div className="md:flex justify-between hidden">
+            <h1 className="text-3xl font-bold">More Info</h1>
             <button
-              className="cursor-pointer font-light text-sm px-5 py-2 rounded-xl"
-              style={{
-                background: "rgba(38, 34, 97, 1)",
-              }}
-              onClick={() => saveApplicationData(true, '/dashboard', false)}
+              className="font-bold cursor-pointer text-sm px-5 py-2 rounded-xl bg-[#262261]"
+              onClick={() => saveApplicationData(true, '/dashboard')}
             >
               Save & Quit
             </button>
           </div>
 
-          <div className="flex flex-col mb-[3rem]">
-            <label htmlFor="teammates">{`Let us know if you have a team! Enter the names of your teammates.`}<br></br>{`(Maximum of 4 people per team. This can be changed at any point until the event weekend. EACH INDIVIDUAL TEAMMATE MUST APPLY)`}</label>
-            <div name="teammates" id="teammates" className="flex flex-col md:flex-row gap-[10px] md:gap-0 justify-between">
-              <input
-                type="text"
-                name="firstTeammate"
-                id="firstTeammate"
-                placeholder="Teammate 1"
-                onChange={e => setAppData({...appData, firstTeammate: e.target.value})}
-                value={appData?.firstTeammate}
-                className={`w-[100%] md:w-[32%] ${textBoxStyle}`}
-              />
-              <input
-                type="text"
-                name="secondTeammate"
-                id="secondTeammate"
-                placeholder="Teammate 2"
-                onChange={e => setAppData({...appData, secondTeammate: e.target.value})}
-                value={appData?.secondTeammate}
-                className={`w-[100%] md:w-[32%] ${textBoxStyle}`}
-              />
-              <input
-                type="text"
-                name="thirdTeammate"
-                id="thirdTeammate"
-                placeholder="Teammate 3"
-                onChange={e => setAppData({...appData, thirdTeammate: e.target.value})}
-                value={appData?.thirdTeammate}
-                className={`w-[100%] md:w-[32%] ${textBoxStyle}`}
-              />
+          <div className="flex flex-col bg-[#202020] py-[4rem] px-[3rem] md:mt-[1rem] md:rounded-lg">
+            <div className="flex justify-between md:hidden mb-[2rem]">
+              <h1 className="text-2xl md:text-3xl font-bold">More Info</h1>
+              <button
+                className="cursor-pointer font-light text-sm px-5 py-2 rounded-xl"
+                style={{
+                  background: "rgba(38, 34, 97, 1)",
+                }}
+                onClick={() => saveApplicationData(true, '/dashboard', false)}
+              >
+                Save & Quit
+              </button>
             </div>
-          </div>
 
-          {/* Long Question 1 */}
-          <div className="flex flex-col mb-[3rem]">
-            <label htmlFor="reasonForParticipating">Why do you want to participate in QHacks? (Please limit your response to less than 300 words) <span className="text-red-500"> *</span></label>
-            <textarea
-              name="reasonForParticipating"
-              id="reasonForParticipating"
-              placeholder="Answer"
-              rows="10"
-              onChange={(e) => {
-                handleWordCounter(e)
-              }}
-              value={appData?.reasonForParticipating}
-              className={`w-full resize-none !pt-[0.75rem] ${textBoxStyle}`}
-              required
-            />
-            <p className="">{wordCount}/300</p>
-          </div>
-
-          {/* Long Question 2 */}
-          <div className="flex flex-col mb-[3rem]">
-            <label htmlFor="projectIdea">Please tell us about a project that you would like to build at QHacks! (Please limit your response to less than 200 words.) <span className="text-red-500"> *</span></label>
-            <textarea
-              name="projectIdea"
-              id="projectIdea"
-              placeholder="Answer"
-              rows="10"
-              onChange={e => {handleWordCounter2(e)}}
-              value={appData?.projectIdea}
-              className={`w-full resize-none !pt-[0.75rem] ${textBoxStyle}`}
-              required
-            />
-            <p className="">{wordCount2}/200</p>
-          </div>
-
-          <div className="flex flex-col mb-[2rem]">
-            <label htmlFor="previousHackathons">How many hackathons have you previously attended? <span className="text-red-500"> *</span></label>
-            <input
-                type="text"
-                name="previousHackathons"
-                id="previousHackathons"
-                placeholder="0"
-                onChange={e => setAppData({...appData, previousHackathons: e.target.value})}
-                value={appData?.previousHackathons}
-                className={`w-[25%] ${textBoxStyle}`}
-              />
-          </div>
-
-          <div className="flex flex-col mb-[2rem]">
-            <label htmlFor="dietaryRestrictions">Do you have any dietary restrictions we should know of?</label>
-            <input
-                type="text"
-                name="dietaryRestrictions"
-                id="dietaryRestrictions"
-                placeholder="intolerance, vegan, allergies, etc."
-                onChange={e => setAppData({...appData, dietaryRestrictions: e.target.value})}
-                value={appData?.dietaryRestrictions}
-                className={`w-[70%] ${textBoxStyle}`}
-              />
-          </div>
-
-          <div className="flex flex-col mb-[3rem]">
-            <label htmlFor="pronouns">Will you be travelling from any of these cities?<span className="text-red-500"> *</span></label>
-            {travelOptions.map(option => {
-              return (
-                <label key={option} className="inline-flex items-center">
+            <div className="flex flex-col mb-[3rem]">
+              <label htmlFor="teammates">{`Let us know if you have a team! Enter the names of your teammates.`}<br></br>{`(Maximum of 4 people per team. This can be changed at any point until the event weekend. EACH INDIVIDUAL TEAMMATE MUST APPLY)`}</label>
+              <div name="teammates" id="teammates" className="flex flex-col md:flex-row gap-[10px] md:gap-0 justify-between">
                 <input
-                  type="radio"
-                  value={option}
-                  checked={appData?.travelOption === `${option}`}
-                  onChange={(e) => { handleOptionChange(e); setAppData({...appData, travelOption: e.target.value}) }}
-                  className="form-radio text-indigo-600 h-4 w-4"
+                  type="text"
+                  name="firstTeammate"
+                  id="firstTeammate"
+                  placeholder="Teammate 1"
+                  onChange={e => setAppData({...appData, firstTeammate: e.target.value})}
+                  value={appData?.firstTeammate}
+                  className={`w-[100%] md:w-[32%] ${textBoxStyle}`}
                 />
-                <span className="ml-2">{option}</span>
-                </label>
-              )
-            })}
-          </div>
-
-          <div className="flex flex-col mb-[3rem]">
-            <label htmlFor="busOption">Will you be needing bussing from any of the above locations?</label>
-            <div className="flex flex-row flex-start items-center">
-              <input type="checkbox" id="busOption" name="busOption" checked={appData?.busOption} className="w-5 h-5 rounded border border-white bg-[#2D2D2D]" onChange={e => setAppData({...appData, busOption: e.target.checked})}></input>
-              <label for="busOption" className="pl-[0.5rem]">Yes</label>
+                <input
+                  type="text"
+                  name="secondTeammate"
+                  id="secondTeammate"
+                  placeholder="Teammate 2"
+                  onChange={e => setAppData({...appData, secondTeammate: e.target.value})}
+                  value={appData?.secondTeammate}
+                  className={`w-[100%] md:w-[32%] ${textBoxStyle}`}
+                />
+                <input
+                  type="text"
+                  name="thirdTeammate"
+                  id="thirdTeammate"
+                  placeholder="Teammate 3"
+                  onChange={e => setAppData({...appData, thirdTeammate: e.target.value})}
+                  value={appData?.thirdTeammate}
+                  className={`w-[100%] md:w-[32%] ${textBoxStyle}`}
+                />
+              </div>
             </div>
-          </div>
-          
-        </div>
 
-        <div className="flex flex-row justify-center bg-[#202020] py-[1rem] mt-[1rem] mb-[6rem] rounded-lg">
-          <button 
-            className="w-[25%] flex justify-center items-center text-center bg-[#FAAF40] rounded-lg py-3 font-bold"
-            onClick={() => { saveApplicationData(false, '/registration/education'); }}
-          >Previous Page</button>
-          <div className="h-full w-[2px] bg-white mx-[1rem]"></div>
-          <button 
-            className="w-[25%] flex justify-center items-center text-center bg-[#EE4036] rounded-lg py-3 font-bold"
-            onClick={() => { saveApplicationData(false, '/registration/policies', true); }}
-          >Next Page</button>
+            {/* Long Question 1 */}
+            <div className="flex flex-col mb-[3rem]">
+              <label htmlFor="reasonForParticipating">Why do you want to participate in QHacks? (Please limit your response to less than 300 words) <span className="text-red-500"> *</span></label>
+              <textarea
+                name="reasonForParticipating"
+                id="reasonForParticipating"
+                placeholder="Answer"
+                rows="10"
+                onChange={(e) => {
+                  handleWordCounter(e)
+                }}
+                value={appData?.reasonForParticipating}
+                className={`w-full resize-none !pt-[0.75rem] ${textBoxStyle}`}
+                required
+              />
+              <p className="">{wordCount}/300</p>
+            </div>
+
+            {/* Long Question 2 */}
+            <div className="flex flex-col mb-[3rem]">
+              <label htmlFor="projectIdea">Please tell us about a project that you would like to build at QHacks! (Please limit your response to less than 200 words.) <span className="text-red-500"> *</span></label>
+              <textarea
+                name="projectIdea"
+                id="projectIdea"
+                placeholder="Answer"
+                rows="10"
+                onChange={e => {handleWordCounter2(e)}}
+                value={appData?.projectIdea}
+                className={`w-full resize-none !pt-[0.75rem] ${textBoxStyle}`}
+                required
+              />
+              <p className="">{wordCount2}/200</p>
+            </div>
+
+            <div className="flex flex-col mb-[2rem]">
+              <label htmlFor="previousHackathons">How many hackathons have you previously attended? <span className="text-red-500"> *</span></label>
+              <input
+                  type="text"
+                  name="previousHackathons"
+                  id="previousHackathons"
+                  placeholder="0"
+                  onChange={e => setAppData({...appData, previousHackathons: e.target.value})}
+                  value={appData?.previousHackathons}
+                  className={`w-[25%] ${textBoxStyle}`}
+                />
+            </div>
+
+            <div className="flex flex-col mb-[2rem]">
+              <label htmlFor="dietaryRestrictions">Do you have any dietary restrictions we should know of?</label>
+              <input
+                  type="text"
+                  name="dietaryRestrictions"
+                  id="dietaryRestrictions"
+                  placeholder="intolerance, vegan, allergies, etc."
+                  onChange={e => setAppData({...appData, dietaryRestrictions: e.target.value})}
+                  value={appData?.dietaryRestrictions}
+                  className={`w-[70%] ${textBoxStyle}`}
+                />
+            </div>
+
+            <div className="flex flex-col mb-[3rem]">
+              <label htmlFor="pronouns">Will you be travelling from any of these cities?<span className="text-red-500"> *</span></label>
+              {travelOptions.map(option => {
+                return (
+                  <label key={option} className="inline-flex items-center">
+                  <input
+                    type="radio"
+                    value={option}
+                    checked={appData?.travelOption === `${option}`}
+                    onChange={(e) => { handleOptionChange(e); setAppData({...appData, travelOption: e.target.value}) }}
+                    className="form-radio text-indigo-600 h-4 w-4"
+                  />
+                  <span className="ml-2">{option}</span>
+                  </label>
+                )
+              })}
+            </div>
+
+            <div className="flex flex-col mb-[3rem]">
+              <label htmlFor="busOption">Will you be needing bussing from any of the above locations?</label>
+              <div className="flex flex-row flex-start items-center">
+                <input type="checkbox" id="busOption" name="busOption" checked={appData?.busOption} className="w-5 h-5 rounded border border-white bg-[#2D2D2D]" onChange={e => setAppData({...appData, busOption: e.target.checked})}></input>
+                <label for="busOption" className="pl-[0.5rem]">Yes</label>
+              </div>
+            </div>
+            
+          </div>
+
+          <div className="flex flex-row justify-center bg-[#202020] py-[1rem] mt-[1rem] mb-[6rem] rounded-lg">
+            <button 
+              className="w-[25%] flex justify-center items-center text-center bg-[#FAAF40] rounded-lg py-3 font-bold"
+              onClick={() => { saveApplicationData(false, '/registration/education'); }}
+            >Previous Page</button>
+            <div className="h-full w-[2px] bg-white mx-[1rem]"></div>
+            <button 
+              className="w-[25%] flex justify-center items-center text-center bg-[#EE4036] rounded-lg py-3 font-bold"
+              onClick={() => { saveApplicationData(false, '/registration/policies', true); }}
+            >Next Page</button>
+          </div>
         </div>
       </div>
       <ToastContainer />

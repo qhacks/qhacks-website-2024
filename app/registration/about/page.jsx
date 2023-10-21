@@ -205,10 +205,9 @@ export default function About() {
   
 
   return (
-    <>
-    <div className="w-screen h-fit m-0 p-0 flex justify-center text-white bg-[#111010]">
+    <div className="w-screen min-h-screen h-fit m-0 p-0 relative text-white bg-[#111010]">
       {/* BACKGROUND */}
-      <div className="hidden md:block m-0 p-0 absolute w-full min-h-screen h-[1700px] bg-transparent overflow-hidden">
+      <div className="hidden md:block absolute inset-0 h-auto w-full bg-transparent overflow-hidden">
         <img src={blob1.src} className="absolute bottom-0 right-0 w-[800px]"></img>
         <img src={blob2.src} className="absolute top-0 right-0 w-[800px]"></img>
         <img src={blob3.src} className="absolute top-[350px] left-0 h-[900px]"></img>
@@ -216,252 +215,251 @@ export default function About() {
         <img src={blob5.src} className="absolute top-[450px] right-0 h-[1000px]"></img>
         <img src={blob6.src} className="absolute top-[-200px] left-0 w-[800px]"></img>
       </div>
-
-
-      <div className="z-[10] md:w-[60%] flex flex-col justify-start md:mt-[6rem]">
-        <div className="md:flex justify-between hidden">
-          <h1 className="text-3xl font-bold">Tell us about yourself</h1>
-          <button
-            className="font-bold cursor-pointer text-sm px-5 py-2 rounded-xl bg-[#262261]"
-            onClick={() => saveApplicationData(true, '/dashboard', false)}
-          >
-            Save & Quit
-          </button>
-        </div>
-
-        <div className="flex flex-col bg-[#202020] py-[4rem] px-[3rem] md:mt-[1rem] md:rounded-lg">
-          <div className="flex justify-between md:hidden mb-[2rem]">
-            <h1 className="text-2xl font-bold">Tell us about yourself</h1>
+      <div className="flex justify-center">
+        <div className="z-[10] md:w-[60%] flex flex-col justify-start md:mt-[6rem]">
+          <div className="md:flex justify-between hidden">
+            <h1 className="text-3xl font-bold">Tell us about yourself</h1>
             <button
-              className="cursor-pointer font-light text-sm px-5 py-2 rounded-xl"
-              style={{
-                background: "rgba(38, 34, 97, 1)",
-              }}
+              className="font-bold cursor-pointer text-sm px-5 py-2 rounded-xl bg-[#262261]"
               onClick={() => saveApplicationData(true, '/dashboard', false)}
             >
               Save & Quit
             </button>
           </div>
 
-          {/* THIS IS WHERE THE FORM BEGINS */}
-          <div className="flex flex-col mb-[1rem]">
-            <label htmlFor="firstName">First Name<span className="text-red-500"> *</span></label>
-            <input
-              type="text"
-              name="firstName"
-              id="firstName"
-              placeholder="First Name"
-              value={appData?.firstName}
-              className={`w-[80%] md:w-[35%] rounded px-4 py-1 mt-[2px] text-sm border border-white bg-[#2D2D2D]`}
-              required
-              onChange={(e) => {
-                setAppData({...appData, firstName: e.target.value})
-              }}
-            />
-          </div>
-          {/* {console.log("App data: "+appData) } */}
-          <div className="flex flex-col mb-[3rem]">
-            <label htmlFor="lastName">Last Name<span className="text-red-500"> *</span></label>
-            <input
-              type="text"
-              name="lastName"
-              id="lastName"
-              placeholder="Last Name"
-              value={appData?.lastName}
-              required
-              className={`w-[80%] md:w-[35%] rounded px-4 py-1 mt-[2px] text-sm border border-white bg-[#2D2D2D]`}
-              onChange={(e) => {
-                setAppData({...appData, lastName: e.target.value})
-              }}
-            />
-          </div>
+          <div className="flex flex-col bg-[#202020] py-[4rem] px-[3rem] md:mt-[1rem] md:rounded-lg">
+            <div className="flex justify-between md:hidden mb-[2rem]">
+              <h1 className="text-2xl font-bold">Tell us about yourself</h1>
+              <button
+                className="cursor-pointer font-light text-sm px-5 py-2 rounded-xl"
+                style={{
+                  background: "rgba(38, 34, 97, 1)",
+                }}
+                onClick={() => saveApplicationData(true, '/dashboard', false)}
+              >
+                Save & Quit
+              </button>
+            </div>
 
-          {/* PRONOUNS */}
-          <div className="flex flex-col mb-[3rem]">
-            <label htmlFor="pronouns">Preferred Pronouns<span className="text-red-500"> *</span></label>
-            {pronounOptions.map(option => {
-              return (
-                <label className="inline-flex items-center" key={option}>
+            {/* THIS IS WHERE THE FORM BEGINS */}
+            <div className="flex flex-col mb-[1rem]">
+              <label htmlFor="firstName">First Name<span className="text-red-500"> *</span></label>
+              <input
+                type="text"
+                name="firstName"
+                id="firstName"
+                placeholder="First Name"
+                value={appData?.firstName}
+                className={`w-[80%] md:w-[35%] rounded px-4 py-1 mt-[2px] text-sm border border-white bg-[#2D2D2D]`}
+                required
+                onChange={(e) => {
+                  setAppData({...appData, firstName: e.target.value})
+                }}
+              />
+            </div>
+            {/* {console.log("App data: "+appData) } */}
+            <div className="flex flex-col mb-[3rem]">
+              <label htmlFor="lastName">Last Name<span className="text-red-500"> *</span></label>
+              <input
+                type="text"
+                name="lastName"
+                id="lastName"
+                placeholder="Last Name"
+                value={appData?.lastName}
+                required
+                className={`w-[80%] md:w-[35%] rounded px-4 py-1 mt-[2px] text-sm border border-white bg-[#2D2D2D]`}
+                onChange={(e) => {
+                  setAppData({...appData, lastName: e.target.value})
+                }}
+              />
+            </div>
+
+            {/* PRONOUNS */}
+            <div className="flex flex-col mb-[3rem]">
+              <label htmlFor="pronouns">Preferred Pronouns<span className="text-red-500"> *</span></label>
+              {pronounOptions.map(option => {
+                return (
+                  <label className="inline-flex items-center" key={option}>
+                  <input
+                    type="radio"
+                    value={option}
+                    checked={appData?.pronouns === `${option}`}
+                    onChange={(e) => {
+                      handleOptionChange(e); 
+                      setAppData({...appData, pronouns: e.target.value})
+                    }}
+                    className="form-radio text-indigo-600 h-4 w-4"
+                  />
+                  <span className="ml-2">{option}</span>
+                  </label>
+                )
+              })}
+              <label className="inline-flex items-center">
                 <input
                   type="radio"
-                  value={option}
-                  checked={appData?.pronouns === `${option}`}
+                  value="other"
+                  checked={appData?.pronouns === "other"}
                   onChange={(e) => {
                     handleOptionChange(e); 
                     setAppData({...appData, pronouns: e.target.value})
                   }}
                   className="form-radio text-indigo-600 h-4 w-4"
                 />
-                <span className="ml-2">{option}</span>
-                </label>
-              )
-            })}
-            <label className="inline-flex items-center">
-              <input
-                type="radio"
-                value="other"
-                checked={appData?.pronouns === "other"}
-                onChange={(e) => {
-                  handleOptionChange(e); 
-                  setAppData({...appData, pronouns: e.target.value})
-                }}
-                className="form-radio text-indigo-600 h-4 w-4"
-              />
-              <span className="ml-2">Other: </span>
-              <input type="text" className="ml-2 bg-transparent border-b-[1px] text-sm outline-none"></input>
-            </label>
-            <label className="inline-flex items-center">
-              <input
-                type="radio"
-                value="no_prefer"
-                checked={appData?.pronouns === "no_prefer"}
-                onChange={(e) => {
-                  handleOptionChange(e); 
-                  setAppData({...appData, pronouns: e.target.value})
-                }}
-                className="form-radio text-indigo-600 h-4 w-4"
-              />
-              <span className="ml-2">Prefer not to answer</span>
-            </label>
-          </div>
-          
-          {/* GENDER */}
-          <div className="flex flex-col mb-[3rem]">
-            <label htmlFor="pronouns">What is your Gender?<span className="text-red-500"> *</span></label>
-            {genderOptions.map(option => {
-              return (
-                <label key={option} className="inline-flex items-center">
+                <span className="ml-2">Other: </span>
+                <input type="text" className="ml-2 bg-transparent border-b-[1px] text-sm outline-none"></input>
+              </label>
+              <label className="inline-flex items-center">
                 <input
                   type="radio"
-                  value={option}
-                  checked={appData?.gender === `${option}`}
+                  value="no_prefer"
+                  checked={appData?.pronouns === "no_prefer"}
                   onChange={(e) => {
-                    handleOptionChange2(e); 
-                    setAppData({...appData, gender: e.target.value})
+                    handleOptionChange(e); 
+                    setAppData({...appData, pronouns: e.target.value})
                   }}
                   className="form-radio text-indigo-600 h-4 w-4"
                 />
-                <span className="ml-2">{option}</span>
-                </label>
-              )
-            })}
-            <label className="inline-flex items-center">
+                <span className="ml-2">Prefer not to answer</span>
+              </label>
+            </div>
+            
+            {/* GENDER */}
+            <div className="flex flex-col mb-[3rem]">
+              <label htmlFor="pronouns">What is your Gender?<span className="text-red-500"> *</span></label>
+              {genderOptions.map(option => {
+                return (
+                  <label key={option} className="inline-flex items-center">
+                  <input
+                    type="radio"
+                    value={option}
+                    checked={appData?.gender === `${option}`}
+                    onChange={(e) => {
+                      handleOptionChange2(e); 
+                      setAppData({...appData, gender: e.target.value})
+                    }}
+                    className="form-radio text-indigo-600 h-4 w-4"
+                  />
+                  <span className="ml-2">{option}</span>
+                  </label>
+                )
+              })}
+              <label className="inline-flex items-center">
+                <input
+                  type="radio"
+                  value="other"
+                  checked={appData?.gender === "other"}
+                  onChange={(e) => {handleOptionChange2(e); setAppData({...appData, gender: e.target.value})}}
+                  className="form-radio text-indigo-600 h-4 w-4"
+                />
+                <span className="ml-2">Other: </span>
+                <input type="text" className="ml-2 bg-transparent border-b-[1px] text-sm outline-none"></input>
+              </label>
+              <label className="inline-flex items-center">
+                <input
+                  type="radio"
+                  value="no_prefer"
+                  checked={appData?.gender === "no_prefer"}
+                  onChange={(e) => {handleOptionChange2(e); setAppData({...appData, gender: e.target.value})}}
+                  className="form-radio text-indigo-600 h-4 w-4"
+                />
+                <span className="ml-2">Prefer not to answer</span>
+              </label>
+            </div>
+            
+            {/* AGE */}
+            <div className="flex flex-col mb-[2rem]">
+              <label htmlFor="age">What is your age?<span className="text-red-500"> *</span></label>
               <input
-                type="radio"
-                value="other"
-                checked={appData?.gender === "other"}
-                onChange={(e) => {handleOptionChange2(e); setAppData({...appData, gender: e.target.value})}}
-                className="form-radio text-indigo-600 h-4 w-4"
-              />
-              <span className="ml-2">Other: </span>
-              <input type="text" className="ml-2 bg-transparent border-b-[1px] text-sm outline-none"></input>
-            </label>
-            <label className="inline-flex items-center">
-              <input
-                type="radio"
-                value="no_prefer"
-                checked={appData?.gender === "no_prefer"}
-                onChange={(e) => {handleOptionChange2(e); setAppData({...appData, gender: e.target.value})}}
-                className="form-radio text-indigo-600 h-4 w-4"
-              />
-              <span className="ml-2">Prefer not to answer</span>
-            </label>
-          </div>
-          
-          {/* AGE */}
-          <div className="flex flex-col mb-[2rem]">
-            <label htmlFor="age">What is your age?<span className="text-red-500"> *</span></label>
-            <input
-                type="text"
-                name="age"
-                id="age"
-                placeholder="Age"
-                value={appData?.age}
+                  type="text"
+                  name="age"
+                  id="age"
+                  placeholder="Age"
+                  value={appData?.age}
+                  required
+                  className={`w-[25%] rounded px-4 py-1 mt-[2px] text-sm border border-white bg-[#2D2D2D]`}
+                  onChange={e => setAppData({...appData, age: e.target.value})}
+                />
+            </div>
+            
+            {/* COUNTRY */}
+            <div className="flex flex-col mb-[2rem]">
+              <label htmlFor="country">Country of Residence<span className="text-red-500"> *</span></label>
+              <select
                 required
-                className={`w-[25%] rounded px-4 py-1 mt-[2px] text-sm border border-white bg-[#2D2D2D]`}
-                onChange={e => setAppData({...appData, age: e.target.value})}
+                id="country"
+                name="country"
+                value={appData?.country}
+                onChange={e => setAppData({...appData, country: e.target.value})}
+                className="rounded px-4 py-1 mt-[2px] text-sm border border-white bg-[#2D2D2D] block w-full p-2.5 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
+              >
+                <option className="placeholder-gray-400" value="">Choose a country</option>
+                {
+                  CountryList.map(country => {
+                    return (
+                      <option key={country} value={country}>{country}</option>
+                    )
+                  })
+                }
+              </select>
+            </div>
+
+            {/* PHONE NUMBER */}
+            <div className="flex flex-col mb-[2rem]">
+              <label htmlFor="phone">{`Phone Number (Format as "xxx-xxx-xxxx")`}<span className="text-red-500"> *</span></label>
+              {/* Create custom pattern matching */}
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="123-456-7890"
+                className={`rounded px-4 py-1 mt-[2px] text-sm border border-white bg-[#2D2D2D]`}
+                value={appData?.phone}
+                onChange={(e) => {
+                    setAppData({...appData, phone: e.target.value})
+                }}
+                required
               />
-          </div>
-          
-          {/* COUNTRY */}
-          <div className="flex flex-col mb-[2rem]">
-            <label htmlFor="country">Country of Residence<span className="text-red-500"> *</span></label>
-            <select
-              required
-              id="country"
-              name="country"
-              value={appData?.country}
-              onChange={e => setAppData({...appData, country: e.target.value})}
-              className="rounded px-4 py-1 mt-[2px] text-sm border border-white bg-[#2D2D2D] block w-full p-2.5 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
-            >
-              <option className="placeholder-gray-400" value="">Choose a country</option>
-              {
-                CountryList.map(country => {
-                  return (
-                    <option key={country} value={country}>{country}</option>
-                  )
-                })
-              }
-            </select>
+              {console.log("[expected true] phone test: "+validatePhoneNumber("651-9969-9148"))}
+            </div>
+
+            {/* RESUME */}
+            <div className="">
+              <label className="text-white" for="resume">Resume <span className="text-xs text-gray-500">Max file size: 4mb</span></label>
+              {/* {appData.resumeOK ? <p className="text-xs text-green-500">Resume uploaded!</p> : <p className="text-xs text-red-500">Resume not uploaded.</p>} */}
+              <input className="block w-full text-lg text-grey-500 rounded cursor-pointer border border-white bg-[#2D2D2D]" id="resume" type="file" onChange={upload}/>
+              <p className="mb-5 text-gray-300">Note: If you already saved a resume, you can upload a new file to overwrite it, otherwise we have it saved in our database</p>
+            </div>
+
+            {/* GITHUB */}
+            <div className="flex flex-col mb-[2rem]">
+              <label htmlFor="github">GitHub Link</label>
+              <input type="url" id="github" name="github" placeholder="GitHub" className={`rounded px-4 py-1 mt-[2px] text-sm border border-white bg-[#2D2D2D]`} onChange={e => setAppData({...appData, githubLink: e.target.value})} value={appData?.githubLink} />
+            </div>
+
+            {/* LINKEDIN */}
+            <div className="flex flex-col mb-[2rem]">
+              <label htmlFor="linkedin">LinkedIn Link</label>
+              <input type="url" id="linkedin" name="linkedin" placeholder="LinkedIn" className={`rounded px-4 py-1 mt-[2px] text-sm border border-white bg-[#2D2D2D]`} onChange={e => setAppData({...appData, linkedinLink: e.target.value})} value={appData?.linkedinLink} />
+            </div>
+
+            {/* PORTFOLIO */}
+            <div className="flex flex-col">
+              <label htmlFor="portfolio">Website</label>
+              <input type="url" id="portfolio" name="portfolio" placeholder="Personal Site" className={`rounded px-4 py-1 mt-[2px] text-sm border border-white bg-[#2D2D2D]`} onChange={e => setAppData({ ...appData, portfolioLink: e.target.value})} value={appData?.portfolioLink} />
+            </div>
+            
           </div>
 
-          {/* PHONE NUMBER */}
-          <div className="flex flex-col mb-[2rem]">
-            <label htmlFor="phone">{`Phone Number (Format as "xxx-xxx-xxxx")`}<span className="text-red-500"> *</span></label>
-            {/* Create custom pattern matching */}
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              placeholder="123-456-7890"
-              className={`rounded px-4 py-1 mt-[2px] text-sm border border-white bg-[#2D2D2D]`}
-              value={appData?.phone}
-              onChange={(e) => {
-                  setAppData({...appData, phone: e.target.value})
-              }}
-              required
-            />
-            {console.log("[expected true] phone test: "+validatePhoneNumber("651-9969-9148"))}
+          <div className="flex flex-row justify-center bg-[#202020] py-[1rem] mt-[1rem] mb-[6rem] rounded-lg">
+            <button 
+              className="w-[25%] flex justify-center items-center text-center bg-[#FAAF40] font-bold rounded-lg py-3"
+              href="/registration/education"
+              onClick={() => {saveApplicationData(false, '/registration/education', true)}}
+            >Next Page</button>
           </div>
-
-          {/* RESUME */}
-          <div className="">
-            <label className="text-white" for="resume">Resume <span className="text-xs text-gray-500">Max file size: 4mb</span></label>
-            {/* {appData.resumeOK ? <p className="text-xs text-green-500">Resume uploaded!</p> : <p className="text-xs text-red-500">Resume not uploaded.</p>} */}
-            <input className="block w-full text-lg text-grey-500 rounded cursor-pointer border border-white bg-[#2D2D2D]" id="resume" type="file" onChange={upload}/>
-            <p className="mb-5 text-gray-300">Note: If you already saved a resume, you can upload a new file to overwrite it, otherwise we have it saved in our database</p>
-          </div>
-
-          {/* GITHUB */}
-          <div className="flex flex-col mb-[2rem]">
-            <label htmlFor="github">GitHub Link</label>
-            <input type="url" id="github" name="github" placeholder="GitHub" className={`rounded px-4 py-1 mt-[2px] text-sm border border-white bg-[#2D2D2D]`} onChange={e => setAppData({...appData, githubLink: e.target.value})} value={appData?.githubLink} />
-          </div>
-
-          {/* LINKEDIN */}
-          <div className="flex flex-col mb-[2rem]">
-            <label htmlFor="linkedin">LinkedIn Link</label>
-            <input type="url" id="linkedin" name="linkedin" placeholder="LinkedIn" className={`rounded px-4 py-1 mt-[2px] text-sm border border-white bg-[#2D2D2D]`} onChange={e => setAppData({...appData, linkedinLink: e.target.value})} value={appData?.linkedinLink} />
-          </div>
-
-          {/* PORTFOLIO */}
-          <div className="flex flex-col">
-            <label htmlFor="portfolio">Website</label>
-            <input type="url" id="portfolio" name="portfolio" placeholder="Personal Site" className={`rounded px-4 py-1 mt-[2px] text-sm border border-white bg-[#2D2D2D]`} onChange={e => setAppData({ ...appData, portfolioLink: e.target.value})} value={appData?.portfolioLink} />
-          </div>
-          
         </div>
-
-        <div className="flex flex-row justify-center bg-[#202020] py-[1rem] mt-[1rem] mb-[6rem] rounded-lg">
-          <button 
-            className="w-[25%] flex justify-center items-center text-center bg-[#FAAF40] font-bold rounded-lg py-3"
-            href="/registration/education"
-            onClick={() => {saveApplicationData(false, '/registration/education', true)}}
-          >Next Page</button>
-        </div>
-      </div>
+      </div>      
+      <ToastContainer />
     </div>
-    <ToastContainer />
-    </>
   );
 };
