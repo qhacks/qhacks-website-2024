@@ -291,7 +291,7 @@ export default function Info() {
                 <input
                   type="radio"
                   value={option}
-                  checked={travelOption === `${option}`}
+                  checked={appData?.travelOption === `${option}`}
                   onChange={(e) => { handleOptionChange(e); setAppData({...appData, travelOption: e.target.value}) }}
                   className="form-radio text-indigo-600 h-4 w-4"
                 />

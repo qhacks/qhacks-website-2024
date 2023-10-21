@@ -40,7 +40,7 @@ export default function Dashboard() {
     async function selectImageToUse()
     {
         let localAppData = await (await retrieveUserData(currentUser.uid)).result;
-        // console.log(localAppData);
+        console.log(localAppData);
 
         if (localAppData == null)
         {
@@ -51,15 +51,15 @@ export default function Dashboard() {
         {
             return setImageToUse(4);
         }
-        else if (localAppData.aboutComplete == true && localAppData.educationComplete == true && localAppData.additionalInfoComplete == true && localAppData.policiesComplete == true)
+        else if (localAppData.aboutComplete == true && localAppData.educationComplete == true && localAppData.appQsComplete && localAppData.additionalInfoComplete == true && localAppData.policiesComplete == true)
         {
             return setImageToUse(3);
         }
-        else if (localAppData.aboutComplete == true && localAppData.educationComplete == true && localAppData.additionalInfoComplete == true && localAppData.policiesComplete == false)
+        else if (localAppData.aboutComplete == true && localAppData.educationComplete == true && localAppData.appQsComplete  && localAppData.additionalInfoComplete == true && localAppData.policiesComplete == false)
         {
             return setImageToUse(2);
         }
-        else if (localAppData.aboutComplete == true && localAppData.educationComplete == false && localAppData.additionalInfoComplete == false && localAppData.policiesComplete == false)
+        else if (localAppData.aboutComplete == true && localAppData.educationComplete == false && localAppData.appQsComplete && localAppData.additionalInfoComplete == false && localAppData.policiesComplete == false)
         {
             return setImageToUse(1);
         }
