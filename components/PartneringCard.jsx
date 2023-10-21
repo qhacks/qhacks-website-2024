@@ -29,6 +29,7 @@ export default function PartneringCard() {
                     <a
                         href="https://drive.google.com/file/d/1zkrt4qKh9HaB_tRDXZ45H5J7J1RSR3jk/view?usp=drive_link"
                         className="text-white hover:text-sky-500"
+                        target="_blank"
                     >
                         <motion.p whileHover={{scale:1.1}} className="2xl:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-600">Partnerships Package</motion.p>
                     </a>
