@@ -237,7 +237,7 @@ export default function Policies() {
           <div className="flex flex-col mb-[3rem]">
             <div className="flex flex-row flex-start items-center">
               <input type="checkbox" id="privacy-policy" name="privacy-policy" checked={appData?.privacyPolicy} className="w-5 h-5 rounded border border-white bg-[#2D2D2D]" onChange={e => setAppData({ ...appData, privacyPolicy: e.target.checked }) }></input>
-              <label for="privacy-policy" className="pl-[0.5rem]">I have read and agree to the QHacks Privacy Policy</label>
+              <label for="privacy-policy" className="pl-[0.5rem]">I have read and agree to the QHacks Privacy Policy<span className="text-red-500"> *</span></label>
             </div>
           </div>
 
@@ -284,7 +284,7 @@ export default function Policies() {
           <div className="flex flex-col mb-[3rem]">
             <div className="flex flex-row flex-start items-center">
               <input type="checkbox" id="terms-conditions" name="terms-conditions" checked={appData?.termsOfService} className="w-5 h-5 rounded border border-white bg-[#2D2D2D]" onChange={e => setAppData({ ...appData, termsOfService: e.target.checked })}></input>
-              <label for="terms-conditions" className="pl-[0.5rem]">I have read and agree to the QHacks Terms and Conditions</label>
+              <label for="terms-conditions" className="pl-[0.5rem]">I have read and agree to the QHacks Terms and Conditions<span className="text-red-500"> *</span></label>
             </div>
           </div>
 
@@ -293,15 +293,15 @@ export default function Policies() {
             <p className="mb-2">We are currently in the process of partnering with MLH. The following 3 checkboxes are for this partnership. If we do not end up partnering with MLH, your information will not be shared</p>
             <div className="flex flex-row flex-start items-center mb-2">
               <input type="checkbox" id="MLH-code-of-conduct" name="MLH-code-of-conduct" checked={appData?.codeOfConduct} className="w-5 h-5 rounded border border-white bg-[#2D2D2D]" onChange={e => setAppData({ ...appData, codeOfConduct: e.target.checked })}></input>
-              <label for="MLH-code-of-conduct" className="pl-[0.5rem]">{parse(`I have read and agree to the <u><a target="_blank" rel="noreferrer" href="https://github.com/MLH/mlh-policies/blob/main/code-of-conduct.md">MLH Code of Conduct</a></u>`)}</label>
+              <label for="MLH-code-of-conduct" className="pl-[0.5rem]">{parse(`I have read and agree to the <u><a target="_blank" rel="noreferrer" href="https://github.com/MLH/mlh-policies/blob/main/code-of-conduct.md">MLH Code of Conduct</a></u><span className="text-red-500"> *</span>`)}</label>
             </div>
             <div className="flex flex-row flex-start mb-1">
               <input type="checkbox" id="authorize-MLH-application" name="authorize-MLH-application" checked={appData?.codeOfConduct2} className="w-5 h-5 rounded border border-white bg-[#2D2D2D] mt-[2px]" onChange={e => setAppData({ ...appData, codeOfConduct2: e.target.checked })}></input>
-              <label for="authorize-MLH-application" className="pl-[0.5rem]">{parse(`I authorize you to share my application/registration information with Major League Hacking for event administration, ranking, and MLH administration in-line with the <u><a href="https://mlh.io/privacy" target="_blank" rel="noreferrer">MLH Privacy Policy</a></u>. I further agree to the terms of both the <u><a href="https://mlh.io/terms" target="_blank" rel="noreferrer">MLH Contest Terms and Conditions</a></u> and the <u><a href="https://mlh.io/privacy" target="_blank" rel="noreferrer">MLH Privacy Policy</a></u>.`)}</label>
+              <label for="authorize-MLH-application" className="pl-[0.5rem]">{parse(`I authorize you to share my application/registration information with Major League Hacking for event administration, ranking, and MLH administration in-line with the <u><a href="https://mlh.io/privacy" target="_blank" rel="noreferrer">MLH Privacy Policy</a></u>. I further agree to the terms of both the <u><a href="https://mlh.io/terms" target="_blank" rel="noreferrer">MLH Contest Terms and Conditions</a></u> and the <u><a href="https://mlh.io/privacy" target="_blank" rel="noreferrer">MLH Privacy Policy</a></u>.<span className="text-red-500"> *</span>`)}</label>
             </div>
             <div className="flex flex-row flex-start mb-1">
               <input type="checkbox" id="authorize-MLH-email" name="authorize-MLH-email" checked={appData?.mlhPromotions} className="w-5 h-5 rounded border border-white bg-[#2D2D2D] mt-[2px]" onChange={e => setAppData({ ...appData, mlhPromotions: e.target.checked })}></input>
-              <label for="authorize-MLH-email" className="pl-[0.5rem]">{parse(`I authorize MLH to send me an email where I can further opt into the MLH Hacker, Events, or Organizer Newsletters and other communications from MLH.`)}</label>
+              <label for="authorize-MLH-email" className="pl-[0.5rem]">{parse(`I authorize MLH to send me an email where I can further opt into the MLH Hacker, Events, or Organizer Newsletters and other communications from MLH.<span className="text-red-500"> *</span>`)}</label>
             </div>
           </div>
         </div>

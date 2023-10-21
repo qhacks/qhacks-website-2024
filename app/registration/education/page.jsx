@@ -153,9 +153,9 @@ export default function About() {
       </div>
 
 
-      <div className="z-[10] md:w-[80%] md:w-[60%] flex flex-col justify-start md:mt-[6rem]">
+      <div className="z-[10] md:w-[60%] flex flex-col justify-start md:mt-[6rem]">
         <div className="md:flex justify-between hidden">
-          <h1 className="text-3xl font-bold">Tell us about yourself</h1>
+          <h1 className="text-3xl font-bold">Education</h1>
           <button
             className="font-bold cursor-pointer text-sm px-5 py-2 rounded-xl bg-[#262261]"
             onClick={() => saveApplicationData(true, '/dashboard', false)}
