@@ -122,6 +122,7 @@ export default function Info() {
 
   function areFieldsCompleted()
   {
+    /* note: first teammate, second teammate, third teammate, dietary restriction and bus options are not required */
     return (
     //   appData.firstTeammate != null &&
     //   appData.secondTeammate != null &&
@@ -134,18 +135,48 @@ export default function Info() {
     //   && appData.busOption != null
     )
   }
-  function wordCountFunc(string){
-    return string.trim().split(" ").length;
-  }
+
   let initialWordCount = appData?.reasonForParticipating?.trim().split(" ").length;
   const [{ content, wordCount }, setContent] = useState({
     content: appData?.reasonForParticipating, // sets the initialy conent
     wordCount: initialWordCount
   });
 
-  function handleWordCounter(string, e) {
-    if(wordCountFunc(string) <= 300){
-      
+  let initialWordCount2 = appData?.reasonForParticipating?.trim().split(" ").length;
+  const [{ content2, wordCount2 }, setContent2] = useState({
+    content2: appData?.projectIdea, // sets the initial conent
+    wordCount2: initialWordCount2
+  });
+
+  function handleWordCounter2(e)
+  {
+    let text = e.target.value;
+    const words = text.split(' ').filter((word) => word.length > 0);
+
+    if(words.length <= 200)
+    {
+      setAppData({...appData, projectIdea: text})
+    }
+    else
+    {
+      toast('You have exceeded the word limit!', {
+        theme: 'dark',
+        pauseOnHover: false,
+        type: 'error'
+      });
+    }
+    setContent2({
+      content2: words,
+      wordCount2: words.length
+    });
+  }
+
+  function handleWordCounter(e) {
+    let text = e.target.value;
+    const words = text.split(' ').filter((word) => word.length > 0);
+
+    if(words.length <= 300) {
+      setAppData({...appData, reasonForParticipating: text})
     } else {
       toast('You have exceeded the word limit!', {
         theme: 'dark',
@@ -154,8 +185,8 @@ export default function Info() {
       });
     }
     setContent({
-      content: string,
-      wordCount: wordCountFunc(string)
+      content: words,
+      wordCount: words.length
     });
   }
 
@@ -241,8 +272,7 @@ export default function Info() {
               placeholder="Answer"
               rows="10"
               onChange={(e) => {
-                setAppData({...appData, reasonForParticipating: e.target.value})
-                handleWordCounter(appData?.reasonForParticipating)
+                handleWordCounter(e)
               }}
               value={appData?.reasonForParticipating}
               className={`w-full resize-none !pt-[0.75rem] ${textBoxStyle}`}
@@ -259,12 +289,12 @@ export default function Info() {
               id="projectIdea"
               placeholder="Answer"
               rows="10"
-              onChange={e => setAppData({...appData, projectIdea: e.target.value})}
+              onChange={e => {handleWordCounter2(e)}}
               value={appData?.projectIdea}
               className={`w-full resize-none !pt-[0.75rem] ${textBoxStyle}`}
               required
             />
-            
+            <p className="">{wordCount2}/200</p>
           </div>
 
           <div className="flex flex-col mb-[2rem]">
