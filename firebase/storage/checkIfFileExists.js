@@ -2,10 +2,10 @@ import { ref, getDownloadURL } from 'firebase/storage';
 import { getFirebase } from '../firebase';
 const { storage } = getFirebase();
 
-export default function checkIfFileExists(uid) {
+export default async function checkIfFileExists(uid) {
   const storageRef = ref(storage, `resumes/${uid}/resume.pdf`);
 
-  getDownloadURL(storageRef)
+  await getDownloadURL(storageRef)
     .then(url => {
       return Promise.resolve(true);
     })
