@@ -158,7 +158,7 @@ export default function Dashboard() {
                             <br />
                             {appStarted == false ? <div>It looks like you haven't started your application now. Make sure to apply before the deadline!</div> : null}
                             <br />
-                            <p>If you encounter any errors with your application please email:  <a target="_blank" href='mailto:hello@qhacks.io'className='hover:text-blue-400 font-bold' >hello@qhacks.io</a></p>
+                            <p>If you encounter any errors with your application, shoot us an email at:  <a target="_blank" href='mailto:hello@qhacks.io'className='hover:text-blue-400 font-bold' >hello@qhacks.io</a></p>
                         </div>
                     </div>
                 </div>
