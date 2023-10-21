@@ -35,6 +35,8 @@ export default function About() {
     setAgeSelect(selectedOption);
   };
 
+
+
   const [resumeOK, setResumeOK] = useState(false);
 
   const pronounOptions = [
@@ -153,7 +155,8 @@ export default function About() {
       appData.age !== undefined &&
       appData.country !== undefined &&
       // appData.phone !== undefined &&
-      resumeOK !== false
+    //   appData.resumeOK !== false
+    resumeOK !== false
     )
   }
 
@@ -177,6 +180,7 @@ export default function About() {
         pauseOnHover: false,
         type: 'success'
       });
+      // appData.resumeOK = true;
     }
   }
 
@@ -366,6 +370,7 @@ export default function About() {
               required
               id="country"
               name="country"
+              value={appData?.country}
               onChange={e => setAppData({...appData, country: e.target.value})}
               className="rounded px-4 py-1 mt-[2px] text-sm border border-white bg-[#2D2D2D] block w-full p-2.5 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
             >
@@ -399,6 +404,7 @@ export default function About() {
           {/* RESUME */}
           <div className="">
             <label className="text-white" for="resume">Resume <span className="text-xs text-gray-500">Max file size: 4mb</span></label>
+            {/* {appData.resumeOK ? <p className="text-xs text-green-500">Resume uploaded!</p> : <p className="text-xs text-red-500">Resume not uploaded.</p>} */}
             <input className="block w-full mb-5 text-lg text-grey-500 rounded cursor-pointer border border-white bg-[#2D2D2D]" id="resume" type="file" onChange={upload}/>
           </div>
 
@@ -410,7 +416,7 @@ export default function About() {
 
           {/* LINKEDIN */}
           <div className="flex flex-col mb-[2rem]">
-            <label htmlFor="linkedin">Linkedin Link</label>
+            <label htmlFor="linkedin">LinkedIn Link</label>
             <input type="url" id="linkedin" name="linkedin" placeholder="LinkedIn" className={`rounded px-4 py-1 mt-[2px] text-sm border border-white bg-[#2D2D2D]`} onChange={e => setAppData({...appData, linkedinLink: e.target.value})} value={appData?.linkedinLink} />
           </div>
 
