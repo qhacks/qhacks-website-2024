@@ -28,7 +28,6 @@ export default function Dashboard() {
             await selectImageToUse();
         }
         checkApplicationOnStartup();
-        // console.log("[4] Process finished" + imageToUse);
     }, []);
 
     async function signOut()
@@ -40,29 +39,44 @@ export default function Dashboard() {
     async function selectImageToUse()
     {
         let localAppData = await (await retrieveUserData(currentUser.uid)).result;
-        console.log(localAppData);
-
         if (localAppData == null)
         {
             return setImageToUse(0);
         }
 
-        if (localAppData.applicationComplete == true)
+        if(localAppData.aboutComplete && localAppData.educationComplete && localAppData.additionalInfoComplete && localAppData.policiesComplete)
         {
             return setImageToUse(4);
         }
-        else if (localAppData.aboutComplete == true && localAppData.educationComplete == true && localAppData.appQsComplete && localAppData.additionalInfoComplete == true && localAppData.policiesComplete == true)
+        else if (localAppData.aboutComplete && localAppData.educationComplete && localAppData.additionalInfoComplete)
         {
             return setImageToUse(3);
         }
-        else if (localAppData.aboutComplete == true && localAppData.educationComplete == true && localAppData.appQsComplete  && localAppData.additionalInfoComplete == true && localAppData.policiesComplete == false)
+        else if(localAppData.aboutComplete && localAppData.educationComplete)
         {
             return setImageToUse(2);
         }
-        else if (localAppData.aboutComplete == true && localAppData.educationComplete == false && localAppData.appQsComplete && localAppData.additionalInfoComplete == false && localAppData.policiesComplete == false)
+        else if(localAppData.aboutComplete)
         {
             return setImageToUse(1);
         }
+
+        // if (localAppData.applicationComplete == true)
+        // {
+        //     return setImageToUse(4);
+        // }
+        // else if (localAppData.aboutComplete == true && localAppData.educationComplete == true && localAppData.appQsComplete && localAppData.additionalInfoComplete == true && localAppData.policiesComplete == true)
+        // {
+        //     return setImageToUse(3);
+        // }
+        // else if (localAppData.aboutComplete == true && localAppData.educationComplete == true && localAppData.appQsComplete  && localAppData.additionalInfoComplete == true && localAppData.policiesComplete == false)
+        // {
+        //     return setImageToUse(2);
+        // }
+        // else if (localAppData.aboutComplete && !localAppData.educationComplete && !localAppData.appQsComplete && !localAppData.additionalInfoComplete && !localAppData.policiesComplete)
+        // {
+        //     return setImageToUse(1);
+        // }
     }
 
 
@@ -128,7 +142,6 @@ export default function Dashboard() {
                 
                 <div className='flex flex-col w-full lg:w-[85%] sm:h-full justify-start items-center'>
                     <div className='bg-[#202020] h-full rounded-2xl py-5 px-5'>
-                        {/* {console.log(imageToUse)} */}
                         <ApplicationStatusTracker status={imageToUse} />
                         <div className='w-full rounded-2xl text-white mt-[40px]'>
                             <div className='text-2xl mb-2 font-bold'>QHacks Application</div>

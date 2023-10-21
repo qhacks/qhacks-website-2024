@@ -70,8 +70,7 @@ export default function About() {
   // SAVE APPLICATION DATA
   async function saveApplicationData(forceRedirect, path, checkCompletion)
   {
-    if (appData === null) return;
-    
+    if (appData === null) return; 
     if (forceRedirect)
     {
       toast('Application saved!', {
@@ -87,6 +86,18 @@ export default function About() {
     {
       if (checkCompletion)
       {
+        // Checks for valid phone number
+        if (validatePhoneNumber(appData.phone) == false)
+        {
+          toast('Please enter a valid phone number.', {
+            theme: 'dark',
+            pauseOnHover: false,
+            type: 'error'
+          });
+          return;
+        }
+
+        // Checks for valid fields
         if (areFieldsCompleted() == false)
         {
           toast('Please fill out all fields to continue.', {
@@ -183,6 +194,15 @@ export default function About() {
       // appData.resumeOK = true;
     }
   }
+
+  function validatePhoneNumber(input) {
+    // Define the regular expression pattern for XXX-XXX-XXXX format
+    const phoneNumberPattern = /^\d{3}-\d{3}-\d{4}$/;
+  
+    // Use the test method to check if the input matches the pattern
+    return phoneNumberPattern.test(input);
+  }
+  
 
   return (
     <>
@@ -388,17 +408,20 @@ export default function About() {
           {/* PHONE NUMBER */}
           <div className="flex flex-col mb-[2rem]">
             <label htmlFor="phone">{`Phone Number (Format as "xxx-xxx-xxxx")`}<span className="text-red-500"> *</span></label>
+            {/* Create custom pattern matching */}
             <input
               type="tel"
               id="phone"
               name="phone"
               placeholder="123-456-7890"
-              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
               className={`rounded px-4 py-1 mt-[2px] text-sm border border-white bg-[#2D2D2D]`}
               value={appData?.phone}
-              onChange={e => setAppData({...appData, phone: e.target.value})}
+              onChange={(e) => {
+                  setAppData({...appData, phone: e.target.value})
+              }}
               required
             />
+            {console.log("[expected true] phone test: "+validatePhoneNumber("651-9969-9148"))}
           </div>
 
           {/* RESUME */}

@@ -14,6 +14,7 @@ import blob3 from "../../../assets/registration/Vector-3.png"
 import blob4 from "../../../assets/registration/Vector-4.png"
 import blob5 from "../../../assets/registration/Vector-5.png"
 import blob6 from "../../../assets/registration/Vector-6.png"
+import { setRevalidateHeaders } from "next/dist/server/send-payload";
 
 export default function Info() {
   const textBoxStyle = "rounded px-4 py-1 mt-[2px] text-sm border border-white bg-[#2D2D2D]"
@@ -26,7 +27,7 @@ export default function Info() {
     "No I will not"
   ]
 
-  const [wordCount1, setWordCount1] = useState(0);
+  
   const [travelOption, setTravelOption] = useState("");
   const handleOptionChange = (event) => {
     setTravelOption(event.target.value);
@@ -34,7 +35,7 @@ export default function Info() {
 
   const { currentUser } = useAuth();
   const [appData, setAppData] = useState(null);
-
+  
   useEffect(async () => {
     if (currentUser === null)
     {
@@ -133,24 +134,29 @@ export default function Info() {
     //   && appData.busOption != null
     )
   }
+  function wordCountFunc(string){
+    return string.trim().split(" ").length;
+  }
+  let initialWordCount = appData?.reasonForParticipating?.trim().split(" ").length;
+  const [{ content, wordCount }, setContent] = useState({
+    content: appData?.reasonForParticipating, // sets the initialy conent
+    wordCount: initialWordCount
+  });
 
-  function WordCounter() {
-    
-    
-    const handleKeyPress = (e) => {
-      const count = e.target.value;
+  function handleWordCounter(string, e) {
+    if(wordCountFunc(string) <= 300){
       
-      const countWords = (count) => {
-        if (count.length === 0) {
-          return 0;
-        } else {
-          count = count.replace(/(^\s*)|(\s*$)/gi,"");
-          count = count.replace(/[ ]{2,}/gi," ");
-          count = count.replace(/\n /,"\n");
-          return count.split(' ').length; 
-        }
-      }
+    } else {
+      toast('You have exceeded the word limit!', {
+        theme: 'dark',
+        pauseOnHover: false,
+        type: 'error'
+      });
     }
+    setContent({
+      content: string,
+      wordCount: wordCountFunc(string)
+    });
   }
 
 
@@ -234,12 +240,15 @@ export default function Info() {
               id="reasonForParticipating"
               placeholder="Answer"
               rows="10"
-              onChange={e => setAppData({...appData, reasonForParticipating: e.target.value})}
+              onChange={(e) => {
+                setAppData({...appData, reasonForParticipating: e.target.value})
+                handleWordCounter(appData?.reasonForParticipating)
+              }}
               value={appData?.reasonForParticipating}
               className={`w-full resize-none !pt-[0.75rem] ${textBoxStyle}`}
               required
             />
-            {/* {console.log(appData.reasonForParticipating)} */}
+            <p className="">{wordCount}/300</p>
           </div>
 
           {/* Long Question 2 */}
@@ -255,6 +264,7 @@ export default function Info() {
               className={`w-full resize-none !pt-[0.75rem] ${textBoxStyle}`}
               required
             />
+            
           </div>
 
           <div className="flex flex-col mb-[2rem]">
