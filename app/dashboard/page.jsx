@@ -65,6 +65,16 @@ export default function Dashboard() {
         }
     }
 
+
+    function getLinkButtonStatus(baseIndex, currentIndex) {
+        if (currentIndex === baseIndex)
+            return 1
+        else if (currentIndex > baseIndex)
+            return 2
+        else
+            return 0
+    }
+
     return (
         <div className='w-full min-h-screen bg-[#111010] bg-topogrophy-dark flex flex-col justify-start items-center'>
             {/* Home Button */}
@@ -99,10 +109,10 @@ export default function Dashboard() {
                             - 1: yellow Go (incomplete and available)
                             - 2: green Edit (complete and available)
                             */}
-                            <ApplicationLinkButton title="About" status={(appData?.aboutComplete == true) ? 2 : 1} dest={"/registration/about"}/>
-                            <ApplicationLinkButton title="Education" status={(appData?.educationComplete == true) ? 2 : 1} dest={"/registration/education"}/>
-                            <ApplicationLinkButton title="Additional Info" status={(appData?.appQsComplete == true) ? 2 : 1} dest={"/registration/application"}/>
-                            <ApplicationLinkButton title="Policies" status={(appData?.policiesComplete == true) ? 2 : 1} dest={"/registration/policies"}/>
+                            <ApplicationLinkButton title="About" status={getLinkButtonStatus(0, imageToUse)} dest={"/registration/about"}/>
+                            <ApplicationLinkButton title="Education" status={getLinkButtonStatus(1, imageToUse)} dest={"/registration/education"}/>
+                            <ApplicationLinkButton title="Additional Info" status={getLinkButtonStatus(2, imageToUse)} dest={"/registration/application"}/>
+                            <ApplicationLinkButton title="Policies" status={getLinkButtonStatus(3, imageToUse)} dest={"/registration/policies"}/>
                         </div>
                     </div>
                     {/* Info Buttons */}
