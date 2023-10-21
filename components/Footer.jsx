@@ -30,7 +30,7 @@ export default function Footer(){
           {/* LINKS */}
           <div className='
             flex justify-center items-center text-white pb-2 py-4 md:py-2 text-xs xs:text-sm'>
-            <motion.a whileHover={{fontWeight:'bold'}} className=' md:px-[3%] text-center' href='https://qhacks.io/'>QHacks 2023</motion.a>
+            <motion.a whileHover={{fontWeight:'bold'}} className=' md:px-[3%] text-center' href='https://qhacks.io/'>QHacks 2024</motion.a>
             <motion.a whileHover={{fontWeight:'bold'}} className=' md:px-[3%] text-center' href='https://ghw.mlh.io/'>Local Hack Day</motion.a>
             <motion.a whileHover={{fontWeight:'bold'}} className=' md:px-[3%] text-center' href='https://medium.com/@qhacks'>QHacks Blog</motion.a>
             <motion.a whileHover={{fontWeight:'bold'}} className=' md:px-[3%] text-center' href='https://www.youtube.com/watch?v=a3Z7zEc7AXQ'>Hack Day Tips</motion.a>
