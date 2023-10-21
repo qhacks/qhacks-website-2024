@@ -166,7 +166,7 @@ export default function About() {
 
         <div className="flex flex-col bg-[#202020] py-[4rem] px-[3rem] md:mt-[1rem] md:rounded-lg">
           <div className="flex justify-between md:hidden mb-[2rem]">
-            <h1 className="text-2xl font-bold">Tell us about yourself</h1>
+            <h1 className="text-2xl font-bold">Education</h1>
             <button
               className="cursor-pointer font-light text-sm px-5 py-2 rounded-xl"
               style={{
@@ -179,7 +179,7 @@ export default function About() {
           </div>
 
           <div className="flex flex-col mb-[1rem]">
-            <label htmlFor="school">School</label>
+            <label htmlFor="school">School<span className="text-red-500"> *</span></label>
             <select 
               required
               id="school"
@@ -210,7 +210,7 @@ export default function About() {
           </div>
 
           <div className="flex flex-col mb-[2rem]">
-            <label htmlFor="pronouns">Program:</label>
+            <label htmlFor="pronouns">Program: <span className="text-red-500">*</span></label>
             {programOptions.map(option => {
               return (
                 <label className="inline-flex items-center">
@@ -241,7 +241,7 @@ export default function About() {
           </div>
 
           <div className="flex flex-col mb-[2rem]">
-            <label htmlFor="country">Level of Study:</label>
+            <label htmlFor="country">Level of Study:<span className="text-red-500"> *</span></label>
             <select 
               className="rounded px-4 py-1 mt-[2px] text-sm border border-white bg-[#2D2D2D] block w-full p-2.5 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
               id="lvlOfStudy"
@@ -281,7 +281,7 @@ export default function About() {
           </div>
 
           <div className="flex flex-col">
-            <label htmlFor="gradyear">{`Graduation Year`}</label>
+            <label htmlFor="gradyear">Graduation Year<span className="text-red-500"> *</span></label>
             <input
               type="text"
               id="gradyear"

@@ -122,15 +122,15 @@ export default function Info() {
   function areFieldsCompleted()
   {
     return (
-      appData.firstTeammate != null &&
-      appData.secondTeammate != null &&
-      appData.thirdTeammate != null &&
+    //   appData.firstTeammate != null &&
+    //   appData.secondTeammate != null &&
+    //   appData.thirdTeammate != null &&
       appData.reasonForParticipating != null &&
       appData.projectIdea != null &&
       appData.previousHackathons != null &&
-      appData.dietaryRestrictions != null &&
-      appData.travelOption != null &&
-      appData.busOption != null
+    //   appData.dietaryRestrictions != null &&
+      appData.travelOption != null
+    //   && appData.busOption != null
     )
   }
 
@@ -228,7 +228,7 @@ export default function Info() {
 
           {/* Long Question 1 */}
           <div className="flex flex-col mb-[3rem]">
-            <label htmlFor="reasonForParticipating">{`Why do you want to participate in QHacks? (Please limit your response to less than 300 words)`}</label>
+            <label htmlFor="reasonForParticipating">Why do you want to participate in QHacks? (Please limit your response to less than 300 words) <span className="text-red-500"> *</span></label>
             <textarea
               name="reasonForParticipating"
               id="reasonForParticipating"
@@ -237,13 +237,14 @@ export default function Info() {
               onChange={e => setAppData({...appData, reasonForParticipating: e.target.value})}
               value={appData?.reasonForParticipating}
               className={`w-full resize-none !pt-[0.75rem] ${textBoxStyle}`}
+              required
             />
             {/* {console.log(appData.reasonForParticipating)} */}
           </div>
 
           {/* Long Question 2 */}
           <div className="flex flex-col mb-[3rem]">
-            <label htmlFor="projectIdea">{`Please tell us about a project that you would like to build at QHacks! (Please limit your response to less than 200 words.)`}</label>
+            <label htmlFor="projectIdea">Please tell us about a project that you would like to build at QHacks! (Please limit your response to less than 200 words.) <span className="text-red-500"> *</span></label>
             <textarea
               name="projectIdea"
               id="projectIdea"
@@ -252,11 +253,12 @@ export default function Info() {
               onChange={e => setAppData({...appData, projectIdea: e.target.value})}
               value={appData?.projectIdea}
               className={`w-full resize-none !pt-[0.75rem] ${textBoxStyle}`}
+              required
             />
           </div>
 
           <div className="flex flex-col mb-[2rem]">
-            <label htmlFor="previousHackathons">How many hackathons have you previously attended?</label>
+            <label htmlFor="previousHackathons">How many hackathons have you previously attended? <span className="text-red-500"> *</span></label>
             <input
                 type="text"
                 name="previousHackathons"
@@ -282,7 +284,7 @@ export default function Info() {
           </div>
 
           <div className="flex flex-col mb-[3rem]">
-            <label htmlFor="pronouns">Will you be travelling from any of these cities?</label>
+            <label htmlFor="pronouns">Will you be travelling from any of these cities?<span className="text-red-500"> *</span></label>
             {travelOptions.map(option => {
               return (
                 <label key={option} className="inline-flex items-center">
