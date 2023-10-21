@@ -238,7 +238,7 @@ export default function Info() {
               value={appData?.reasonForParticipating}
               className={`w-full resize-none !pt-[0.75rem] ${textBoxStyle}`}
             />
-            {console.log(appData.reasonForParticipating)}
+            {/* {console.log(appData.reasonForParticipating)} */}
           </div>
 
           {/* Long Question 2 */}

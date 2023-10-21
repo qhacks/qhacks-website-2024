@@ -28,7 +28,7 @@ export default function Dashboard() {
             await selectImageToUse();
         }
         checkApplicationOnStartup();
-        console.log("[4] Process finished" + imageToUse);
+        // console.log("[4] Process finished" + imageToUse);
     }, []);
 
     async function signOut()
@@ -118,7 +118,7 @@ export default function Dashboard() {
                 
                 <div className='flex flex-col w-full lg:w-[85%] sm:h-full justify-start items-center'>
                     <div className='bg-[#202020] h-full rounded-2xl py-5 px-5'>
-                        {console.log(imageToUse)}
+                        {/* {console.log(imageToUse)} */}
                         <ApplicationStatusTracker status={imageToUse} />
                         <div className='w-full rounded-2xl text-white mt-[40px]'>
                             <div className='text-2xl mb-2 font-bold'>QHacks Application</div>

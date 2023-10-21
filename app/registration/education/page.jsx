@@ -50,7 +50,7 @@ export default function About() {
       return;
     }
     setAppData((await retrieveUserData(currentUser.uid)).result);
-    setAppData({...appData, studyYear: 3});
+    // setAppData({...appData, studyYear: 3});
   }, []);
 
   async function saveApplicationData(forceRedirect, path, checkCompletion)
@@ -158,7 +158,7 @@ export default function About() {
           <h1 className="text-3xl font-bold">Tell us about yourself</h1>
           <button
             className="font-bold cursor-pointer text-sm px-5 py-2 rounded-xl bg-[#262261]"
-            onClick={() => saveApplicationData(true, '/dashboard')}
+            onClick={() => saveApplicationData(true, '/dashboard', false)}
           >
             Save & Quit
           </button>
@@ -180,7 +180,13 @@ export default function About() {
 
           <div className="flex flex-col mb-[1rem]">
             <label htmlFor="school">School</label>
-            <select className="rounded px-4 py-1 mt-[2px] text-sm border border-white bg-[#2D2D2D] block w-full p-2.5 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500">
+            <select 
+              required
+              id="school"
+              name="school"
+              value={appData?.school}
+              onChange={e => setAppData({...appData, school: e.target.value})}
+              className="rounded px-4 py-1 mt-[2px] text-sm border border-white bg-[#2D2D2D] block w-full p-2.5 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500">
               <option className="placeholder-gray-400" value="">Choose a School</option>
               {
                 MLHSchoolList.map(school => {
@@ -270,7 +276,7 @@ export default function About() {
               <p>2</p>
               <p>3</p>
               <p>4</p>
-              <p>5</p>
+              <p>5+</p>
             </div>
           </div>
 

@@ -64,7 +64,7 @@ export default function About() {
       return;
     }
     setAppData((await retrieveUserData(currentUser.uid)).result);
-    console.log("App data: "+appData) // printing the data
+    // console.log("App data: "+appData) // printing the data
   }, []);
 
   // SAVE APPLICATION DATA
@@ -239,7 +239,7 @@ export default function About() {
               }}
             />
           </div>
-          {console.log("App data: "+appData) }
+          {/* {console.log("App data: "+appData) } */}
           <div className="flex flex-col mb-[3rem]">
             <label htmlFor="lastName">Last Name<span className="text-red-500"> *</span></label>
             <input
