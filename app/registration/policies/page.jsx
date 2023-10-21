@@ -187,6 +187,7 @@ export default function Policies() {
               style={{
                 background: "rgba(38, 34, 97, 1)",
               }}
+              onClick={() => saveApplicationData(true, '/dashboard', false)}
             >
               Save & Quit
             </button>
