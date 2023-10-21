@@ -33,7 +33,7 @@ export default function SignUp() {
         const { error } = await signUp(email, password);
         if (error)
         {
-            console.log(error.code);
+            // console.log(error.code);
             if (error.code == 'auth/weak-password')
             {
                 toast('Password must be at least 6 characters long!', {

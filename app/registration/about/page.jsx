@@ -419,7 +419,7 @@ export default function About() {
                 }}
                 required
               />
-              {console.log("[expected true] phone test: "+validatePhoneNumber("651-9969-9148"))}
+              {/* {console.log("[expected true] phone test: "+validatePhoneNumber("651-9969-9148"))} */}
             </div>
 
             {/* RESUME */}
