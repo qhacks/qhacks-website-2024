@@ -42,6 +42,7 @@ export default function LogIn() {
         const { result, error } = await login(email, password);
         if (error)
         {
+            // console.log(error.code);
             if (error.code == 'auth/user-not-found')
             {
                 toast('No user with that email exists', { theme: 'dark', type: 'error' });
@@ -50,13 +51,18 @@ export default function LogIn() {
             else if (error.code == 'auth/wrong-password')
             {
                 toast('Wrong password', { theme: 'dark', type: 'error' });
-                console.log(error.code);
+                
                 return;
                 
             }
             else if (error.code == 'auth/email-not-verified')
             {
-                toast('Email not verified', { theme: 'dark', type: 'error' });
+                toast('Email not verified. Check your inbox and spam.', { theme: 'dark', type: 'error' });
+                return;
+            }
+            else if (error.code == 'auth/invalid-login-credentials')
+            {
+                toast('Invalid login credentials', { theme: 'dark', type: 'error' });
                 return;
             }
             else
@@ -64,6 +70,7 @@ export default function LogIn() {
                 toast(error, { theme: 'dark', type: 'error' });
                 return;
             }
+            
         }
 
         toast('Logged in successfully', { theme: 'dark', type: 'success' });

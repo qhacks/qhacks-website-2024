@@ -154,7 +154,7 @@ export default function Policies() {
   }
 
   return (
-    <div className="flex justify-center text-white">
+    <div className="w-screen min-h-screen h-fit m-0 p-0 flex justify-center text-white bg-[#111010]">
 
       {/* BACKGROUND */}
       <div className="hidden md:block absolute w-full h-[1850px] bg-transparent overflow-hidden">

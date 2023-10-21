@@ -206,9 +206,9 @@ export default function About() {
 
   return (
     <>
-    <div className="w-screen flex justify-center text-white bg-[#111010]">
+    <div className="w-screen h-fit m-0 p-0 flex justify-center text-white bg-[#111010]">
       {/* BACKGROUND */}
-      <div className="hidden md:block absolute w-full h-[1585px] bg-transparent overflow-hidden">
+      <div className="hidden md:block m-0 p-0 absolute w-full min-h-screen h-[1700px] bg-transparent overflow-hidden">
         <img src={blob1.src} className="absolute bottom-0 right-0 w-[800px]"></img>
         <img src={blob2.src} className="absolute top-0 right-0 w-[800px]"></img>
         <img src={blob3.src} className="absolute top-[350px] left-0 h-[900px]"></img>
@@ -428,7 +428,8 @@ export default function About() {
           <div className="">
             <label className="text-white" for="resume">Resume <span className="text-xs text-gray-500">Max file size: 4mb</span></label>
             {/* {appData.resumeOK ? <p className="text-xs text-green-500">Resume uploaded!</p> : <p className="text-xs text-red-500">Resume not uploaded.</p>} */}
-            <input className="block w-full mb-5 text-lg text-grey-500 rounded cursor-pointer border border-white bg-[#2D2D2D]" id="resume" type="file" onChange={upload}/>
+            <input className="block w-full text-lg text-grey-500 rounded cursor-pointer border border-white bg-[#2D2D2D]" id="resume" type="file" onChange={upload}/>
+            <p className="mb-5 text-gray-300">Note: If you already saved a resume, you can upload a new file to overwrite it, otherwise we have it saved in our database</p>
           </div>
 
           {/* GITHUB */}

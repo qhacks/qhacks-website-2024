@@ -52,7 +52,7 @@ export default function Info() {
                 <div className="flex justify-center md:justify-end">
                     <button onClick={() => {
                         window.location.href = "/dashboard"
-                    }} className="rounded-[5px] w-[150px] bg-[#EE4036] py-[0.5rem] text-[22px] font-medium self-end">Your Profile</button>
+                    }} className="rounded-[5px] w-[150px] bg-[#EE4036] py-[0.5rem] text-[22px] font-medium self-end">Your Dashboard</button>
                 </div>
             </div>
         </div>

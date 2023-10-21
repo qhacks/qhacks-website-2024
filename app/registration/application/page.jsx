@@ -192,10 +192,10 @@ export default function Info() {
 
 
   return (
-    <div className="flex justify-center text-white bg-[#111010]">
+    <div className="w-screen min-h-screen h-fit m-0 p-0 flex justify-center text-white bg-[#111010]">
 
       {/* BACKGROUND */}
-      <div className="hidden md:block absolute w-full h-[1680px] bg-transparent overflow-hidden">
+      <div className="hidden md:block absolute w-full min-h-screen h-[2000px] bg-transparent overflow-hidden">
         <img src={blob1.src} className="absolute bottom-0 right-0 w-[800px]"></img>
         <img src={blob2.src} className="absolute top-0 right-0 w-[800px]"></img>
         <img src={blob3.src} className="absolute top-[350px] left-0 h-[900px]"></img>
