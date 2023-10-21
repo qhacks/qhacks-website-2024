@@ -25,8 +25,8 @@ import Footer from '../components/Footer';
 
 // Cards
 import PartneringCard from "../components/PartneringCard";
-import FirstYearCard from "../components/FirstYearCard";
 import FAQAccordion from "../components/FAQAccordion";
+import HacktoberfestCard from "../components/HacktoberfestCard";
 
 // Sections
 import StatsSection from "../components/StatsSection";
@@ -38,7 +38,6 @@ import faq from "../data/faq.json";
 
 // React Hooks
 import { useEffect, useState } from 'react';
-
 
 
 // DIFFERENT CUSTOM BACKGROUNDS FROM background.css
@@ -133,6 +132,9 @@ export default function Home() {
 			<section className="my-20 md:my-12 flex items-center justify-center">
 				<div className="flex items-center justify-center flex-col md:flex-row">
 					<PartneringCard />
+				</div>
+                <div className="flex items-center justify-center flex-col md:flex-row">
+					<HacktoberfestCard />
 				</div>
 			</section>
 
