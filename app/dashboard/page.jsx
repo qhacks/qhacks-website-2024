@@ -44,11 +44,11 @@ export default function Dashboard() {
             return setImageToUse(0);
         }
 
-        if(localAppData.aboutComplete && localAppData.educationComplete && localAppData.additionalInfoComplete && localAppData.policiesComplete)
+        if(localAppData.aboutComplete && localAppData.educationComplete && localAppData.appQsComplete && localAppData.policiesComplete)
         {
             return setImageToUse(4);
         }
-        else if (localAppData.aboutComplete && localAppData.educationComplete && localAppData.additionalInfoComplete)
+        else if (localAppData.aboutComplete && localAppData.educationComplete && localAppData.appQsComplete)
         {
             return setImageToUse(3);
         }
