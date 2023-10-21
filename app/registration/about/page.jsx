@@ -154,9 +154,9 @@ export default function About() {
       appData.gender !== undefined &&
       appData.age !== undefined &&
       appData.country !== undefined &&
-      // appData.phone !== undefined &&
-    //   appData.resumeOK !== false
-    resumeOK !== false
+      appData.phone !== undefined
+      // appData.resumeOK !== false
+      // resumeOK !== false
     )
   }
 
