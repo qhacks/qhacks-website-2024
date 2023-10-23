@@ -10,7 +10,6 @@ const TeamSection = () => {
 			<TeamBubble teamMember={team.MonicaStef} />
 			<TeamBubble teamMember={team.EthanWang} />
 			<TeamBubble teamMember={team.LacshmiGaneshananda}/>
-			<TeamBubble teamMember={team.EricaFry}/>
 			<TeamBubble teamMember={team.MichaelaLi}/>
 			<TeamBubble teamMember={team.MayaGoodman}/>
 			<TeamBubble teamMember={team.NicholasLykopoulos}/>
