@@ -7,28 +7,6 @@ const StatsSection = () => {
         <div className='py-4 w-full flex flex-wrap justify-center'>
           <motion.div 
             className='
-            bg-blue-900 
-            relative
-            top-3
-            flex 
-            flex-col 
-            items-center 
-            justify-center 
-            rounded-full 
-            w-32 
-            h-32 
-            text-white 
-            font-bold
-            '
-            whileHover={{scale: 1.5, margin: 14, y:-50}}
-            initial={{opacity: 0}}
-            whileInView={{opacity: 1}}
-          >
-            <h1 className='text-4xl'>10</h1>
-            <h5 className='text-center'>Workshops</h5>
-          </motion.div>
-          <motion.div 
-            className='
               bg-red-600
               relative
               top-16
