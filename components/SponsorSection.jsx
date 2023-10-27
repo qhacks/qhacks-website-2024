@@ -11,20 +11,33 @@ const SponsorSection = () => {
                     Current Sponsors.
                 </span>
             </h1>
-            <div className="flex justify-center pb-16">
-                <div
-                    className="flex flex-row flex-wrap items-center justify-center w-full"
-                >
+            <div className="pb-16">
+                {/*For Tera Sponsors*/}
+                <div className="flex justify-center flex-row flex-wrap items-center justify-center w-full">
                     <SponsorCard sponsor={sponsorsJSON.nationalBank} />
+                </div>
+
+                {/*Add Giga Sponsors here*/}
+                <div className="flex justify-center flex-row flex-wrap items-center justify-center w-full">
+
+                </div>
+
+                {/*For Mega Sponsors*/}
+                <div className="flex justify-center flex-row flex-wrap items-center justify-center w-full">
                     <SponsorCard sponsor={sponsorsJSON.manulife} />
+                </div>
+
+                {/*For Kilo Sponsors*/}
+                <div className="flex justify-center flex-row flex-wrap items-center justify-center w-full">
                     <SponsorCard sponsor={sponsorsJSON.kenworth} />
                     <SponsorCard sponsor={sponsorsJSON.kingston} />
                     <SponsorCard sponsor={sponsorsJSON.otpp} />
                     <SponsorCard sponsor={sponsorsJSON.queensComputing} />
                     <SponsorCard sponsor={sponsorsJSON.ece} />
-
+                    <SponsorCard sponsor={sponsorsJSON.redbull} />
                 </div>
             </div>
+
             <h1 className="text-white text-center text-3xl md:text-5xl font-bold mb-4">
                 Some of Our{" "}
                 <span className="text-transparent text-3xl md:text-5xl bg-clip-text bg-gradient-to-r from-red-500 to-orange-600">
@@ -50,7 +63,6 @@ const SponsorSection = () => {
                     <SponsorCard sponsor={sponsorsJSON.whoosh} />
                     {/* <SponsorCard sponsor={sponsorsJSON.wolfram} /> */}
                     <SponsorCard sponsor={sponsorsJSON.amazon} />
-                    <SponsorCard sponsor={sponsorsJSON.redbull} />
                     {/* <SponsorCard sponsor={sponsorsJSON.dominoes} /> */}
                     <SponsorCard sponsor={sponsorsJSON.kingstonUtilities} />
                     <SponsorCard sponsor={sponsorsJSON.voiceflow} />
