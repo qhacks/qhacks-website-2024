@@ -264,5 +264,13 @@
         "link": "https://emplois.bnc.ca/fr_CA/careers",
         "borderColor": "border-indigo-600",
         "tier": "tera"
+    },
+    "cpp": {
+        "name": "CPP",
+        "logo": "/sponsors/CPP.svg",
+        "link": "",
+        "borderColor": "border-red-600",
+        "tier": "kilo"
     }
+
 }
