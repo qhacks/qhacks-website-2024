@@ -50,7 +50,6 @@ export default function About() {
       return;
     }
     setAppData((await retrieveUserData(currentUser.uid)).result);
-    // setAppData({...appData, studyYear: 3});
   }, []);
 
   async function saveApplicationData(forceRedirect, path, checkCompletion)
@@ -130,6 +129,7 @@ export default function About() {
 
   function areFieldsCompleted()
   {
+    if (appData.studyYear == undefined) appData.studyYear = "3";
     return (
       appData.school != undefined &&
       appData.program != undefined &&
