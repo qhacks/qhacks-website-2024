@@ -133,9 +133,9 @@ export default function Home() {
 				<div className="flex items-center justify-center flex-col md:flex-row">
 					<PartneringCard />
 				</div>
-                <div className="flex items-center justify-center flex-col md:flex-row">
+                {/* <div className="flex items-center justify-center flex-col md:flex-row">
 					<HacktoberfestCard />
-				</div>
+				</div> */}
 			</section>
 
 
