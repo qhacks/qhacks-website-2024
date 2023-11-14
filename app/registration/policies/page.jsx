@@ -148,8 +148,7 @@ export default function Policies() {
       appData.privacyPolicy != null  &&
       appData.termsOfService != null &&
       appData.mlhcodeOfConduct != null &&
-      appData.mlhSharing != null &&
-      appData.mlhPromotions != null
+      appData.mlhSharing != null
     )
   }
 
@@ -288,7 +287,6 @@ export default function Policies() {
 
             <div className="flex flex-col mb-[4rem]">
               <h1 className="text-[20px] font-bold mb-1">{`MLH Code of Conduct`}</h1>
-              <p className="mb-2">We are currently in the process of partnering with MLH. The following 3 checkboxes are for this partnership. If we do not end up partnering with MLH, your information will not be shared</p>
               <div className="flex flex-row flex-start items-center mb-2">
                 <input type="checkbox" id="MLH-code-of-conduct" name="MLH-code-of-conduct" checked={appData?.mlhcodeOfConduct} className="w-5 h-5 rounded border border-white bg-[#2D2D2D]" onChange={e => setAppData({ ...appData, mlhcodeOfConduct: e.target.checked })}></input>
                 <label for="MLH-code-of-conduct" className="pl-[0.5rem]">{parse(`I have read and agree to the <u><a target="_blank" rel="noreferrer" href="https://github.com/MLH/mlh-policies/blob/main/code-of-conduct.md">MLH Code of Conduct</a></u><span className="text-red-500"> *</span>`)}</label>
@@ -299,7 +297,7 @@ export default function Policies() {
               </div>
               <div className="flex flex-row flex-start mb-1">
                 <input type="checkbox" id="authorize-MLH-email" name="authorize-MLH-email" checked={appData?.mlhPromotions} className="w-5 h-5 rounded border border-white bg-[#2D2D2D] mt-[2px]" onChange={e => setAppData({ ...appData, mlhPromotions: e.target.checked })}></input>
-                <label for="authorize-MLH-email" className="pl-[0.5rem]">{parse(`I authorize MLH to send me an email where I can further opt into the MLH Hacker, Events, or Organizer Newsletters and other communications from MLH.<span className="text-red-500"> *</span>`)}</label>
+                <label for="authorize-MLH-email" className="pl-[0.5rem]">{parse(`I authorize MLH to send me occasional emails about relevant events, career opportunities, and community announcements.`)}</label>
               </div>
             </div>
           </div>
