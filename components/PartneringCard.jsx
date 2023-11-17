@@ -21,10 +21,10 @@ export default function PartneringCard() {
                     </h4>
                     <p className="text-white 2xl:text-lg">Contact us at:</p>
                     <motion.a
-                        href="mailto:partnerships@qhacks.io"
+                        href="mailto:partnership@qhacks.io"
                         className="text-white 2xl:text-lg"
                     >
-                        <motion.p whileHover={{scale:1.1, color: "#FBBF24"}}>partnerships@qhacks.io</motion.p>
+                        <motion.p whileHover={{scale:1.1, color: "#FBBF24"}}>partnership@qhacks.io</motion.p>
                     </motion.a>
                     <a
                         href="https://drive.google.com/file/d/1zkrt4qKh9HaB_tRDXZ45H5J7J1RSR3jk/view?usp=drive_link"
