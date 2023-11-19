@@ -113,41 +113,33 @@ export default function Dashboard() {
             </div>
             
             <div className="flex w-[95%] 2xl:w-[75%] lg:flex-row flex-col-reverse gap-4 justify-start items-start pt-[20px] mb-[3rem]">
-                <div className='flex flex-col items-center justify-between h-full w-full lg:w-[25%] gap-4'>
-                    {/* Application Tracker */}
+                {/* <div className='flex flex-col items-center justify-between h-full w-full lg:w-[25%] gap-4'>
                     <div className='w-full bg-[#202020] flex flex-col justify-center items-center rounded-2xl px-6 py-5'>
                         <h3 className='text-white font-bold text-xl mb-2 text-center'>Application Tracker</h3>
-                        <div className='w-full flex flex-col'>
-                            {/* Statuses
-                            - 0: grey Go (incomplete but not available)
-                            - 1: yellow Go (incomplete and available)
-                            - 2: green Edit (complete and available)
-                            */}
+                        <div className='w-full flex flex-col'>                            
                             <ApplicationLinkButton title="About" status={getLinkButtonStatus(0, imageToUse)} dest={"/registration/about"}/>
                             <ApplicationLinkButton title="Education" status={getLinkButtonStatus(1, imageToUse)} dest={"/registration/education"}/>
                             <ApplicationLinkButton title="Additional Info" status={getLinkButtonStatus(2, imageToUse)} dest={"/registration/application"}/>
                             <ApplicationLinkButton title="Policies" status={getLinkButtonStatus(3, imageToUse)} dest={"/registration/policies"}/>
-                        </div>
+                        </div> 
+                        
                     </div>
-                    {/* Info Buttons */}
-                    {/* <div className='w-full bg-[#202020] flex flex-col justify-center items-center rounded-2xl py-2 px-2'>
+                    <div className='w-full bg-[#202020] flex flex-col justify-center items-center rounded-2xl py-2 px-2'>
                         <h3 className='text-white font-bold text-xl mb-3'>Need a team?</h3>
                         <a href='javascript:void(0)' className='bg-[#3f3f46] w-1/2 lg:w-4/5 xl:1/2 h-[40px] rounded-full flex justify-center items-center lg:text-sm text-lg text-white font-bold'>Coming Soon</a>
                     </div>
                     <div className='w-full bg-[#202020] flex flex-col justify-center items-center rounded-2xl py-2 px-2'>
                         <h3 className='text-white font-bold text-xl mb-3'>Need a bus?</h3>
                         <a href='javascript:void(0)' className='bg-[#3f3f46] w-1/2 lg:w-4/5 xl:1/2 h-[40px] rounded-full flex justify-center items-center lg:text-sm text-lg text-white font-bold'>Coming Soon</a>
-                    </div> */}
-                </div>
+                    </div> 
+                </div>  */}
                 
-                <div className='flex flex-col w-full lg:w-[85%] sm:h-full justify-start items-center'>
+                <div className='flex flex-col w-full sm:h-full justify-start items-center'>
                     <div className='bg-[#202020] h-full rounded-2xl py-5 px-5'>
                         <ApplicationStatusTracker status={imageToUse} />
                         <div className='w-full rounded-2xl text-white mt-[40px]'>
-                            <div className='text-2xl mb-2 font-bold'>QHacks Application</div>
+                            <div className='text-2xl mb-2 font-bold'>Applications have closed.</div>
                             <div>
-                            We're super excited to see you're interested in participating at QHacks this year!
-                            <br />
                             QHacks is Queen's University's largest Hackathon! This year we expect to welcome over 500 hackers, speakers and mentors to create, learn and share your ideas. At the event, you will have the opportunity to attend our workshops and meet industry professionals, innovators, and creatives from all faculties with varying skill levels.
                             <br />
                             We look forward to seeing you at the event.

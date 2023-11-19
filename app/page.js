@@ -106,18 +106,20 @@ export default function Home() {
 							>
 								In-person! • February 2nd - 4th
 							</motion.p>
+							<p className="text-white text-center font-bold">Applications have closed</p>
 							<div className="flex justify-center items-center w-full">
 								<motion.a
 									whileHover={{ scale: 1.05 }}
 									whileTap={{ scale: 0.9 }}
-									href="/signup"
+									href="/login"
 									className="flex w-56 lg:w-full text-white justify-center  bg-green-500 px-5 py-3 mx-5 mt-5 mb-3 z-5 rounded-xl font-bold opacity-100"
 								>
-									Register Here
+									Check Application Status
 								</motion.a>
 							</div>
 							
-							<p className="text-white text-center">Already have an account? <a href="/login" className="text-blue-400 hover:text-blue-100">log in</a></p>							
+							
+							{/* <a href="/login" className="text-blue-400 hover:text-blue-100">log in</a>					 */}
 						</div>
 					</div>
 					<div id="crown-container" className="w-[750px] h-[500px] hidden xl:flex justify-center items-center ">

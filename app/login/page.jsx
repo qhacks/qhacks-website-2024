@@ -137,7 +137,7 @@ export default function LogIn() {
                     />
                     <div className='text-center flex flex-col gap-[10px]'>
                     <button onClick={forgotPassword} className='text-xs font-regular text-blue-600 hover:underline'>Forgot your password?</button>
-                    <div className='text-xs font-light'>Don't have an account? <a className='font-semibold hover:underline' href="/signup">Sign Up</a></div>
+                    {/* <div className='text-xs font-light'>Don't have an account? <a className='font-semibold hover:underline' href="/signup">Sign Up</a></div> */}
                     <div className='text-xs font-light'>Return <a className='font-semibold hover:underline' href="/">Home</a></div>
                     </div>
                 </form>

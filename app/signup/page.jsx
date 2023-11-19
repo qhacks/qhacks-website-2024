@@ -73,8 +73,10 @@ export default function SignUp() {
     }
 
     return ( 
-        <div className='h-screen bg-gray-950'>
-            <div id='signup-container' className='flex flex-col justify-center items-center w-full h-full bg-repeat-x bg-bottom' style={{
+        <div className='h-screen border bg-gray-950 flex flex-col items-center justify-center text-center'>
+            <h2 className='text-white text-4xl mb-5'>Error this page does not exist</h2>
+            <motion.a href='/' whileHover={{scale:1.1}} className='p-4 bg-red-500 text-white font-bold rounded-full'>Return Home</motion.a>
+            {/* <div id='signup-container' className='flex flex-col justify-center items-center w-full h-full bg-repeat-x bg-bottom' style={{
                 backgroundImage: `url(${wavesSrc.src})`,
                 backgroundSize: 'cover'
             }}>
@@ -84,7 +86,6 @@ export default function SignUp() {
                         background: 'none',
                     }} placeholder='Email' onChange={e => setEmail(e.target.value)}/>
                     
-                    {/* PASSWORD FIELD */}
                     <div className='relative w-[280px]'>
                         <input 
                             id='password-input'
@@ -108,7 +109,6 @@ export default function SignUp() {
                         </div>
                     </div>
                     
-                    {/* PASSWORD FIELD */}
                     <div className='relative'>
                         <input 
                             id='confirm-input' 
@@ -148,7 +148,7 @@ export default function SignUp() {
                     <div className='text-xs font-light'>Return <a className='font-semibold hover:underline' href="/">Home</a></div>
                 </form>
             </div>
-            <ToastContainer />
+            <ToastContainer /> */}
         </div>
      );
 }
