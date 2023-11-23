@@ -271,6 +271,12 @@
         "link": "",
         "borderColor": "border-red-600",
         "tier": "kilo"
+    },
+    "campusBookStore": {
+        "name": "Campus Book Store",
+        "logo": "/sponsors/CampusBookStore.svg",
+        "link": "",
+        "borderColor": "border-red-600",
+        "tier": "kilo"
     }
-
 }

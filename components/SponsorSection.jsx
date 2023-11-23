@@ -34,8 +34,9 @@ const SponsorSection = () => {
                     <SponsorCard sponsor={sponsorsJSON.otpp} />
                     <SponsorCard sponsor={sponsorsJSON.queensComputing} />
                     <SponsorCard sponsor={sponsorsJSON.ece} />
-                    <SponsorCard sponsor={sponsorsJSON.redbull} />
+                    {/* <SponsorCard sponsor={sponsorsJSON.redbull} /> */}
                     <SponsorCard sponsor={sponsorsJSON.cpp} />
+                    <SponsorCard sponsor={sponsorsJSON.campusBookStore} />
                 </div>
             </div>
 
