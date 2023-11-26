@@ -278,5 +278,12 @@
         "link": "",
         "borderColor": "border-red-600",
         "tier": "kilo"
+    },
+    "scorePizza": {
+        "name": "Score Pizza",
+        "logo": "/sponsors/ScorePizza.png",
+        "link": "https://scorepizza.ca/",
+        "borderColor": "border-red-600",
+        "tier": "kilo"
     }
 }
