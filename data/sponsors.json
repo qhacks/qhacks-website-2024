@@ -285,5 +285,12 @@
         "link": "https://scorepizza.ca/",
         "borderColor": "border-red-600",
         "tier": "kilo"
+    },
+    "systemx": {
+        "name": "System X",
+        "logo": "/sponsors/SystemX.svg",
+        "link": "https://www.systemx.net/",
+        "borderColor": "border-yellow-600",
+        "tier": "kilo"
     }
 }
