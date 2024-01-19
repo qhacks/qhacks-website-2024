@@ -40,6 +40,7 @@ const SponsorSection = () => {
                     <SponsorCard sponsor={sponsorsJSON.campusBookStore} />
                     <SponsorCard sponsor={sponsorsJSON.scorePizza} />
                     <SponsorCard sponsor={sponsorsJSON.systemx} />
+                    <SponsorCard sponsor={sponsorsJSON.standOutStickers} />
                 </div>
             </div>
 
@@ -81,7 +82,6 @@ const SponsorSection = () => {
                     <PreviousSponsorCard sponsor={sponsorsJSON.scotiabank} />
                     {/* <SponsorCard sponsor={sponsorsJSON.smileCDR} /> */}
                     <PreviousSponsorCard sponsor={sponsorsJSON.stanAI} />
-                    <PreviousSponsorCard sponsor={sponsorsJSON.standOutStickers} />
                 </div>
             </div>
             <div id="sponsor-link" className="flex justify-center items-center mt-8 2xl:mt-40">
