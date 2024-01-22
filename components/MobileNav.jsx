@@ -2,6 +2,7 @@ import { Inter } from 'next/font/google';
 import React, { useState, useEffect, useRef } from "react";
 import { motion, useAnimation, AnimatePresence, useInView } from "framer-motion";
 import ScrollIntoView from 'react-scroll-into-view';
+import Link from 'next/link';
 
 export default function MobileNav(){
     const [isExpanded, setExpanded] = useState(false);
@@ -44,6 +45,17 @@ export default function MobileNav(){
                         }}
                         transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
                     >
+                        {window.location.href.substring(window.location.href.lastIndexOf('/')) != '/' ? 
+                        <motion.div>
+                            <motion.span 
+                                className="block mx-4 py-2"
+                            >
+                                <a href="/">
+                                    Home
+                                </a>
+                            </motion.span>
+                        </motion.div>
+                        :
                         <motion.div>
                             {/* <motion.a href="/" className="block mx-4 py-2">
                                 Home
@@ -72,10 +84,11 @@ export default function MobileNav(){
                                 </ScrollIntoView>
                                 
                             </motion.span>
-                            {/* <motion.a href='/Schedule' className="block mx-4 py-2">
-                                    Schedule
-                            </motion.a> */}
+                            <motion.a className="block mx-4 py-2">
+                                <a href='/Schedule'>Schedule</a>
+                            </motion.a>
                         </motion.div>
+                        } 
                     </motion.div>
                 )}
             </AnimatePresence>

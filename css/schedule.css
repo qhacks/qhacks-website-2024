@@ -34,6 +34,12 @@
     font-size: 20px;
 }
 
+#paged-table td {
+    color: white;
+    font-size: 16px;
+    text-align: center;
+}
+
 #paged-table th:first-child {
     border-top-left-radius: 30px;
 }
@@ -108,8 +114,6 @@
 
 #paged-table table {
     margin-bottom: 40px;
-    max-width: 1000px;
-    width: 80vw;
 }
 
 .triangle {
