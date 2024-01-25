@@ -22,7 +22,7 @@ const TestimonialsCarousel = () => {
             return (
               <div key={index}>
                 <div className='h-96 flex justify-center items-center'>
-                  <div className="rounded-xl w-[500px] h-[350px] m-5 bg-gray-900 ">
+                  <div className="rounded-xl w-[500px] h-[350px] m-5 bg-gray-900 testimonial-card">
                     <div className="flex flex-row px-4 pt-4">
                       <div className="aspect-w-1 aspect-h-1">
                         <img src={testimonials[num].image} alt={`${testimonials[num].name}`} width={500} height={500} className='w-24 h-24 rounded-full'/>
@@ -34,7 +34,7 @@ const TestimonialsCarousel = () => {
                     </div>
                     <div className="flex mt-2 mx-6 text-gray-300 text-left text-[17px]">{testimonials[num].text}</div>
                   </div>
-                  <div className="rounded-xl w-[500px] h-[350px] m-5 bg-gray-900">
+                  <div className="rounded-xl w-[500px] h-[350px] m-5 bg-gray-900 testimonial-card">
                     <div className="flex flex-row px-4 pt-4">
                       <div className="aspect-w-1 aspect-h-1">
                         <img src={testimonials[num+1].image} alt={`${testimonials[num+1].name}`} width={500} height={500} className='w-24 h-24 rounded-full'/>
@@ -62,7 +62,7 @@ const TestimonialsCarousel = () => {
               return (
                 <div key={index}>
                   <div className='h-[420px] flex justify-center'>
-                    <div className="rounded-xl w-[90%] h-[350px] sm:w-[500px] sm:h-[350px] m-5 bg-gray-900">
+                    <div className="rounded-xl w-[90%] h-[350px] sm:w-[500px] sm:h-[350px] m-5 bg-gray-900 testimonial-card">
                       <div className="flex flex-row px-4 pt-4">
                         <div className="">
                           <img src={testimonial.image} alt={`${testimonial.name}`} className='w-16 h-16 sm:w-24 sm:h-24 rounded-full'/>
