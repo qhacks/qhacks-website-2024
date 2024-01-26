@@ -35,6 +35,9 @@ import SponsorSection from "../components/SponsorSection";
 
 // JSON Data
 import faq from "../data/faq.json";
+import judges from 'data/judges.json'
+import panel1 from 'data/panel1.json';
+import panel2 from 'data/panel2.json';
 
 // React Hooks
 import { useEffect, useState } from 'react';
@@ -233,18 +236,49 @@ export default function Home() {
 			</section>
 
 
-
 			{/* Speaker Section */}
 			<section className="mt-12 pt-16 mb-8 mx-2 sm:mx-8 md:mx-12 lg:mx-12 xl:mx-80 2xl:mx-96">
 				<h1 className="text-center text-white text-3xl md:text-5xl font-bold mb-8">
+					Our{" "}
+					<span className="text-3xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-600">
+						Hackathon Judges
+					</span>{" "}
+				</h1>
+				<SpeakerCarousel speakers = {judges}/>
+			</section>
+
+			<section className="mt-4 pt-16 mb-8 mx-2 sm:mx-8 md:mx-12 lg:mx-12 xl:mx-80 2xl:mx-96">
+				<h1 className="text-center text-white text-3xl md:text-5xl font-bold mb-8">
+					Our{" "}
+					<span className="text-3xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-600">
+						Artificial Intelligence
+					</span>{" "}
+					Panel Speakers
+				</h1>
+				<SpeakerCarousel speakers = {panel1}/>
+			</section>
+
+			<section className="mt-4 pt-16 mb-8 mx-2 sm:mx-8 md:mx-12 lg:mx-12 xl:mx-80 2xl:mx-96">
+				<h1 className="text-center text-white text-3xl md:text-5xl font-bold mb-8">
+					Our{" "}
+					<span className="text-3xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-600">
+						Cloud Computing
+					</span>{" "}
+					Panel Speakers
+				</h1>
+				<SpeakerCarousel speakers = {panel2}/>
+			</section>
+
+			{/* Speaker Section */}
+			{/* <section className="mt-12 pt-16 mb-8 mx-2 sm:mx-8 md:mx-12 lg:mx-12 xl:mx-80 2xl:mx-96">
+				<h1 className="text-center text-white text-3xl md:text-5xl font-bold mb-8">
 					Some of Our{" "}
 					<span className="text-3xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-600">
-						{/* Amazing */}
 						Past Speakers
 					</span>
 				</h1>
 				<SpeakerCarousel />
-			</section>
+			</section> */}
 
 
 

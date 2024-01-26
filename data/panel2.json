@@ -1,0 +1,27 @@
+[
+    {
+      "name": "Faranak Sharifi",
+      "title": "Ecobee",
+      "image": "/speakers/panel2/Faranak Sharifi.png"
+    },
+    {
+      "name": "Nimish Aggarwal",
+      "title": "CRA",
+      "image": "/speakers/panel2/Nimish Aggarwal.jpeg"
+    },
+    {
+      "name": "Rishab Kumar",
+      "title": "Twilio",
+      "image": "/speakers/panel2/Rishab Kumar.jpg"
+    },
+    {
+      "name": "Ryan Grant",
+      "title": "Sandia National Labratories",
+      "image": "/speakers/panel2/Ryan Grant.jpg"
+    },
+    {
+      "name": "Shadi Khalifa",
+      "title": "Queen's Centre for Advanced Computing",
+      "image": "/speakers/panel2/Shadi Khalifa.jpg"
+    }
+]
