@@ -1,56 +1,120 @@
 {
     "Friday • February 2nd": {
-        "8:30 PM": {
-            "Location": "Mitchell Hall",
+        "4:00 PM": {
+            "Location": "Biosciences Complex Atrium",
+            "Event": "Transportation Arrives"
+        },
+        "5:00 PM": {
+            "Location": "Biosciences Complex Room 1101",
+            "Event": "Registration and Dinner"
+        },
+        "7:00 PM": {
+            "Location": "Biosciences Complex Room 1101",
             "Event": "Opening Ceremonies"
+        },
+        "7:30 PM": {
+            "Location": "Biosciences Complex Room 1101",
+            "Event": "Shaping the world with AI - DDQIC Workshop"
         },
         "9:30 PM": {
             "Location": "Mitchell Hall",
-            "Event": "Dinner"
+            "Event": "Team Formation"
+        },
+        "10:30 PM": {
+            "Location": "Mitchell Hall",
+            "Event": "MLH Github Copilot Event"
+        },
+        "11:30 PM": {
+            "Location": "Mitchell Hall",
+            "Event": "Late Night Snack"
+        }
+    },
+    "Saturday • February 3rd": {
+        "12:00 AM": {
+            "Location": "Mitchell Hall",
+            "Event": "Movie Night / Karaoke Night"
+        },
+        "7:30 AM": {
+            "Location": "Mitchell Hall",
+            "Event": "Breakfast"
+        },
+        "9:00 AM": {
+            "Location": "Mitchell Hall",
+            "Event": "Cloud Computing Panel Talk"
+        },
+        "10:00 AM": {
+            "Location": "Mitchell Hall",
+            "Event": "QUANTT Resume Building - OTPP Workshop"
+        },
+        "11:00 AM": {
+            "Location": "Mitchell Hall",
+            "Event": "Manulife Workshop"
+        },
+        "12:00 PM": {
+            "Location": "Mitchell Hall",
+            "Event": "Lunch"
+        },
+        "1:00 PM": {
+            "Location": "Mitchell Hall",
+            "Event": "Career Fair"
+        },
+        "4:00 PM": {
+            "Location": "Mitchell Hall",
+            "Event": "Financial Markets - National Bank Workshop"
+        },
+        "5:00 PM": {
+            "Location": "Mitchell Hall",
+            "Event": "Artificial Intelligence Panel Talk"
+        },
+        "6:00 PM": {
+            "Location": "Mitchell Hall",
+            "Event": "CSE Workshop"
+        },
+        "7:00 PM": {
+            "Location": "Mitchell Hall",
+            "Event": "Dinner & Therapy Dogs"
+        },
+        "9:00 PM": {
+            "Location": "Mitchell Hall",
+            "Event": "MLH Cup Stacking Event"
         },
         "10:30 PM": {
             "Location": "Mitchell Hall",
             "Event": "Late Night Snack"
         }
     },
-    "Saturday • February 3rd": {
-        "8:00 AM": {
-            "Location": "Mitchell Hall",
-            "Event": "Breakfast"
-        },
-        "9:00 AM": {
-            "Location": "Mitchell Hall",
-            "Event": "Hacking \r Begins"
-        },
-        "12:00 PM": {
-            "Location": "Mitchell Hall",
-            "Event": "Lunch"
-        },
-        "6:00 PM": {
-            "Location": "Mitchell Hall",
-            "Event": "Dinner"
-        },
-        "10:00 PM": {
-            "Location": "Mitchell Hall",
-            "Event": "Late Night Snack"
-        }
-    },
     "Sunday • February 4th": {
-        "8:00 AM": {
+        "7:00 AM": {
             "Location": "Mitchell Hall",
             "Event": "Breakfast"
         },
-        "9:00 AM": {
+        "8:00 AM": {
             "Location": "Mitchell Hall",
             "Event": "Hacking Ends"
         },
-        "9:30 AM": {
+        "9:00 AM": {
             "Location": "Mitchell Hall",
-            "Event": "Judging Begins"
+            "Event": "Judging Time and Mini Games"
         },
-        "11:00 AM": {
-            "Location": "Mitchell Hall",
+        "12:00 PM": {
+            "Location": "Biosciences Complex Room 1101",
+            "Event": "Lunch"
+        },
+        "1:00 PM": {
+            "Location": "Biosciences Complex Room 1101",
+            "Event": "Justin Tse Keynote Prensentation"
+        },
+        "2:00 PM": {
+            "Location": "Biosciences Complex Room 1101",
             "Event": "Closing Ceremonies"
+        },
+        "3:30 PM": {
+            "Location": "Biosciences Complex Room 1101",
+            "Event": "Event Ends"
+        },
+        "4:00 PM": {
+            "Location": "Biosciences Complex Atrium",
+            "Event": "Transportation Departs"
         }
     }
 }
