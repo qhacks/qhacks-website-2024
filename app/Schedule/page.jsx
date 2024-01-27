@@ -8,7 +8,7 @@ import rowData from './rows.json'
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 
-function Schedule() {
+function Schedule() {   
     const [pageIndex, setPageIndex] = useState(0)
 
     let rowComponents = Object.entries(Object.values(rowData)[pageIndex]).map(([key, value], index) => 
@@ -20,9 +20,9 @@ function Schedule() {
     )
 
     let table = (
-        <div id="paged-table">
+        <div id="paged-table" className='flex flex-col items-center'>
 
-            <table id={`day-${pageIndex - 1}-table`}>
+            <table id={`day-${pageIndex - 1}-table`} className='md:w-[80vw] md:max-w-[1000px] w-[95%]'>
                     <tr>
                         <th>Time</th>
                         <th>Location</th>
@@ -72,7 +72,7 @@ function Schedule() {
     return (
         <div>
             <Navbar />
-            <div className='bg-gray-950 flex flex-col justify-start text-white items-center'>
+            <div className='bg-gray-950 flex flex-col justify-start text-white items-center pt-[50px]'>
                 
                 <div id='day-button-container'  className='flex flex-row justify-center items-center text-center' style={{
                 marginInline: "200px"

@@ -1,32 +1,89 @@
-[
+{
+  "judges": [],
+  "panel1": [
+    {
+      "name": "Alexander Salgo",
+      "title": "Distributive",
+      "image": "/speakers/panel#1/Alexander Salgo.jpg"
+    },
+    {
+      "name": "Debaditya Shome",
+      "title": "Vector Institute",
+      "image": "/speakers/panel#1/Debaditya Shome.jpg"
+    },
+    {
+      "name": "Ribhav Kapur",
+      "title": "JALI Research",
+      "image": "/speakers/panel#1/Ribhav Kapur.jpg"
+    },
+    {
+      "name": "Jessie Leung",
+      "title": "STAN AI",
+      "image": "/speakers/panel#1/Jessie Leung.jpg"
+    },
+    {
+      "name": "Javad Manashti",
+      "title": "Nova Microsystems",
+      "image": "/speakers/panel#1/Javad Manashti.jpg"
+    }
+  ],
+  "panel2": [
+    {
+      "name": "Faranak Sharifi",
+      "title": "Ecobee",
+      "image": "/speakers/panel#1/Faranak Sharifi.jpg"
+    },
+    {
+      "name": "Nimish Aggarwal",
+      "title": "CRA",
+      "image": "/speakers/panel#1/Nimish Aggarwal.jpg"
+    },
+    {
+      "name": "Rishab Kumar",
+      "title": "Twilio",
+      "image": "/speakers/panel#1/Rishab Kumar.jpg"
+    },
+    {
+      "name": "Ryan Grant",
+      "title": "Sandia National Labratories",
+      "image": "/speakers/panel#1/Ryan Grant.jpg"
+    },
+    {
+      "name": "Shadi Khalifa",
+      "title": "Queen's Centre for Advanced Computing",
+      "image": "/speakers/panel#1/Shadi Khalifa.jpg"
+    }
+  ],
+  "pastSpeakers": [
     {
       "name": "Dan Desjardins",
       "title": "CEO",
-      "image": "/speakers/Dan Desjardins.png"
+      "image": "/speakers/pastspeakers/Dan Desjardins.png"
     },
     {
       "name": "Minami Alguire",
       "title": "Lead Campus Recruiter",
-      "image": "/speakers/Minami Alguire.png"
+      "image": "/speakers/pastspeakers/Minami Alguire.png"
     },
     {
       "name": "Sean Monteiro",
       "title": "CEO and Founder",
-      "image": "/speakers/Sean Monteiro.png"
+      "image": "/speakers/pastspeakers/Sean Monteiro.png"
     },
     {
       "name": "Chloe Beisheim",
       "title": "Outreach Manager",
-      "image": "/speakers/Chloe Beisheim.png"
+      "image": "/speakers/pastspeakers/Chloe Beisheim.png"
     },
     {
       "name": "Malcom Eade",
       "title": "Co-Founder",
-      "image": "/speakers/Malcom Eade.png"
+      "image": "/speakers/pastspeakers/Malcom Eade.png"
     },
     {
       "name": "Jim McLennan",
       "title": "Co-Founder/Academic Director",
-      "image": "/speakers/Jim McLennan.png"
+      "image": "/speakers/pastspeakers/Jim McLennan.png"
     }
-]
+  ]
+}

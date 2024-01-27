@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ['latin'] });
 export default function Footer(){
 
     return(
-        <footer className='pb-8 pt-48 bg-gradient-to-b from-gray-950 to-blue-900'>
+        <footer className='pb-8 pt-48 bg-gradient-to-b from-gray-950 to-blue-900 w-full'>
           <div className='flex justify-center items-center py-5'>
             <a className='px-[3%] text-4xl ' href='https://www.instagram.com/qhacks24/'>
               <motion.i whileHover={{scale:1.2}} className="fab fa-instagram text-white"></motion.i>
