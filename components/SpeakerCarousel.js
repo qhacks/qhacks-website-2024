@@ -24,7 +24,7 @@ const SpeakerCarousel = (speakers) => {
     <div>
       {/* THIS IS FOR LARGER SCREEN SIZE  -  3 images */}
       <div className='hidden lg:block'>
-        <Carousel showStatus={false} showArrows={false} showThumbs={false}>
+        <Carousel showStatus={false} showArrows={true} showThumbs={false}>
           {
             numofspeakers1.map((num, index) => {
               return (

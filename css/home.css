@@ -1,0 +1,11 @@
+@media (min-width: 1024px) {
+    .carousel .speaker-img {
+        max-height: 320px;
+        object-fit: cover;
+        object-position: bottom center;
+    }
+
+    .carousel .testimonial-card {
+        margin-bottom: 60px;
+    }
+}

@@ -8,6 +8,7 @@ import Image from 'next/image'
 import "tailwindcss/tailwind.css";
 import '../css/background.css';
 import '../css/ScrollBar.css';
+import '../css/home.css';
 
 // Custom Components
 import Crown from "../components/Crown";
