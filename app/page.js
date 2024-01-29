@@ -95,7 +95,7 @@ export default function Home() {
 				<a id="mlh-trust-badge" STYLE="display:block;max-width:100px;min-width:60px;position:fixed;right:40px;top:0;width:10%;z-index:10000" href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2024-season&utm_content=red" target="_blank"><img src="https://s3.amazonaws.com/logged-assets/trust-badge/2024/mlh-trust-badge-2024-blue.svg" alt="Major League Hacking 2024 Hackathon Season" STYLE="width:100%"/></a>
 				<a 
 					STYLE="display:block;max-width:100px;min-width:60px;position:fixed;right:150px;top:0;width:10%;z-index:10000" 
-					href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2024-season&utm_content=red" 
+					href="https://pinnacle.us.org/" 
 					target="_blank">
 					<Image src={Pinnacle_Banner}
 						alt="" STYLE="width:100%"/>
