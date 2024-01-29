@@ -292,5 +292,12 @@
         "link": "https://www.systemx.net/",
         "borderColor": "border-yellow-600",
         "tier": "kilo"
+    },
+    "pinnacle": {
+        "name": "Pinnacle",
+        "logo": "/sponsors/Pinnacle.svg",
+        "link": "https://pinnacle.us.org/",
+        "borderColor": "border-yellow-600",
+        "tier": "kilo"
     }
 }

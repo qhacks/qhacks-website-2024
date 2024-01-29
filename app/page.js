@@ -43,6 +43,9 @@ import panel2 from 'data/panel2.json';
 // React Hooks
 import { useEffect, useState } from 'react';
 
+// Pinnacle Banner
+import Pinnacle_Banner from '../public/Pinnacle_Banner_White.png';
+
 
 // DIFFERENT CUSTOM BACKGROUNDS FROM background.css
 // bg-dots: puts a series of dots onto the background
@@ -89,7 +92,14 @@ export default function Home() {
 			{/* Splash Screen Section */}
 			<section id="home" className=" flex items-center justify-center px-1 w-full h-screen bg-topogrophy-dark">
 
-				<a id="mlh-trust-badge" STYLE="display:block;max-width:100px;min-width:60px;position:fixed;right:50px;top:0;width:10%;z-index:10000" href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2024-season&utm_content=red" target="_blank"><img src="https://s3.amazonaws.com/logged-assets/trust-badge/2024/mlh-trust-badge-2024-blue.svg" alt="Major League Hacking 2024 Hackathon Season" STYLE="width:100%"/></a>
+				<a id="mlh-trust-badge" STYLE="display:block;max-width:100px;min-width:60px;position:fixed;right:40px;top:0;width:10%;z-index:10000" href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2024-season&utm_content=red" target="_blank"><img src="https://s3.amazonaws.com/logged-assets/trust-badge/2024/mlh-trust-badge-2024-blue.svg" alt="Major League Hacking 2024 Hackathon Season" STYLE="width:100%"/></a>
+				<a 
+					STYLE="display:block;max-width:100px;min-width:60px;position:fixed;right:150px;top:0;width:10%;z-index:10000" 
+					href="https://mlh.io/na?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2024-season&utm_content=red" 
+					target="_blank">
+					<Image src={Pinnacle_Banner}
+						alt="" STYLE="width:100%"/>
+				</a>
 				{/* Add this for a cool feature down below: " p-40 bg-gray-950 rounded-[50px] bg-opacity-80" */}
 				<div className=" flex flex-row justify-between">
 					<div className="flex items-center text-center lg:text-left">

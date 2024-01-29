@@ -41,6 +41,7 @@ const SponsorSection = () => {
                     <SponsorCard sponsor={sponsorsJSON.scorePizza} />
                     <SponsorCard sponsor={sponsorsJSON.systemx} />
                     <SponsorCard sponsor={sponsorsJSON.standOutStickers} />
+                    <SponsorCard sponsor={sponsorsJSON.pinnacle} />
                 </div>
             </div>
 

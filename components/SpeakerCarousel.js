@@ -29,7 +29,7 @@ const SpeakerCarousel = (speakers) => {
             numofspeakers1.map((num, index) => {
               return (
                 <div key={index} className='h-[450px] flex justify-center text-center text-white'>
-                  <div className='flex justify-center gap-8 w-full'>
+                  <div className='flex justify-center gap-8 w-full 2xl:w-[800px]'>
                     <div className="w-[33%] flex flex-col h-full">
                       <img src={speakers[num].image} alt={`${speakers[num].name}`} className='h-[75%] w-full object-cover rounded-md'/>
                       <h2 className='text-white font-bold text-2xl'>{speakers[num].name}</h2>
