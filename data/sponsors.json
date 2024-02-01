@@ -88,7 +88,7 @@
         "logo": "/sponsors/Taskade.svg",
         "link": "https://www.taskade.com/jobs",
         "borderColor": "border-red-600",
-        "tier": "previous"
+        "tier": "kilo"
     },
     "whoosh": {
         "name": "Whoosh",
@@ -102,7 +102,7 @@
         "logo": "/sponsors/Wolfram.svg",
         "link": "https://www.wolfram.com/company/careers/opportunities/",
         "borderColor": "border-indigo-600",
-        "tier": "previous"
+        "tier": "kilo"
     },
     "amazon": {
         "name": "Amazon",
@@ -179,7 +179,7 @@
         "logo": "/sponsors/Echo.svg",
         "link": "https://www.echo3d.co/",
         "borderColor": "border-yellow-600",
-        "tier": "previous"
+        "tier": "kilo"
     },
     "ibm": {
         "name": "IBM",
@@ -207,7 +207,7 @@
         "logo": "/sponsors/Mapbox.svg",
         "link": "https://www.mapbox.com/careers",
         "borderColor": "border-indigo-600",
-        "tier": "previous"
+        "tier": "kilo"
     },
     "mars": {
         "name": "MaRS",
@@ -235,7 +235,7 @@
         "logo": "/sponsors/StanAI.svg",
         "link": "https://www.stanintelligence.com/",
         "borderColor": "border-yellow-600",
-        "tier": "previous"
+        "tier": "kilo"
     },
     "standOutStickers": {
         "name": "Stand Out Stickers",
@@ -297,6 +297,20 @@
         "name": "Pinnacle",
         "logo": "/sponsors/Pinnacle.svg",
         "link": "https://pinnacle.us.org/",
+        "borderColor": "border-yellow-600",
+        "tier": "kilo"
+    },
+    "aops": {
+        "name": "Art of Problem Solving",
+        "logo": "/sponsors/AOPS.svg",
+        "link": "https://artofproblemsolving.com/",
+        "borderColor": "border-yellow-600",
+        "tier": "kilo"
+    },
+    "interviewCake": {
+        "name": "Interview Cake",
+        "logo": "/sponsors/InterviewCake.jpeg",
+        "link": "https://www.interviewcake.com/",
         "borderColor": "border-yellow-600",
         "tier": "kilo"
     }

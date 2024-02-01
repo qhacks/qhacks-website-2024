@@ -35,13 +35,20 @@ const SponsorSection = () => {
                     <SponsorCard sponsor={sponsorsJSON.otpp} />
                     <SponsorCard sponsor={sponsorsJSON.queensComputing} />
                     <SponsorCard sponsor={sponsorsJSON.ece} />
-                    {/* <SponsorCard sponsor={sponsorsJSON.redbull} /> */}
                     <SponsorCard sponsor={sponsorsJSON.cpp} />
                     <SponsorCard sponsor={sponsorsJSON.campusBookStore} />
                     <SponsorCard sponsor={sponsorsJSON.scorePizza} />
                     <SponsorCard sponsor={sponsorsJSON.systemx} />
                     <SponsorCard sponsor={sponsorsJSON.standOutStickers} />
                     <SponsorCard sponsor={sponsorsJSON.pinnacle} />
+                    <SponsorCard sponsor={sponsorsJSON.stanAI} />
+                    <SponsorCard sponsor={sponsorsJSON.taskade} />
+                    <SponsorCard sponsor={sponsorsJSON.wolfram} />
+                    <SponsorCard sponsor={sponsorsJSON.redbull} />
+                    <SponsorCard sponsor={sponsorsJSON.echo} />
+                    <SponsorCard sponsor={sponsorsJSON.mapbox} />
+                    <SponsorCard sponsor={sponsorsJSON.aops} />
+                    <SponsorCard sponsor={sponsorsJSON.interviewCake} />
                 </div>
             </div>
 
@@ -66,23 +73,18 @@ const SponsorSection = () => {
                     <PreviousSponsorCard sponsor={sponsorsJSON.mosaic} />
                     <PreviousSponsorCard sponsor={sponsorsJSON.pwc} />
                     {/* <SponsorCard sponsor={sponsorsJSON.sleek} /> */}
-                    {/* <SponsorCard sponsor={sponsorsJSON.taskade} /> */}
                     <PreviousSponsorCard sponsor={sponsorsJSON.whoosh} />
-                    {/* <SponsorCard sponsor={sponsorsJSON.wolfram} /> */}
                     <PreviousSponsorCard sponsor={sponsorsJSON.amazon} />
                     {/* <SponsorCard sponsor={sponsorsJSON.dominoes} /> */}
                     <PreviousSponsorCard sponsor={sponsorsJSON.kingstonUtilities} />
                     <PreviousSponsorCard sponsor={sponsorsJSON.voiceflow} />
                     <PreviousSponsorCard sponsor={sponsorsJSON.amd} />
                     <PreviousSponsorCard sponsor={sponsorsJSON.bmo} />
-                    {/* <SponsorCard sponsor={sponsorsJSON.echo} /> */}
                     <PreviousSponsorCard sponsor={sponsorsJSON.ibm} />
                     {/* <SponsorCard sponsor={sponsorsJSON.kbc} /> */}
-                    <PreviousSponsorCard sponsor={sponsorsJSON.mapbox} />
                     <PreviousSponsorCard sponsor={sponsorsJSON.mars} />
                     <PreviousSponsorCard sponsor={sponsorsJSON.scotiabank} />
                     {/* <SponsorCard sponsor={sponsorsJSON.smileCDR} /> */}
-                    <PreviousSponsorCard sponsor={sponsorsJSON.stanAI} />
                 </div>
             </div>
             <div id="sponsor-link" className="flex justify-center items-center mt-8 2xl:mt-40">
