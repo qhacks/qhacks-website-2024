@@ -34,6 +34,13 @@
         "borderColor": "border-yellow-600",
         "tier": "previous"
     },
+    "ddqic": {
+        "name": "DDQIC",
+        "logo": "/sponsors/DDQIC.svg",
+        "link": "",
+        "borderColor": "border-red-600",
+        "tier": "kilo"
+    },
     "gameloft": {
         "name": "Gameloft",
         "logo": "/sponsors/gameloft.svg",
@@ -129,7 +136,7 @@
         "name": "Ontario Teachers Pension Plan",
         "logo": "/sponsors/OTPP.svg",
         "link": "https://www.otpp.com/en-ca/careers/",
-        "borderColor": "border-red-600",
+        "borderColor": "border-indigo-600",
         "tier": "kilo"
     },
     "kingstonUtilities": {
@@ -141,16 +148,23 @@
     },
     "ece": {
         "name": "Queence Engineering",
-        "logo": "/sponsors/ECE.svg",
+        "logo": "/sponsors/Engineering.svg",
         "link": "https://www.ece.queensu.ca/about-us/employment-opportunities.html",
-        "borderColor": "border-indigo-600",
+        "borderColor": "border-red-600",
         "tier": "kilo"
+    },
+    "cse": {
+        "name": "CSE",
+        "logo": "/sponsors/CSE.svg",
+        "link": "",
+        "borderColor": "border-red-600",
+        "tier": "mega"
     },
     "queensComputing": {
         "name": "Queens Computing",
-        "logo": "/sponsors/QueensComputing.svg",
+        "logo": "/sponsors/Computing.svg",
         "link": "https://www.cs.queensu.ca/",
-        "borderColor": "border-red-600",
+        "borderColor": "border-yellow-600",
         "tier": "kilo"
     },
     "voiceflow": {
@@ -159,6 +173,13 @@
         "link": "https://www.voiceflow.com/",
         "borderColor": "border-yellow-600",
         "tier": "previous"
+    },
+    "bayun": {
+        "name": "Bayun",
+        "logo": "/sponsors/Bayun.svg",
+        "link": "",
+        "borderColor": "border-yellow-600",
+        "tier": "kilo"
     },
     "amd": {
         "name": "AMD",
@@ -178,7 +199,7 @@
         "name": "Echo",
         "logo": "/sponsors/Echo.svg",
         "link": "https://www.echo3d.co/",
-        "borderColor": "border-yellow-600",
+        "borderColor": "border-red-600",
         "tier": "kilo"
     },
     "ibm": {
@@ -199,7 +220,7 @@
         "name": "Kenworth",
         "logo": "/sponsors/Kenworth.svg",
         "link": "https://www.kenworth.com/careers/",
-        "borderColor": "border-yellow-600",
+        "borderColor": "border-indigo-600",
         "tier": "kilo"
     },
     "mapbox": {
@@ -241,7 +262,7 @@
         "name": "Stand Out Stickers",
         "logo": "/sponsors/StandOutStickers.svg",
         "link": "http://hackp.ac/mlh-StandOutStickers-hackathons",
-        "borderColor": "border-indigo-600",
+        "borderColor": "border-red-600",
         "tier": "kilo"
     },
     "xyz": {
@@ -269,14 +290,14 @@
         "name": "CPP",
         "logo": "/sponsors/CPP.svg",
         "link": "",
-        "borderColor": "border-red-600",
+        "borderColor": "border-indigo-600",
         "tier": "kilo"
     },
     "campusBookStore": {
         "name": "Campus Book Store",
         "logo": "/sponsors/CampusBookStore.svg",
         "link": "",
-        "borderColor": "border-red-600",
+        "borderColor": "border-yellow-600",
         "tier": "kilo"
     },
     "scorePizza": {
@@ -290,14 +311,14 @@
         "name": "System X",
         "logo": "/sponsors/SystemX.svg",
         "link": "https://www.systemx.net/",
-        "borderColor": "border-yellow-600",
+        "borderColor": "border-indigo-600",
         "tier": "kilo"
     },
     "pinnacle": {
         "name": "Pinnacle",
         "logo": "/sponsors/Pinnacle.svg",
         "link": "https://pinnacle.us.org/",
-        "borderColor": "border-yellow-600",
+        "borderColor": "border-indigo-600",
         "tier": "kilo"
     },
     "aops": {
@@ -311,7 +332,7 @@
         "name": "Interview Cake",
         "logo": "/sponsors/InterviewCake.jpeg",
         "link": "https://www.interviewcake.com/",
-        "borderColor": "border-yellow-600",
+        "borderColor": "border-red-600",
         "tier": "kilo"
     }
 }

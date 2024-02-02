@@ -26,12 +26,15 @@ const SponsorSection = () => {
                 {/*For Mega Sponsors*/}
                 <div className="flex justify-center flex-row flex-wrap items-center justify-center w-full">
                     <SponsorCard sponsor={sponsorsJSON.manulife} />
+                    <SponsorCard sponsor={sponsorsJSON.cse} />
+
                 </div>
 
                 {/*For Kilo Sponsors*/}
                 <div className="flex justify-center flex-row flex-wrap items-center justify-center w-full">
                     <SponsorCard sponsor={sponsorsJSON.kenworth} />
                     <SponsorCard sponsor={sponsorsJSON.kingston} />
+                    <SponsorCard sponsor={sponsorsJSON.ddqic} />
                     <SponsorCard sponsor={sponsorsJSON.otpp} />
                     <SponsorCard sponsor={sponsorsJSON.queensComputing} />
                     <SponsorCard sponsor={sponsorsJSON.ece} />
@@ -39,6 +42,7 @@ const SponsorSection = () => {
                     <SponsorCard sponsor={sponsorsJSON.campusBookStore} />
                     <SponsorCard sponsor={sponsorsJSON.scorePizza} />
                     <SponsorCard sponsor={sponsorsJSON.systemx} />
+                    <SponsorCard sponsor={sponsorsJSON.bayun} />
                     <SponsorCard sponsor={sponsorsJSON.standOutStickers} />
                     <SponsorCard sponsor={sponsorsJSON.pinnacle} />
                     <SponsorCard sponsor={sponsorsJSON.stanAI} />
