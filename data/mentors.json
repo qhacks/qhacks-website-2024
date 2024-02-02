@@ -13,6 +13,7 @@
                 "Pitching"
             ],
             "linkedin":"",
+            "company":"",
             "image":"/mentors/Jen Goetz.png"
         },
         {
@@ -26,6 +27,7 @@
                 "Next.Js"
             ],
             "linkedin":"",
+            "company":"Intuit",
             "image":"/mentors/Arjun Vegda.png"
         },
         {
@@ -38,6 +40,7 @@
                 "Machine Learning"
             ],
             "linkedin":"www.linkedin.com/in/javadmanashti",
+            "company":"SIA Innovations Inc",
             "image":"/mentors/Javad Manashti.png"
         },
         {
@@ -54,6 +57,7 @@
                 "QA Testing"
             ],
             "linkedin":"https://linkedin.com/in/lamphillip",
+            "company":"STAN A.I.",
             "image":"/mentors/Phillip Lam.png"
         },
         {
@@ -63,6 +67,7 @@
                 "Software Engineering (in general)"
             ],
             "linkedin":"https://www.linkedin.com/in/paul-majewski-mjp/",
+            "company":"STAN A.I.",
             "image":"/mentors/Paul Majewski.png"
         },
         {
@@ -78,6 +83,7 @@
                 "AWS"
             ],
             "linkedin":"https://www.linkedin.com/in/mkwongjack/",
+            "company":"STAN A.I.",
             "image":"/mentors/Jack Wong.png"
         },
         {
@@ -97,6 +103,7 @@
                 "Git"
             ],
             "linkedin":"https://www.linkedin.com/in/bryan-c-hoang/",
+            "company":"Distributive",
             "image":"/mentors/Bryan Hoang.png"
         },
         {
@@ -111,6 +118,7 @@
                 "algorithms"
             ],
             "linkedin":"linkedin.com/in/ahmreza",
+            "company":"Queen's School of Computing",
             "image":"/mentors/Reza Ahmadi.png"
         },
         {
@@ -121,6 +129,7 @@
                 "Go"
             ],
             "linkedin":"",
+            "company":"",
             "image":"/mentors/Unknown.png"
         },
         {
@@ -128,6 +137,7 @@
             "bio":"",
             "areas":[],
             "linkedin":"",
+            "company":"",
             "image":"/mentors/Unknown.png"
         },
         {
@@ -139,6 +149,7 @@
                 "team motivation"
             ],
             "linkedin":"https://ca.linkedin.com/in/terry-prezens-86b94186",
+            "company":"St. Andrew's College",
             "image":"/mentors/Terry Prezens.png"
         }
     ]
