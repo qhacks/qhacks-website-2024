@@ -44,6 +44,17 @@
             "image":"/mentors/Javad Manashti.png"
         },
         {
+            "name":"Ethan Fung",
+            "bio":"Ethan Fung is the CEO and Co founder of Expresume, an AI resume builder. He has participated in numerous startup accelerators, and graduated with a Bachelor of Computing Specializing in Game Development at Queen’s University and a Mini MBA from Schulich School of Business at York University. His hobbies in tech include film and cinematography for content creation.",
+            "areas":[
+                "UX UI",
+                "marketing, pitching"
+            ],
+            "linkedin":"https://www.linkedin.com/in/ethanfung/",
+            "company":"Expresume",
+            "image":"/mentors/Ethan Fung.png"
+        },
+        {
             "name":"Phillip Lam",
             "bio":"Graduated from the University of Waterloo with a major in Physics and Astronomy and a minor in Computer Science. Did 3 years of Software QA (Manual and Automation Testing), then transitioned into Software Development last year.",
             "areas":[
