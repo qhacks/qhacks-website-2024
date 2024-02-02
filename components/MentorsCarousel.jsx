@@ -74,11 +74,13 @@ const MentorCarousel = () => {
                           mentors[num].bio && mentors[num].bio.length > 0 && 
                           <>
                             <p className={`text-white text-sm ${isExpanded1 ? 'py-2' : 'py-4'} px-4 text-center`}>
-                              {isExpanded1 ? mentors[num+1].bio : `${mentors[num+1].bio.substring(0, 300)}...`}
+                              {mentors[num].bio.length <= 210 || isExpanded1 ? mentors[num].bio : `${mentors[num].bio.substring(0, 210)}...`}
                             </p>
-                            <button onClick={() => setIsExpanded1(!isExpanded1)} className='text-blue-500'>
-                              {isExpanded1 ? 'Read Less' : 'Read More'}
-                            </button>
+                            {mentors[num].bio.length > 210 && 
+                              <button onClick={() => setIsExpanded1(!isExpanded1)} className='text-blue-500'>
+                                {isExpanded1 ? 'Read Less' : 'Read More'}
+                              </button>
+                            }
                           </>
                         }
                       </div>
@@ -122,11 +124,13 @@ const MentorCarousel = () => {
                           mentors[num+1].bio && mentors[num+1].bio.length > 0 && 
                           <>
                             <p className={`text-white text-sm ${isExpanded2 ? 'py-2' : 'py-4'} px-4 text-center`}>
-                              {isExpanded2 ? mentors[num+1].bio : `${mentors[num+1].bio.substring(0, 300)}...`}
+                              {mentors[num+1].bio.length <= 210 || isExpanded2 ? mentors[num+1].bio : `${mentors[num+1].bio.substring(0, 210)}...`}
                             </p>
-                            <button onClick={() => setIsExpanded2(!isExpanded2)} className='text-blue-500'>
-                              {isExpanded2 ? 'Read Less' : 'Read More'}
-                            </button>
+                            {mentors[num+1].bio.length > 210 && 
+                              <button onClick={() => setIsExpanded2(!isExpanded2)} className='text-blue-500'>
+                                {isExpanded2 ? 'Read Less' : 'Read More'}
+                              </button>
+                            }
                           </>
                         }
                       </div>
@@ -169,15 +173,17 @@ const MentorCarousel = () => {
                           </motion.div>
                         }
                       <div>
-                        {
+                      {
                           mentors[num+2].bio && mentors[num+2].bio.length > 0 && 
                           <>
                             <p className={`text-white text-sm ${isExpanded3 ? 'py-2' : 'py-4'} px-4 text-center`}>
-                              {isExpanded3 ? mentors[num+2].bio : `${mentors[num+2].bio.substring(0, 300)}...`}
+                              {mentors[num+2].bio.length <= 210 || isExpanded3 ? mentors[num+2].bio : `${mentors[num+2].bio.substring(0, 210)}...`}
                             </p>
-                            <button onClick={() => setIsExpanded3(!isExpanded3)} className='text-blue-500'>
-                              {isExpanded3 ? 'Read Less' : 'Read More'}
-                            </button>
+                            {mentors[num+2].bio.length > 210 && 
+                              <button onClick={() => setIsExpanded3(!isExpanded3)} className='text-blue-500'>
+                                {isExpanded3 ? 'Read Less' : 'Read More'}
+                              </button>
+                            }
                           </>
                         }
                       </div>
