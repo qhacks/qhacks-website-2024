@@ -1,0 +1,147 @@
+{
+    "mentors2024":[
+        {
+            "name":"Terry Prezens",
+            "bio":"I am a Computer Science teacher with 30 years of experience, and enjoy spending time with my wonderful wife and daughter. A few years ago, I was honoured by the Prime Minister with an award for teaching excellence in STEM. I also coach VEX robotics and am on the national committee for RoboCup Junior. Finally, I am the ECOO programming contest convenor for the Independent Schools.",
+            "areas":[
+                "Coding",
+                "problem definition",
+                "team motivation"
+            ],
+            "linkedin":"https://ca.linkedin.com/in/terry-prezens-86b94186",
+            "image":"/mentors/Terry Prezens.png"
+        },
+        {
+            "name":"Jen Goetz",
+            "bio":"I'm Jen, a full stack developer with a background in fintech and social media. I studied mechanical engineering at Queen’s and switched into tech after a few years in construction consulting. I have participated in several hackathons myself and I am excited to learn about your innovative ideas and projects during the hackathon!",
+            "areas":[
+                "Typescript",
+                "Javascript",
+                "NodeJS",
+                "React",
+                "Next JS",
+                "Blockchain",
+                "Pitching"
+            ],
+            "linkedin":"",
+            "image":"/mentors/Jen Goetz.png"
+        },
+        {
+            "name":"Arjun Vegda",
+            "bio":"I'm Arjun! I'm a Toronto-based Software Engineer currently working at Intuit. My professional journey's been quite the adventure—from consulting gigs and freelancing to diving into healthcare-tech, and food-delivery platforms. Now I'm building AI-based user experiences at a financial technology company. Beyond tech, you'll find me nose-deep in books, occasionally gaming, exploring the intricacies of finance, and cherishing moments spent with friends and family. Always seeking new knowledge and experiences!",
+            "areas":[
+                "JavaScript",
+                "TypeScript",
+                "React",
+                "NodeJS",
+                "Next.Js"
+            ],
+            "linkedin":"",
+            "image":"/mentors/Arjun Vegda.png"
+        },
+        {
+            "name":"Javad Manashti",
+            "bio":"As an AI Engineer at SIA Innovations Inc., I specialize in Generative AI, Data Science, and Machine Learning. With a PhD in Geotechnical and Geoenvironmental Engineering from ETS University of Montreal, my strength lies in applying AI, particularly in computer vision, to address complex business challenges. I lead AI projects, develop innovative solutions, and am passionate about leveraging AI to solve real-world problems.",
+            "areas":[
+                "AI",
+                "Generative AI",
+                "Data Science",
+                "Machine Learning"
+            ],
+            "linkedin":"www.linkedin.com/in/javadmanashti",
+            "image":"/mentors/Javad Manashti.png"
+        },
+        {
+            "name":"Phillip Lam",
+            "bio":"Graduated from the University of Waterloo with a major in Physics and Astronomy and a minor in Computer Science. Did 3 years of Software QA (Manual and Automation Testing), then transitioned into Software Development last year.",
+            "areas":[
+                "Frontend: ReactJS",
+                "Next.js",
+                "TailwindCSS",
+                "MaterialUI",
+                "Backend: NodeJS",
+                "MongoDB",
+                "Misc: TypeScript",
+                "QA Testing"
+            ],
+            "linkedin":"https://linkedin.com/in/lamphillip",
+            "image":"/mentors/Phillip Lam.png"
+        },
+        {
+            "name":"Paul Majewski",
+            "bio":"My name is Paul, and I am a graduate of Queen's University from the Faculty of Engineering and Applied Science. I completed my degree (Apple Math) in 2022, and have been working as a software engineer full time since October 2022. Besides the few basic coding courses taken in the Apple Math (Sysro) stream, I am entirely self-taught, and the 5 months after graduating were spent tirelessly learning tech stacks and working on personal projects that could be good enough to impress recruiters. After successfully landing a job at a very small startup in October 2022, I was immediately thrown into the deep end and had to learn various languages and frameworks on my own with very little mentorship and oversight, which was very rewarding, but also incredibly stressful. After 9 months of this, I found a new job and started working at STAN A.I., where I work with a dynamic team full of wonderful and talented people, this time with better mentorship and oversight. I'm excited to be a mentor at QHacks this year, offer students some assistance, and also talk to them about our product.",
+            "areas":[
+                "Software Engineering (in general)"
+            ],
+            "linkedin":"https://www.linkedin.com/in/paul-majewski-mjp/",
+            "image":"/mentors/Paul Majewski.png"
+        },
+        {
+            "name":"Jack Wong",
+            "bio":"Jack Wong is a software engineer at STAN, who specializes in AI/ML research and full-stack development. In his spare time, Jack enjoys reading and playing Civilization VI (as Khmer).",
+            "areas":[
+                "AI/ML",
+                "Speech, NLP, and Computer Vision",
+                "full stack development",
+                "Angular",
+                "React", 
+                "Node.js", 
+                "AWS"
+            ],
+            "linkedin":"https://www.linkedin.com/in/mkwongjack/",
+            "image":"/mentors/Jack Wong.png"
+        },
+        {
+            "name":"Bryan Hoang",
+            "bio":"An Apple Math Comp graduate turned full-stack developer at a start-up tech company. Spends too much time tinkering with developer tooling. Enjoys typing on a split keyboard with blank key-caps.",
+            "areas":[
+                "Full-stack development",
+                "JavaScript",
+                "TypeScript",
+                "Node.js",
+                "React",
+                "MySQL",
+                "nginx",
+                "Docker",
+                "GitLab/GitHub CI & CD",
+                "Linux",
+                "Git"
+            ],
+            "linkedin":"https://www.linkedin.com/in/bryan-c-hoang/",
+            "image":"/mentors/Bryan Hoang.png"
+        },
+        {
+            "name":"Reza Ahmadi Ph.D",
+            "bio":"Reza is a software architect/team leader in industry and an Adjunct professor at Queen's school of computing.",
+            "areas":[
+                "software systems",
+                "IoT",
+                "Java",
+                "C/C++",
+                "web technologies",
+                "algorithms"
+            ],
+            "linkedin":"linkedin.com/in/ahmreza",
+            "image":"/mentors/Reza Ahmadi Ph.D.png"
+        },
+        {
+            "name":"Kunalan Subagaran",
+            "bio":"I'm a recently graduated Queen's SODE student. My favorite color is green.",
+            "areas":[
+                "Typescript",
+                "Go"
+            ],
+            "linkedin":"",
+            "image":"/mentors/Unknown.png"
+        },
+        {
+            "name":"William Nippard",
+            "bio":"",
+            "areas":[
+                ""
+            ],
+            "linkedin":"",
+            "image":"/mentors/Unknown.png"
+        }
+    ]
+}

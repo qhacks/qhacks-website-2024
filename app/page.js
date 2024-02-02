@@ -18,6 +18,7 @@ import WarmWaves from '../components/WarmWaves';
 
 // Carousel Components
 import SpeakerCarousel from '../components/SpeakerCarousel';
+import MentorCarousel from '../components/MentorsCarousel';
 import TestimonialsCarousel from '../components/TestimonialsCarousel';
 
 // Navbar and Footer
@@ -39,7 +40,7 @@ import faq from "../data/faq.json";
 import judges from 'data/judges.json'
 import panel1 from 'data/panel1.json';
 import panel2 from 'data/panel2.json';
-
+import mentors1 from 'data/mentors.json';
 // React Hooks
 import { useEffect, useState } from 'react';
 
@@ -280,16 +281,16 @@ export default function Home() {
 				<SpeakerCarousel speakers = {panel2}/>
 			</section>
 
-			{/* Speaker Section */}
-			{/* <section className="mt-12 pt-16 mb-8 mx-2 sm:mx-8 md:mx-12 lg:mx-12 xl:mx-80 2xl:mx-96">
+			{/* Mentor Section */}
+			<section className="mt-12 pt-16 mb-8 mx-2 sm:mx-8 md:mx-12 lg:mx-12 xl:mx-80 2xl:mx-96">
 				<h1 className="text-center text-white text-3xl md:text-5xl font-bold mb-8">
-					Some of Our{" "}
+					Our{" "}
 					<span className="text-3xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-600">
-						Past Speakers
+						Mentors
 					</span>
 				</h1>
-				<SpeakerCarousel />
-			</section> */}
+				<MentorCarousel/>
+			</section>
 
 
 
