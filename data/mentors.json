@@ -1,17 +1,6 @@
 {
     "mentors2024":[
         {
-            "name":"Terry Prezens",
-            "bio":"I am a Computer Science teacher with 30 years of experience, and enjoy spending time with my wonderful wife and daughter. A few years ago, I was honoured by the Prime Minister with an award for teaching excellence in STEM. I also coach VEX robotics and am on the national committee for RoboCup Junior. Finally, I am the ECOO programming contest convenor for the Independent Schools.",
-            "areas":[
-                "Coding",
-                "problem definition",
-                "team motivation"
-            ],
-            "linkedin":"https://ca.linkedin.com/in/terry-prezens-86b94186",
-            "image":"/mentors/Terry Prezens.png"
-        },
-        {
             "name":"Jen Goetz",
             "bio":"I'm Jen, a full stack developer with a background in fintech and social media. I studied mechanical engineering at Queen’s and switched into tech after a few years in construction consulting. I have participated in several hackathons myself and I am excited to learn about your innovative ideas and projects during the hackathon!",
             "areas":[
@@ -122,7 +111,7 @@
                 "algorithms"
             ],
             "linkedin":"linkedin.com/in/ahmreza",
-            "image":"/mentors/Reza Ahmadi Ph.D.png"
+            "image":"/mentors/Reza Ahmadi.png"
         },
         {
             "name":"Kunalan Subagaran",
@@ -137,11 +126,20 @@
         {
             "name":"William Nippard",
             "bio":"",
-            "areas":[
-                ""
-            ],
+            "areas":[],
             "linkedin":"",
             "image":"/mentors/Unknown.png"
+        },
+        {
+            "name":"Terry Prezens",
+            "bio":"I am a Computer Science teacher with 30 years of experience, and enjoy spending time with my wonderful wife and daughter. A few years ago, I was honoured by the Prime Minister with an award for teaching excellence in STEM. I also coach VEX robotics and am on the national committee for RoboCup Junior. Finally, I am the ECOO programming contest convenor for the Independent Schools.",
+            "areas":[
+                "Coding",
+                "problem definition",
+                "team motivation"
+            ],
+            "linkedin":"https://ca.linkedin.com/in/terry-prezens-86b94186",
+            "image":"/mentors/Terry Prezens.png"
         }
     ]
 }
